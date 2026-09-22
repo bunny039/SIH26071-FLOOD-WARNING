@@ -1,0 +1,58 @@
+ClimateTwinBench Derivation Evaluation
+==================================================
+
+Protocol Recovery
+---------------------------
+Claude: 100.00%
+DeepSeek: 98.74%
+GPT: 43.75%
+
+Category Recovery
+---------------------------
+compound_state_transition_verification
+  Claude   : 100.00%
+  DeepSeek : 100.00%
+  GPT      : 27.50%
+
+localized_intensification_verification
+  Claude   : 100.00%
+  DeepSeek : 100.00%
+  GPT      : 45.00%
+
+persistent_regional_anomaly_verification
+  Claude   : 100.00%
+  DeepSeek : 100.00%
+  GPT      : 100.00%
+
+reliability_aware_claim_verification
+  Claude   : 100.00%
+  DeepSeek : 94.87%
+  GPT      : 30.00%
+
+spatial_coherence_verification
+  Claude   : 100.00%
+  DeepSeek : 97.50%
+  GPT      : 32.50%
+
+wet_anomaly_consistency_verification
+  Claude   : 100.00%
+  DeepSeek : 100.00%
+  GPT      : 27.50%
+
+
+DeepSeek Failure Analysis
+---------------------------
+HYP-186
+Category : spatial_coherence_verification
+Failure  : Spatial
+Cause    : Connected-component counting
+
+HYP-213
+Category : reliability_aware_claim_verification
+Failure  : Numerical
+Cause    : Mean anomaly derivation
+
+HYP-226
+Category : reliability_aware_claim_verification
+Failure  : Numerical
+Cause    : Mean anomaly derivation

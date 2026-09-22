@@ -1,0 +1,247 @@
+==========================================================================================
+CLIMATETWINBENCH - MASTER PAPER STATISTICS
+==========================================================================================
+
+OVERALL MODEL PERFORMANCE
+------------------------------------------------------------------------------------------
+      Model  Questions  Protocol Recovery  Metric Accuracy  Metric Errors  Absorbed  Propagated  Absorption Rate  Propagation Rate
+     Claude        240         100.000000        99.583333              1         1           0       100.000000          0.000000
+Claude Opus        240         100.000000       100.000000              0         0           0         0.000000          0.000000
+   DeepSeek        240          99.583333        94.166667             14        13           1        92.857143          7.142857
+     Gemini        240         100.000000       100.000000              0         0           0         0.000000          0.000000
+        GPT        240          42.916667         4.166667            230        93         137        40.434783         59.565217
+
+
+==========================================================================================
+PER-CATEGORY SUMMARY
+==========================================================================================
+
+
+Claude
+--------------------------------------------------
+                                Category  Questions  MetricAcc  DecisionAcc  MetricErrors  Absorbed  Propagated
+  compound_state_transition_verification         40      100.0        100.0             0         0           0
+  localized_intensification_verification         40      100.0        100.0             0         0           0
+persistent_regional_anomaly_verification         40      100.0        100.0             0         0           0
+    reliability_aware_claim_verification         40      100.0        100.0             0         0           0
+          spatial_coherence_verification         40       97.5        100.0             1         1           0
+    wet_anomaly_consistency_verification         40      100.0        100.0             0         0           0
+
+
+Claude Opus
+--------------------------------------------------
+                                Category  Questions  MetricAcc  DecisionAcc  MetricErrors  Absorbed  Propagated
+  compound_state_transition_verification         40      100.0        100.0             0         0           0
+  localized_intensification_verification         40      100.0        100.0             0         0           0
+persistent_regional_anomaly_verification         40      100.0        100.0             0         0           0
+    reliability_aware_claim_verification         40      100.0        100.0             0         0           0
+          spatial_coherence_verification         40      100.0        100.0             0         0           0
+    wet_anomaly_consistency_verification         40      100.0        100.0             0         0           0
+
+
+DeepSeek
+--------------------------------------------------
+                                Category  Questions  MetricAcc  DecisionAcc  MetricErrors  Absorbed  Propagated
+  compound_state_transition_verification         40      100.0        100.0             0         0           0
+  localized_intensification_verification         40      100.0        100.0             0         0           0
+persistent_regional_anomaly_verification         40       92.5        100.0             3         3           0
+    reliability_aware_claim_verification         40      100.0        100.0             0         0           0
+          spatial_coherence_verification         40       72.5         97.5            11        10           1
+    wet_anomaly_consistency_verification         40      100.0        100.0             0         0           0
+
+
+Gemini
+--------------------------------------------------
+                                Category  Questions  MetricAcc  DecisionAcc  MetricErrors  Absorbed  Propagated
+  compound_state_transition_verification         40      100.0        100.0             0         0           0
+  localized_intensification_verification         40      100.0        100.0             0         0           0
+persistent_regional_anomaly_verification         40      100.0        100.0             0         0           0
+    reliability_aware_claim_verification         40      100.0        100.0             0         0           0
+          spatial_coherence_verification         40      100.0        100.0             0         0           0
+    wet_anomaly_consistency_verification         40      100.0        100.0             0         0           0
+
+
+GPT
+--------------------------------------------------
+                                Category  Questions  MetricAcc  DecisionAcc  MetricErrors  Absorbed  Propagated
+  compound_state_transition_verification         40        0.0         35.0            40        14          26
+  localized_intensification_verification         40        0.0         32.5            40        13          27
+persistent_regional_anomaly_verification         40        0.0         90.0            40        36           4
+    reliability_aware_claim_verification         40        0.0         32.5            40        13          27
+          spatial_coherence_verification         40       25.0         32.5            30         3          27
+    wet_anomaly_consistency_verification         40        0.0         35.0            40        14          26
+
+==========================================================================================
+PROPAGATED FAILURES
+==========================================================================================
+
+
+Claude
+None
+
+
+Claude Opus
+None
+
+
+DeepSeek
+     id                    subcategory GT_Decision RecoveredDecision  GT_Metric1  Pred_Metric1  GT_Metric2  Pred_Metric2  GT_Metric3  Pred_Metric3
+HYP-186 spatial_coherence_verification     REFUTED      INSUFFICIENT         4.0           2.0         1.0           2.0         4.0           1.0
+
+
+Gemini
+None
+
+
+GPT
+     id                              subcategory  GT_Decision RecoveredDecision  GT_Metric1  Pred_Metric1  GT_Metric2  Pred_Metric2  GT_Metric3  Pred_Metric3
+HYP-001 persistent_regional_anomaly_verification    SUPPORTED           REFUTED      0.7789        0.0000      0.4444        0.0000      1.0000           0.0
+HYP-014 persistent_regional_anomaly_verification      REFUTED         SUPPORTED      0.1953        0.7658      0.0000        0.7778      1.0000           1.0
+HYP-027 persistent_regional_anomaly_verification INSUFFICIENT           REFUTED      0.7209        0.1962      0.4444        0.0000      1.0000           1.0
+HYP-032 persistent_regional_anomaly_verification INSUFFICIENT           REFUTED      0.4958        0.4137      0.2222        0.1111      1.0000           1.0
+HYP-041   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.8476        0.4907      0.4388        0.1111      1.9395           1.0
+HYP-042   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.0936        0.0000      0.2592        0.0000      0.3405           0.0
+HYP-043   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.2429        0.0000      0.1935        0.0000      0.4704           0.0
+HYP-044   localized_intensification_verification    SUPPORTED      INSUFFICIENT      1.2485        0.0000      0.3910        0.0000      2.5151           0.0
+HYP-045   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.1536        0.0000      0.1522        0.0000      0.6319           0.0
+HYP-046   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.6393        0.0000      0.2146        0.0000      0.6393           0.0
+HYP-047   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.7100        0.0000      0.3229        0.0000      0.8739           0.0
+HYP-048   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.5113        0.0000      0.1598        0.0000      0.8767           0.0
+HYP-049   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.4475        0.0000      0.2384        0.0000      0.8936           0.0
+HYP-050   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.8492        0.0000      0.4319        0.0000      1.6101           0.0
+HYP-051   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.3531        0.0000      0.1389        0.0000      0.3938           0.0
+HYP-052   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.5673        0.0000      0.3190        0.0000      0.5130           0.0
+HYP-053   localized_intensification_verification    SUPPORTED      INSUFFICIENT      0.3645        0.0000      0.1913        0.0000      0.6594           0.0
+HYP-054   localized_intensification_verification      REFUTED      INSUFFICIENT     -0.6032        0.0000      0.0738        0.0000     -0.7023           0.0
+HYP-055   localized_intensification_verification      REFUTED      INSUFFICIENT     -0.1167        0.0000     -0.1446        0.0000      0.7049           0.0
+HYP-056   localized_intensification_verification      REFUTED      INSUFFICIENT      0.2470        0.0000     -0.0172        0.0000     -1.9459           0.0
+HYP-057   localized_intensification_verification      REFUTED      INSUFFICIENT     -0.2749        0.0000     -0.0313        0.0000     -0.7381           0.0
+HYP-058   localized_intensification_verification      REFUTED      INSUFFICIENT      0.8236        0.0000      0.3229        0.0000     -1.0421           0.0
+HYP-059   localized_intensification_verification      REFUTED      INSUFFICIENT      0.0760        0.0000     -0.1506        0.0000      1.1015           0.0
+HYP-060   localized_intensification_verification      REFUTED      INSUFFICIENT     -0.4800        0.0000     -0.3807        0.0000     -0.5297           0.0
+HYP-061   localized_intensification_verification      REFUTED      INSUFFICIENT     -0.2618        0.0000      0.2291        0.0000     -2.1008           0.0
+HYP-062   localized_intensification_verification      REFUTED      INSUFFICIENT      0.0651        0.0000     -0.0714        0.0000     -0.6109           0.0
+HYP-063   localized_intensification_verification      REFUTED      INSUFFICIENT     -0.2166        0.0000     -0.1235        0.0000      0.7035           0.0
+HYP-064   localized_intensification_verification      REFUTED      INSUFFICIENT      0.0319        0.0000      0.0918        0.0000     -0.7691           0.0
+HYP-065   localized_intensification_verification      REFUTED      INSUFFICIENT      1.1128        0.0000      0.0446        0.0000     -2.2956           0.0
+HYP-066   localized_intensification_verification      REFUTED      INSUFFICIENT     -0.0958        0.0000     -0.1211        0.0000     -1.3768           0.0
+HYP-080   localized_intensification_verification      REFUTED      INSUFFICIENT     -0.3448        0.0000     -0.2904        0.0000      0.7874           0.0
+HYP-081     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      0.7791        0.0000      0.8457        0.0000      1.0000           0.0
+HYP-082     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      0.7202        0.0000      0.8183        0.0000      1.0000           0.0
+HYP-083     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      0.5204        0.0000      0.6051        0.0000      1.0000           0.0
+HYP-084     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      0.7458        0.0000      0.7287        0.0000      1.0000           0.0
+HYP-085     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      0.9094        0.0000      1.3012        0.0000      1.0000           0.0
+HYP-086     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      1.6814        0.0000      2.1588        0.0000      1.0000           0.0
+HYP-087     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      1.3726        0.0000      3.0657        0.0000      1.0000           0.0
+HYP-088     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      0.6100        0.0000      0.9651        0.0000      1.0000           0.0
+HYP-089     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      1.2494        0.0000      1.8369        0.0000      1.0000           0.0
+HYP-090     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      0.9116        0.0000      1.6278        0.0000      1.0000           0.0
+HYP-091     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      0.9252        0.0000      2.2828        0.0000      1.0000           0.0
+HYP-092     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      0.7230        0.0000      0.6161        0.0000      1.0000           0.0
+HYP-093     wet_anomaly_consistency_verification    SUPPORTED      INSUFFICIENT      0.8245        0.0000      1.5204        0.0000      1.0000           0.0
+HYP-094     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -0.6167        0.0000     -0.1898        0.0000      0.3333           0.0
+HYP-095     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -1.0204        0.0000     -0.3487        0.0000      0.3333           0.0
+HYP-096     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -1.3372        0.0000     -2.8633        0.0000      0.0000           0.0
+HYP-097     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -0.8618        0.0000      0.0465        0.0000      0.6667           0.0
+HYP-098     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -0.8106        0.0000     -2.7530        0.0000      0.0000           0.0
+HYP-099     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -0.3649        0.0000     -0.1940        0.0000      0.3333           0.0
+HYP-100     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -0.5104        0.0000      0.3196        0.0000      0.7778           0.0
+HYP-101     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -0.4986        0.0000     -1.0719        0.0000      0.0000           0.0
+HYP-102     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -0.7443        0.0000     -0.4206        0.0000      0.0000           0.0
+HYP-103     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -3.5745        0.0000     -3.4021        0.0000      0.0000           0.0
+HYP-104     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -1.2351        0.0000      0.2776        0.0000      0.7778           0.0
+HYP-105     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -0.5523        0.0000     -1.0218        0.0000      0.0000           0.0
+HYP-106     wet_anomaly_consistency_verification      REFUTED      INSUFFICIENT     -0.3885        0.0000     -0.0529        0.0000      0.2222           0.0
+HYP-121   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      0.4387        0.0000      0.4038        0.0000         NaN           NaN
+HYP-122   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      1.4407        0.0000      0.2739        0.0000         NaN           NaN
+HYP-123   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      0.5665        0.0000      0.4190        0.0000         NaN           NaN
+HYP-124   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      0.3305        0.0000      0.3132        0.0000         NaN           NaN
+HYP-125   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      1.0867        0.0000      0.6695        0.0000         NaN           NaN
+HYP-126   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      1.6644        0.0000      0.5730        0.0000         NaN           NaN
+HYP-127   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      0.5400        0.0000      0.7544        0.0000         NaN           NaN
+HYP-128   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      0.3314        0.0000      0.4879        0.0000         NaN           NaN
+HYP-129   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      0.5428        0.0000      0.3129        0.0000         NaN           NaN
+HYP-130   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      0.9555        0.0000      0.3232        0.0000         NaN           NaN
+HYP-131   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      0.6231        0.0000      0.3554        0.0000         NaN           NaN
+HYP-132   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      1.2832        0.0000      0.2597        0.0000         NaN           NaN
+HYP-133   compound_state_transition_verification    SUPPORTED      INSUFFICIENT      0.4081        0.0000      0.3290        0.0000         NaN           NaN
+HYP-134   compound_state_transition_verification      REFUTED      INSUFFICIENT      0.7088        0.0000     -0.3645        0.0000         NaN           NaN
+HYP-135   compound_state_transition_verification      REFUTED      INSUFFICIENT      0.9537        0.0000     -0.3681        0.0000         NaN           NaN
+HYP-136   compound_state_transition_verification      REFUTED      INSUFFICIENT     -0.1428        0.0000     -0.5187        0.0000         NaN           NaN
+HYP-137   compound_state_transition_verification      REFUTED      INSUFFICIENT      0.1069        0.0000     -0.7959        0.0000         NaN           NaN
+HYP-138   compound_state_transition_verification      REFUTED      INSUFFICIENT     -1.6178        0.0000      0.9447        0.0000         NaN           NaN
+HYP-139   compound_state_transition_verification      REFUTED      INSUFFICIENT      0.0761        0.0000     -0.2929        0.0000         NaN           NaN
+HYP-140   compound_state_transition_verification      REFUTED      INSUFFICIENT     -1.1979        0.0000      0.4061        0.0000         NaN           NaN
+HYP-141   compound_state_transition_verification      REFUTED      INSUFFICIENT     -1.1128        0.0000      0.2213        0.0000         NaN           NaN
+HYP-142   compound_state_transition_verification      REFUTED      INSUFFICIENT      0.5283        0.0000     -0.7265        0.0000         NaN           NaN
+HYP-143   compound_state_transition_verification      REFUTED      INSUFFICIENT      0.7539        0.0000     -0.3384        0.0000         NaN           NaN
+HYP-144   compound_state_transition_verification      REFUTED      INSUFFICIENT     -1.1335        0.0000     -0.8127        0.0000         NaN           NaN
+HYP-145   compound_state_transition_verification      REFUTED      INSUFFICIENT     -0.3728        0.0000     -0.4403        0.0000         NaN           NaN
+HYP-146   compound_state_transition_verification      REFUTED      INSUFFICIENT     -0.8906        0.0000      0.5178        0.0000         NaN           NaN
+HYP-161           spatial_coherence_verification    SUPPORTED           REFUTED      6.0000        0.0000      6.0000        0.0000      1.0000           0.0
+HYP-162           spatial_coherence_verification    SUPPORTED           REFUTED     24.0000        0.0000     24.0000        0.0000      1.0000           0.0
+HYP-163           spatial_coherence_verification    SUPPORTED           REFUTED      5.0000        0.0000      5.0000        0.0000      1.0000           0.0
+HYP-164           spatial_coherence_verification    SUPPORTED           REFUTED      3.0000        0.0000      3.0000        0.0000      1.0000           0.0
+HYP-165           spatial_coherence_verification    SUPPORTED           REFUTED      3.0000        0.0000      3.0000        0.0000      1.0000           0.0
+HYP-166           spatial_coherence_verification    SUPPORTED           REFUTED     16.0000        0.0000     16.0000        0.0000      1.0000           0.0
+HYP-167           spatial_coherence_verification    SUPPORTED           REFUTED      3.0000        0.0000      3.0000        0.0000      1.0000           0.0
+HYP-168           spatial_coherence_verification    SUPPORTED           REFUTED      9.0000        0.0000      9.0000        0.0000      1.0000           0.0
+HYP-169           spatial_coherence_verification    SUPPORTED           REFUTED      3.0000        0.0000      3.0000        0.0000      1.0000           0.0
+HYP-170           spatial_coherence_verification    SUPPORTED           REFUTED      9.0000        0.0000      9.0000        0.0000      1.0000           0.0
+HYP-171           spatial_coherence_verification    SUPPORTED           REFUTED     10.0000        0.0000     10.0000        0.0000      1.0000           0.0
+HYP-172           spatial_coherence_verification    SUPPORTED           REFUTED      3.0000        0.0000      3.0000        0.0000      1.0000           0.0
+HYP-173           spatial_coherence_verification    SUPPORTED           REFUTED     18.0000        0.0000     18.0000        0.0000      1.0000           0.0
+HYP-187           spatial_coherence_verification INSUFFICIENT           REFUTED      2.0000        0.0000      2.0000        0.0000      1.0000           0.0
+HYP-188           spatial_coherence_verification INSUFFICIENT           REFUTED      2.0000        0.0000      1.0000        0.0000      2.0000           0.0
+HYP-189           spatial_coherence_verification INSUFFICIENT           REFUTED      5.0000        0.0000      4.0000        0.0000      2.0000           0.0
+HYP-190           spatial_coherence_verification INSUFFICIENT           REFUTED      2.0000        0.0000      2.0000        0.0000      1.0000           0.0
+HYP-191           spatial_coherence_verification INSUFFICIENT           REFUTED      2.0000        0.0000      1.0000        0.0000      2.0000           0.0
+HYP-192           spatial_coherence_verification INSUFFICIENT           REFUTED      2.0000        0.0000      1.0000        0.0000      2.0000           0.0
+HYP-193           spatial_coherence_verification INSUFFICIENT           REFUTED      2.0000        0.0000      1.0000        0.0000      2.0000           0.0
+HYP-194           spatial_coherence_verification INSUFFICIENT           REFUTED      1.0000        0.0000      1.0000        0.0000      1.0000           0.0
+HYP-195           spatial_coherence_verification INSUFFICIENT           REFUTED      2.0000        0.0000      1.0000        0.0000      2.0000           0.0
+HYP-196           spatial_coherence_verification INSUFFICIENT           REFUTED      2.0000        0.0000      1.0000        0.0000      2.0000           0.0
+HYP-197           spatial_coherence_verification INSUFFICIENT           REFUTED      2.0000        0.0000      1.0000        0.0000      2.0000           0.0
+HYP-198           spatial_coherence_verification INSUFFICIENT           REFUTED      5.0000        0.0000      4.0000        0.0000      2.0000           0.0
+HYP-199           spatial_coherence_verification INSUFFICIENT           REFUTED      3.0000        0.0000      2.0000        0.0000      2.0000           0.0
+HYP-200           spatial_coherence_verification INSUFFICIENT           REFUTED      1.0000        0.0000      1.0000        0.0000      1.0000           0.0
+HYP-201     reliability_aware_claim_verification    SUPPORTED           REFUTED      1.0057        0.0000      1.0000        0.0000         NaN           NaN
+HYP-202     reliability_aware_claim_verification    SUPPORTED           REFUTED      2.0741        0.0000      1.0000        0.0000         NaN           NaN
+HYP-203     reliability_aware_claim_verification    SUPPORTED           REFUTED      1.3425        0.0000      1.0000        0.0000         NaN           NaN
+HYP-204     reliability_aware_claim_verification    SUPPORTED           REFUTED      0.8835        0.0000      1.0000        0.0000         NaN           NaN
+HYP-205     reliability_aware_claim_verification    SUPPORTED           REFUTED      1.1662        0.0000      1.0000        0.0000         NaN           NaN
+HYP-206     reliability_aware_claim_verification    SUPPORTED           REFUTED      1.1178        0.0000      1.0000        0.0000         NaN           NaN
+HYP-207     reliability_aware_claim_verification    SUPPORTED           REFUTED      1.4872        0.0000      1.0000        0.0000         NaN           NaN
+HYP-208     reliability_aware_claim_verification    SUPPORTED           REFUTED      0.9698        0.0000      1.0000        0.0000         NaN           NaN
+HYP-209     reliability_aware_claim_verification    SUPPORTED           REFUTED      0.9318        0.0000      1.0000        0.0000         NaN           NaN
+HYP-210     reliability_aware_claim_verification    SUPPORTED           REFUTED      1.0198        0.0000      1.0000        0.0000         NaN           NaN
+HYP-211     reliability_aware_claim_verification    SUPPORTED           REFUTED      2.6415        0.0000      1.0000        0.0000         NaN           NaN
+HYP-212     reliability_aware_claim_verification    SUPPORTED           REFUTED      1.0279        0.0000      1.0000        0.0000         NaN           NaN
+HYP-213     reliability_aware_claim_verification    SUPPORTED           REFUTED      1.5182        0.0000      1.0000        0.0000         NaN           NaN
+HYP-227     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.4970        0.0000      1.0000        0.0000         NaN           NaN
+HYP-228     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.6416        0.0000      1.0000        0.0000         NaN           NaN
+HYP-229     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.4975        0.0000      1.0000        0.0000         NaN           NaN
+HYP-230     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.7299        0.0000      1.0000        0.0000         NaN           NaN
+HYP-231     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.4774        0.0000      1.0000        0.0000         NaN           NaN
+HYP-232     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.5837        0.0000      1.0000        0.0000         NaN           NaN
+HYP-233     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.7539        0.0000      1.0000        0.0000         NaN           NaN
+HYP-234     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.7970        0.0000      1.0000        0.0000         NaN           NaN
+HYP-235     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.7623        0.0000      1.0000        0.0000         NaN           NaN
+HYP-236     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.4724        0.0000      1.0000        0.0000         NaN           NaN
+HYP-237     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.5091        0.0000      1.0000        0.0000         NaN           NaN
+HYP-238     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.8326        0.0000      1.0000        0.0000         NaN           NaN
+HYP-239     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.4922        0.0000      1.0000        0.0000         NaN           NaN
+HYP-240     reliability_aware_claim_verification INSUFFICIENT           REFUTED      0.6410        0.0000      1.0000        0.0000         NaN           NaN
+
+==========================================================================================
+BENCHMARK TOTALS
+==========================================================================================
+
+Questions                  : 240
+Categories                 : 6
+Persistent                 : 40
+Localized                  : 40
+Wet                        : 40
+Compound                   : 40
+Spatial                    : 40
+Reliability                : 40

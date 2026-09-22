@@ -1,0 +1,66 @@
+{
+  "analysis": "ClimateTwin Phase 1.5F publication-grade statistical analysis",
+  "observations": 245,
+  "alpha_grid": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    0.9,
+    0.95,
+    0.99
+  ],
+  "alpha_1_policy": "excluded from primary analysis because alpha=1 changes canonical GT decisions at the equality boundary",
+  "toward_gt": "T_alpha = T + alpha * (GT_metric - T)",
+  "away_gt_control": "T_alpha = T - alpha * (GT_metric - T)",
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 20260626,
+  "canonical_gt_changes_through_0_99": {
+    "primary": 0,
+    "control": 0
+  },
+  "primary_effect": {
+    "n": 245,
+    "baseline_alpha": 0.0,
+    "endpoint_alpha": 0.99,
+    "baseline_propagation_rate": 0.563265306122449,
+    "endpoint_propagation_rate": 0.689795918367347,
+    "risk_difference_percentage_points": 12.653061224489804,
+    "risk_difference_ci95_percentage_points": [
+      4.489795918367347,
+      20.408163265306122
+    ],
+    "exact_mcnemar": {
+      "a_propagated_b_absorbed": 35,
+      "a_absorbed_b_propagated": 66,
+      "discordant": 101,
+      "exact_two_sided_p": 0.002653786057228506
+    }
+  },
+  "directional_effect": {
+    "n": 245,
+    "away_alpha": 0.99,
+    "toward_alpha": 0.99,
+    "away_propagation_rate": 0.4122448979591837,
+    "toward_propagation_rate": 0.689795918367347,
+    "toward_minus_away_percentage_points": 27.755102040816332,
+    "toward_minus_away_ci95_percentage_points": [
+      20.0,
+      35.51020408163265
+    ],
+    "exact_mcnemar": {
+      "a_propagated_b_absorbed": 21,
+      "a_absorbed_b_propagated": 89,
+      "discordant": 110,
+      "exact_two_sided_p": 3.7651773363237467e-11
+    }
+  },
+  "trend_summary": {
+    "mean_per_observation_spearman_rho": 0.25187653181051617,
+    "median_per_observation_spearman_rho": 0.8451542547285167,
+    "n_with_defined_rho": 101,
+    "n_constant_response_excluded": 144,
+    "note": "Secondary descriptive trend measure; the primary inference is paired at alpha=0 vs alpha=.99 and toward-vs-away at alpha=.99."
+  }
+}

@@ -1,0 +1,7 @@
+subcategory,Accuracy_Claude,Accuracy_DeepSeek,Accuracy_GPT
+compound_state_transition_verification,100.0,100.0,27.500000000000004
+localized_intensification_verification,100.0,100.0,45.0
+persistent_regional_anomaly_verification,100.0,100.0,100.0
+reliability_aware_claim_verification,100.0,94.87179487179486,30.0
+spatial_coherence_verification,100.0,97.5,32.5
+wet_anomaly_consistency_verification,100.0,100.0,27.500000000000004

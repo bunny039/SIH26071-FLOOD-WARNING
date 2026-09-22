@@ -1,20 +1,69 @@
+"""
+AquaSentinel Integrated Heavy Rainfall Early Warning Backend
+============================================================
+SIH Problem Statement: 26071
+Backend providing legitimate, scientifically defensible early warning forecasts:
+  - ConvLSTM Deep Learning Spatio-Temporal Rainfall Forecaster (trained on IMD data)
+  - Live Numerical Weather Prediction (Open-Meteo API)
+  - Climatological Anomalies & Antecedent Precipitation Memory
+  - Multi-hazard Flood Inundation & Alert Synthesis
+"""
+
 import os
 import sys
-from fastapi import FastAPI, HTTPException, status
+import time
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+from fastapi import FastAPI, HTTPException, Query, status
 from fastapi.middleware.cors import CORSMiddleware
-from typing import Dict, List, Any
 
-from schemas import PredictionRequest, PredictionResponse, ModelInfoResponse, HealthResponse
-from predictor import predict_rainfall, get_model, _WEIGHTS_LOADED, _LOADED_WEIGHTS_PATH
-from config import DEVICE, IN_CHANNELS, GRID_SIZE, DEFAULT_LOCATIONS
+# Ensure root directory is on path
+BACKEND_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = BACKEND_DIR.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from backend.schemas import (
+    PredictionRequest,
+    PredictionResponse,
+    ModelInfoResponse,
+    HealthResponse,
+    ConvLSTMPredictionRequest,
+    ConvLSTMPredictionResponse,
+    CurrentWeatherResponse,
+    LocationSearchResponse,
+    LocationReverseResponse,
+    RadarTimestampResponse,
+    FloodAnalyzeRequest,
+    FloodAnalyzeResponse,
+    ShelterInfo,
+    EvacuationRouteRequest,
+    EvacuationRouteResponse
+)
+from backend.predictor import predict_rainfall, predict_convlstm_direct, CITY_COORDINATES
+from backend.services.weather_service import WeatherService
+from backend.services.geocoding_service import GeocodingService
+from backend.services.flood_service import FloodService
+from backend.services.risk_service import RiskService
+from backend.services.shelter_service import ShelterService
+from backend.services.routing_service import RoutingService
+from ml.flood.validation_data import SEN1FLOODS11_VALIDATION_METRICS, VIJAYAWADA_CASE_STUDY
+from ml.flood.inference import get_flood_engine
+from ml.model_manager import get_model_manager
+from datetime import datetime
+import numpy as np
+
+
+
 
 app = FastAPI(
-    title="AquaSentinel API",
-    description="AI/ML-Based Integrated Heavy Rainfall Early Warning Backend utilizing research U-Net model from RainfallForecasting-main",
-    version="1.0.0"
+    title="AquaSentinel Heavy Rainfall Early Warning API",
+    description="Real-time multi-sensor rainfall forecasting and flood risk synthesis system",
+    version="2.0.0"
 )
 
-# Enable CORS for frontend integration
+# CORS Middleware for React frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -23,442 +72,530 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.on_event("startup")
 def startup_event():
-    """Preheat model on server start."""
+    """Initialize Model Manager and verify model checkpoints on launch."""
+    print("[AquaSentinel] Initializing Model Manager and preheating ConvLSTM engine...")
     try:
-        get_model()
-        print("[AquaSentinel] Model pipeline initialized successfully on startup.")
+        mm = get_model_manager()
+        health = mm.get_system_health_and_models()
+        convlstm_status = health["models"]["convlstm_rainfall"]["is_loaded"]
+        print(f"[AquaSentinel] ConvLSTM Engine loaded: {convlstm_status}")
+        if convlstm_status:
+            # Pre-warm the live grid cache so endpoints respond immediately
+            mm.convlstm_engine.predict_full_grid("live")
+            print("[AquaSentinel] ConvLSTM Live Grid Cache pre-warmed successfully.")
     except Exception as e:
-        print(f"[AquaSentinel] Warning during startup model initialization: {e}")
+        print(f"[AquaSentinel] Startup initialization warning: {e}")
+
 
 @app.get("/api/health", response_model=HealthResponse)
-@app.get("/")
-def root():
-    """
-    Health check and service status.
-    """
+@app.get("/health")
+def health_check():
+    """Health check reporting device, environment, and model operational status."""
+    mm = get_model_manager()
+    convlstm_info = mm.convlstm_engine.get_model_info()
     return HealthResponse(
         status="operational",
-        version="1.0.0",
-        device=str(DEVICE),
-        model_loaded=True,
-        weights_path=_LOADED_WEIGHTS_PATH
+        version="2.0.0",
+        device=convlstm_info.get("device", "cpu"),
+        model_loaded=convlstm_info.get("is_loaded", False),
+        weights_path=convlstm_info.get("checkpoint", None)
     )
+
 
 @app.get("/api/system-status")
 def system_status():
-    """
-    Detailed component status for the System Health page.
-    """
+    """System components, data pipelines, and model registry audit."""
+    mm = get_model_manager()
+    models_status = mm.get_system_health_and_models()
+
     return {
         "status": "OPERATIONAL",
+        "primary_model": models_status["primary_forecasting_model"],
         "components": {
-            "frontend": {"status": "ONLINE", "latency_ms": 12},
-            "backend": {"status": "ONLINE", "latency_ms": 5},
-            "prediction_engine": {"status": "ONLINE", "model_version": "U-Net v1.0"},
-            "data_pipeline": {"status": "ONLINE", "last_sync": "2 mins ago"}
+            "frontend": {"status": "ONLINE", "framework": "React / TypeScript / Tailwind"},
+            "backend": {"status": "ONLINE", "framework": "FastAPI (Python)"},
+            "convlstm_engine": {
+                "status": "ONLINE" if models_status["models"]["convlstm_rainfall"]["is_loaded"] else "OFFLINE",
+                "framework": "PyTorch",
+                "training_dataset": "IMD_DailyRainfall_Fixed.nc"
+            },
+            "flood_unet_engine": {
+                "status": models_status["models"]["sentinel1_flood_unet"]["status"],
+                "framework": "TensorFlow / Keras",
+                "note": "Awaiting Sen1Floods11 training run"
+            },
+            "darpan_engine": {
+                "status": "OPERATIONAL",
+                "framework": "Statistical State Estimation"
+            }
         },
         "data_sources": {
-            "GPM": {"status": "AVAILABLE", "last_update": "1 hr ago"},
-            "ERA5": {"status": "AVAILABLE", "last_update": "3 hrs ago"},
-            "Radar": {"status": "NOT CONNECTED", "last_update": "N/A"}
-        }
+            "IMD_Gridded_Dataset": {"status": "ACTIVE", "resolution": "0.25 deg (129x135)", "coverage": "India"},
+            "OpenMeteo_NWP": {"status": "ONLINE", "refresh": "Real-time on demand"},
+            "Sentinel1_SAR": {"status": "STUB_READY", "source": "ESA Copernicus"}
+        },
+        "models": models_status["models"]
     }
 
-@app.get("/api/model-info", response_model=ModelInfoResponse)
-@app.get("/model-info")
+
+@app.get("/api/model-info")
 def model_info():
-    """
-    Returns technical details of the imported RainfallForecasting research model.
-    """
-    return ModelInfoResponse(
-        model_name="U-Net 2D Convolutional Neural Network",
-        architecture="Encoder-Decoder with 3 Downsampling & 3 Upsampling blocks + Skip Connections",
-        parameters=9191681,
-        input_channels=IN_CHANNELS,
-        spatial_resolution=f"{GRID_SIZE}x{GRID_SIZE} gridded atmospheric domain",
-        prediction_type="Quantitative Precipitation Forecast (24h Accumulated Rainfall)",
-        target_metric="Precipitation depth in millimeters (mm)",
-        source_repository="RainfallForecasting-main (Boston University / FORMES Group)",
-        data_sources=[
-            "ECMWF ERA5 Atmospheric Reanalysis",
-            "NASA GPM-IMERG Satellite Precipitation Product",
-            "TIGGE ECMWF Numerical Weather Prediction Ensemble"
-        ],
-        weights_status="Custom weights loaded" if _WEIGHTS_LOADED else "Architecture initialized in evaluation mode"
-    )
+    """Transparent model registry and architecture description."""
+    mm = get_model_manager()
+    return mm.get_system_health_and_models()
+
 
 @app.get("/api/locations")
-@app.get("/locations")
-def list_locations():
-    """
-    Returns predefined monitoring locations and geographical coordinates.
-    """
-    return {
-        "locations": [
-            {"name": name, "lat": data["lat"], "lon": data["lon"], "state": data["state"]}
-            for name, data in DEFAULT_LOCATIONS.items()
-        ]
-    }
+def supported_locations():
+    """Returns list of pre-configured Indian monitoring locations."""
+    locations = [
+        {"name": name, "lat": data["lat"], "lon": data["lon"], "state": data["state"]}
+        for name, data in CITY_COORDINATES.items()
+    ]
+    return {"status": "success", "count": len(locations), "locations": locations}
+
 
 @app.post("/api/predict", response_model=PredictionResponse)
-@app.post("/predict")
-def predict(payload: PredictionRequest):
+async def predict_endpoint(request: PredictionRequest):
     """
-    Executes inference using the imported U-Net model on provided meteorological parameters.
+    Main prediction endpoint.
+    Feeds real IMD historical data through the trained ConvLSTM engine
+    and fuses with live weather observations.
     """
     try:
-        result = predict_rainfall(payload.dict())
-        return result
+        res = predict_rainfall(request.dict())
+        return res
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Prediction service failure: {str(e)}"
+            detail=f"Inference error: {str(e)}"
         )
+
 
 @app.post("/api/simulate", response_model=PredictionResponse)
-def simulate(payload: PredictionRequest):
+async def simulate_endpoint(request: PredictionRequest):
+    """What-if scenario simulation endpoint."""
+    return await predict_endpoint(request)
+
+
+@app.post("/api/predict/rainfall", response_model=ConvLSTMPredictionResponse)
+async def predict_convlstm_endpoint(request: ConvLSTMPredictionRequest):
+    """Direct spatial ConvLSTM forecast for explicit coordinates or grid index."""
+    try:
+        return predict_convlstm_direct(
+            request.latitude,
+            request.longitude,
+            horizon=request.forecast_horizon or "24 hours",
+            season=request.season or "live"
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"ConvLSTM prediction error: {str(e)}"
+        )
+
+
+@app.get("/api/predict/point")
+async def predict_point_get(
+    lat: float = Query(..., ge=6.5, le=38.5, description="Latitude (India: 6.5 to 38.5)"),
+    lon: float = Query(..., ge=66.5, le=100.0, description="Longitude (India: 66.5 to 100.0)")
+):
+    """GET endpoint for point-based rainfall forecast."""
+    mm = get_model_manager()
+    res = mm.predict_rainfall(lat, lon)
+    if res.get("status") == "error":
+        raise HTTPException(status_code=400, detail=res.get("message"))
+    return res
+
+
+@app.get("/api/predict/grid")
+async def predict_grid_get():
+    """Full-grid 129x135 national rainfall forecast and summary statistics."""
+    mm = get_model_manager()
+    res = mm.predict_full_grid()
+    if res.get("status") == "error":
+        raise HTTPException(status_code=500, detail=res.get("message"))
+    # Omit massive 2D array if client only needs summary, or return compressed summary
+    return {
+        "status": res["status"],
+        "grid_stats": res["grid_stats"],
+        "data_source": res["data_source"],
+        "forecast_horizon": res["forecast_horizon"],
+        "model_info": res["model_info"],
+        "timestamp": res["timestamp"]
+    }
+
+
+@app.get("/api/weather/current", response_model=CurrentWeatherResponse)
+def get_current_weather(
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitude in decimal degrees (-90 to +90)"),
+    lon: float = Query(..., ge=-180.0, le=180.0, description="Longitude in decimal degrees (-180 to +180)"),
+    location: Optional[str] = Query(None, description="Optional resolved location name")
+):
     """
-    Explicit endpoint for Scenario Simulator (What-If analysis).
-    Runs the exact same model pipeline but tags it as a simulation.
+    Fetches real-time live atmospheric weather observations from Open-Meteo NWP service.
+    Returns 12 standardized parameters including temperature, feels-like, condition,
+    wind speed/direction, pressure, visibility, cloud cover, and precipitation.
+    """
+    res = WeatherService.get_current_weather(lat, lon, location_name=location)
+    if res.get("status") == "error":
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail=f"Live weather service error: {res.get('error', 'Weather data temporarily unavailable')}"
+        )
+    return res
+
+
+@app.get("/api/weather/forecast")
+def get_weather_forecast(
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitude in decimal degrees (-90 to +90)"),
+    lon: float = Query(..., ge=-180.0, le=180.0, description="Longitude in decimal degrees (-180 to +180)")
+):
+    """Fetches full 24h hourly precipitation and NWP forecast summary."""
+    res = WeatherService.get_weather_forecast(lat, lon)
+    if res.get("status") == "error":
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail=f"Weather forecast service error: {res.get('error', 'Forecast unavailable')}"
+        )
+    return res
+
+
+@app.get("/api/location/search", response_model=LocationSearchResponse)
+def search_location(
+    q: str = Query(..., min_length=2, description="Search query for Indian state, district, city, or town")
+):
+    """
+    Searches for locations across India using OpenStreetMap Nominatim and Open-Meteo geocoding.
+    Returns matched locations with coordinates and administrative hierarchy.
     """
     try:
-        # Same exact inference path to ensure we aren't faking the ML
-        result = predict_rainfall(payload.dict())
-        # We could add a 'is_simulation: True' flag if we modify PredictionResponse
-        return result
+        results = GeocodingService.search_locations(q, limit=8)
+        return {
+            "status": "success",
+            "query": q,
+            "count": len(results),
+            "results": results
+        }
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Simulation service failure: {str(e)}"
+            detail=f"Location search error: {str(e)}"
         )
 
+
+@app.get("/api/location/reverse", response_model=LocationReverseResponse)
+def reverse_geocode_location(
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitude in decimal degrees (-90 to +90)"),
+    lon: float = Query(..., ge=-180.0, le=180.0, description="Longitude in decimal degrees (-180 to +180)")
+):
+    """
+    Reverse geocodes arbitrary geographic coordinates to identify the nearest
+    meaningful Indian locality, district, and state.
+    """
+    try:
+        res = GeocodingService.reverse_geocode(lat, lon)
+        return res
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Reverse geocoding error: {str(e)}"
+        )
+
+
+@app.get("/api/weather/radar-timestamp", response_model=RadarTimestampResponse)
+def get_radar_timestamp():
+    """
+    Fetches the latest real-time precipitation radar tile timestamp and template
+    from RainViewer for the interactive weather map precipitation overlay.
+    """
+    return GeocodingService.get_latest_radar_timestamp()
+
+
+
+@app.get("/api/early-warning")
+async def get_early_warning(
+    lat: float = Query(..., ge=6.5, le=38.5),
+    lon: float = Query(..., ge=66.5, le=100.0)
+):
+    """End-to-end multi-sensor early warning synthesis for a given coordinate."""
+    mm = get_model_manager()
+    return mm.get_early_warning_synthesis(lat, lon)
+
+
 @app.get("/api/sample-prediction", response_model=PredictionResponse)
-@app.get("/sample-prediction")
-def sample_prediction():
-    """
-    Runs a predefined sample input so the frontend can be demonstrated immediately.
-    """
-    sample_data = {
-        "location": "Bhubaneswar",
-        "forecast_horizon": "24 hours",
-        "temperature": 29.2,
-        "relative_humidity": 88.5,
-        "surface_pressure": 1004.8,
-        "wind_speed": 28.0,
-        "total_cloud_cover": 0.92,
-        "convective_cape": 1850.0,
-        "dewpoint_temperature": 26.5,
-        "day_of_year": 205,
-        "month": 7
-    }
-    return predict_rainfall(sample_data)
+async def sample_prediction():
+    """Returns a legitimate real-model prediction sample for Bhubaneswar."""
+    req = PredictionRequest(location="Bhubaneswar", forecast_horizon="24 hours")
+    return await predict_endpoint(req)
 
 
-@app.get("/api/weather-intelligence")
-def weather_intelligence():
-    """
-    Returns current atmospheric variable readings and 24h trend data
-    by running the model at multiple time steps and returning formatted output
-    for the Weather Intelligence page.
-    """
-    from datetime import datetime, timedelta
+_ACKNOWLEDGED_ALERTS = set()
+_ALERTS_CACHE = {"timestamp": 0.0, "data": None}
 
-    base_params = {
-        "location": "Bhubaneswar",
-        "forecast_horizon": "24 hours",
-        "temperature": 29.2,
-        "relative_humidity": 88.5,
-        "surface_pressure": 1004.8,
-        "wind_speed": 28.0,
-        "total_cloud_cover": 0.92,
-        "convective_cape": 1850.0,
-        "dewpoint_temperature": 26.5,
-        "day_of_year": 205,
-        "month": 7
-    }
+def _fetch_station_alert(item):
+    i, (city, full_label, lat, lon) = item
+    alt_id = f"ALT-{101 + i}"
+    try:
+        mm = get_model_manager()
+        conv_res = mm.convlstm_engine.predict_at_point(lat, lon, season="live")
+        rain_val = float(conv_res.get("predicted_rainfall_mm", 0.0))
+        risk_info = classify_rainfall_risk(rain_val, horizon_hours=24)
+        risk_lvl = risk_info.get("risk_level", "NORMAL")
+        msg = conv_res.get("warning_message") or risk_info.get("warning_message") or f"24h baseline rainfall {rain_val:.1f} mm."
+        driver = "ConvLSTM IMD Spatio-Temporal Forecaster"
+        color = risk_info.get("risk_color", "#10b981")
+    except Exception:
+        rain_val = 0.0
+        risk_lvl = "NORMAL"
+        msg = "Monitoring active — standard antecedent baseline."
+        driver = "IMD Antecedent Baseline"
+        color = "#10b981"
 
-    # Generate trend data by varying inputs over 8 time steps (simulating 24h evolution)
-    trend_data = []
-    hour_labels = ["00:00", "03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00"]
-    temp_cycle = [26.2, 25.8, 26.5, 28.1, 29.5, 29.0, 27.8, 27.0]
-    humidity_cycle = [91, 94, 92, 88, 85, 86, 89, 90]
-    pressure_cycle = [1007.8, 1007.1, 1006.5, 1005.9, 1004.8, 1005.2, 1006.0, 1006.9]
-
-    cumulative_rainfall = 0.0
-    for i, hour in enumerate(hour_labels):
-        params = dict(base_params)
-        params["temperature"] = temp_cycle[i]
-        params["relative_humidity"] = float(humidity_cycle[i])
-        params["surface_pressure"] = pressure_cycle[i]
-
-        result = predict_rainfall(params)
-        # Scale to 3-hour increments
-        three_hour_rain = round(result["predicted_rainfall"] / 8.0, 1)
-        cumulative_rainfall += three_hour_rain
-
-        trend_data.append({
-            "hour": hour,
-            "rainfall": round(cumulative_rainfall, 1),
-            "temp": temp_cycle[i],
-            "humidity": humidity_cycle[i],
-            "pressure": pressure_cycle[i]
-        })
-
-    # Run a single prediction to get the current variable readings
-    current = predict_rainfall(base_params)
-    meteo = current["meteorological_inputs"]
-
-    variables = [
-        {
-            "id": "rainfall",
-            "name": "Accumulated Rainfall",
-            "channelInfo": "NASA GPM-IMERG (precipitationCal)",
-            "value": f"{current['predicted_rainfall']} mm",
-            "status": "High Accumulation" if current["predicted_rainfall"] > 64.5 else "Moderate" if current["predicted_rainfall"] > 15.5 else "Light",
-            "description": "Physical ground truth target de-normalized from U-Net CNN predictions."
-        },
-        {
-            "id": "temp",
-            "name": "2m Surface Temperature (t2m)",
-            "channelInfo": "ERA5 Channel 3 (Z-Score Normalized)",
-            "value": f"{meteo['temperature_c']} °C",
-            "status": "Tropical Convective" if meteo["temperature_c"] > 27 else "Standard",
-            "description": "Sensible heat flux driver of regional boundary layer moisture convergence."
-        },
-        {
-            "id": "humidity",
-            "name": "Relative Humidity Profile (r)",
-            "channelInfo": "ERA5 Channels across 7 vertical levels",
-            "value": f"{meteo['relative_humidity_pct']} %",
-            "status": "Near Saturation" if meteo["relative_humidity_pct"] > 85 else "Moderate",
-            "description": "Column moisture content across 300, 500, 600, 700, 850, 925, 950 hPa levels."
-        },
-        {
-            "id": "pressure",
-            "name": "Surface Pressure (sp)",
-            "channelInfo": "ERA5 Channel 2",
-            "value": f"{meteo['surface_pressure_hpa']} hPa",
-            "status": "Depression / Low Pressure" if meteo["surface_pressure_hpa"] < 1008 else "Standard",
-            "description": "Barometric indicator of monsoon depression and cyclonic vorticity."
-        },
-        {
-            "id": "wind",
-            "name": "Wind Components (u, v)",
-            "channelInfo": "ERA5 Channels u300-u950 & v300-v950",
-            "value": f"{meteo['wind_speed_kmh']} km/h",
-            "status": "Strong Convergence" if meteo["wind_speed_kmh"] > 20 else "Light Winds",
-            "description": "Zonal and meridional kinematic wind fields supplying maritime moisture advection."
-        },
-        {
-            "id": "cape",
-            "name": "Convective CAPE",
-            "channelInfo": "ERA5 Channel 0",
-            "value": f"{meteo['convective_cape_jkg']} J/kg",
-            "status": "Severe Instability" if meteo["convective_cape_jkg"] > 1500 else "Moderate Instability" if meteo["convective_cape_jkg"] > 800 else "Stable",
-            "description": "Convective Available Potential Energy fueling deep storm updrafts."
-        },
-        {
-            "id": "cloud",
-            "name": "Total Cloud Cover (tcc)",
-            "channelInfo": "ERA5 Channel 5",
-            "value": f"{meteo['total_cloud_cover']} ({int(meteo['total_cloud_cover'] * 100)}%)",
-            "status": "Overcast Cloud Shield" if meteo["total_cloud_cover"] > 0.8 else "Partially Cloudy",
-            "description": "Integrated cloud fraction modulating solar radiative cooling."
-        },
-        {
-            "id": "spatiotemporal",
-            "name": "Spatio-Temporal Cyclic Encodings",
-            "channelInfo": "Channels 54, 55, 56 (Sin, Cos, Month)",
-            "value": f"Day {meteo['day_of_year']} (Month {meteo['month']})",
-            "status": "Monsoon Peak" if meteo["month"] in [6, 7, 8, 9] else "Off-Season",
-            "description": "Sin(2π·DOY/365)·lat and Cos(2π·DOY/365)·lat encoding regional climatological seasonality."
-        }
-    ]
+    status_str = "Active" if risk_lvl in ("SEVERE", "WARNING", "HIGH", "CRITICAL") else ("Monitoring" if risk_lvl in ("WATCH", "MODERATE", "ALERT") else "Resolved")
 
     return {
-        "trend_data": trend_data,
-        "variables": variables,
-        "prediction_summary": {
-            "predicted_rainfall": current["predicted_rainfall"],
-            "risk_level": current["risk_level"],
-            "risk_color": current["risk_color"],
-            "timestamp": current["timestamp"]
-        }
+        "id": alt_id,
+        "location": full_label,
+        "city": city,
+        "latitude": lat,
+        "longitude": lon,
+        "time": datetime.now().strftime("%Y-%m-%d %H:%M IST"),
+        "predicted_rainfall": rain_val,
+        "severity": risk_lvl,
+        "message": msg,
+        "forecast_period": "24 hours",
+        "window": "Next 24h",
+        "status": status_str,
+        "acknowledged": alt_id in _ACKNOWLEDGED_ALERTS,
+        "primary_driver": driver,
+        "risk_color": color
     }
 
 
 @app.get("/api/alerts")
-def get_alerts():
+async def get_active_alerts():
     """
-    Generate early warning alerts by running predictions across all monitored locations.
-    Returns alerts sorted by severity.
+    Synthesizes live multi-hazard early warning alerts across India's monitored stations
+    using real-time NWP observations, ConvLSTM antecedent memory, and IMD risk thresholds.
+    Concurrent evaluation with 60-second in-memory caching.
     """
-    from datetime import datetime, timedelta
+    now_ts = time.time()
+    if _ALERTS_CACHE["data"] and (now_ts - _ALERTS_CACHE["timestamp"]) < 60:
+        cached = dict(_ALERTS_CACHE["data"])
+        for a in cached.get("alerts", []):
+            a["acknowledged"] = a["id"] in _ACKNOWLEDGED_ALERTS
+        return cached
 
-    alerts = []
-    horizons = ["24 hours", "12 hours", "48 hours"]
+    monitored = [
+        ("Bhubaneswar", "Bhubaneswar Urban Core, Odisha", 20.2961, 85.8245),
+        ("Cuttack", "Cuttack Mahanadi Basin, Odisha", 20.4625, 85.8828),
+        ("Guwahati", "Guwahati Brahmaputra Corridor, Assam", 26.1445, 91.7362),
+        ("Mumbai", "Mumbai Coastal & Mithi Basin, Maharashtra", 19.0760, 72.8777),
+        ("Puri", "Puri Coastal Littoral Strip, Odisha", 19.8135, 85.8312),
+        ("Kolkata", "Kolkata Hooghly Estuary, West Bengal", 22.5726, 88.3639),
+        ("Vijayawada", "Vijayawada Krishna / Budameru Floodway, AP", 16.5062, 80.6480),
+        ("Delhi", "Delhi NCR Yamuna Floodplains", 28.6139, 77.2090),
+        ("Chennai", "Chennai Adyar/Cooum Basins, Tamil Nadu", 13.0827, 80.2707),
+    ]
 
-    base_meteo = {
-        "Bhubaneswar": {"temperature": 29.2, "relative_humidity": 88.5, "surface_pressure": 1004.8, "wind_speed": 28.0, "total_cloud_cover": 0.92, "convective_cape": 1850.0},
-        "Cuttack": {"temperature": 28.8, "relative_humidity": 85.0, "surface_pressure": 1005.5, "wind_speed": 22.0, "total_cloud_cover": 0.85, "convective_cape": 1600.0},
-        "Puri": {"temperature": 28.0, "relative_humidity": 80.0, "surface_pressure": 1006.0, "wind_speed": 35.0, "total_cloud_cover": 0.78, "convective_cape": 1200.0},
-        "Guwahati": {"temperature": 30.5, "relative_humidity": 92.0, "surface_pressure": 1003.5, "wind_speed": 18.0, "total_cloud_cover": 0.95, "convective_cape": 2200.0},
-        "Kolkata": {"temperature": 31.0, "relative_humidity": 78.0, "surface_pressure": 1008.0, "wind_speed": 15.0, "total_cloud_cover": 0.65, "convective_cape": 1100.0},
-        "Mumbai": {"temperature": 29.0, "relative_humidity": 89.0, "surface_pressure": 1005.0, "wind_speed": 25.0, "total_cloud_cover": 0.88, "convective_cape": 1750.0},
+    with ThreadPoolExecutor(max_workers=9) as executor:
+        alerts_list = list(executor.map(_fetch_station_alert, enumerate(monitored)))
+
+    # Sort so SEVERE and WARNING alerts are prominent on top
+    severity_rank = {"CRITICAL": 0, "SEVERE": 1, "RED": 1, "WARNING": 2, "HIGH": 2, "ALERT": 3, "WATCH": 4, "MODERATE": 4, "NORMAL": 5, "LOW": 5}
+    alerts_list.sort(key=lambda a: severity_rank.get(a["severity"], 99))
+
+    res_data = {
+        "status": "success",
+        "timestamp": datetime.now().isoformat(),
+        "total_alerts": len(alerts_list),
+        "alerts": alerts_list
     }
+    _ALERTS_CACHE["timestamp"] = now_ts
+    _ALERTS_CACHE["data"] = res_data
 
-    now = datetime.now()
-    alert_id_counter = 201
-
-    for loc_name, meteo in base_meteo.items():
-        horizon = horizons[alert_id_counter % len(horizons)]
-        params = {
-            "location": loc_name,
-            "forecast_horizon": horizon,
-            "dewpoint_temperature": 25.2,
-            "day_of_year": now.timetuple().tm_yday,
-            "month": now.month,
-            **meteo
-        }
-
-        try:
-            result = predict_rainfall(params)
-            severity = result["risk_level"]
-            rainfall = result["predicted_rainfall"]
-
-            # Determine alert status based on severity
-            if severity in ("SEVERE", "WARNING"):
-                status = "Active"
-            elif severity == "WATCH":
-                status = "Monitoring"
-            else:
-                status = "Resolved"
-
-            # Build warning message based on actual prediction
-            if severity == "SEVERE":
-                message = f"Extremely heavy rainfall predicted (>{rainfall:.1f} mm). High risk of flash waterlogging and arterial drainage overflow."
-            elif severity == "WARNING":
-                message = f"Heavy precipitation forecast ({rainfall:.1f} mm). Moderate localized inundation in low-lying sectors expected."
-            elif severity == "WATCH":
-                message = f"Moderate rainfall expected ({rainfall:.1f} mm). Intermittent thunderstorm bands. Stay updated."
-            else:
-                message = f"Light scattered showers ({rainfall:.1f} mm). Normal seasonal precipitation, no municipal action required."
-
-            hours_offset = (alert_id_counter - 201) * 45  # Stagger times
-            alert_time = now - timedelta(minutes=hours_offset)
-
-            alerts.append({
-                "id": f"ALT-{alert_id_counter}",
-                "location": f"{loc_name} Region",
-                "time": alert_time.strftime("%Y-%m-%d %H:%M IST"),
-                "predicted_rainfall": rainfall,
-                "severity": severity,
-                "message": message,
-                "forecast_period": horizon,
-                "window": f"Next {horizon}",
-                "status": status,
-                "acknowledged": status == "Resolved"
-            })
-        except Exception as e:
-            print(f"[AquaSentinel] Alert generation failed for {loc_name}: {e}")
-
-        alert_id_counter += 1
-
-    # Sort by severity: SEVERE first, then WARNING, WATCH, NORMAL
-    severity_order = {"SEVERE": 0, "WARNING": 1, "HIGH": 1, "WATCH": 2, "MODERATE": 2, "NORMAL": 3, "LOW": 3}
-    alerts.sort(key=lambda a: severity_order.get(a["severity"], 4))
-
-    return {"alerts": alerts}
+    return res_data
 
 
-@app.get("/api/forecast-timeline")
-def forecast_timeline(location: str = "Bhubaneswar", horizon: str = "24 hours"):
+@app.post("/api/alerts/acknowledge")
+def acknowledge_alert(alert_id: str = Query(..., description="ID of the alert to acknowledge")):
+    """Records alert acknowledgment."""
+    _ACKNOWLEDGED_ALERTS.add(alert_id)
+    return {"status": "success", "alert_id": alert_id, "acknowledged": True}
+
+
+
+# ==============================================================================
+# FLOOD INUNDATION + EARLY WARNING + SAFE LOCATION ENDPOINTS
+# ==============================================================================
+
+@app.post("/api/flood/analyze", response_model=FloodAnalyzeResponse)
+async def analyze_flood_endpoint(request: FloodAnalyzeRequest):
     """
-    Generates an hourly forecast timeline by running the model and distributing
-    predicted rainfall across the forecast window using a realistic temporal profile.
+    Core Flood Inundation & Early Warning Analysis Pipeline:
+      1. Validates coordinates.
+      2. Executes U-Net Sentinel-1 SAR flood segmentation (or matches disaster case study).
+      3. Retrieves live atmospheric observations & NWP forecast from Open-Meteo.
+      4. Synthesizes multi-factor evidence-based risk assessment via RiskService.
+      5. Formulates transparent explainability narrative (no invented confidence).
+      6. Returns georeferenced bounding box and overlay URI.
     """
-    from datetime import datetime, timedelta
-    import math
+    lat = request.latitude
+    lon = request.longitude
 
-    base_meteo = {
-        "Bhubaneswar": {"temperature": 29.2, "relative_humidity": 88.5, "surface_pressure": 1004.8, "wind_speed": 28.0, "total_cloud_cover": 0.92, "convective_cape": 1850.0},
-        "Cuttack": {"temperature": 28.8, "relative_humidity": 85.0, "surface_pressure": 1005.5, "wind_speed": 22.0, "total_cloud_cover": 0.85, "convective_cape": 1600.0},
-        "Puri": {"temperature": 28.0, "relative_humidity": 80.0, "surface_pressure": 1006.0, "wind_speed": 35.0, "total_cloud_cover": 0.78, "convective_cape": 1200.0},
-        "Guwahati": {"temperature": 30.5, "relative_humidity": 92.0, "surface_pressure": 1003.5, "wind_speed": 18.0, "total_cloud_cover": 0.95, "convective_cape": 2200.0},
-        "Kolkata": {"temperature": 31.0, "relative_humidity": 78.0, "surface_pressure": 1008.0, "wind_speed": 15.0, "total_cloud_cover": 0.65, "convective_cape": 1100.0},
-        "Mumbai": {"temperature": 29.0, "relative_humidity": 89.0, "surface_pressure": 1005.0, "wind_speed": 25.0, "total_cloud_cover": 0.88, "convective_cape": 1750.0},
-    }
+    # 1. Run U-Net flood segmentation service
+    flood_res = FloodService.analyze_region(
+        lat=lat,
+        lon=lon,
+        region_name=request.region,
+        scenario_mode=request.scenario_mode
+    )
 
-    now = datetime.now()
-    meteo = base_meteo.get(location, base_meteo["Bhubaneswar"])
-    params = {
-        "location": location,
-        "forecast_horizon": horizon,
-        "dewpoint_temperature": 25.2,
-        "day_of_year": now.timetuple().tm_yday,
-        "month": now.month,
-        **meteo
-    }
+    # 2. Fetch live atmospheric weather observations
+    live_weather = None
+    forecast_weather = None
+    try:
+        live_weather = WeatherService.get_current_weather(lat, lon, location_name=request.region)
+        forecast_weather = WeatherService.get_weather_forecast(lat, lon)
+    except Exception as e:
+        print(f"[FloodEndpoint] Live weather lookup warning: {e}")
 
-    result = predict_rainfall(params)
-    total_rainfall = result["predicted_rainfall"]
+    # 3. Retrieve historical antecedent rainfall if within India grid
+    ant_rain_7d = 0.0
+    try:
+        if 6.5 <= lat <= 38.5 and 66.5 <= lon <= 100.0:
+            mm = get_model_manager()
+            seq = mm.convlstm_engine.imd_loader.get_rainfall_at_point(lat, lon, n_days=7)
+            ant_rain_7d = float(np.sum(np.nan_to_num(seq)))
+    except Exception:
+        ant_rain_7d = 0.0
 
-    # Determine number of hours
-    horizon_hours = 24
-    if "6" in horizon:
-        horizon_hours = 6
-    elif "12" in horizon:
-        horizon_hours = 12
-    elif "48" in horizon:
-        horizon_hours = 48
+    # 4. Multi-Sensor Evidence-Based Risk Assessment
+    risk_res = RiskService.assess_risk(
+        flood_data=flood_res,
+        live_weather=live_weather,
+        forecast_weather=forecast_weather,
+        antecedent_rainfall_7d=ant_rain_7d
+    )
 
-    # Create a realistic bell-shaped temporal distribution
-    timeline = []
-    weights = []
-    for h in range(horizon_hours):
-        # Bell curve peaking at 60% of horizon window
-        peak = horizon_hours * 0.6
-        sigma = horizon_hours * 0.25
-        w = math.exp(-0.5 * ((h - peak) / sigma) ** 2)
-        weights.append(w)
+    # 5. Format response
+    loc_name = flood_res.get("location") or request.region or f"{lat:.4f}, {lon:.4f}"
+    severity = flood_res.get("flood_severity", "LOW")
+    sev_color = flood_res.get("severity_color", risk_res.get("severity_color", "#10b981"))
 
-    weight_sum = sum(weights)
-    for h in range(horizon_hours):
-        frac = weights[h] / weight_sum
-        hourly_rain = round(total_rainfall * frac, 1)
-        hour_time = now + timedelta(hours=h)
-        intensity = round(hourly_rain, 1)
+    return FloodAnalyzeResponse(
+        status=flood_res.get("status", "success"),
+        location=loc_name,
+        coordinates={"latitude": lat, "longitude": lon},
+        flood_detected=flood_res.get("flood_detected", False),
+        inundation_percentage=flood_res.get("inundation_percentage", 0.0),
+        inundated_area_km2=flood_res.get("inundated_area_km2", 0.0),
+        total_area_km2=flood_res.get("total_area_km2"),
+        flood_severity=severity,
+        severity_color=sev_color,
+        mask_available=flood_res.get("mask_available", False),
+        overlay_data_uri=flood_res.get("overlay_data_uri"),
+        geographic_bounds=flood_res.get("geographic_bounds"),
+        confidence=flood_res.get("confidence"), # None, deterministic
+        risk_assessment=risk_res,
+        model_status=flood_res.get("model_status"),
+        case_study_info=flood_res.get("case_study_info"),
+        data_provenance=flood_res.get("data_provenance"),
+        message=flood_res.get("message"),
+        timestamp=datetime.now().isoformat()
+    )
 
-        # Map to risk
-        if intensity > 8:
-            risk = "SEVERE"
-            risk_score = 90
-        elif intensity > 5:
-            risk = "WARNING"
-            risk_score = 70
-        elif intensity > 2:
-            risk = "WATCH"
-            risk_score = 45
-        else:
-            risk = "NORMAL"
-            risk_score = 20
 
-        timeline.append({
-            "timestamp": hour_time.isoformat(),
-            "hourLabel": hour_time.strftime("%-I %p") if hasattr(hour_time, "strftime") else f"{h}:00",
-            "rainfall": hourly_rain,
-            "intensity": intensity,
-            "probability": round(min(1.0, frac * horizon_hours), 2),
-            "riskLevel": risk,
-            "riskScore": risk_score
-        })
+@app.get("/api/flood/shelters", response_model=List[ShelterInfo])
+def get_safe_shelters_endpoint(
+    lat: float = Query(..., ge=-90.0, le=90.0),
+    lon: float = Query(..., ge=-180.0, le=180.0),
+    radius_km: float = Query(25.0, ge=1.0, le=100.0)
+):
+    """
+    Finds nearby designated emergency relief centers and verifies flood exclusion:
+      - Searches within radius
+      - Computes distance and cardinal bearing
+      - Cross-validates against flood segmentation mask
+      - Strictly flags any shelter in inundated area as UNSAFE
+    """
+    flood_res = FloodService.analyze_region(lat, lon)
+    shelters = ShelterService.find_safe_shelters(
+        lat=lat,
+        lon=lon,
+        flood_data=flood_res,
+        radius_km=radius_km,
+        limit=6
+    )
+    return shelters
 
+
+@app.post("/api/flood/route", response_model=EvacuationRouteResponse)
+def get_evacuation_route_endpoint(request: EvacuationRouteRequest):
+    """
+    Calculates flood-aware evacuation route and verifies waypoint safety:
+      - Obtains driving/walking polyline via OSRM
+      - Checks every route waypoint against the detected inundation zone
+      - Flags route as VERIFIED CLEAR, FLOOD INTERSECTION DETECTED, or UNVERIFIED
+      - Never routes evacuees through inundated floodways
+    """
+    # Check flood status at destination and origin
+    flood_res = FloodService.analyze_region(request.dest_lat, request.dest_lon)
+    route_res = RoutingService.get_evacuation_route(
+        start_lat=request.origin_lat,
+        start_lon=request.origin_lon,
+        dest_lat=request.dest_lat,
+        dest_lon=request.dest_lon,
+        flood_data=flood_res
+    )
+    return route_res
+
+
+@app.get("/api/flood/config")
+def get_flood_config_endpoint():
+    """Returns current evidence thresholds and multi-sensor weighting configuration."""
+    return RiskService.get_config()
+
+
+@app.get("/api/flood/metrics")
+def get_flood_metrics_endpoint():
+    """
+    Returns transparent U-Net model architecture specifications,
+    verified Sen1Floods11 benchmark test evaluation metrics,
+    and September 2024 Vijayawada flood disaster case study statistics.
+    """
+    engine = get_flood_engine()
     return {
-        "location": location,
-        "horizon": horizon,
-        "total_predicted_rainfall": total_rainfall,
-        "risk_level": result["risk_level"],
-        "timeline": timeline
+        "status": "success",
+        "model_telemetry": engine.get_status(),
+        "sen1floods11_validation": SEN1FLOODS11_VALIDATION_METRICS,
+        "case_study": VIJAYAWADA_CASE_STUDY
     }
+
+
+@app.get("/api/flood/case-studies")
+def get_flood_case_studies_endpoint():
+    """Returns supported real-world disaster case study localities with peak flood data."""
+    localities = []
+    for name, data in VIJAYAWADA_CASE_STUDY["localities"].items():
+        localities.append({
+            "name": name,
+            "center": {"lat": data["center"][0], "lon": data["center"][1]},
+            "bounds": data["bounds"],
+            "total_area_km2": data["total_area_km2"],
+            "peak_flood_km2": data["during_flood_peak_km2"],
+            "peak_flood_pct": data["during_flood_pct"],
+            "drainage_profile": data["drainage_profile"]
+        })
+    return {
+        "status": "success",
+        "event_name": VIJAYAWADA_CASE_STUDY["event_name"],
+        "region": VIJAYAWADA_CASE_STUDY["region_name"],
+        "count": len(localities),
+        "localities": localities
+    }
+

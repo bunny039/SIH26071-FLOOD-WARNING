@@ -1,0 +1,29 @@
+dataset:
+  path: "IMD_DailyRainfall_Fixed.nc"
+  fill_value: -999.0
+  variable_name: "rainfall"
+  days_to_load: 1500
+
+model:
+  input_channels: 1
+  hidden_channels: [32, 64]
+  kernel_size: 3
+  num_layers: 2
+  sequence_length: 7
+  forecast_horizon: 1
+
+training:
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  test_ratio: 0.15
+  learning_rate: 0.0003
+  batch_size: 8
+  epochs: 8
+  early_stopping_patience: 5
+  seed: 42
+  heavy_rain_threshold: 64.5  # mm/day
+
+outputs:
+  model_dir: "ml/models/checkpoints"
+  figures_dir: "ml/outputs/rainfall"
+  normalization_file: "ml/config/normalization.json"

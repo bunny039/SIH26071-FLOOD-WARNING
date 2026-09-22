@@ -1,0 +1,2 @@
+n,away_alpha,toward_alpha,away_propagation_rate,toward_propagation_rate,toward_minus_away_percentage_points,toward_minus_away_ci95_percentage_points,mcnemar_away_propagated_toward_absorbed,mcnemar_away_absorbed_toward_propagated,mcnemar_discordant,mcnemar_p,ci95_low_pp,ci95_high_pp
+245,0.99,0.99,0.4122448979591837,0.689795918367347,27.755102040816332,"[20.0, 35.51020408163265]",21,89,110,3.7651773363237467e-11,20.0,35.51020408163265

@@ -1,0 +1,241 @@
+id,answer,subcategory,difficulty,ChatGPT_V1,ChatGPT_V2,Claude_V1,Claude_V2,DeepSeek_V1,DeepSeek_V2,Gemini_V1,Gemini_V2,ChatGPT_V1_correct,ChatGPT_V2_correct,Claude_V1_correct,Claude_V2_correct,DeepSeek_V1_correct,DeepSeek_V2_correct,Gemini_V1_correct,Gemini_V2_correct,operation,Decision
+HYP-001,C,persistent_regional_anomaly_verification,medium,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Minimum Selection,SUPPORTED
+HYP-002,A,persistent_regional_anomaly_verification,medium,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Minimum Selection,REFUTED
+HYP-003,B,persistent_regional_anomaly_verification,medium,B,B,B,B,B,B,C,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-004,C,persistent_regional_anomaly_verification,medium,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Minimum Selection,SUPPORTED
+HYP-005,C,persistent_regional_anomaly_verification,medium,C,C,C,C,C,C,B,C,True,True,True,True,True,True,False,True,Minimum Selection,SUPPORTED
+HYP-006,C,persistent_regional_anomaly_verification,medium,C,C,C,C,C,C,C,C,True,True,True,True,True,True,True,True,Minimum Selection,SUPPORTED
+HYP-007,A,persistent_regional_anomaly_verification,medium,A,A,A,A,A,A,A,A,True,True,True,True,True,True,True,True,Minimum Selection,REFUTED
+HYP-008,C,persistent_regional_anomaly_verification,medium,C,C,C,C,C,C,B,C,True,True,True,True,True,True,False,True,Minimum Selection,SUPPORTED
+HYP-009,B,persistent_regional_anomaly_verification,medium,B,B,B,B,B,B,C,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-010,A,persistent_regional_anomaly_verification,medium,A,A,A,A,A,A,A,A,True,True,True,True,True,True,True,True,Minimum Selection,REFUTED
+HYP-011,A,persistent_regional_anomaly_verification,medium,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Minimum Selection,REFUTED
+HYP-012,C,persistent_regional_anomaly_verification,medium,C,C,C,C,C,C,C,C,True,True,True,True,True,True,True,True,Minimum Selection,SUPPORTED
+HYP-013,A,persistent_regional_anomaly_verification,medium,A,A,A,A,A,A,A,A,True,True,True,True,True,True,True,True,Minimum Selection,REFUTED
+HYP-014,C,persistent_regional_anomaly_verification,medium,C,C,C,C,C,C,B,C,True,True,True,True,True,True,False,True,Minimum Selection,SUPPORTED
+HYP-015,B,persistent_regional_anomaly_verification,medium,B,B,B,B,B,B,C,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-016,A,persistent_regional_anomaly_verification,medium,A,A,A,A,A,A,A,A,True,True,True,True,True,True,True,True,Minimum Selection,REFUTED
+HYP-017,B,persistent_regional_anomaly_verification,medium,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Minimum Selection,INSUFFICIENT
+HYP-018,B,persistent_regional_anomaly_verification,medium,B,B,B,B,B,B,C,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-019,B,persistent_regional_anomaly_verification,medium,B,B,B,B,B,B,A,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-020,A,persistent_regional_anomaly_verification,medium,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Minimum Selection,REFUTED
+HYP-021,B,persistent_regional_anomaly_verification,medium,B,B,B,B,B,B,C,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-022,A,persistent_regional_anomaly_verification,medium,A,A,A,A,A,A,A,A,True,True,True,True,True,True,True,True,Minimum Selection,REFUTED
+HYP-023,A,persistent_regional_anomaly_verification,medium,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Minimum Selection,REFUTED
+HYP-024,B,persistent_regional_anomaly_verification,medium,B,B,B,B,B,B,C,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-025,B,persistent_regional_anomaly_verification,medium,B,B,B,B,B,B,A,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-026,A,persistent_regional_anomaly_verification,medium,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Minimum Selection,REFUTED
+HYP-027,A,persistent_regional_anomaly_verification,hard,A,A,A,A,A,A,C,A,True,True,True,True,True,True,False,True,Minimum Selection,REFUTED
+HYP-028,B,persistent_regional_anomaly_verification,hard,B,B,B,B,B,B,A,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-029,A,persistent_regional_anomaly_verification,hard,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Minimum Selection,REFUTED
+HYP-030,B,persistent_regional_anomaly_verification,hard,B,B,B,B,B,B,C,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-031,A,persistent_regional_anomaly_verification,hard,A,A,A,A,A,A,A,A,True,True,True,True,True,True,True,True,Minimum Selection,REFUTED
+HYP-032,C,persistent_regional_anomaly_verification,hard,C,C,C,C,C,C,B,C,True,True,True,True,True,True,False,True,Minimum Selection,SUPPORTED
+HYP-033,A,persistent_regional_anomaly_verification,hard,C,A,A,A,A,A,C,A,False,True,True,True,True,True,False,True,Minimum Selection,REFUTED
+HYP-034,C,persistent_regional_anomaly_verification,hard,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Minimum Selection,SUPPORTED
+HYP-035,A,persistent_regional_anomaly_verification,hard,B,A,A,A,A,A,B,A,False,True,True,True,True,True,False,True,Minimum Selection,REFUTED
+HYP-036,B,persistent_regional_anomaly_verification,hard,B,B,B,B,B,B,C,B,True,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-037,C,persistent_regional_anomaly_verification,hard,B,C,C,C,C,C,A,C,False,True,True,True,True,True,False,True,Minimum Selection,SUPPORTED
+HYP-038,A,persistent_regional_anomaly_verification,hard,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Minimum Selection,REFUTED
+HYP-039,B,persistent_regional_anomaly_verification,hard,C,B,B,B,B,B,C,B,False,True,True,True,True,True,False,True,Minimum Selection,INSUFFICIENT
+HYP-040,C,persistent_regional_anomaly_verification,hard,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Minimum Selection,SUPPORTED
+HYP-041,C,localized_intensification_verification,hard,C,C,C,C,C,C,B,B,True,True,True,True,True,True,False,False,Subtraction,SUPPORTED
+HYP-042,C,localized_intensification_verification,hard,C,C,C,C,C,C,C,C,True,True,True,True,True,True,True,True,Subtraction,SUPPORTED
+HYP-043,C,localized_intensification_verification,hard,C,C,C,C,C,C,A,A,True,True,True,True,True,True,False,False,Subtraction,SUPPORTED
+HYP-044,C,localized_intensification_verification,hard,C,C,C,C,C,C,B,B,True,True,True,True,True,True,False,False,Subtraction,SUPPORTED
+HYP-045,A,localized_intensification_verification,hard,C,A,A,A,A,A,C,B,False,True,True,True,True,True,False,False,Subtraction,REFUTED
+HYP-046,C,localized_intensification_verification,hard,B,C,C,C,C,C,A,C,False,True,True,True,True,True,False,True,Subtraction,SUPPORTED
+HYP-047,A,localized_intensification_verification,hard,C,A,A,A,A,A,B,B,False,True,True,True,True,True,False,False,Subtraction,REFUTED
+HYP-048,A,localized_intensification_verification,hard,A,A,A,A,A,A,C,A,True,True,True,True,True,True,False,True,Subtraction,REFUTED
+HYP-049,B,localized_intensification_verification,hard,B,B,B,B,B,B,A,B,True,True,True,True,True,True,False,True,Subtraction,INSUFFICIENT
+HYP-050,A,localized_intensification_verification,hard,C,A,A,A,A,A,B,B,False,True,True,True,True,True,False,False,Subtraction,REFUTED
+HYP-051,B,localized_intensification_verification,hard,B,B,B,B,B,B,C,C,True,True,True,True,True,True,False,False,Subtraction,INSUFFICIENT
+HYP-052,C,localized_intensification_verification,hard,A,C,C,C,C,C,A,B,False,True,True,True,True,True,False,False,Subtraction,SUPPORTED
+HYP-053,C,localized_intensification_verification,hard,C,C,C,C,C,C,B,A,True,True,True,True,True,True,False,False,Subtraction,SUPPORTED
+HYP-054,A,localized_intensification_verification,hard,B,A,A,A,A,A,C,B,False,True,True,True,True,True,False,False,Subtraction,REFUTED
+HYP-055,C,localized_intensification_verification,hard,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Subtraction,SUPPORTED
+HYP-056,C,localized_intensification_verification,hard,B,C,C,C,C,C,B,B,False,True,True,True,True,True,False,False,Subtraction,SUPPORTED
+HYP-057,A,localized_intensification_verification,hard,A,A,A,A,A,A,C,B,True,True,True,True,True,True,False,False,Subtraction,REFUTED
+HYP-058,C,localized_intensification_verification,hard,C,C,C,C,C,C,A,A,True,True,True,True,True,True,False,False,Subtraction,SUPPORTED
+HYP-059,C,localized_intensification_verification,hard,B,C,C,C,C,C,B,C,False,True,True,True,True,True,False,True,Subtraction,SUPPORTED
+HYP-060,B,localized_intensification_verification,hard,C,B,B,B,B,B,C,B,False,True,True,True,True,True,False,True,Subtraction,INSUFFICIENT
+HYP-061,B,localized_intensification_verification,hard,B,B,B,B,B,B,A,A,True,True,True,True,True,True,False,False,Subtraction,INSUFFICIENT
+HYP-062,B,localized_intensification_verification,hard,B,B,B,B,B,C,B,B,True,True,True,True,True,False,True,True,Subtraction,INSUFFICIENT
+HYP-063,B,localized_intensification_verification,hard,B,B,B,B,B,B,C,C,True,True,True,True,True,True,False,False,Subtraction,INSUFFICIENT
+HYP-064,C,localized_intensification_verification,hard,C,C,C,C,C,C,A,A,True,True,True,True,True,True,False,False,Subtraction,SUPPORTED
+HYP-065,A,localized_intensification_verification,hard,A,A,A,A,A,A,B,B,True,True,True,True,True,True,False,False,Subtraction,REFUTED
+HYP-066,C,localized_intensification_verification,hard,C,C,C,C,C,C,C,B,True,True,True,True,True,True,True,False,Subtraction,SUPPORTED
+HYP-067,A,localized_intensification_verification,hard,A,A,A,A,A,A,A,C,True,True,True,True,True,True,True,False,Subtraction,REFUTED
+HYP-068,C,localized_intensification_verification,hard,C,C,C,C,C,C,B,A,True,True,True,True,True,True,False,False,Subtraction,SUPPORTED
+HYP-069,C,localized_intensification_verification,hard,C,C,C,C,C,C,C,A,True,True,True,True,True,True,True,False,Subtraction,SUPPORTED
+HYP-070,A,localized_intensification_verification,hard,A,A,A,A,A,A,A,B,True,True,True,True,True,True,True,False,Subtraction,REFUTED
+HYP-071,B,localized_intensification_verification,hard,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Subtraction,INSUFFICIENT
+HYP-072,C,localized_intensification_verification,hard,C,C,C,C,C,C,C,A,True,True,True,True,True,True,True,False,Subtraction,SUPPORTED
+HYP-073,B,localized_intensification_verification,hard,B,B,B,B,B,B,A,A,True,True,True,True,True,True,False,False,Subtraction,INSUFFICIENT
+HYP-074,B,localized_intensification_verification,hard,B,B,B,B,B,B,B,C,True,True,True,True,True,True,True,False,Subtraction,INSUFFICIENT
+HYP-075,B,localized_intensification_verification,hard,B,B,B,B,B,B,C,A,True,True,True,True,True,True,False,False,Subtraction,INSUFFICIENT
+HYP-076,B,localized_intensification_verification,hard,B,B,B,B,B,B,A,B,True,True,True,True,True,True,False,True,Subtraction,INSUFFICIENT
+HYP-077,A,localized_intensification_verification,hard,A,A,A,A,A,A,B,C,True,True,True,True,True,True,False,False,Subtraction,REFUTED
+HYP-078,C,localized_intensification_verification,hard,C,C,C,C,C,C,C,A,True,True,True,True,True,True,True,False,Subtraction,SUPPORTED
+HYP-079,B,localized_intensification_verification,hard,B,B,B,B,B,B,A,B,True,True,True,True,True,True,False,True,Subtraction,INSUFFICIENT
+HYP-080,B,localized_intensification_verification,hard,B,B,B,B,B,B,B,C,True,True,True,True,True,True,True,False,Subtraction,INSUFFICIENT
+HYP-081,C,wet_anomaly_consistency_verification,medium,C,C,C,C,C,C,C,A,True,True,True,True,True,True,True,False,Fraction / Division,SUPPORTED
+HYP-082,A,wet_anomaly_consistency_verification,medium,A,A,A,A,A,A,A,C,True,True,True,True,True,True,True,False,Fraction / Division,REFUTED
+HYP-083,A,wet_anomaly_consistency_verification,medium,A,A,A,A,A,A,B,B,True,True,True,True,True,True,False,False,Fraction / Division,REFUTED
+HYP-084,A,wet_anomaly_consistency_verification,medium,A,A,A,A,A,A,C,C,True,True,True,True,True,True,False,False,Fraction / Division,REFUTED
+HYP-085,B,wet_anomaly_consistency_verification,medium,B,B,B,B,B,B,A,B,True,True,True,True,True,True,False,True,Fraction / Division,INSUFFICIENT
+HYP-086,B,wet_anomaly_consistency_verification,medium,B,B,B,B,B,B,B,A,True,True,True,True,True,True,True,False,Fraction / Division,INSUFFICIENT
+HYP-087,C,wet_anomaly_consistency_verification,medium,C,C,C,C,C,C,C,B,True,True,True,True,True,True,True,False,Fraction / Division,SUPPORTED
+HYP-088,A,wet_anomaly_consistency_verification,medium,A,A,A,A,A,A,A,C,True,True,True,True,True,True,True,False,Fraction / Division,REFUTED
+HYP-089,A,wet_anomaly_consistency_verification,medium,A,A,A,A,A,A,B,C,True,True,True,True,True,True,False,False,Fraction / Division,REFUTED
+HYP-090,A,wet_anomaly_consistency_verification,medium,A,A,A,A,A,A,C,,True,True,True,True,True,True,False,False,Fraction / Division,REFUTED
+HYP-091,B,wet_anomaly_consistency_verification,medium,B,B,B,B,B,B,A,C,True,True,True,True,True,True,False,False,Fraction / Division,INSUFFICIENT
+HYP-092,B,wet_anomaly_consistency_verification,medium,B,B,B,B,B,B,B,A,True,True,True,True,True,True,True,False,Fraction / Division,INSUFFICIENT
+HYP-093,A,wet_anomaly_consistency_verification,medium,A,A,A,A,A,A,C,B,True,True,True,True,True,True,False,False,Fraction / Division,REFUTED
+HYP-094,C,wet_anomaly_consistency_verification,medium,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Fraction / Division,SUPPORTED
+HYP-095,B,wet_anomaly_consistency_verification,medium,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Fraction / Division,INSUFFICIENT
+HYP-096,C,wet_anomaly_consistency_verification,medium,C,C,C,C,C,C,C,C,True,True,True,True,True,True,True,True,Fraction / Division,SUPPORTED
+HYP-097,C,wet_anomaly_consistency_verification,medium,C,C,C,C,C,C,A,B,True,True,True,True,True,True,False,False,Fraction / Division,SUPPORTED
+HYP-098,A,wet_anomaly_consistency_verification,medium,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Fraction / Division,REFUTED
+HYP-099,A,wet_anomaly_consistency_verification,medium,A,A,A,A,A,A,C,C,True,True,True,True,True,True,False,False,Fraction / Division,REFUTED
+HYP-100,C,wet_anomaly_consistency_verification,medium,C,C,C,C,C,C,A,B,True,True,True,True,True,True,False,False,Fraction / Division,SUPPORTED
+HYP-101,B,wet_anomaly_consistency_verification,medium,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Fraction / Division,INSUFFICIENT
+HYP-102,C,wet_anomaly_consistency_verification,medium,C,C,C,C,C,C,C,C,True,True,True,True,True,True,True,True,Fraction / Division,SUPPORTED
+HYP-103,B,wet_anomaly_consistency_verification,medium,B,B,B,B,B,B,A,A,True,True,True,True,True,True,False,False,Fraction / Division,INSUFFICIENT
+HYP-104,B,wet_anomaly_consistency_verification,medium,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Fraction / Division,INSUFFICIENT
+HYP-105,C,wet_anomaly_consistency_verification,medium,C,C,C,C,C,C,C,B,True,True,True,True,True,True,True,False,Fraction / Division,SUPPORTED
+HYP-106,B,wet_anomaly_consistency_verification,medium,B,B,B,B,B,B,A,C,True,True,True,True,True,True,False,False,Fraction / Division,INSUFFICIENT
+HYP-107,B,wet_anomaly_consistency_verification,hard,B,B,B,B,B,B,B,A,True,True,True,True,True,True,True,False,Fraction / Division,INSUFFICIENT
+HYP-108,A,wet_anomaly_consistency_verification,hard,A,A,A,A,A,A,C,C,True,True,True,True,True,True,False,False,Fraction / Division,REFUTED
+HYP-109,B,wet_anomaly_consistency_verification,hard,B,B,B,B,B,B,A,A,True,True,True,True,True,True,False,False,Fraction / Division,INSUFFICIENT
+HYP-110,C,wet_anomaly_consistency_verification,hard,C,C,C,C,C,C,B,B,True,True,True,True,True,True,False,False,Fraction / Division,SUPPORTED
+HYP-111,A,wet_anomaly_consistency_verification,hard,A,A,A,A,A,A,C,A,True,True,True,True,True,True,False,True,Fraction / Division,REFUTED
+HYP-112,B,wet_anomaly_consistency_verification,hard,B,B,B,B,B,B,A,C,True,True,True,True,True,True,False,False,Fraction / Division,INSUFFICIENT
+HYP-113,C,wet_anomaly_consistency_verification,hard,C,C,C,C,C,C,B,A,True,True,True,True,True,True,False,False,Fraction / Division,SUPPORTED
+HYP-114,B,wet_anomaly_consistency_verification,hard,B,B,B,B,B,B,C,B,True,True,True,True,True,True,False,True,Fraction / Division,INSUFFICIENT
+HYP-115,A,wet_anomaly_consistency_verification,hard,A,A,A,A,A,A,A,B,True,True,True,True,True,True,True,False,Fraction / Division,REFUTED
+HYP-116,B,wet_anomaly_consistency_verification,hard,B,B,B,B,B,B,B,C,True,True,True,True,True,True,True,False,Fraction / Division,INSUFFICIENT
+HYP-117,C,wet_anomaly_consistency_verification,hard,C,C,C,C,C,C,C,A,True,True,True,True,True,True,True,False,Fraction / Division,SUPPORTED
+HYP-118,A,wet_anomaly_consistency_verification,hard,A,A,A,A,A,A,A,C,True,True,True,True,True,True,True,False,Fraction / Division,REFUTED
+HYP-119,B,wet_anomaly_consistency_verification,hard,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Fraction / Division,INSUFFICIENT
+HYP-120,A,wet_anomaly_consistency_verification,hard,A,A,A,A,A,A,C,C,True,True,True,True,True,True,False,False,Fraction / Division,REFUTED
+HYP-121,C,compound_state_transition_verification,medium,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Grid Averaging,SUPPORTED
+HYP-122,C,compound_state_transition_verification,medium,C,B,C,C,C,C,B,B,True,False,True,True,True,True,False,False,Grid Averaging,SUPPORTED
+HYP-123,B,compound_state_transition_verification,medium,B,A,B,B,B,B,C,C,True,False,True,True,True,True,False,False,Grid Averaging,INSUFFICIENT
+HYP-124,B,compound_state_transition_verification,medium,C,C,B,B,B,B,A,B,False,False,True,True,True,True,False,True,Grid Averaging,INSUFFICIENT
+HYP-125,B,compound_state_transition_verification,medium,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Grid Averaging,INSUFFICIENT
+HYP-126,A,compound_state_transition_verification,medium,C,A,A,A,A,A,C,A,False,True,True,True,True,True,False,True,Grid Averaging,REFUTED
+HYP-127,A,compound_state_transition_verification,medium,A,C,A,A,A,A,A,C,True,False,True,True,True,True,True,False,Grid Averaging,REFUTED
+HYP-128,C,compound_state_transition_verification,medium,C,B,C,C,C,C,B,B,True,False,True,True,True,True,False,False,Grid Averaging,SUPPORTED
+HYP-129,B,compound_state_transition_verification,medium,C,C,B,B,B,B,C,B,False,False,True,True,True,True,False,True,Grid Averaging,INSUFFICIENT
+HYP-130,C,compound_state_transition_verification,medium,A,A,C,C,C,C,A,B,False,False,True,True,True,True,False,False,Grid Averaging,SUPPORTED
+HYP-131,B,compound_state_transition_verification,medium,B,B,B,B,B,B,B,C,True,True,True,True,True,True,True,False,Grid Averaging,INSUFFICIENT
+HYP-132,C,compound_state_transition_verification,medium,C,C,C,C,C,C,C,A,True,True,True,True,True,True,True,False,Grid Averaging,SUPPORTED
+HYP-133,A,compound_state_transition_verification,medium,B,A,A,A,A,A,A,B,False,True,True,True,True,True,True,False,Grid Averaging,REFUTED
+HYP-134,C,compound_state_transition_verification,medium,C,B,C,A,C,C,B,B,True,False,True,False,True,True,False,False,Grid Averaging,SUPPORTED
+HYP-135,C,compound_state_transition_verification,medium,A,C,C,B,C,C,C,A,False,True,True,False,True,True,True,False,Grid Averaging,SUPPORTED
+HYP-136,C,compound_state_transition_verification,medium,B,A,C,B,C,C,A,B,False,False,True,False,True,True,False,False,Grid Averaging,SUPPORTED
+HYP-137,B,compound_state_transition_verification,medium,C,B,B,B,B,B,B,B,False,True,True,True,True,True,True,True,Grid Averaging,INSUFFICIENT
+HYP-138,C,compound_state_transition_verification,medium,A,C,C,A,C,C,C,C,False,True,True,False,True,True,True,True,Grid Averaging,SUPPORTED
+HYP-139,B,compound_state_transition_verification,medium,B,A,B,B,B,B,A,B,True,False,True,True,True,True,False,True,Grid Averaging,INSUFFICIENT
+HYP-140,A,compound_state_transition_verification,medium,C,B,A,A,A,A,B,A,False,False,True,True,True,True,False,True,Grid Averaging,REFUTED
+HYP-141,B,compound_state_transition_verification,medium,B,C,B,A,B,B,C,A,True,False,True,False,True,True,False,False,Grid Averaging,INSUFFICIENT
+HYP-142,B,compound_state_transition_verification,medium,A,A,B,A,B,B,A,B,False,False,True,False,True,True,False,True,Grid Averaging,INSUFFICIENT
+HYP-143,B,compound_state_transition_verification,medium,C,B,B,A,B,B,B,B,False,True,True,False,True,True,True,True,Grid Averaging,INSUFFICIENT
+HYP-144,A,compound_state_transition_verification,medium,B,C,A,A,A,A,C,A,False,False,True,True,True,True,False,True,Grid Averaging,REFUTED
+HYP-145,C,compound_state_transition_verification,medium,A,A,C,B,C,C,A,A,False,False,True,False,True,True,False,False,Grid Averaging,SUPPORTED
+HYP-146,C,compound_state_transition_verification,medium,C,B,C,A,C,C,B,B,True,False,True,False,True,True,False,False,Grid Averaging,SUPPORTED
+HYP-147,C,compound_state_transition_verification,hard,B,C,C,C,C,C,C,B,False,True,True,True,True,True,True,False,Grid Averaging,SUPPORTED
+HYP-148,A,compound_state_transition_verification,hard,A,A,A,A,A,A,A,C,True,True,True,True,True,True,True,False,Grid Averaging,REFUTED
+HYP-149,A,compound_state_transition_verification,hard,C,B,A,A,A,A,B,B,False,False,True,True,True,True,False,False,Grid Averaging,REFUTED
+HYP-150,C,compound_state_transition_verification,hard,B,C,C,C,C,C,C,A,False,True,True,True,True,True,True,False,Grid Averaging,SUPPORTED
+HYP-151,B,compound_state_transition_verification,hard,C,A,B,B,B,B,A,B,False,False,True,True,True,True,False,True,Grid Averaging,INSUFFICIENT
+HYP-152,A,compound_state_transition_verification,hard,A,B,A,A,A,A,B,C,True,False,True,True,True,True,False,False,Grid Averaging,REFUTED
+HYP-153,C,compound_state_transition_verification,hard,B,C,C,C,C,C,C,B,False,True,True,True,True,True,True,False,Grid Averaging,SUPPORTED
+HYP-154,B,compound_state_transition_verification,hard,C,A,B,B,B,B,A,A,False,False,True,True,True,True,False,False,Grid Averaging,INSUFFICIENT
+HYP-155,B,compound_state_transition_verification,hard,A,B,B,B,B,B,B,A,False,True,True,True,True,True,True,False,Grid Averaging,INSUFFICIENT
+HYP-156,B,compound_state_transition_verification,hard,B,C,B,B,B,B,C,B,True,False,True,True,True,True,False,True,Grid Averaging,INSUFFICIENT
+HYP-157,C,compound_state_transition_verification,hard,C,A,C,C,C,C,A,B,True,False,True,True,True,True,False,False,Grid Averaging,SUPPORTED
+HYP-158,A,compound_state_transition_verification,hard,B,B,A,A,A,A,B,A,False,False,True,True,True,True,False,True,Grid Averaging,REFUTED
+HYP-159,A,compound_state_transition_verification,hard,A,C,A,A,A,A,C,B,True,False,True,True,True,True,False,False,Grid Averaging,REFUTED
+HYP-160,C,compound_state_transition_verification,hard,C,C,C,C,C,C,A,A,True,True,True,True,True,True,False,False,Grid Averaging,SUPPORTED
+HYP-161,C,spatial_coherence_verification,hard,B,C,C,C,C,C,B,C,False,True,True,True,True,True,False,True,Graph Traversal,SUPPORTED
+HYP-162,C,spatial_coherence_verification,hard,C,C,C,C,C,C,C,B,True,True,True,True,True,True,True,False,Graph Traversal,SUPPORTED
+HYP-163,B,spatial_coherence_verification,hard,A,B,B,B,B,B,A,C,False,True,True,True,True,True,False,False,Graph Traversal,INSUFFICIENT
+HYP-164,B,spatial_coherence_verification,hard,B,B,B,B,B,B,B,A,True,True,True,True,True,True,True,False,Graph Traversal,INSUFFICIENT
+HYP-165,B,spatial_coherence_verification,hard,C,B,B,B,B,B,C,A,False,True,True,True,True,True,False,False,Graph Traversal,INSUFFICIENT
+HYP-166,A,spatial_coherence_verification,hard,A,A,A,A,A,A,A,C,True,True,True,True,True,True,True,False,Graph Traversal,REFUTED
+HYP-167,B,spatial_coherence_verification,hard,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Graph Traversal,INSUFFICIENT
+HYP-168,B,spatial_coherence_verification,hard,C,B,B,B,B,B,C,A,False,True,True,True,True,True,False,False,Graph Traversal,INSUFFICIENT
+HYP-169,A,spatial_coherence_verification,hard,B,A,A,A,A,A,A,C,False,True,True,True,True,True,True,False,Graph Traversal,REFUTED
+HYP-170,A,spatial_coherence_verification,hard,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Graph Traversal,REFUTED
+HYP-171,B,spatial_coherence_verification,hard,C,B,B,B,B,B,C,C,False,True,True,True,True,True,False,False,Graph Traversal,INSUFFICIENT
+HYP-172,A,spatial_coherence_verification,hard,B,A,A,A,A,A,A,B,False,True,True,True,True,True,True,False,Graph Traversal,REFUTED
+HYP-173,A,spatial_coherence_verification,hard,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Graph Traversal,REFUTED
+HYP-174,C,spatial_coherence_verification,hard,C,C,C,C,C,C,C,A,True,True,True,True,True,True,True,False,Graph Traversal,SUPPORTED
+HYP-175,C,spatial_coherence_verification,hard,B,C,C,C,C,C,A,B,False,True,True,True,True,True,False,False,Graph Traversal,SUPPORTED
+HYP-176,C,spatial_coherence_verification,hard,A,C,C,C,C,C,B,C,False,True,True,True,True,True,False,True,Graph Traversal,SUPPORTED
+HYP-177,B,spatial_coherence_verification,hard,C,B,B,B,B,B,C,A,False,True,True,True,True,True,False,False,Graph Traversal,INSUFFICIENT
+HYP-178,A,spatial_coherence_verification,hard,B,A,A,A,A,A,A,C,False,True,True,True,True,True,True,False,Graph Traversal,REFUTED
+HYP-179,A,spatial_coherence_verification,hard,A,A,A,A,A,A,B,A,True,True,True,True,True,True,False,True,Graph Traversal,REFUTED
+HYP-180,B,spatial_coherence_verification,hard,B,B,B,B,B,B,C,B,True,True,True,True,True,True,False,True,Graph Traversal,INSUFFICIENT
+HYP-181,B,spatial_coherence_verification,hard,C,B,B,B,B,B,A,C,False,True,True,True,True,True,False,False,Graph Traversal,INSUFFICIENT
+HYP-182,C,spatial_coherence_verification,hard,B,C,C,C,C,C,B,A,False,True,True,True,True,True,False,False,Graph Traversal,SUPPORTED
+HYP-183,A,spatial_coherence_verification,hard,A,A,A,A,A,A,C,C,True,True,True,True,True,True,False,False,Graph Traversal,REFUTED
+HYP-184,A,spatial_coherence_verification,hard,C,A,A,A,A,A,A,A,False,True,True,True,True,True,True,True,Graph Traversal,REFUTED
+HYP-185,B,spatial_coherence_verification,hard,B,B,B,B,B,B,B,A,True,True,True,True,True,True,True,False,Graph Traversal,INSUFFICIENT
+HYP-186,B,spatial_coherence_verification,hard,A,B,B,B,B,B,C,B,False,True,True,True,True,True,False,True,Graph Traversal,INSUFFICIENT
+HYP-187,B,spatial_coherence_verification,hard,C,B,B,B,B,B,A,C,False,True,True,True,True,True,False,False,Graph Traversal,INSUFFICIENT
+HYP-188,A,spatial_coherence_verification,hard,B,A,A,A,A,A,B,A,False,True,True,True,True,True,False,True,Graph Traversal,REFUTED
+HYP-189,C,spatial_coherence_verification,hard,A,C,C,C,C,C,C,C,False,True,True,True,True,True,True,True,Graph Traversal,SUPPORTED
+HYP-190,A,spatial_coherence_verification,hard,C,A,A,A,A,A,A,B,False,True,True,True,True,True,True,False,Graph Traversal,REFUTED
+HYP-191,B,spatial_coherence_verification,hard,B,B,B,B,B,B,B,A,True,True,True,True,True,True,True,False,Graph Traversal,INSUFFICIENT
+HYP-192,A,spatial_coherence_verification,hard,A,A,A,A,A,A,C,C,True,True,True,True,True,True,False,False,Graph Traversal,REFUTED
+HYP-193,A,spatial_coherence_verification,hard,C,A,A,A,A,A,A,B,False,True,True,True,True,True,True,False,Graph Traversal,REFUTED
+HYP-194,C,spatial_coherence_verification,hard,B,C,C,C,C,C,B,C,False,True,True,True,True,True,False,True,Graph Traversal,SUPPORTED
+HYP-195,C,spatial_coherence_verification,hard,A,C,C,C,C,C,C,A,False,True,True,True,True,True,True,False,Graph Traversal,SUPPORTED
+HYP-196,B,spatial_coherence_verification,hard,C,B,B,B,B,B,A,B,False,True,True,True,True,True,False,True,Graph Traversal,INSUFFICIENT
+HYP-197,C,spatial_coherence_verification,hard,B,C,C,C,C,C,B,B,False,True,True,True,True,True,False,False,Graph Traversal,SUPPORTED
+HYP-198,A,spatial_coherence_verification,hard,A,A,A,A,A,A,C,C,True,True,True,True,True,True,False,False,Graph Traversal,REFUTED
+HYP-199,C,spatial_coherence_verification,hard,C,C,C,C,C,C,A,A,True,True,True,True,True,True,False,False,Graph Traversal,SUPPORTED
+HYP-200,A,spatial_coherence_verification,hard,B,A,A,A,A,A,B,C,False,True,True,True,True,True,False,False,Graph Traversal,REFUTED
+HYP-201,B,reliability_aware_claim_verification,medium,A,B,B,B,B,B,C,C,False,True,True,True,True,True,False,False,Logical Thresholding,INSUFFICIENT
+HYP-202,C,reliability_aware_claim_verification,medium,C,C,C,C,C,C,A,A,True,True,True,True,True,True,False,False,Logical Thresholding,SUPPORTED
+HYP-203,B,reliability_aware_claim_verification,medium,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Logical Thresholding,INSUFFICIENT
+HYP-204,B,reliability_aware_claim_verification,medium,A,B,B,B,B,B,C,C,False,True,True,True,True,True,False,False,Logical Thresholding,INSUFFICIENT
+HYP-205,B,reliability_aware_claim_verification,medium,C,B,B,B,B,B,A,A,False,True,True,True,True,True,False,False,Logical Thresholding,INSUFFICIENT
+HYP-206,B,reliability_aware_claim_verification,medium,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Logical Thresholding,INSUFFICIENT
+HYP-207,B,reliability_aware_claim_verification,medium,A,B,B,B,B,B,C,B,False,True,True,True,True,True,False,True,Logical Thresholding,INSUFFICIENT
+HYP-208,C,reliability_aware_claim_verification,medium,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Logical Thresholding,SUPPORTED
+HYP-209,B,reliability_aware_claim_verification,medium,B,B,B,B,B,B,B,B,True,True,True,True,True,True,True,True,Logical Thresholding,INSUFFICIENT
+HYP-210,C,reliability_aware_claim_verification,medium,A,C,C,C,C,C,C,C,False,True,True,True,True,True,True,True,Logical Thresholding,SUPPORTED
+HYP-211,A,reliability_aware_claim_verification,medium,C,A,A,A,A,A,A,A,False,True,True,True,True,True,True,True,Logical Thresholding,REFUTED
+HYP-212,C,reliability_aware_claim_verification,medium,B,C,C,C,C,C,B,C,False,True,True,True,True,True,False,True,Logical Thresholding,SUPPORTED
+HYP-213,B,reliability_aware_claim_verification,medium,A,B,B,B,B,B,C,C,False,True,True,True,True,True,False,False,Logical Thresholding,INSUFFICIENT
+HYP-214,A,reliability_aware_claim_verification,medium,C,A,A,A,A,A,A,B,False,True,True,True,True,True,True,False,Logical Thresholding,REFUTED
+HYP-215,C,reliability_aware_claim_verification,medium,B,C,C,C,C,C,B,C,False,True,True,True,True,True,False,True,Logical Thresholding,SUPPORTED
+HYP-216,A,reliability_aware_claim_verification,medium,A,A,A,A,A,A,C,A,True,True,True,True,True,True,False,True,Logical Thresholding,REFUTED
+HYP-217,B,reliability_aware_claim_verification,medium,C,B,B,B,B,B,A,B,False,True,True,True,True,True,False,True,Logical Thresholding,INSUFFICIENT
+HYP-218,B,reliability_aware_claim_verification,medium,B,B,B,B,B,A,B,C,True,True,True,True,True,False,True,False,Logical Thresholding,INSUFFICIENT
+HYP-219,A,reliability_aware_claim_verification,medium,A,A,A,A,A,A,C,B,True,True,True,True,True,True,False,False,Logical Thresholding,REFUTED
+HYP-220,B,reliability_aware_claim_verification,medium,C,B,B,B,B,B,A,C,False,True,True,True,True,True,False,False,Logical Thresholding,INSUFFICIENT
+HYP-221,A,reliability_aware_claim_verification,medium,B,A,A,A,A,A,B,A,False,True,True,True,True,True,False,True,Logical Thresholding,REFUTED
+HYP-222,A,reliability_aware_claim_verification,medium,A,A,A,A,A,A,C,B,True,True,True,True,True,True,False,False,Logical Thresholding,REFUTED
+HYP-223,C,reliability_aware_claim_verification,medium,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Logical Thresholding,SUPPORTED
+HYP-224,B,reliability_aware_claim_verification,medium,B,B,B,B,B,B,B,A,True,True,True,True,True,True,True,False,Logical Thresholding,INSUFFICIENT
+HYP-225,B,reliability_aware_claim_verification,medium,A,B,B,B,B,B,C,B,False,True,True,True,True,True,False,True,Logical Thresholding,INSUFFICIENT
+HYP-226,A,reliability_aware_claim_verification,medium,C,A,A,A,A,A,A,C,False,True,True,True,True,True,True,False,Logical Thresholding,REFUTED
+HYP-227,C,reliability_aware_claim_verification,hard,B,C,C,C,C,C,B,A,False,True,True,True,True,True,False,False,Logical Thresholding,SUPPORTED
+HYP-228,C,reliability_aware_claim_verification,hard,A,C,C,C,C,C,C,B,False,True,True,True,True,True,True,False,Logical Thresholding,SUPPORTED
+HYP-229,B,reliability_aware_claim_verification,hard,C,B,B,B,B,C,A,C,False,True,True,True,True,False,False,False,Logical Thresholding,INSUFFICIENT
+HYP-230,A,reliability_aware_claim_verification,hard,B,A,A,A,A,A,B,A,False,True,True,True,True,True,False,True,Logical Thresholding,REFUTED
+HYP-231,B,reliability_aware_claim_verification,hard,A,B,B,B,B,B,C,B,False,True,True,True,True,True,False,True,Logical Thresholding,INSUFFICIENT
+HYP-232,C,reliability_aware_claim_verification,hard,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Logical Thresholding,SUPPORTED
+HYP-233,C,reliability_aware_claim_verification,hard,B,C,C,C,C,C,B,A,False,True,True,True,True,True,False,False,Logical Thresholding,SUPPORTED
+HYP-234,C,reliability_aware_claim_verification,hard,A,C,C,C,C,C,C,B,False,True,True,True,True,True,True,False,Logical Thresholding,SUPPORTED
+HYP-235,C,reliability_aware_claim_verification,hard,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Logical Thresholding,SUPPORTED
+HYP-236,A,reliability_aware_claim_verification,hard,B,A,A,A,A,A,B,B,False,True,True,True,True,True,False,False,Logical Thresholding,REFUTED
+HYP-237,B,reliability_aware_claim_verification,hard,A,B,B,B,B,B,C,A,False,True,True,True,True,True,False,False,Logical Thresholding,INSUFFICIENT
+HYP-238,C,reliability_aware_claim_verification,hard,C,C,C,C,C,C,A,C,True,True,True,True,True,True,False,True,Logical Thresholding,SUPPORTED
+HYP-239,A,reliability_aware_claim_verification,hard,B,A,A,A,A,A,B,B,False,True,True,True,True,True,False,False,Logical Thresholding,REFUTED
+HYP-240,B,reliability_aware_claim_verification,hard,A,B,B,B,B,B,C,C,False,True,True,True,True,True,False,False,Logical Thresholding,INSUFFICIENT

@@ -1,0 +1,124 @@
+# ==============================================================================
+# AquaSentinel — Multi-Sensor Flood Inundation & Early Warning Risk Configuration
+# ==============================================================================
+# Governs risk level categorization, multi-sensor weighting, and alert triggers.
+# All thresholds are evidence-based, scientifically defensible, and tunable.
+# Standards Reference: IMD Standard Precipitation & NDMA Flood Hazard Guidelines.
+# ==============================================================================
+
+version: "2.0.0"
+last_updated: "2026-09-22"
+
+# ------------------------------------------------------------------------------
+# 1. RISK CATEGORIES & THRESHOLDS
+# ------------------------------------------------------------------------------
+risk_categories:
+  LOW:
+    name: "Low Risk (Green Advisory)"
+    code: "LOW"
+    severity_level: 1
+    color: "#10b981"
+    badge_bg: "rgba(16, 185, 129, 0.15)"
+    badge_border: "rgba(16, 185, 129, 0.4)"
+    max_score: 35.0
+    criteria:
+      max_inundation_percentage: 2.0
+      max_observed_rainfall_mm: 35.5
+      max_forecast_rainfall_mm: 50.0
+    advisory: "Conditions normal or light precipitation. No immediate inundation hazard detected. Standard vigilance."
+    operational_action: "Routine monitoring; no municipal dispatch required."
+
+  MODERATE:
+    name: "Moderate Risk (Yellow Watch)"
+    code: "MODERATE"
+    severity_level: 2
+    color: "#f59e0b"
+    badge_bg: "rgba(245, 158, 11, 0.15)"
+    badge_border: "rgba(245, 158, 11, 0.4)"
+    min_score: 35.0
+    max_score: 60.0
+    criteria:
+      min_inundation_percentage: 2.0
+      max_inundation_percentage: 8.0
+      min_observed_rainfall_mm: 35.5
+      max_observed_rainfall_mm: 64.4
+    advisory: "Localized waterlogging possible in low-lying corridors. Drainage infrastructure operating at partial capacity."
+    operational_action: "Alert local civic ward pumps; monitor riverine tributaries and culverts."
+
+  HIGH:
+    name: "High Risk (Orange Warning)"
+    code: "HIGH"
+    severity_level: 3
+    color: "#f97316"
+    badge_bg: "rgba(249, 115, 22, 0.15)"
+    badge_border: "rgba(249, 115, 22, 0.4)"
+    min_score: 60.0
+    max_score: 80.0
+    criteria:
+      min_inundation_percentage: 8.0
+      max_inundation_percentage: 20.0
+      min_observed_rainfall_mm: 64.5
+      max_observed_rainfall_mm: 115.5
+    advisory: "Significant inundation detected across analyzed sector. Road waterlogging and basement inundation expected."
+    operational_action: "Issue public travel advisory; prep emergency relief centers and traffic diversions."
+
+  CRITICAL:
+    name: "Critical Risk (Red Alert)"
+    code: "CRITICAL"
+    severity_level: 4
+    color: "#ef4444"
+    badge_bg: "rgba(239, 68, 68, 0.15)"
+    badge_border: "rgba(239, 68, 68, 0.4)"
+    min_score: 80.0
+    max_score: 100.0
+    criteria:
+      min_inundation_percentage: 20.0
+      min_observed_rainfall_mm: 115.6
+    advisory: "Severe widespread flash flood and prolonged inundation. Critical threat to property and transit corridors."
+    operational_action: "Immediate evacuation of floodway zones; mobilize SDRF/NDRF; direct citizens to verified shelters."
+
+# ------------------------------------------------------------------------------
+# 2. EVIDENCE WEIGHTING SCHEME
+# ------------------------------------------------------------------------------
+# The composite risk score (0-100) is synthesized from 4 distinct evidence streams:
+#   Score = (W_unet * S_unet) + (W_obs * S_obs) + (W_fcst * S_fcst) + (W_ant * S_ant)
+# ------------------------------------------------------------------------------
+weights:
+  unet_spatial_inundation: 0.40   # Satellite U-Net segmentation mask evidence
+  observed_rainfall_live: 0.25    # Real-time Open-Meteo & station precipitation
+  forecast_rainfall_24h: 0.20     # Numerical Weather Prediction (NWP) 24h accumulation
+  antecedent_rainfall_7d: 0.15    # Soil saturation / catchment memory (IMD 7-day grid)
+
+# ------------------------------------------------------------------------------
+# 3. MULTI-SENSOR CONVERGENCE RULES (NOISY SENSOR SUPPRESSION)
+# ------------------------------------------------------------------------------
+# A single anomalous measurement MUST NOT trigger a Critical Red Alert in isolation.
+# Convergence rules prevent false alarms caused by temporary sensor glitches:
+# ------------------------------------------------------------------------------
+convergence_rules:
+  critical_requires_two_signals: true
+  critical_conditions:
+    # Requires at least one from Group A and one from Group B to confirm Critical:
+    group_a:
+      inundation_gt_pct: 15.0
+    group_b:
+      observed_rainfall_gt_mm: 100.0
+      forecast_rainfall_gt_mm: 120.0
+      antecedent_saturation_pct: 80.0
+
+  # If U-Net satellite data is temporarily unavailable, fall back to meteorological risk
+  fallback_when_unet_missing:
+    max_achievable_tier: "HIGH"   # Never claim Critical without spatial inundation verification
+    rescale_weights:
+      observed_rainfall_live: 0.45
+      forecast_rainfall_24h: 0.35
+      antecedent_rainfall_7d: 0.20
+
+# ------------------------------------------------------------------------------
+# 4. EVACUATION & SAFE ROUTING THRESHOLDS
+# ------------------------------------------------------------------------------
+evacuation_parameters:
+  search_radius_km: 15.0
+  max_shelters_returned: 6
+  inundation_buffer_meters: 100.0   # Buffer around flood mask where shelter is considered unsafe
+  max_allowable_route_flood_crossings: 0 # ZERO tolerance: never route through flood

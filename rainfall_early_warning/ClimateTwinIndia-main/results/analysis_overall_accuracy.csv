@@ -1,0 +1,9 @@
+Model,Accuracy
+Claude_V1,100.0
+DeepSeek_V1,100.0
+DeepSeek_V2,98.75
+Claude_V2,96.25
+ChatGPT_V2,90.0
+ChatGPT_V1,64.17
+Gemini_V2,45.42
+Gemini_V1,32.5

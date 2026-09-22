@@ -1,0 +1,24 @@
+{
+  "name": "ClimateTwinBench",
+  "version": "1.0",
+  "questions": 810,
+  "grid_cells": 4964,
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "difficulty": {
+    "easy": 15,
+    "medium": 518,
+    "hard": 277
+  },
+  "categories": {
+    "trend_analysis": 500,
+    "comparative_reasoning": 310
+  }
+}

@@ -1,0 +1,5 @@
+Model,ChatGPT,ChatGPT,Claude,Claude,DeepSeek,DeepSeek,Gemini,Gemini
+Version,V1,V2,V1,V2,V1,V2,V1,V2
+Difficulty,,,,,,,,
+hard,58.09,94.12,100.0,100.0,100.0,98.53,29.41,36.03
+medium,72.12,84.62,100.0,91.35,100.0,99.04,36.54,57.69

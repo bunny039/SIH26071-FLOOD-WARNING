@@ -6,12 +6,14 @@ export const RISK_HEX: Record<RiskLevel, string> = {
   WATCH: '#f59e0b',
   WARNING: '#f97316',
   SEVERE: '#ef4444',
+  CRITICAL: '#dc2626',
+  ALERT: '#f97316',
   LOW: '#4ed69a',
   MODERATE: '#f6c85f',
   HIGH: '#fb9638',
 }
 
-export const RISK_ORDER: RiskLevel[] = ['NORMAL', 'WATCH', 'WARNING', 'SEVERE', 'LOW', 'MODERATE', 'HIGH']
+export const RISK_ORDER: RiskLevel[] = ['NORMAL', 'WATCH', 'WARNING', 'SEVERE', 'CRITICAL', 'ALERT', 'LOW', 'MODERATE', 'HIGH']
 
 /** Risk color as an rgba string for Leaflet fills/strokes. */
 export function riskColor(level: RiskLevel, alpha = 1): string {

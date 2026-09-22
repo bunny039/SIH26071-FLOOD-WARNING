@@ -1,0 +1,4 @@
+Model,Correct→Correct,Correct→Wrong,Wrong→Correct,Wrong→Wrong,Flip Rate %
+ChatGPT,142,12,74,12,35.83
+Claude,231,9,0,0,3.75
+DeepSeek,237,3,0,0,1.25

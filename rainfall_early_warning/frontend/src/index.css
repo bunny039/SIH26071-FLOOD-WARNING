@@ -1580,3 +1580,27 @@
   .map-legend { display: none; }
   .map-demo-label { top: 0.55rem; right: 0.55rem; bottom: auto; left: auto; }
 }
+
+/* Custom Weather Map Leaflet Marker Styling */
+.custom-weather-station-marker, .selected-location-pin {
+  border: none !important;
+  background: transparent !important;
+}
+
+@keyframes bounce-short {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-bounce-short {
+  animation: bounce-short 2s ease-in-out infinite;
+}
+
+/* Photorealistic Google Maps tile vibrancy and color pop */
+.leaflet-tile-pane {
+  filter: saturate(1.18) contrast(1.06) brightness(1.02);
+}
+
+.leaflet-tile {
+  image-rendering: -webkit-optimize-contrast;
+}

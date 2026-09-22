@@ -1,0 +1,9 @@
+Model,ChatGPT,ChatGPT,Claude,Claude,DeepSeek,DeepSeek,Gemini,Gemini
+Version,V1,V2,V1,V2,V1,V2,V1,V2
+Operation,,,,,,,,
+Fraction / Division,100.0,100.0,100.0,100.0,100.0,100.0,45.0,27.5
+Graph Traversal,37.5,100.0,100.0,100.0,100.0,100.0,37.5,32.5
+Grid Averaging,45.0,40.0,100.0,77.5,100.0,100.0,35.0,37.5
+Logical Thresholding,35.0,100.0,100.0,100.0,100.0,95.0,27.5,47.5
+Minimum Selection,90.0,100.0,100.0,100.0,100.0,100.0,22.5,100.0
+Subtraction,77.5,100.0,100.0,100.0,100.0,97.5,27.5,27.5

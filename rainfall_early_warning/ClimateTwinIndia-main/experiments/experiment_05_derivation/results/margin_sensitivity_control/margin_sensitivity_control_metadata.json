@@ -1,0 +1,53 @@
+{
+  "source_files": {
+    "benchmark": "benchmark\\ClimateTwinBench_Hypothesis_V2.json",
+    "derivation_results": {
+      "claude": "experiments\\experiment_05_derivation\\results\\claude_derivation.csv",
+      "claude_opus": "experiments\\experiment_05_derivation\\results\\claude_opus_derivation.csv",
+      "deepseek": "experiments\\experiment_05_derivation\\results\\deepseek_derivation.csv",
+      "gemini": "experiments\\experiment_05_derivation\\results\\gemini_derivation.csv",
+      "gpt": "experiments\\experiment_05_derivation\\results\\gpt_derivation.csv"
+    }
+  },
+  "perturbation_schedule": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    0.9,
+    0.95,
+    0.99
+  ],
+  "perturbation_definition": "T'(alpha) = T - alpha * (GT_metric - T), per (metric,threshold) pair in PERTURBATION_TARGETS; directional away-from-GT control; see script docstring.",
+  "decision_reference": "canonical_ground_truth_decision",
+  "supported_protocols": [
+    "compound_state_transition_verification",
+    "localized_intensification_verification",
+    "persistent_regional_anomaly_verification",
+    "reliability_aware_claim_verification",
+    "spatial_coherence_verification",
+    "wet_anomaly_consistency_verification"
+  ],
+  "unsupported_protocols": [],
+  "models": [
+    "claude",
+    "claude_opus",
+    "deepseek",
+    "gemini",
+    "gpt"
+  ],
+  "n_records_evaluated": 9600,
+  "n_records_unsupported_protocol": 0,
+  "n_records_insufficient_prediction": 0,
+  "n_model_question_observations_with_metric_error": 245,
+  "metric_tolerance_atol": 0.0001,
+  "bootstrap_resamples": 1000,
+  "bootstrap_seed": 20260626,
+  "outputs": {
+    "question_level": "experiments\\experiment_05_derivation\\results\\margin_sensitivity_control\\question_level_control.csv",
+    "aggregate_overall": "experiments\\experiment_05_derivation\\results\\margin_sensitivity_control\\aggregate_control_overall.csv",
+    "aggregate_by_model": "experiments\\experiment_05_derivation\\results\\margin_sensitivity_control\\aggregate_control_by_model.csv",
+    "aggregate_by_category": "experiments\\experiment_05_derivation\\results\\margin_sensitivity_control\\aggregate_control_by_category.csv"
+  }
+}

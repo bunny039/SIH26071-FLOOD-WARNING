@@ -1,0 +1,4 @@
+id,subcategory,GT_Decision,RecoveredDecision,Failure_Type,Root_Cause
+HYP-186,spatial_coherence_verification,REFUTED,INSUFFICIENT,Spatial,Connected-component counting
+HYP-213,reliability_aware_claim_verification,SUPPORTED,REFUTED,Numerical,Mean anomaly derivation
+HYP-226,reliability_aware_claim_verification,REFUTED,INSUFFICIENT,Numerical,Mean anomaly derivation

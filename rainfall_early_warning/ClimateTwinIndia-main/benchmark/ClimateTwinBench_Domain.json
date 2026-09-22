@@ -1,0 +1,2222 @@
+{
+  "name": "ClimateTwinBench_DomainReasoning_v2",
+  "version": "2.0",
+  "constraint": "STRICT: Every answer derivable programmatically from dataset values alone. No external climate knowledge. No monsoon assumptions. No Paris thresholds. No pre-industrial baselines. No algorithm references. Ground truth sources: anomaly_score, rainfall_mm, risk_tier_schema (defined in code), national_yearly_stats.",
+  "n_questions": 49,
+  "subcategories": {
+    "risk_tier_classification": 7,
+    "cell_national_divergence": 10,
+    "peak_valley_identification": 8,
+    "risk_escalation_counting": 7,
+    "sign_consistency_count": 7,
+    "national_statistics_ordering": 6,
+    "consecutive_extreme_run": 4
+  },
+  "violation_count": 0,
+  "questions": [
+    {
+      "id": "DR2-001",
+      "category": "domain_reasoning",
+      "subcategory": "risk_tier_classification",
+      "difficulty": "easy",
+      "question": "Risk tier schema (defined by this dataset):\n  LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (21.00\u00b0N, 74.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+3.392, 2020:-1.483, 2021:-0.006, 2022:-0.174, 2023:-0.815, 2024:-0.914, 2025:-0.631\n\nIn 2020 the cell's anomaly_score was -1.483.\n\nWhich risk tier applies?",
+      "options": {
+        "A": "EXTREME  \u2014 |anomaly_score| \u2265 10.00",
+        "B": "LOW      \u2014 |anomaly_score| < 2.00",
+        "C": "HIGH     \u2014 5.00 \u2264 |anomaly_score| < 10.00",
+        "D": "MODERATE \u2014 2.00 \u2264 |anomaly_score| < 5.00"
+      },
+      "answer": "B",
+      "explanation": "|-1.483| = 1.483. Schema \u2192 LOW.",
+      "context": {
+        "latitude": 21.0,
+        "longitude": 74.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          3.3918,
+          -1.4834,
+          -0.0057,
+          -0.174,
+          -0.8146,
+          -0.9143,
+          -0.6308
+        ],
+        "target_year": 2020,
+        "target_anomaly": -1.4834,
+        "true_tier": "LOW"
+      }
+    },
+    {
+      "id": "DR2-002",
+      "category": "domain_reasoning",
+      "subcategory": "risk_tier_classification",
+      "difficulty": "easy",
+      "question": "Risk tier schema (defined by this dataset):\n  LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (21.00\u00b0N, 74.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+3.392, 2020:-1.483, 2021:-0.006, 2022:-0.174, 2023:-0.815, 2024:-0.914, 2025:-0.631\n\nIn 2021 the cell's anomaly_score was -0.006.\n\nWhich risk tier applies?",
+      "options": {
+        "A": "HIGH     \u2014 5.00 \u2264 |anomaly_score| < 10.00",
+        "B": "LOW      \u2014 |anomaly_score| < 2.00",
+        "C": "MODERATE \u2014 2.00 \u2264 |anomaly_score| < 5.00",
+        "D": "EXTREME  \u2014 |anomaly_score| \u2265 10.00"
+      },
+      "answer": "B",
+      "explanation": "|-0.006| = 0.006. Schema \u2192 LOW.",
+      "context": {
+        "latitude": 21.0,
+        "longitude": 74.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          3.3918,
+          -1.4834,
+          -0.0057,
+          -0.174,
+          -0.8146,
+          -0.9143,
+          -0.6308
+        ],
+        "target_year": 2021,
+        "target_anomaly": -0.0057,
+        "true_tier": "LOW"
+      }
+    },
+    {
+      "id": "DR2-003",
+      "category": "domain_reasoning",
+      "subcategory": "risk_tier_classification",
+      "difficulty": "easy",
+      "question": "Risk tier schema (defined by this dataset):\n  LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (21.00\u00b0N, 74.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+3.392, 2020:-1.483, 2021:-0.006, 2022:-0.174, 2023:-0.815, 2024:-0.914, 2025:-0.631\n\nIn 2019 the cell's anomaly_score was +3.392.\n\nWhich risk tier applies?",
+      "options": {
+        "A": "LOW      \u2014 |anomaly_score| < 2.00",
+        "B": "EXTREME  \u2014 |anomaly_score| \u2265 10.00",
+        "C": "MODERATE \u2014 2.00 \u2264 |anomaly_score| < 5.00",
+        "D": "HIGH     \u2014 5.00 \u2264 |anomaly_score| < 10.00"
+      },
+      "answer": "C",
+      "explanation": "|3.392| = 3.392. Schema \u2192 MODERATE.",
+      "context": {
+        "latitude": 21.0,
+        "longitude": 74.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          3.3918,
+          -1.4834,
+          -0.0057,
+          -0.174,
+          -0.8146,
+          -0.9143,
+          -0.6308
+        ],
+        "target_year": 2019,
+        "target_anomaly": 3.3918,
+        "true_tier": "MODERATE"
+      }
+    },
+    {
+      "id": "DR2-004",
+      "category": "domain_reasoning",
+      "subcategory": "risk_tier_classification",
+      "difficulty": "easy",
+      "question": "Risk tier schema (defined by this dataset):\n  LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (22.25\u00b0N, 86.00\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+0.434, 2020:+0.239, 2021:+1.131, 2022:+0.163, 2023:-0.954, 2024:-1.013, 2025:+2.235\n\nIn 2025 the cell's anomaly_score was +2.235.\n\nWhich risk tier applies?",
+      "options": {
+        "A": "LOW      \u2014 |anomaly_score| < 2.00",
+        "B": "HIGH     \u2014 5.00 \u2264 |anomaly_score| < 10.00",
+        "C": "MODERATE \u2014 2.00 \u2264 |anomaly_score| < 5.00",
+        "D": "EXTREME  \u2014 |anomaly_score| \u2265 10.00"
+      },
+      "answer": "C",
+      "explanation": "|2.235| = 2.235. Schema \u2192 MODERATE.",
+      "context": {
+        "latitude": 22.25,
+        "longitude": 86.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          0.4342,
+          0.2395,
+          1.1306,
+          0.1625,
+          -0.9535,
+          -1.0132,
+          2.2349
+        ],
+        "target_year": 2025,
+        "target_anomaly": 2.2349,
+        "true_tier": "MODERATE"
+      }
+    },
+    {
+      "id": "DR2-005",
+      "category": "domain_reasoning",
+      "subcategory": "risk_tier_classification",
+      "difficulty": "easy",
+      "question": "Risk tier schema (defined by this dataset):\n  LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (19.75\u00b0N, 90.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-2.204, 2020:+6.715, 2021:-1.405, 2022:+10.406, 2023:-8.161, 2024:-5.351, 2025:-9.944\n\nIn 2020 the cell's anomaly_score was +6.715.\n\nWhich risk tier applies?",
+      "options": {
+        "A": "MODERATE \u2014 2.00 \u2264 |anomaly_score| < 5.00",
+        "B": "LOW      \u2014 |anomaly_score| < 2.00",
+        "C": "EXTREME  \u2014 |anomaly_score| \u2265 10.00",
+        "D": "HIGH     \u2014 5.00 \u2264 |anomaly_score| < 10.00"
+      },
+      "answer": "D",
+      "explanation": "|6.715| = 6.715. Schema \u2192 HIGH.",
+      "context": {
+        "latitude": 19.75,
+        "longitude": 90.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -2.2043,
+          6.715,
+          -1.4053,
+          10.4063,
+          -8.1609,
+          -5.3508,
+          -9.9441
+        ],
+        "target_year": 2020,
+        "target_anomaly": 6.715,
+        "true_tier": "HIGH"
+      }
+    },
+    {
+      "id": "DR2-006",
+      "category": "domain_reasoning",
+      "subcategory": "risk_tier_classification",
+      "difficulty": "easy",
+      "question": "Risk tier schema (defined by this dataset):\n  LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (19.75\u00b0N, 90.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-2.204, 2020:+6.715, 2021:-1.405, 2022:+10.406, 2023:-8.161, 2024:-5.351, 2025:-9.944\n\nIn 2023 the cell's anomaly_score was -8.161.\n\nWhich risk tier applies?",
+      "options": {
+        "A": "HIGH     \u2014 5.00 \u2264 |anomaly_score| < 10.00",
+        "B": "LOW      \u2014 |anomaly_score| < 2.00",
+        "C": "MODERATE \u2014 2.00 \u2264 |anomaly_score| < 5.00",
+        "D": "EXTREME  \u2014 |anomaly_score| \u2265 10.00"
+      },
+      "answer": "A",
+      "explanation": "|-8.161| = 8.161. Schema \u2192 HIGH.",
+      "context": {
+        "latitude": 19.75,
+        "longitude": 90.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -2.2043,
+          6.715,
+          -1.4053,
+          10.4063,
+          -8.1609,
+          -5.3508,
+          -9.9441
+        ],
+        "target_year": 2023,
+        "target_anomaly": -8.1609,
+        "true_tier": "HIGH"
+      }
+    },
+    {
+      "id": "DR2-007",
+      "category": "domain_reasoning",
+      "subcategory": "risk_tier_classification",
+      "difficulty": "easy",
+      "question": "Risk tier schema (defined by this dataset):\n  LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (19.75\u00b0N, 90.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-2.204, 2020:+6.715, 2021:-1.405, 2022:+10.406, 2023:-8.161, 2024:-5.351, 2025:-9.944\n\nIn 2022 the cell's anomaly_score was +10.406.\n\nWhich risk tier applies?",
+      "options": {
+        "A": "EXTREME  \u2014 |anomaly_score| \u2265 10.00",
+        "B": "HIGH     \u2014 5.00 \u2264 |anomaly_score| < 10.00",
+        "C": "LOW      \u2014 |anomaly_score| < 2.00",
+        "D": "MODERATE \u2014 2.00 \u2264 |anomaly_score| < 5.00"
+      },
+      "answer": "A",
+      "explanation": "|10.406| = 10.406. Schema \u2192 EXTREME.",
+      "context": {
+        "latitude": 19.75,
+        "longitude": 90.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -2.2043,
+          6.715,
+          -1.4053,
+          10.4063,
+          -8.1609,
+          -5.3508,
+          -9.9441
+        ],
+        "target_year": 2022,
+        "target_anomaly": 10.4063,
+        "true_tier": "EXTREME"
+      }
+    },
+    {
+      "id": "DR2-008",
+      "category": "domain_reasoning",
+      "subcategory": "cell_national_divergence",
+      "difficulty": "hard",
+      "question": "Cell (19.75\u00b0N, 90.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-2.204, 2020:+6.715, 2021:-1.405, 2022:+10.406, 2023:-8.161, 2024:-5.351, 2025:-9.944\n\nIndia-wide mean anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nIn 2022 (this cell's peak |anomaly| year):\n  Cell anomaly_score    = +10.406\n  National mean anomaly = +0.1030\n\nFour compound signal labels are defined as follows:\n  Systemic Dry      : both cell AND national mean negative\n  Localised Wet/Dry : cell POSITIVE, national mean NEGATIVE\n  Systemic Wet      : both cell AND national mean positive\n  Localised Dry/Wet : cell NEGATIVE, national mean POSITIVE\n\nWhich label applies to this cell's 2022 event?",
+      "options": {
+        "A": "Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE",
+        "B": "Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE",
+        "C": "Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE",
+        "D": "Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE"
+      },
+      "answer": "A",
+      "explanation": "Cell +10.406 (pos), National +0.1030 (pos). \u2192 SW: Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE.",
+      "context": {
+        "latitude": 19.75,
+        "longitude": 90.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -2.2043,
+          6.715,
+          -1.4053,
+          10.4063,
+          -8.1609,
+          -5.3508,
+          -9.9441
+        ],
+        "target_year": 2022,
+        "cell_anomaly": 10.4063,
+        "national_anomaly": 0.10301
+      }
+    },
+    {
+      "id": "DR2-009",
+      "category": "domain_reasoning",
+      "subcategory": "cell_national_divergence",
+      "difficulty": "hard",
+      "question": "Cell (26.50\u00b0N, 73.25\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+4.473, 2020:+2.582, 2021:-1.655, 2022:-2.501, 2023:-2.178, 2024:-0.721, 2025:-0.558\n\nIndia-wide mean anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nIn 2019 (this cell's peak |anomaly| year):\n  Cell anomaly_score    = +4.473\n  National mean anomaly = +0.1354\n\nFour compound signal labels are defined as follows:\n  Systemic Dry      : both cell AND national mean negative\n  Localised Wet/Dry : cell POSITIVE, national mean NEGATIVE\n  Systemic Wet      : both cell AND national mean positive\n  Localised Dry/Wet : cell NEGATIVE, national mean POSITIVE\n\nWhich label applies to this cell's 2019 event?",
+      "options": {
+        "A": "Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE",
+        "B": "Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE",
+        "C": "Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE",
+        "D": "Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE"
+      },
+      "answer": "C",
+      "explanation": "Cell +4.473 (pos), National +0.1354 (pos). \u2192 SW: Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE.",
+      "context": {
+        "latitude": 26.5,
+        "longitude": 73.25,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          4.4735,
+          2.5819,
+          -1.6554,
+          -2.5013,
+          -2.1776,
+          -0.721,
+          -0.5577
+        ],
+        "target_year": 2019,
+        "cell_anomaly": 4.4735,
+        "national_anomaly": 0.135367
+      }
+    },
+    {
+      "id": "DR2-010",
+      "category": "domain_reasoning",
+      "subcategory": "cell_national_divergence",
+      "difficulty": "hard",
+      "question": "Cell (17.00\u00b0N, 80.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-2.350, 2020:-1.757, 2021:+4.251, 2022:+2.600, 2023:-1.446, 2024:-1.299, 2025:-1.849\n\nIndia-wide mean anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nIn 2021 (this cell's peak |anomaly| year):\n  Cell anomaly_score    = +4.251\n  National mean anomaly = +0.0152\n\nFour compound signal labels are defined as follows:\n  Systemic Dry      : both cell AND national mean negative\n  Localised Wet/Dry : cell POSITIVE, national mean NEGATIVE\n  Systemic Wet      : both cell AND national mean positive\n  Localised Dry/Wet : cell NEGATIVE, national mean POSITIVE\n\nWhich label applies to this cell's 2021 event?",
+      "options": {
+        "A": "Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE",
+        "B": "Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE",
+        "C": "Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE",
+        "D": "Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE"
+      },
+      "answer": "D",
+      "explanation": "Cell +4.251 (pos), National +0.0152 (pos). \u2192 SW: Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE.",
+      "context": {
+        "latitude": 17.0,
+        "longitude": 80.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -2.3496,
+          -1.757,
+          4.2514,
+          2.6005,
+          -1.4463,
+          -1.2991,
+          -1.8495
+        ],
+        "target_year": 2021,
+        "cell_anomaly": 4.2514,
+        "national_anomaly": 0.015166
+      }
+    },
+    {
+      "id": "DR2-011",
+      "category": "domain_reasoning",
+      "subcategory": "cell_national_divergence",
+      "difficulty": "hard",
+      "question": "Cell (19.25\u00b0N, 91.25\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-2.186, 2020:+0.801, 2021:-2.933, 2022:-1.590, 2023:+2.466, 2024:+3.443, 2025:+0.630\n\nIndia-wide mean anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nIn 2024 (this cell's peak |anomaly| year):\n  Cell anomaly_score    = +3.443\n  National mean anomaly = -0.0208\n\nFour compound signal labels are defined as follows:\n  Systemic Dry      : both cell AND national mean negative\n  Localised Wet/Dry : cell POSITIVE, national mean NEGATIVE\n  Systemic Wet      : both cell AND national mean positive\n  Localised Dry/Wet : cell NEGATIVE, national mean POSITIVE\n\nWhich label applies to this cell's 2024 event?",
+      "options": {
+        "A": "Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE",
+        "B": "Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE",
+        "C": "Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE",
+        "D": "Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE"
+      },
+      "answer": "C",
+      "explanation": "Cell +3.443 (pos), National -0.0208 (neg). \u2192 LWD: Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE.",
+      "context": {
+        "latitude": 19.25,
+        "longitude": 91.25,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -2.1864,
+          0.8008,
+          -2.9335,
+          -1.5902,
+          2.4661,
+          3.4432,
+          0.6303
+        ],
+        "target_year": 2024,
+        "cell_anomaly": 3.4432,
+        "national_anomaly": -0.020754
+      }
+    },
+    {
+      "id": "DR2-012",
+      "category": "domain_reasoning",
+      "subcategory": "cell_national_divergence",
+      "difficulty": "hard",
+      "question": "Cell (19.00\u00b0N, 89.50\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-0.971, 2020:-0.971, 2021:-0.971, 2022:-0.971, 2023:+4.854, 2024:-0.971, 2025:-0.971\n\nIndia-wide mean anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nIn 2023 (this cell's peak |anomaly| year):\n  Cell anomaly_score    = +4.854\n  National mean anomaly = -0.3792\n\nFour compound signal labels are defined as follows:\n  Systemic Dry      : both cell AND national mean negative\n  Localised Wet/Dry : cell POSITIVE, national mean NEGATIVE\n  Systemic Wet      : both cell AND national mean positive\n  Localised Dry/Wet : cell NEGATIVE, national mean POSITIVE\n\nWhich label applies to this cell's 2023 event?",
+      "options": {
+        "A": "Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE",
+        "B": "Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE",
+        "C": "Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE",
+        "D": "Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE"
+      },
+      "answer": "D",
+      "explanation": "Cell +4.854 (pos), National -0.3792 (neg). \u2192 LWD: Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE.",
+      "context": {
+        "latitude": 19.0,
+        "longitude": 89.5,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.9708,
+          -0.9708,
+          -0.9708,
+          -0.9708,
+          4.854,
+          -0.9708,
+          -0.9708
+        ],
+        "target_year": 2023,
+        "cell_anomaly": 4.854,
+        "national_anomaly": -0.379173
+      }
+    },
+    {
+      "id": "DR2-013",
+      "category": "domain_reasoning",
+      "subcategory": "cell_national_divergence",
+      "difficulty": "hard",
+      "question": "Cell (28.50\u00b0N, 74.00\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+3.053, 2020:+0.131, 2021:+0.021, 2022:-0.160, 2023:-2.883, 2024:-0.162, 2025:+2.300\n\nIndia-wide mean anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nIn 2019 (this cell's peak |anomaly| year):\n  Cell anomaly_score    = +3.053\n  National mean anomaly = +0.1354\n\nFour compound signal labels are defined as follows:\n  Systemic Dry      : both cell AND national mean negative\n  Localised Wet/Dry : cell POSITIVE, national mean NEGATIVE\n  Systemic Wet      : both cell AND national mean positive\n  Localised Dry/Wet : cell NEGATIVE, national mean POSITIVE\n\nWhich label applies to this cell's 2019 event?",
+      "options": {
+        "A": "Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE",
+        "B": "Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE",
+        "C": "Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE",
+        "D": "Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE"
+      },
+      "answer": "C",
+      "explanation": "Cell +3.053 (pos), National +0.1354 (pos). \u2192 SW: Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE.",
+      "context": {
+        "latitude": 28.5,
+        "longitude": 74.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          3.0528,
+          0.1313,
+          0.021,
+          -0.1603,
+          -2.8831,
+          -0.1617,
+          2.3
+        ],
+        "target_year": 2019,
+        "cell_anomaly": 3.0528,
+        "national_anomaly": 0.135367
+      }
+    },
+    {
+      "id": "DR2-014",
+      "category": "domain_reasoning",
+      "subcategory": "cell_national_divergence",
+      "difficulty": "hard",
+      "question": "Cell (16.75\u00b0N, 96.00\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+0.970, 2020:+1.751, 2021:-1.198, 2022:+1.770, 2023:-1.644, 2024:-1.649, 2025:-2.823\n\nIndia-wide mean anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nIn 2025 (this cell's peak |anomaly| year):\n  Cell anomaly_score    = -2.823\n  National mean anomaly = +0.1327\n\nFour compound signal labels are defined as follows:\n  Systemic Dry      : both cell AND national mean negative\n  Localised Wet/Dry : cell POSITIVE, national mean NEGATIVE\n  Systemic Wet      : both cell AND national mean positive\n  Localised Dry/Wet : cell NEGATIVE, national mean POSITIVE\n\nWhich label applies to this cell's 2025 event?",
+      "options": {
+        "A": "Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE",
+        "B": "Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE",
+        "C": "Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE",
+        "D": "Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE"
+      },
+      "answer": "B",
+      "explanation": "Cell -2.823 (neg), National +0.1327 (pos). \u2192 LDW: Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE.",
+      "context": {
+        "latitude": 16.75,
+        "longitude": 96.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          0.9703,
+          1.7509,
+          -1.1977,
+          1.7698,
+          -1.6438,
+          -1.6495,
+          -2.823
+        ],
+        "target_year": 2025,
+        "cell_anomaly": -2.823,
+        "national_anomaly": 0.132651
+      }
+    },
+    {
+      "id": "DR2-015",
+      "category": "domain_reasoning",
+      "subcategory": "cell_national_divergence",
+      "difficulty": "hard",
+      "question": "Cell (29.00\u00b0N, 74.00\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+2.000, 2020:-0.308, 2021:-0.413, 2022:-0.155, 2023:-3.236, 2024:+2.113, 2025:-0.635\n\nIndia-wide mean anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nIn 2023 (this cell's peak |anomaly| year):\n  Cell anomaly_score    = -3.236\n  National mean anomaly = -0.3792\n\nFour compound signal labels are defined as follows:\n  Systemic Dry      : both cell AND national mean negative\n  Localised Wet/Dry : cell POSITIVE, national mean NEGATIVE\n  Systemic Wet      : both cell AND national mean positive\n  Localised Dry/Wet : cell NEGATIVE, national mean POSITIVE\n\nWhich label applies to this cell's 2023 event?",
+      "options": {
+        "A": "Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE",
+        "B": "Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE",
+        "C": "Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE",
+        "D": "Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE"
+      },
+      "answer": "D",
+      "explanation": "Cell -3.236 (neg), National -0.3792 (neg). \u2192 SD: Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE.",
+      "context": {
+        "latitude": 29.0,
+        "longitude": 74.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          1.9999,
+          -0.3084,
+          -0.4129,
+          -0.1555,
+          -3.236,
+          2.1129,
+          -0.6351
+        ],
+        "target_year": 2023,
+        "cell_anomaly": -3.236,
+        "national_anomaly": -0.379173
+      }
+    },
+    {
+      "id": "DR2-016",
+      "category": "domain_reasoning",
+      "subcategory": "cell_national_divergence",
+      "difficulty": "hard",
+      "question": "Cell (33.25\u00b0N, 75.25\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+1.268, 2020:+2.009, 2021:+0.045, 2022:-1.382, 2023:-2.324, 2024:+0.384, 2025:+2.401\n\nIndia-wide mean anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nIn 2025 (this cell's peak |anomaly| year):\n  Cell anomaly_score    = +2.401\n  National mean anomaly = +0.1327\n\nFour compound signal labels are defined as follows:\n  Systemic Dry      : both cell AND national mean negative\n  Localised Wet/Dry : cell POSITIVE, national mean NEGATIVE\n  Systemic Wet      : both cell AND national mean positive\n  Localised Dry/Wet : cell NEGATIVE, national mean POSITIVE\n\nWhich label applies to this cell's 2025 event?",
+      "options": {
+        "A": "Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE",
+        "B": "Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE",
+        "C": "Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE",
+        "D": "Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE"
+      },
+      "answer": "B",
+      "explanation": "Cell +2.401 (pos), National +0.1327 (pos). \u2192 SW: Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE.",
+      "context": {
+        "latitude": 33.25,
+        "longitude": 75.25,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          1.2675,
+          2.0091,
+          0.0446,
+          -1.3818,
+          -2.3239,
+          0.3844,
+          2.4007
+        ],
+        "target_year": 2025,
+        "cell_anomaly": 2.4007,
+        "national_anomaly": 0.132651
+      }
+    },
+    {
+      "id": "DR2-017",
+      "category": "domain_reasoning",
+      "subcategory": "cell_national_divergence",
+      "difficulty": "hard",
+      "question": "Cell (27.75\u00b0N, 73.25\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+1.190, 2020:+0.748, 2021:+2.011, 2022:-2.104, 2023:-2.601, 2024:+0.756, 2025:+0.534\n\nIndia-wide mean anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nIn 2023 (this cell's peak |anomaly| year):\n  Cell anomaly_score    = -2.601\n  National mean anomaly = -0.3792\n\nFour compound signal labels are defined as follows:\n  Systemic Dry      : both cell AND national mean negative\n  Localised Wet/Dry : cell POSITIVE, national mean NEGATIVE\n  Systemic Wet      : both cell AND national mean positive\n  Localised Dry/Wet : cell NEGATIVE, national mean POSITIVE\n\nWhich label applies to this cell's 2023 event?",
+      "options": {
+        "A": "Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE",
+        "B": "Localised Dry/Wet  \u2014 cell anomaly NEGATIVE,   national mean POSITIVE",
+        "C": "Localised Wet/Dry  \u2014 cell anomaly POSITIVE,   national mean NEGATIVE",
+        "D": "Systemic Wet       \u2014 cell anomaly POSITIVE AND national mean POSITIVE"
+      },
+      "answer": "A",
+      "explanation": "Cell -2.601 (neg), National -0.3792 (neg). \u2192 SD: Systemic Dry       \u2014 cell anomaly NEGATIVE AND national mean NEGATIVE.",
+      "context": {
+        "latitude": 27.75,
+        "longitude": 73.25,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          1.19,
+          0.7478,
+          2.0106,
+          -2.1041,
+          -2.6006,
+          0.7564,
+          0.5341
+        ],
+        "target_year": 2023,
+        "cell_anomaly": -2.6006,
+        "national_anomaly": -0.379173
+      }
+    },
+    {
+      "id": "DR2-018",
+      "category": "domain_reasoning",
+      "subcategory": "peak_valley_identification",
+      "difficulty": "medium",
+      "question": "Cell (21.00\u00b0N, 74.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+3.392, 2020:-1.483, 2021:-0.006, 2022:-0.174, 2023:-0.815, 2024:-0.914, 2025:-0.631\n\nIn which year did this cell record its HIGHEST |anomaly_score|?",
+      "options": {
+        "A": "2023",
+        "B": "2020",
+        "C": "2019",
+        "D": "2024"
+      },
+      "answer": "C",
+      "explanation": "|anomaly| by year: 2019:3.392, 2020:1.483, 2021:0.006, 2022:0.174, 2023:0.815, 2024:0.914, 2025:0.631. Maximum 3.392 in 2019.",
+      "context": {
+        "latitude": 21.0,
+        "longitude": 74.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          3.3918,
+          -1.4834,
+          -0.0057,
+          -0.174,
+          -0.8146,
+          -0.9143,
+          -0.6308
+        ],
+        "rainfall_mm": [
+          7.7231,
+          2.8479,
+          4.3256,
+          4.1572,
+          3.5167,
+          3.417,
+          3.7004
+        ]
+      }
+    },
+    {
+      "id": "DR2-019",
+      "category": "domain_reasoning",
+      "subcategory": "peak_valley_identification",
+      "difficulty": "medium",
+      "question": "Cell (19.75\u00b0N, 93.00\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-0.153, 2020:-0.534, 2021:-1.329, 2022:+0.117, 2023:-0.056, 2024:+1.955, 2025:+0.973\n\nIn which year did this cell record its HIGHEST |anomaly_score|?",
+      "options": {
+        "A": "2024",
+        "B": "2020",
+        "C": "2025",
+        "D": "2021"
+      },
+      "answer": "A",
+      "explanation": "|anomaly| by year: 2019:0.153, 2020:0.534, 2021:1.329, 2022:0.117, 2023:0.056, 2024:1.955, 2025:0.973. Maximum 1.955 in 2024.",
+      "context": {
+        "latitude": 19.75,
+        "longitude": 93.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.1533,
+          -0.5337,
+          -1.3295,
+          0.117,
+          -0.0555,
+          1.955,
+          0.9732
+        ],
+        "rainfall_mm": [
+          4.6698,
+          4.2894,
+          3.4936,
+          4.9401,
+          4.7676,
+          6.7781,
+          5.7963
+        ]
+      }
+    },
+    {
+      "id": "DR2-020",
+      "category": "domain_reasoning",
+      "subcategory": "peak_valley_identification",
+      "difficulty": "medium",
+      "question": "Cell (23.75\u00b0N, 75.25\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+0.343, 2020:+0.118, 2021:+0.122, 2022:-0.464, 2023:-0.549, 2024:+0.430, 2025:+0.087\n\nIn which year was this cell's |anomaly_score| at its LOWEST?",
+      "options": {
+        "A": "2019",
+        "B": "2025",
+        "C": "2020",
+        "D": "2021"
+      },
+      "answer": "B",
+      "explanation": "|anomaly| by year: 2019:0.343, 2020:0.118, 2021:0.122, 2022:0.464, 2023:0.549, 2024:0.430, 2025:0.087. Minimum 0.087 in 2025.",
+      "context": {
+        "latitude": 23.75,
+        "longitude": 75.25,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          0.3434,
+          0.1181,
+          0.1216,
+          -0.4639,
+          -0.549,
+          0.4297,
+          0.0867
+        ],
+        "rainfall_mm": [
+          2.4304,
+          2.2051,
+          2.2086,
+          1.6231,
+          1.538,
+          2.5167,
+          2.1737
+        ]
+      }
+    },
+    {
+      "id": "DR2-021",
+      "category": "domain_reasoning",
+      "subcategory": "peak_valley_identification",
+      "difficulty": "medium",
+      "question": "Cell (20.00\u00b0N, 83.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-0.009, 2020:-0.080, 2021:+0.681, 2022:-0.681, 2023:-0.052, 2024:+0.141, 2025:+0.554\n\nIn which year was this cell's |anomaly_score| at its LOWEST?",
+      "options": {
+        "A": "2023",
+        "B": "2024",
+        "C": "2020",
+        "D": "2019"
+      },
+      "answer": "D",
+      "explanation": "|anomaly| by year: 2019:0.009, 2020:0.080, 2021:0.681, 2022:0.681, 2023:0.052, 2024:0.141, 2025:0.554. Minimum 0.009 in 2019.",
+      "context": {
+        "latitude": 20.0,
+        "longitude": 83.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.0088,
+          -0.0803,
+          0.6813,
+          -0.6812,
+          -0.052,
+          0.1409,
+          0.5544
+        ],
+        "rainfall_mm": [
+          2.3866,
+          2.3151,
+          3.0767,
+          1.7141,
+          2.3434,
+          2.5362,
+          2.9497
+        ]
+      }
+    },
+    {
+      "id": "DR2-022",
+      "category": "domain_reasoning",
+      "subcategory": "peak_valley_identification",
+      "difficulty": "medium",
+      "question": "Cell (33.25\u00b0N, 75.25\u00b0E) \u2014 rainfall_mm 2019\u20132025:\n  2019:10.99, 2020:11.73, 2021:9.76, 2022:8.34, 2023:7.40, 2024:10.10, 2025:12.12\n\nIn which year did this cell receive the HIGHEST rainfall?",
+      "options": {
+        "A": "2019",
+        "B": "2024",
+        "C": "2020",
+        "D": "2025"
+      },
+      "answer": "D",
+      "explanation": "Rainfall by year: 2019:10.99, 2020:11.73, 2021:9.76, 2022:8.34, 2023:7.40, 2024:10.10, 2025:12.12. Maximum 12.12 mm in 2025.",
+      "context": {
+        "latitude": 33.25,
+        "longitude": 75.25,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          1.2675,
+          2.0091,
+          0.0446,
+          -1.3818,
+          -2.3239,
+          0.3844,
+          2.4007
+        ],
+        "rainfall_mm": [
+          10.9879,
+          11.7294,
+          9.7649,
+          8.3385,
+          7.3964,
+          10.1047,
+          12.121
+        ]
+      }
+    },
+    {
+      "id": "DR2-023",
+      "category": "domain_reasoning",
+      "subcategory": "peak_valley_identification",
+      "difficulty": "medium",
+      "question": "Cell (22.50\u00b0N, 76.50\u00b0E) \u2014 rainfall_mm 2019\u20132025:\n  2019:3.92, 2020:3.88, 2021:2.95, 2022:4.18, 2023:3.33, 2024:3.73, 2025:3.45\n\nIn which year did this cell receive the HIGHEST rainfall?",
+      "options": {
+        "A": "2019",
+        "B": "2020",
+        "C": "2024",
+        "D": "2022"
+      },
+      "answer": "D",
+      "explanation": "Rainfall by year: 2019:3.92, 2020:3.88, 2021:2.95, 2022:4.18, 2023:3.33, 2024:3.73, 2025:3.45. Maximum 4.18 mm in 2022.",
+      "context": {
+        "latitude": 22.5,
+        "longitude": 76.5,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          0.2502,
+          0.215,
+          -0.7155,
+          0.5189,
+          -0.3368,
+          0.0683,
+          -0.2204
+        ],
+        "rainfall_mm": [
+          3.9162,
+          3.8811,
+          2.9505,
+          4.1849,
+          3.3293,
+          3.7344,
+          3.4457
+        ]
+      }
+    },
+    {
+      "id": "DR2-024",
+      "category": "domain_reasoning",
+      "subcategory": "peak_valley_identification",
+      "difficulty": "medium",
+      "question": "Cell (9.50\u00b0N, 80.25\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+0.337, 2020:-0.028, 2021:-0.047, 2022:-0.175, 2023:-0.102, 2024:+0.013, 2025:+0.177\n\nWhich year-to-year TRANSITION showed the LARGEST absolute change in anomaly_score?",
+      "options": {
+        "A": "2021\u21922022",
+        "B": "2023\u21922024",
+        "C": "2024\u21922025",
+        "D": "2019\u21922020"
+      },
+      "answer": "D",
+      "explanation": "|\u0394anomaly| by transition: 2019\u21922020:0.365, 2020\u21922021:0.019, 2021\u21922022:0.128, 2022\u21922023:0.073, 2023\u21922024:0.115, 2024\u21922025:0.164. Largest: 2019\u21922020.",
+      "context": {
+        "latitude": 9.5,
+        "longitude": 80.25,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          0.3371,
+          -0.0275,
+          -0.0467,
+          -0.1746,
+          -0.1015,
+          0.0132,
+          0.1769
+        ],
+        "rainfall_mm": [
+          0.6957,
+          0.3312,
+          0.3119,
+          0.184,
+          0.2572,
+          0.3718,
+          0.5355
+        ]
+      }
+    },
+    {
+      "id": "DR2-025",
+      "category": "domain_reasoning",
+      "subcategory": "peak_valley_identification",
+      "difficulty": "medium",
+      "question": "Cell (18.50\u00b0N, 71.50\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-0.273, 2020:-0.183, 2021:-0.210, 2022:+0.149, 2023:+0.153, 2024:+0.364, 2025:-0.155\n\nWhich year-to-year TRANSITION showed the LARGEST absolute change in anomaly_score?",
+      "options": {
+        "A": "2021\u21922022",
+        "B": "2023\u21922024",
+        "C": "2024\u21922025",
+        "D": "2019\u21922020"
+      },
+      "answer": "C",
+      "explanation": "|\u0394anomaly| by transition: 2019\u21922020:0.090, 2020\u21922021:0.027, 2021\u21922022:0.359, 2022\u21922023:0.004, 2023\u21922024:0.211, 2024\u21922025:0.518. Largest: 2024\u21922025.",
+      "context": {
+        "latitude": 18.5,
+        "longitude": 71.5,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.2725,
+          -0.1829,
+          -0.21,
+          0.1486,
+          0.153,
+          0.3638,
+          -0.1547
+        ],
+        "rainfall_mm": [
+          0.7886,
+          0.8782,
+          0.8511,
+          1.2096,
+          1.2141,
+          1.4248,
+          0.9064
+        ]
+      }
+    },
+    {
+      "id": "DR2-026",
+      "category": "domain_reasoning",
+      "subcategory": "risk_escalation_counting",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\nAn ESCALATION is a transition where risk tier rank strictly increases\n(e.g. LOW\u2192MODERATE, MODERATE\u2192HIGH, HIGH\u2192EXTREME, or LOW\u2192HIGH).\n\nCell (31.25\u00b0N, 75.00\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+1.818, 2020:-0.830, 2021:+1.633, 2022:+0.372, 2023:-3.039, 2024:+0.046, 2025:+1.304\n\nApplying the schema yields:\n  2019:LOW, 2020:LOW, 2021:LOW, 2022:LOW, 2023:MODERATE, 2024:LOW, 2025:LOW\n\nHow many ESCALATIONS occurred across the 6 consecutive year-to-year transitions?",
+      "options": {
+        "A": "6",
+        "B": "2",
+        "C": "1",
+        "D": "0"
+      },
+      "answer": "C",
+      "explanation": "Transitions: 2019\u21922020:\u2500, 2020\u21922021:\u2500, 2021\u21922022:\u2500, 2022\u21922023:\u2191ESC, 2023\u21922024:\u2193DSC, 2024\u21922025:\u2500.\n\u2191Escalations=1, \u2193De-escalations=1, Total changes=2, Years at HIGH/EXTREME=0. Correct: 1.",
+      "context": {
+        "latitude": 31.25,
+        "longitude": 75.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          1.8183,
+          -0.8299,
+          1.633,
+          0.372,
+          -3.0395,
+          0.046,
+          1.3045
+        ],
+        "risk_tiers": [
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "MODERATE",
+          "LOW",
+          "LOW"
+        ],
+        "escalation_count": 1,
+        "de_escalation_count": 1
+      }
+    },
+    {
+      "id": "DR2-027",
+      "category": "domain_reasoning",
+      "subcategory": "risk_escalation_counting",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\nAn ESCALATION is a transition where risk tier rank strictly increases\n(e.g. LOW\u2192MODERATE, MODERATE\u2192HIGH, HIGH\u2192EXTREME, or LOW\u2192HIGH).\n\nCell (21.00\u00b0N, 74.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+3.392, 2020:-1.483, 2021:-0.006, 2022:-0.174, 2023:-0.815, 2024:-0.914, 2025:-0.631\n\nApplying the schema yields:\n  2019:MODERATE, 2020:LOW, 2021:LOW, 2022:LOW, 2023:LOW, 2024:LOW, 2025:LOW\n\nHow many ESCALATIONS occurred across the 6 consecutive year-to-year transitions?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "4",
+        "D": "0"
+      },
+      "answer": "D",
+      "explanation": "Transitions: 2019\u21922020:\u2193DSC, 2020\u21922021:\u2500, 2021\u21922022:\u2500, 2022\u21922023:\u2500, 2023\u21922024:\u2500, 2024\u21922025:\u2500.\n\u2191Escalations=0, \u2193De-escalations=1, Total changes=1, Years at HIGH/EXTREME=0. Correct: 0.",
+      "context": {
+        "latitude": 21.0,
+        "longitude": 74.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          3.3918,
+          -1.4834,
+          -0.0057,
+          -0.174,
+          -0.8146,
+          -0.9143,
+          -0.6308
+        ],
+        "risk_tiers": [
+          "MODERATE",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW"
+        ],
+        "escalation_count": 0,
+        "de_escalation_count": 1
+      }
+    },
+    {
+      "id": "DR2-028",
+      "category": "domain_reasoning",
+      "subcategory": "risk_escalation_counting",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\nAn ESCALATION is a transition where risk tier rank strictly increases\n(e.g. LOW\u2192MODERATE, MODERATE\u2192HIGH, HIGH\u2192EXTREME, or LOW\u2192HIGH).\n\nCell (27.25\u00b0N, 73.00\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+0.842, 2020:+0.278, 2021:+2.651, 2022:-2.022, 2023:-1.315, 2024:-0.434, 2025:+0.802\n\nApplying the schema yields:\n  2019:LOW, 2020:LOW, 2021:MODERATE, 2022:MODERATE, 2023:LOW, 2024:LOW, 2025:LOW\n\nHow many ESCALATIONS occurred across the 6 consecutive year-to-year transitions?",
+      "options": {
+        "A": "0",
+        "B": "3",
+        "C": "2",
+        "D": "1"
+      },
+      "answer": "D",
+      "explanation": "Transitions: 2019\u21922020:\u2500, 2020\u21922021:\u2191ESC, 2021\u21922022:\u2500, 2022\u21922023:\u2193DSC, 2023\u21922024:\u2500, 2024\u21922025:\u2500.\n\u2191Escalations=1, \u2193De-escalations=1, Total changes=2, Years at HIGH/EXTREME=0. Correct: 1.",
+      "context": {
+        "latitude": 27.25,
+        "longitude": 73.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          0.8417,
+          0.2784,
+          2.6506,
+          -2.0223,
+          -1.3147,
+          -0.4337,
+          0.8023
+        ],
+        "risk_tiers": [
+          "LOW",
+          "LOW",
+          "MODERATE",
+          "MODERATE",
+          "LOW",
+          "LOW",
+          "LOW"
+        ],
+        "escalation_count": 1,
+        "de_escalation_count": 1
+      }
+    },
+    {
+      "id": "DR2-029",
+      "category": "domain_reasoning",
+      "subcategory": "risk_escalation_counting",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\nAn ESCALATION is a transition where risk tier rank strictly increases\n(e.g. LOW\u2192MODERATE, MODERATE\u2192HIGH, HIGH\u2192EXTREME, or LOW\u2192HIGH).\n\nCell (18.25\u00b0N, 91.25\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-0.789, 2020:+0.358, 2021:-1.932, 2022:+1.664, 2023:+0.767, 2024:-0.067, 2025:-2.392\n\nApplying the schema yields:\n  2019:LOW, 2020:LOW, 2021:LOW, 2022:LOW, 2023:LOW, 2024:LOW, 2025:MODERATE\n\nHow many ESCALATIONS occurred across the 6 consecutive year-to-year transitions?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "5",
+        "D": "0"
+      },
+      "answer": "A",
+      "explanation": "Transitions: 2019\u21922020:\u2500, 2020\u21922021:\u2500, 2021\u21922022:\u2500, 2022\u21922023:\u2500, 2023\u21922024:\u2500, 2024\u21922025:\u2191ESC.\n\u2191Escalations=1, \u2193De-escalations=0, Total changes=1, Years at HIGH/EXTREME=0. Correct: 1.",
+      "context": {
+        "latitude": 18.25,
+        "longitude": 91.25,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.7892,
+          0.358,
+          -1.932,
+          1.6636,
+          0.767,
+          -0.0674,
+          -2.3921
+        ],
+        "risk_tiers": [
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "MODERATE"
+        ],
+        "escalation_count": 1,
+        "de_escalation_count": 0
+      }
+    },
+    {
+      "id": "DR2-030",
+      "category": "domain_reasoning",
+      "subcategory": "risk_escalation_counting",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\nAn ESCALATION is a transition where risk tier rank strictly increases\n(e.g. LOW\u2192MODERATE, MODERATE\u2192HIGH, HIGH\u2192EXTREME, or LOW\u2192HIGH).\n\nCell (18.75\u00b0N, 83.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:+0.361, 2020:+1.597, 2021:+1.333, 2022:-0.693, 2023:-1.009, 2024:-1.589, 2025:-1.528\n\nApplying the schema yields:\n  2019:LOW, 2020:LOW, 2021:LOW, 2022:LOW, 2023:LOW, 2024:LOW, 2025:LOW\n\nHow many ESCALATIONS occurred across the 6 consecutive year-to-year transitions?",
+      "options": {
+        "A": "1",
+        "B": "0",
+        "C": "5",
+        "D": "2"
+      },
+      "answer": "B",
+      "explanation": "Transitions: 2019\u21922020:\u2500, 2020\u21922021:\u2500, 2021\u21922022:\u2500, 2022\u21922023:\u2500, 2023\u21922024:\u2500, 2024\u21922025:\u2500.\n\u2191Escalations=0, \u2193De-escalations=0, Total changes=0, Years at HIGH/EXTREME=0. Correct: 0.",
+      "context": {
+        "latitude": 18.75,
+        "longitude": 83.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          0.3607,
+          1.5966,
+          1.3332,
+          -0.6925,
+          -1.0094,
+          -1.5886,
+          -1.5278
+        ],
+        "risk_tiers": [
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW"
+        ],
+        "escalation_count": 0,
+        "de_escalation_count": 0
+      }
+    },
+    {
+      "id": "DR2-031",
+      "category": "domain_reasoning",
+      "subcategory": "risk_escalation_counting",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\nAn ESCALATION is a transition where risk tier rank strictly increases\n(e.g. LOW\u2192MODERATE, MODERATE\u2192HIGH, HIGH\u2192EXTREME, or LOW\u2192HIGH).\n\nCell (17.25\u00b0N, 88.50\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-0.180, 2020:+0.848, 2021:-0.552, 2022:+0.584, 2023:-0.716, 2024:+0.017, 2025:-3.147\n\nApplying the schema yields:\n  2019:LOW, 2020:LOW, 2021:LOW, 2022:LOW, 2023:LOW, 2024:LOW, 2025:MODERATE\n\nHow many ESCALATIONS occurred across the 6 consecutive year-to-year transitions?",
+      "options": {
+        "A": "5",
+        "B": "4",
+        "C": "0",
+        "D": "1"
+      },
+      "answer": "D",
+      "explanation": "Transitions: 2019\u21922020:\u2500, 2020\u21922021:\u2500, 2021\u21922022:\u2500, 2022\u21922023:\u2500, 2023\u21922024:\u2500, 2024\u21922025:\u2191ESC.\n\u2191Escalations=1, \u2193De-escalations=0, Total changes=1, Years at HIGH/EXTREME=0. Correct: 1.",
+      "context": {
+        "latitude": 17.25,
+        "longitude": 88.5,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.1798,
+          0.8478,
+          -0.5525,
+          0.5837,
+          -0.7157,
+          0.0165,
+          -3.1475
+        ],
+        "risk_tiers": [
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "MODERATE"
+        ],
+        "escalation_count": 1,
+        "de_escalation_count": 0
+      }
+    },
+    {
+      "id": "DR2-032",
+      "category": "domain_reasoning",
+      "subcategory": "risk_escalation_counting",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\nAn ESCALATION is a transition where risk tier rank strictly increases\n(e.g. LOW\u2192MODERATE, MODERATE\u2192HIGH, HIGH\u2192EXTREME, or LOW\u2192HIGH).\n\nCell (32.00\u00b0N, 77.75\u00b0E) \u2014 anomaly_score 2019\u20132025:\n  2019:-0.442, 2020:+0.556, 2021:+0.826, 2022:+1.803, 2023:-0.928, 2024:-1.814, 2025:-0.316\n\nApplying the schema yields:\n  2019:LOW, 2020:LOW, 2021:LOW, 2022:LOW, 2023:LOW, 2024:LOW, 2025:LOW\n\nHow many ESCALATIONS occurred across the 6 consecutive year-to-year transitions?",
+      "options": {
+        "A": "6",
+        "B": "5",
+        "C": "3",
+        "D": "0"
+      },
+      "answer": "D",
+      "explanation": "Transitions: 2019\u21922020:\u2500, 2020\u21922021:\u2500, 2021\u21922022:\u2500, 2022\u21922023:\u2500, 2023\u21922024:\u2500, 2024\u21922025:\u2500.\n\u2191Escalations=0, \u2193De-escalations=0, Total changes=0, Years at HIGH/EXTREME=0. Correct: 0.",
+      "context": {
+        "latitude": 32.0,
+        "longitude": 77.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.4424,
+          0.5562,
+          0.8256,
+          1.8033,
+          -0.9282,
+          -1.8144,
+          -0.3156
+        ],
+        "risk_tiers": [
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW"
+        ],
+        "escalation_count": 0,
+        "de_escalation_count": 0
+      }
+    },
+    {
+      "id": "DR2-033",
+      "category": "domain_reasoning",
+      "subcategory": "sign_consistency_count",
+      "difficulty": "hard",
+      "question": "Cell (21.25\u00b0N, 86.75\u00b0E) \u2014 anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:-0.313(\u2212), 2020:-0.513(\u2212), 2021:+1.898(+), 2022:-1.666(\u2212), 2023:-0.514(\u2212), 2024:+1.108(+), 2025:+0.102(+)\n\nIndia-wide mean anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+0.1354(+), 2020:+0.1464(+), 2021:+0.0152(+), 2022:+0.1030(+), 2023:-0.3792(\u2212), 2024:-0.0208(\u2212), 2025:+0.1327(+)\n\nIn how many of the 7 years did the cell anomaly sign AGREE with the national mean sign\n(both positive OR both negative)?",
+      "options": {
+        "A": "5",
+        "B": "4",
+        "C": "7",
+        "D": "3"
+      },
+      "answer": "D",
+      "explanation": "Year-by-year: 2019:DIFF, 2020:DIFF, 2021:AGREE, 2022:DIFF, 2023:AGREE, 2024:DIFF, 2025:AGREE.\nAgreements=3, Disagreements=4, Cell-positive years=3, National-positive years=5.",
+      "context": {
+        "latitude": 21.25,
+        "longitude": 86.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.3128,
+          -0.5134,
+          1.8977,
+          -1.6658,
+          -0.5137,
+          1.108,
+          0.1015
+        ],
+        "agreement_count": 3
+      }
+    },
+    {
+      "id": "DR2-034",
+      "category": "domain_reasoning",
+      "subcategory": "sign_consistency_count",
+      "difficulty": "hard",
+      "question": "Cell (15.75\u00b0N, 95.50\u00b0E) \u2014 anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:-0.832(\u2212), 2020:+1.472(+), 2021:-2.000(\u2212), 2022:-0.006(\u2212), 2023:+0.867(+), 2024:+0.498(+), 2025:-0.228(\u2212)\n\nIndia-wide mean anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+0.1354(+), 2020:+0.1464(+), 2021:+0.0152(+), 2022:+0.1030(+), 2023:-0.3792(\u2212), 2024:-0.0208(\u2212), 2025:+0.1327(+)\n\nIn how many of the 7 years did the cell anomaly sign AGREE with the national mean sign\n(both positive OR both negative)?",
+      "options": {
+        "A": "1",
+        "B": "6",
+        "C": "5",
+        "D": "3"
+      },
+      "answer": "A",
+      "explanation": "Year-by-year: 2019:DIFF, 2020:AGREE, 2021:DIFF, 2022:DIFF, 2023:DIFF, 2024:DIFF, 2025:DIFF.\nAgreements=1, Disagreements=6, Cell-positive years=3, National-positive years=5.",
+      "context": {
+        "latitude": 15.75,
+        "longitude": 95.5,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.8315,
+          1.4722,
+          -2.0002,
+          -0.0056,
+          0.8674,
+          0.4976,
+          -0.2283
+        ],
+        "agreement_count": 1
+      }
+    },
+    {
+      "id": "DR2-035",
+      "category": "domain_reasoning",
+      "subcategory": "sign_consistency_count",
+      "difficulty": "hard",
+      "question": "Cell (18.50\u00b0N, 84.00\u00b0E) \u2014 anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+0.582(+), 2020:+1.455(+), 2021:+1.226(+), 2022:-1.105(\u2212), 2023:-1.427(\u2212), 2024:-0.730(\u2212), 2025:-0.287(\u2212)\n\nIndia-wide mean anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+0.1354(+), 2020:+0.1464(+), 2021:+0.0152(+), 2022:+0.1030(+), 2023:-0.3792(\u2212), 2024:-0.0208(\u2212), 2025:+0.1327(+)\n\nIn how many of the 7 years did the cell anomaly sign AGREE with the national mean sign\n(both positive OR both negative)?",
+      "options": {
+        "A": "4",
+        "B": "3",
+        "C": "2",
+        "D": "5"
+      },
+      "answer": "D",
+      "explanation": "Year-by-year: 2019:AGREE, 2020:AGREE, 2021:AGREE, 2022:DIFF, 2023:AGREE, 2024:AGREE, 2025:DIFF.\nAgreements=5, Disagreements=2, Cell-positive years=3, National-positive years=5.",
+      "context": {
+        "latitude": 18.5,
+        "longitude": 84.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          0.582,
+          1.455,
+          1.2256,
+          -1.105,
+          -1.4273,
+          -0.7304,
+          -0.2869
+        ],
+        "agreement_count": 5
+      }
+    },
+    {
+      "id": "DR2-036",
+      "category": "domain_reasoning",
+      "subcategory": "sign_consistency_count",
+      "difficulty": "hard",
+      "question": "Cell (22.25\u00b0N, 86.00\u00b0E) \u2014 anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+0.434(+), 2020:+0.239(+), 2021:+1.131(+), 2022:+0.163(+), 2023:-0.954(\u2212), 2024:-1.013(\u2212), 2025:+2.235(+)\n\nIndia-wide mean anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+0.1354(+), 2020:+0.1464(+), 2021:+0.0152(+), 2022:+0.1030(+), 2023:-0.3792(\u2212), 2024:-0.0208(\u2212), 2025:+0.1327(+)\n\nIn how many of the 7 years did the cell anomaly sign AGREE with the national mean sign\n(both positive OR both negative)?",
+      "options": {
+        "A": "5",
+        "B": "7",
+        "C": "0",
+        "D": "4"
+      },
+      "answer": "B",
+      "explanation": "Year-by-year: 2019:AGREE, 2020:AGREE, 2021:AGREE, 2022:AGREE, 2023:AGREE, 2024:AGREE, 2025:AGREE.\nAgreements=7, Disagreements=0, Cell-positive years=5, National-positive years=5.",
+      "context": {
+        "latitude": 22.25,
+        "longitude": 86.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          0.4342,
+          0.2395,
+          1.1306,
+          0.1625,
+          -0.9535,
+          -1.0132,
+          2.2349
+        ],
+        "agreement_count": 7
+      }
+    },
+    {
+      "id": "DR2-037",
+      "category": "domain_reasoning",
+      "subcategory": "sign_consistency_count",
+      "difficulty": "hard",
+      "question": "Cell (23.50\u00b0N, 73.75\u00b0E) \u2014 anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+1.371(+), 2020:+0.216(+), 2021:-0.450(\u2212), 2022:+1.052(+), 2023:-1.980(\u2212), 2024:-0.210(\u2212), 2025:-0.279(\u2212)\n\nIndia-wide mean anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+0.1354(+), 2020:+0.1464(+), 2021:+0.0152(+), 2022:+0.1030(+), 2023:-0.3792(\u2212), 2024:-0.0208(\u2212), 2025:+0.1327(+)\n\nIn how many of the 7 years did the cell anomaly sign AGREE with the national mean sign\n(both positive OR both negative)?",
+      "options": {
+        "A": "5",
+        "B": "3",
+        "C": "1",
+        "D": "2"
+      },
+      "answer": "A",
+      "explanation": "Year-by-year: 2019:AGREE, 2020:AGREE, 2021:DIFF, 2022:AGREE, 2023:AGREE, 2024:AGREE, 2025:DIFF.\nAgreements=5, Disagreements=2, Cell-positive years=3, National-positive years=5.",
+      "context": {
+        "latitude": 23.5,
+        "longitude": 73.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          1.3714,
+          0.2164,
+          -0.45,
+          1.0518,
+          -1.98,
+          -0.2096,
+          -0.2794
+        ],
+        "agreement_count": 5
+      }
+    },
+    {
+      "id": "DR2-038",
+      "category": "domain_reasoning",
+      "subcategory": "sign_consistency_count",
+      "difficulty": "hard",
+      "question": "Cell (19.75\u00b0N, 93.00\u00b0E) \u2014 anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:-0.153(\u2212), 2020:-0.534(\u2212), 2021:-1.329(\u2212), 2022:+0.117(+), 2023:-0.056(\u2212), 2024:+1.955(+), 2025:+0.973(+)\n\nIndia-wide mean anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+0.1354(+), 2020:+0.1464(+), 2021:+0.0152(+), 2022:+0.1030(+), 2023:-0.3792(\u2212), 2024:-0.0208(\u2212), 2025:+0.1327(+)\n\nIn how many of the 7 years did the cell anomaly sign AGREE with the national mean sign\n(both positive OR both negative)?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6"
+      },
+      "answer": "A",
+      "explanation": "Year-by-year: 2019:DIFF, 2020:DIFF, 2021:DIFF, 2022:AGREE, 2023:AGREE, 2024:DIFF, 2025:AGREE.\nAgreements=3, Disagreements=4, Cell-positive years=3, National-positive years=5.",
+      "context": {
+        "latitude": 19.75,
+        "longitude": 93.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.1533,
+          -0.5337,
+          -1.3295,
+          0.117,
+          -0.0555,
+          1.955,
+          0.9732
+        ],
+        "agreement_count": 3
+      }
+    },
+    {
+      "id": "DR2-039",
+      "category": "domain_reasoning",
+      "subcategory": "sign_consistency_count",
+      "difficulty": "hard",
+      "question": "Cell (25.00\u00b0N, 80.00\u00b0E) \u2014 anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+1.207(+), 2020:-1.248(\u2212), 2021:-1.220(\u2212), 2022:+0.952(+), 2023:-0.197(\u2212), 2024:+0.506(+), 2025:+1.080(+)\n\nIndia-wide mean anomaly_score 2019\u20132025 (sign in parentheses):\n  2019:+0.1354(+), 2020:+0.1464(+), 2021:+0.0152(+), 2022:+0.1030(+), 2023:-0.3792(\u2212), 2024:-0.0208(\u2212), 2025:+0.1327(+)\n\nIn how many of the 7 years did the cell anomaly sign AGREE with the national mean sign\n(both positive OR both negative)?",
+      "options": {
+        "A": "2",
+        "B": "5",
+        "C": "4",
+        "D": "3"
+      },
+      "answer": "C",
+      "explanation": "Year-by-year: 2019:AGREE, 2020:DIFF, 2021:DIFF, 2022:AGREE, 2023:AGREE, 2024:DIFF, 2025:AGREE.\nAgreements=4, Disagreements=3, Cell-positive years=4, National-positive years=5.",
+      "context": {
+        "latitude": 25.0,
+        "longitude": 80.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          1.2073,
+          -1.2485,
+          -1.22,
+          0.9516,
+          -0.1968,
+          0.5064,
+          1.0798
+        ],
+        "agreement_count": 4
+      }
+    },
+    {
+      "id": "DR2-040",
+      "category": "domain_reasoning",
+      "subcategory": "national_statistics_ordering",
+      "difficulty": "medium",
+      "question": "India-wide yearly statistics 2019\u20132025:\n  2019: mean_anomaly=+0.1354, mean_rainfall=3.4767 mm/day, mean_max_temp=30.865\u00b0C, max_|anomaly|=5.989\n  2020: mean_anomaly=+0.1464, mean_rainfall=3.4877 mm/day, mean_max_temp=30.680\u00b0C, max_|anomaly|=11.287\n  2021: mean_anomaly=+0.0152, mean_rainfall=3.3565 mm/day, mean_max_temp=30.912\u00b0C, max_|anomaly|=5.735\n  2022: mean_anomaly=+0.1030, mean_rainfall=3.4443 mm/day, mean_max_temp=31.171\u00b0C, max_|anomaly|=12.850\n  2023: mean_anomaly=-0.3792, mean_rainfall=2.9621 mm/day, mean_max_temp=31.062\u00b0C, max_|anomaly|=11.312\n  2024: mean_anomaly=-0.0208, mean_rainfall=3.3206 mm/day, mean_max_temp=31.151\u00b0C, max_|anomaly|=10.094\n  2025: mean_anomaly=+0.1327, mean_rainfall=3.4740 mm/day, mean_max_temp=30.802\u00b0C, max_|anomaly|=11.494\n\nWhich year had the HIGHEST India-wide mean_anomaly_score?",
+      "options": {
+        "A": "2020",
+        "B": "2019",
+        "C": "2025",
+        "D": "2022"
+      },
+      "answer": "A",
+      "explanation": "mean_anomaly ranked (max): 2020:0.1464, 2019:0.1354, 2025:0.1327, 2022:0.1030, 2021:0.0152, 2024:-0.0208, 2023:-0.3792.",
+      "context": {
+        "yearly_stats": {
+          "2019": {
+            "mean_anomaly": 0.135367,
+            "mean_rainfall": 3.47668,
+            "mean_temp": 30.865413,
+            "max_abs_anomaly": 5.989103
+          },
+          "2020": {
+            "mean_anomaly": 0.146384,
+            "mean_rainfall": 3.487696,
+            "mean_temp": 30.680312,
+            "max_abs_anomaly": 11.287101
+          },
+          "2021": {
+            "mean_anomaly": 0.015166,
+            "mean_rainfall": 3.356478,
+            "mean_temp": 30.912408,
+            "max_abs_anomaly": 5.734994
+          },
+          "2022": {
+            "mean_anomaly": 0.10301,
+            "mean_rainfall": 3.444323,
+            "mean_temp": 31.171071,
+            "max_abs_anomaly": 12.850145
+          },
+          "2023": {
+            "mean_anomaly": -0.379173,
+            "mean_rainfall": 2.96214,
+            "mean_temp": 31.062242,
+            "max_abs_anomaly": 11.31209
+          },
+          "2024": {
+            "mean_anomaly": -0.020754,
+            "mean_rainfall": 3.320558,
+            "mean_temp": 31.150929,
+            "max_abs_anomaly": 10.093552
+          },
+          "2025": {
+            "mean_anomaly": 0.132651,
+            "mean_rainfall": 3.473964,
+            "mean_temp": 30.80237,
+            "max_abs_anomaly": 11.494356
+          }
+        }
+      }
+    },
+    {
+      "id": "DR2-041",
+      "category": "domain_reasoning",
+      "subcategory": "national_statistics_ordering",
+      "difficulty": "medium",
+      "question": "India-wide yearly statistics 2019\u20132025:\n  2019: mean_anomaly=+0.1354, mean_rainfall=3.4767 mm/day, mean_max_temp=30.865\u00b0C, max_|anomaly|=5.989\n  2020: mean_anomaly=+0.1464, mean_rainfall=3.4877 mm/day, mean_max_temp=30.680\u00b0C, max_|anomaly|=11.287\n  2021: mean_anomaly=+0.0152, mean_rainfall=3.3565 mm/day, mean_max_temp=30.912\u00b0C, max_|anomaly|=5.735\n  2022: mean_anomaly=+0.1030, mean_rainfall=3.4443 mm/day, mean_max_temp=31.171\u00b0C, max_|anomaly|=12.850\n  2023: mean_anomaly=-0.3792, mean_rainfall=2.9621 mm/day, mean_max_temp=31.062\u00b0C, max_|anomaly|=11.312\n  2024: mean_anomaly=-0.0208, mean_rainfall=3.3206 mm/day, mean_max_temp=31.151\u00b0C, max_|anomaly|=10.094\n  2025: mean_anomaly=+0.1327, mean_rainfall=3.4740 mm/day, mean_max_temp=30.802\u00b0C, max_|anomaly|=11.494\n\nWhich year had the LOWEST India-wide mean_anomaly_score?",
+      "options": {
+        "A": "2024",
+        "B": "2021",
+        "C": "2023",
+        "D": "2022"
+      },
+      "answer": "C",
+      "explanation": "mean_anomaly ranked (min): 2023:-0.3792, 2024:-0.0208, 2021:0.0152, 2022:0.1030, 2025:0.1327, 2019:0.1354, 2020:0.1464.",
+      "context": {
+        "yearly_stats": {
+          "2019": {
+            "mean_anomaly": 0.135367,
+            "mean_rainfall": 3.47668,
+            "mean_temp": 30.865413,
+            "max_abs_anomaly": 5.989103
+          },
+          "2020": {
+            "mean_anomaly": 0.146384,
+            "mean_rainfall": 3.487696,
+            "mean_temp": 30.680312,
+            "max_abs_anomaly": 11.287101
+          },
+          "2021": {
+            "mean_anomaly": 0.015166,
+            "mean_rainfall": 3.356478,
+            "mean_temp": 30.912408,
+            "max_abs_anomaly": 5.734994
+          },
+          "2022": {
+            "mean_anomaly": 0.10301,
+            "mean_rainfall": 3.444323,
+            "mean_temp": 31.171071,
+            "max_abs_anomaly": 12.850145
+          },
+          "2023": {
+            "mean_anomaly": -0.379173,
+            "mean_rainfall": 2.96214,
+            "mean_temp": 31.062242,
+            "max_abs_anomaly": 11.31209
+          },
+          "2024": {
+            "mean_anomaly": -0.020754,
+            "mean_rainfall": 3.320558,
+            "mean_temp": 31.150929,
+            "max_abs_anomaly": 10.093552
+          },
+          "2025": {
+            "mean_anomaly": 0.132651,
+            "mean_rainfall": 3.473964,
+            "mean_temp": 30.80237,
+            "max_abs_anomaly": 11.494356
+          }
+        }
+      }
+    },
+    {
+      "id": "DR2-042",
+      "category": "domain_reasoning",
+      "subcategory": "national_statistics_ordering",
+      "difficulty": "medium",
+      "question": "India-wide yearly statistics 2019\u20132025:\n  2019: mean_anomaly=+0.1354, mean_rainfall=3.4767 mm/day, mean_max_temp=30.865\u00b0C, max_|anomaly|=5.989\n  2020: mean_anomaly=+0.1464, mean_rainfall=3.4877 mm/day, mean_max_temp=30.680\u00b0C, max_|anomaly|=11.287\n  2021: mean_anomaly=+0.0152, mean_rainfall=3.3565 mm/day, mean_max_temp=30.912\u00b0C, max_|anomaly|=5.735\n  2022: mean_anomaly=+0.1030, mean_rainfall=3.4443 mm/day, mean_max_temp=31.171\u00b0C, max_|anomaly|=12.850\n  2023: mean_anomaly=-0.3792, mean_rainfall=2.9621 mm/day, mean_max_temp=31.062\u00b0C, max_|anomaly|=11.312\n  2024: mean_anomaly=-0.0208, mean_rainfall=3.3206 mm/day, mean_max_temp=31.151\u00b0C, max_|anomaly|=10.094\n  2025: mean_anomaly=+0.1327, mean_rainfall=3.4740 mm/day, mean_max_temp=30.802\u00b0C, max_|anomaly|=11.494\n\nWhich year had the HIGHEST India-wide mean_rainfall (mm/day)?",
+      "options": {
+        "A": "2019",
+        "B": "2025",
+        "C": "2022",
+        "D": "2020"
+      },
+      "answer": "D",
+      "explanation": "mean_rainfall ranked (max): 2020:3.4877, 2019:3.4767, 2025:3.4740, 2022:3.4443, 2021:3.3565, 2024:3.3206, 2023:2.9621.",
+      "context": {
+        "yearly_stats": {
+          "2019": {
+            "mean_anomaly": 0.135367,
+            "mean_rainfall": 3.47668,
+            "mean_temp": 30.865413,
+            "max_abs_anomaly": 5.989103
+          },
+          "2020": {
+            "mean_anomaly": 0.146384,
+            "mean_rainfall": 3.487696,
+            "mean_temp": 30.680312,
+            "max_abs_anomaly": 11.287101
+          },
+          "2021": {
+            "mean_anomaly": 0.015166,
+            "mean_rainfall": 3.356478,
+            "mean_temp": 30.912408,
+            "max_abs_anomaly": 5.734994
+          },
+          "2022": {
+            "mean_anomaly": 0.10301,
+            "mean_rainfall": 3.444323,
+            "mean_temp": 31.171071,
+            "max_abs_anomaly": 12.850145
+          },
+          "2023": {
+            "mean_anomaly": -0.379173,
+            "mean_rainfall": 2.96214,
+            "mean_temp": 31.062242,
+            "max_abs_anomaly": 11.31209
+          },
+          "2024": {
+            "mean_anomaly": -0.020754,
+            "mean_rainfall": 3.320558,
+            "mean_temp": 31.150929,
+            "max_abs_anomaly": 10.093552
+          },
+          "2025": {
+            "mean_anomaly": 0.132651,
+            "mean_rainfall": 3.473964,
+            "mean_temp": 30.80237,
+            "max_abs_anomaly": 11.494356
+          }
+        }
+      }
+    },
+    {
+      "id": "DR2-043",
+      "category": "domain_reasoning",
+      "subcategory": "national_statistics_ordering",
+      "difficulty": "medium",
+      "question": "India-wide yearly statistics 2019\u20132025:\n  2019: mean_anomaly=+0.1354, mean_rainfall=3.4767 mm/day, mean_max_temp=30.865\u00b0C, max_|anomaly|=5.989\n  2020: mean_anomaly=+0.1464, mean_rainfall=3.4877 mm/day, mean_max_temp=30.680\u00b0C, max_|anomaly|=11.287\n  2021: mean_anomaly=+0.0152, mean_rainfall=3.3565 mm/day, mean_max_temp=30.912\u00b0C, max_|anomaly|=5.735\n  2022: mean_anomaly=+0.1030, mean_rainfall=3.4443 mm/day, mean_max_temp=31.171\u00b0C, max_|anomaly|=12.850\n  2023: mean_anomaly=-0.3792, mean_rainfall=2.9621 mm/day, mean_max_temp=31.062\u00b0C, max_|anomaly|=11.312\n  2024: mean_anomaly=-0.0208, mean_rainfall=3.3206 mm/day, mean_max_temp=31.151\u00b0C, max_|anomaly|=10.094\n  2025: mean_anomaly=+0.1327, mean_rainfall=3.4740 mm/day, mean_max_temp=30.802\u00b0C, max_|anomaly|=11.494\n\nWhich year contained the grid cell with the highest single-cell |anomaly_score| nationally?",
+      "options": {
+        "A": "2025",
+        "B": "2020",
+        "C": "2023",
+        "D": "2022"
+      },
+      "answer": "D",
+      "explanation": "max_|anomaly| ranked (max): 2022:12.8501, 2025:11.4944, 2023:11.3121, 2020:11.2871, 2024:10.0936, 2019:5.9891, 2021:5.7350.",
+      "context": {
+        "yearly_stats": {
+          "2019": {
+            "mean_anomaly": 0.135367,
+            "mean_rainfall": 3.47668,
+            "mean_temp": 30.865413,
+            "max_abs_anomaly": 5.989103
+          },
+          "2020": {
+            "mean_anomaly": 0.146384,
+            "mean_rainfall": 3.487696,
+            "mean_temp": 30.680312,
+            "max_abs_anomaly": 11.287101
+          },
+          "2021": {
+            "mean_anomaly": 0.015166,
+            "mean_rainfall": 3.356478,
+            "mean_temp": 30.912408,
+            "max_abs_anomaly": 5.734994
+          },
+          "2022": {
+            "mean_anomaly": 0.10301,
+            "mean_rainfall": 3.444323,
+            "mean_temp": 31.171071,
+            "max_abs_anomaly": 12.850145
+          },
+          "2023": {
+            "mean_anomaly": -0.379173,
+            "mean_rainfall": 2.96214,
+            "mean_temp": 31.062242,
+            "max_abs_anomaly": 11.31209
+          },
+          "2024": {
+            "mean_anomaly": -0.020754,
+            "mean_rainfall": 3.320558,
+            "mean_temp": 31.150929,
+            "max_abs_anomaly": 10.093552
+          },
+          "2025": {
+            "mean_anomaly": 0.132651,
+            "mean_rainfall": 3.473964,
+            "mean_temp": 30.80237,
+            "max_abs_anomaly": 11.494356
+          }
+        }
+      }
+    },
+    {
+      "id": "DR2-044",
+      "category": "domain_reasoning",
+      "subcategory": "national_statistics_ordering",
+      "difficulty": "medium",
+      "question": "India-wide yearly statistics 2019\u20132025:\n  2019: mean_anomaly=+0.1354, mean_rainfall=3.4767 mm/day, mean_max_temp=30.865\u00b0C, max_|anomaly|=5.989\n  2020: mean_anomaly=+0.1464, mean_rainfall=3.4877 mm/day, mean_max_temp=30.680\u00b0C, max_|anomaly|=11.287\n  2021: mean_anomaly=+0.0152, mean_rainfall=3.3565 mm/day, mean_max_temp=30.912\u00b0C, max_|anomaly|=5.735\n  2022: mean_anomaly=+0.1030, mean_rainfall=3.4443 mm/day, mean_max_temp=31.171\u00b0C, max_|anomaly|=12.850\n  2023: mean_anomaly=-0.3792, mean_rainfall=2.9621 mm/day, mean_max_temp=31.062\u00b0C, max_|anomaly|=11.312\n  2024: mean_anomaly=-0.0208, mean_rainfall=3.3206 mm/day, mean_max_temp=31.151\u00b0C, max_|anomaly|=10.094\n  2025: mean_anomaly=+0.1327, mean_rainfall=3.4740 mm/day, mean_max_temp=30.802\u00b0C, max_|anomaly|=11.494\n\nWhich year had the LOWEST India-wide mean_max_temperature?",
+      "options": {
+        "A": "2025",
+        "B": "2020",
+        "C": "2019",
+        "D": "2021"
+      },
+      "answer": "B",
+      "explanation": "mean_max_temp ranked (min): 2020:30.6803, 2025:30.8024, 2019:30.8654, 2021:30.9124, 2023:31.0622, 2024:31.1509, 2022:31.1711.",
+      "context": {
+        "yearly_stats": {
+          "2019": {
+            "mean_anomaly": 0.135367,
+            "mean_rainfall": 3.47668,
+            "mean_temp": 30.865413,
+            "max_abs_anomaly": 5.989103
+          },
+          "2020": {
+            "mean_anomaly": 0.146384,
+            "mean_rainfall": 3.487696,
+            "mean_temp": 30.680312,
+            "max_abs_anomaly": 11.287101
+          },
+          "2021": {
+            "mean_anomaly": 0.015166,
+            "mean_rainfall": 3.356478,
+            "mean_temp": 30.912408,
+            "max_abs_anomaly": 5.734994
+          },
+          "2022": {
+            "mean_anomaly": 0.10301,
+            "mean_rainfall": 3.444323,
+            "mean_temp": 31.171071,
+            "max_abs_anomaly": 12.850145
+          },
+          "2023": {
+            "mean_anomaly": -0.379173,
+            "mean_rainfall": 2.96214,
+            "mean_temp": 31.062242,
+            "max_abs_anomaly": 11.31209
+          },
+          "2024": {
+            "mean_anomaly": -0.020754,
+            "mean_rainfall": 3.320558,
+            "mean_temp": 31.150929,
+            "max_abs_anomaly": 10.093552
+          },
+          "2025": {
+            "mean_anomaly": 0.132651,
+            "mean_rainfall": 3.473964,
+            "mean_temp": 30.80237,
+            "max_abs_anomaly": 11.494356
+          }
+        }
+      }
+    },
+    {
+      "id": "DR2-045",
+      "category": "domain_reasoning",
+      "subcategory": "national_statistics_ordering",
+      "difficulty": "hard",
+      "question": "India-wide mean_anomaly_score 2019\u20132025:\n  2019:+0.1354, 2020:+0.1464, 2021:+0.0152, 2022:+0.1030, 2023:-0.3792, 2024:-0.0208, 2025:+0.1327\n\nWhich year-to-year TRANSITION showed the largest POSITIVE change\n(\u0394 = value_later_year \u2212 value_earlier_year) in national mean_anomaly?",
+      "options": {
+        "A": "2024\u21922025",
+        "B": "2019\u21922020",
+        "C": "2023\u21922024",
+        "D": "2021\u21922022"
+      },
+      "answer": "C",
+      "explanation": "\u0394 by transition: 2019\u21922020:+0.0110, 2020\u21922021:-0.1312, 2021\u21922022:+0.0878, 2022\u21922023:-0.4822, 2023\u21922024:+0.3584, 2024\u21922025:+0.1534. Largest positive \u0394 at 2023\u21922024.",
+      "context": {
+        "yearly_stats": {
+          "2019": {
+            "mean_anomaly": 0.135367,
+            "mean_rainfall": 3.47668,
+            "mean_temp": 30.865413,
+            "max_abs_anomaly": 5.989103
+          },
+          "2020": {
+            "mean_anomaly": 0.146384,
+            "mean_rainfall": 3.487696,
+            "mean_temp": 30.680312,
+            "max_abs_anomaly": 11.287101
+          },
+          "2021": {
+            "mean_anomaly": 0.015166,
+            "mean_rainfall": 3.356478,
+            "mean_temp": 30.912408,
+            "max_abs_anomaly": 5.734994
+          },
+          "2022": {
+            "mean_anomaly": 0.10301,
+            "mean_rainfall": 3.444323,
+            "mean_temp": 31.171071,
+            "max_abs_anomaly": 12.850145
+          },
+          "2023": {
+            "mean_anomaly": -0.379173,
+            "mean_rainfall": 2.96214,
+            "mean_temp": 31.062242,
+            "max_abs_anomaly": 11.31209
+          },
+          "2024": {
+            "mean_anomaly": -0.020754,
+            "mean_rainfall": 3.320558,
+            "mean_temp": 31.150929,
+            "max_abs_anomaly": 10.093552
+          },
+          "2025": {
+            "mean_anomaly": 0.132651,
+            "mean_rainfall": 3.473964,
+            "mean_temp": 30.80237,
+            "max_abs_anomaly": 11.494356
+          }
+        }
+      }
+    },
+    {
+      "id": "DR2-046",
+      "category": "domain_reasoning",
+      "subcategory": "consecutive_extreme_run",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (27.50\u00b0N, 76.75\u00b0E) \u2014 anomaly_score with risk labels (2019\u20132025):\n  2019:-0.328(LOW), 2020:+1.722(LOW), 2021:+0.541(LOW), 2022:-0.048(LOW), 2023:-0.370(LOW), 2024:-1.517(LOW), 2025:+0.649(LOW)\n\nWhat is the length of the LONGEST CONSECUTIVE RUN of years\nclassified as HIGH or EXTREME (|anomaly| \u2265 5.00)?",
+      "options": {
+        "A": "1",
+        "B": "6",
+        "C": "0",
+        "D": "2"
+      },
+      "answer": "C",
+      "explanation": "HIGH/EXTREME flags: 2019:\u2014, 2020:\u2014, 2021:\u2014, 2022:\u2014, 2023:\u2014, 2024:\u2014, 2025:\u2014.\nLongest consecutive run = 0. (Total HIGH/EXTREME years = 0; longest run including MODERATE = 0; second-longest HIGH/EXTREME run = 0.)",
+      "context": {
+        "latitude": 27.5,
+        "longitude": 76.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.3276,
+          1.7225,
+          0.5406,
+          -0.0482,
+          -0.3704,
+          -1.5168,
+          0.6493
+        ],
+        "risk_tiers": [
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW"
+        ],
+        "max_consecutive_high_extreme_run": 0
+      }
+    },
+    {
+      "id": "DR2-047",
+      "category": "domain_reasoning",
+      "subcategory": "consecutive_extreme_run",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (19.25\u00b0N, 84.00\u00b0E) \u2014 anomaly_score with risk labels (2019\u20132025):\n  2019:+1.159(LOW), 2020:+0.188(LOW), 2021:+1.251(LOW), 2022:-1.006(LOW), 2023:-0.921(LOW), 2024:-0.672(LOW), 2025:-0.249(LOW)\n\nWhat is the length of the LONGEST CONSECUTIVE RUN of years\nclassified as HIGH or EXTREME (|anomaly| \u2265 5.00)?",
+      "options": {
+        "A": "2",
+        "B": "5",
+        "C": "0",
+        "D": "1"
+      },
+      "answer": "C",
+      "explanation": "HIGH/EXTREME flags: 2019:\u2014, 2020:\u2014, 2021:\u2014, 2022:\u2014, 2023:\u2014, 2024:\u2014, 2025:\u2014.\nLongest consecutive run = 0. (Total HIGH/EXTREME years = 0; longest run including MODERATE = 0; second-longest HIGH/EXTREME run = 0.)",
+      "context": {
+        "latitude": 19.25,
+        "longitude": 84.0,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          1.159,
+          0.1884,
+          1.251,
+          -1.0059,
+          -0.9208,
+          -0.6718,
+          -0.2492
+        ],
+        "risk_tiers": [
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW"
+        ],
+        "max_consecutive_high_extreme_run": 0
+      }
+    },
+    {
+      "id": "DR2-048",
+      "category": "domain_reasoning",
+      "subcategory": "consecutive_extreme_run",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (36.50\u00b0N, 76.75\u00b0E) \u2014 anomaly_score with risk labels (2019\u20132025):\n  2019:-0.904(LOW), 2020:+0.361(LOW), 2021:+1.428(LOW), 2022:-0.936(LOW), 2023:-0.484(LOW), 2024:+0.536(LOW), 2025:-0.112(LOW)\n\nWhat is the length of the LONGEST CONSECUTIVE RUN of years\nclassified as HIGH or EXTREME (|anomaly| \u2265 5.00)?",
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "1",
+        "D": "5"
+      },
+      "answer": "A",
+      "explanation": "HIGH/EXTREME flags: 2019:\u2014, 2020:\u2014, 2021:\u2014, 2022:\u2014, 2023:\u2014, 2024:\u2014, 2025:\u2014.\nLongest consecutive run = 0. (Total HIGH/EXTREME years = 0; longest run including MODERATE = 0; second-longest HIGH/EXTREME run = 0.)",
+      "context": {
+        "latitude": 36.5,
+        "longitude": 76.75,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -0.9044,
+          0.3615,
+          1.4277,
+          -0.9361,
+          -0.4844,
+          0.5357,
+          -0.1121
+        ],
+        "risk_tiers": [
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW"
+        ],
+        "max_consecutive_high_extreme_run": 0
+      }
+    },
+    {
+      "id": "DR2-049",
+      "category": "domain_reasoning",
+      "subcategory": "consecutive_extreme_run",
+      "difficulty": "hard",
+      "question": "Risk tier schema: LOW:|a|<2.00 | MODERATE:2.00\u2264|a|<5.00 | HIGH:5.00\u2264|a|<10.00 | EXTREME:|a|\u226510.00\n\nCell (25.00\u00b0N, 78.50\u00b0E) \u2014 anomaly_score with risk labels (2019\u20132025):\n  2019:-1.096(LOW), 2020:-0.989(LOW), 2021:+0.308(LOW), 2022:+0.905(LOW), 2023:+0.548(LOW), 2024:+0.324(LOW), 2025:+0.914(LOW)\n\nWhat is the length of the LONGEST CONSECUTIVE RUN of years\nclassified as HIGH or EXTREME (|anomaly| \u2265 5.00)?",
+      "options": {
+        "A": "1",
+        "B": "5",
+        "C": "3",
+        "D": "0"
+      },
+      "answer": "D",
+      "explanation": "HIGH/EXTREME flags: 2019:\u2014, 2020:\u2014, 2021:\u2014, 2022:\u2014, 2023:\u2014, 2024:\u2014, 2025:\u2014.\nLongest consecutive run = 0. (Total HIGH/EXTREME years = 0; longest run including MODERATE = 0; second-longest HIGH/EXTREME run = 0.)",
+      "context": {
+        "latitude": 25.0,
+        "longitude": 78.5,
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "anomaly_score": [
+          -1.0958,
+          -0.9887,
+          0.308,
+          0.9046,
+          0.5476,
+          0.3244,
+          0.914
+        ],
+        "risk_tiers": [
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW",
+          "LOW"
+        ],
+        "max_consecutive_high_extreme_run": 0
+      }
+    }
+  ]
+}

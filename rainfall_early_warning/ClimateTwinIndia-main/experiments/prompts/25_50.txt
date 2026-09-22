@@ -1,0 +1,1904 @@
+You are participating in a scientific benchmark.
+
+Your task is NOT to answer the multiple-choice question directly.
+
+Instead, derive the intermediate quantities required by the printed verification protocol.
+
+Carefully compute every intermediate metric from the provided climate evidence.
+
+Then output ONLY the following format exactly.
+
+Derived Values
+Metric_1 = <number>
+Metric_2 = <number>
+Metric_3 = <number>
+Decision = <SUPPORTED/REFUTED/INSUFFICIENT>
+
+Rules:
+
+- Compute the values exactly from the evidence.
+- Use decimal numbers.
+- Do not explain your reasoning.
+- Do not show calculations.
+- Do not include markdown.
+- Do not include any additional text.
+- The decision must be the semantic protocol decision (SUPPORTED, REFUTED, or INSUFFICIENT), NOT the multiple-choice option letter.
+
+Question:
+
+id,subcategory,difficulty,answer,question,Prompt
+HYP-001,persistent_regional_anomaly_verification,medium,C,"Hypothesis:
+  The 3x3 region centered at (18.75N, 83.75E) shows a persistent regional anomaly through 2021-2023.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7763
+  refute_mean_abs_p50: 0.4078
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2021_mean_abs_anomaly: 1.1589
+  year_2021_fraction_cells_above_p75: 0.8889
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.7789
+  year_2022_fraction_cells_above_p75: 0.4444
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 1.1242
+  year_2023_fraction_cells_above_p75: 0.7778
+  year_2023_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (18.75N, 83.75E) shows a persistent regional anomaly through 2021-2023.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7763
+  refute_mean_abs_p50: 0.4078
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2021_mean_abs_anomaly: 1.1589
+  year_2021_fraction_cells_above_p75: 0.8889
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.7789
+  year_2022_fraction_cells_above_p75: 0.4444
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 1.1242
+  year_2023_fraction_cells_above_p75: 0.7778
+  year_2023_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-002,persistent_regional_anomaly_verification,medium,A,"Hypothesis:
+  The 3x3 region centered at (17.25N, 93.50E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 1.6805
+  year_2022_fraction_cells_above_p75: 1.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 1.8438
+  year_2023_fraction_cells_above_p75: 0.8889
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 2.2715
+  year_2024_fraction_cells_above_p75: 1.0000
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (17.25N, 93.50E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 1.6805
+  year_2022_fraction_cells_above_p75: 1.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 1.8438
+  year_2023_fraction_cells_above_p75: 0.8889
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 2.2715
+  year_2024_fraction_cells_above_p75: 1.0000
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-003,persistent_regional_anomaly_verification,medium,B,"Hypothesis:
+  The 3x3 region centered at (17.25N, 95.00E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 1.8305
+  year_2020_fraction_cells_above_p75: 0.6667
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.8054
+  year_2021_fraction_cells_above_p75: 1.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.9982
+  year_2022_fraction_cells_above_p75: 0.7778
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (17.25N, 95.00E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 1.8305
+  year_2020_fraction_cells_above_p75: 0.6667
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.8054
+  year_2021_fraction_cells_above_p75: 1.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.9982
+  year_2022_fraction_cells_above_p75: 0.7778
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-004,persistent_regional_anomaly_verification,medium,C,"Hypothesis:
+  The 3x3 region centered at (32.00N, 75.00E) shows a persistent regional anomaly through 2023-2025.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7896
+  refute_mean_abs_p50: 0.4256
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2023_mean_abs_anomaly: 2.6112
+  year_2023_fraction_cells_above_p75: 1.0000
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 1.1584
+  year_2024_fraction_cells_above_p75: 0.7778
+  year_2024_mean_completeness: 1.0000
+  year_2025_mean_abs_anomaly: 2.4094
+  year_2025_fraction_cells_above_p75: 1.0000
+  year_2025_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (32.00N, 75.00E) shows a persistent regional anomaly through 2023-2025.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7896
+  refute_mean_abs_p50: 0.4256
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2023_mean_abs_anomaly: 2.6112
+  year_2023_fraction_cells_above_p75: 1.0000
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 1.1584
+  year_2024_fraction_cells_above_p75: 0.7778
+  year_2024_mean_completeness: 1.0000
+  year_2025_mean_abs_anomaly: 2.4094
+  year_2025_fraction_cells_above_p75: 1.0000
+  year_2025_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-005,persistent_regional_anomaly_verification,medium,C,"Hypothesis:
+  The 3x3 region centered at (18.75N, 84.50E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.8405
+  year_2022_fraction_cells_above_p75: 0.6667
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.9093
+  year_2023_fraction_cells_above_p75: 0.7778
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 1.0037
+  year_2024_fraction_cells_above_p75: 0.8889
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (18.75N, 84.50E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.8405
+  year_2022_fraction_cells_above_p75: 0.6667
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.9093
+  year_2023_fraction_cells_above_p75: 0.7778
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 1.0037
+  year_2024_fraction_cells_above_p75: 0.8889
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-006,persistent_regional_anomaly_verification,medium,C,"Hypothesis:
+  The 3x3 region centered at (17.25N, 94.00E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 1.0867
+  year_2020_fraction_cells_above_p75: 0.7778
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.0254
+  year_2021_fraction_cells_above_p75: 0.5556
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 1.3517
+  year_2022_fraction_cells_above_p75: 0.8889
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (17.25N, 94.00E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 1.0867
+  year_2020_fraction_cells_above_p75: 0.7778
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.0254
+  year_2021_fraction_cells_above_p75: 0.5556
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 1.3517
+  year_2022_fraction_cells_above_p75: 0.8889
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-007,persistent_regional_anomaly_verification,medium,A,"Hypothesis:
+  The 3x3 region centered at (30.50N, 78.50E) shows a persistent regional anomaly through 2019-2021.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7459
+  refute_mean_abs_p50: 0.4020
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2019_mean_abs_anomaly: 0.7502
+  year_2019_fraction_cells_above_p75: 0.5556
+  year_2019_mean_completeness: 1.0000
+  year_2020_mean_abs_anomaly: 1.0859
+  year_2020_fraction_cells_above_p75: 0.7778
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.1476
+  year_2021_fraction_cells_above_p75: 0.7778
+  year_2021_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (30.50N, 78.50E) shows a persistent regional anomaly through 2019-2021.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7459
+  refute_mean_abs_p50: 0.4020
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2019_mean_abs_anomaly: 0.7502
+  year_2019_fraction_cells_above_p75: 0.5556
+  year_2019_mean_completeness: 1.0000
+  year_2020_mean_abs_anomaly: 1.0859
+  year_2020_fraction_cells_above_p75: 0.7778
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.1476
+  year_2021_fraction_cells_above_p75: 0.7778
+  year_2021_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-008,persistent_regional_anomaly_verification,medium,C,"Hypothesis:
+  The 3x3 region centered at (18.00N, 84.00E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 1.1085
+  year_2020_fraction_cells_above_p75: 0.5556
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.7069
+  year_2021_fraction_cells_above_p75: 0.8889
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.9184
+  year_2022_fraction_cells_above_p75: 0.6667
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (18.00N, 84.00E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 1.1085
+  year_2020_fraction_cells_above_p75: 0.5556
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.7069
+  year_2021_fraction_cells_above_p75: 0.8889
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.9184
+  year_2022_fraction_cells_above_p75: 0.6667
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-009,persistent_regional_anomaly_verification,medium,B,"Hypothesis:
+  The 3x3 region centered at (17.00N, 93.00E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 1.3867
+  year_2022_fraction_cells_above_p75: 1.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 1.0246
+  year_2023_fraction_cells_above_p75: 0.5556
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 1.7622
+  year_2024_fraction_cells_above_p75: 1.0000
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (17.00N, 93.00E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 1.3867
+  year_2022_fraction_cells_above_p75: 1.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 1.0246
+  year_2023_fraction_cells_above_p75: 0.5556
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 1.7622
+  year_2024_fraction_cells_above_p75: 1.0000
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-010,persistent_regional_anomaly_verification,medium,A,"Hypothesis:
+  The 3x3 region centered at (19.00N, 91.50E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 0.9352
+  year_2020_fraction_cells_above_p75: 0.5556
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.3349
+  year_2021_fraction_cells_above_p75: 0.7778
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 1.6376
+  year_2022_fraction_cells_above_p75: 0.6667
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (19.00N, 91.50E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 0.9352
+  year_2020_fraction_cells_above_p75: 0.5556
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.3349
+  year_2021_fraction_cells_above_p75: 0.7778
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 1.6376
+  year_2022_fraction_cells_above_p75: 0.6667
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-011,persistent_regional_anomaly_verification,medium,A,"Hypothesis:
+  The 3x3 region centered at (23.75N, 73.50E) shows a persistent regional anomaly through 2023-2025.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7896
+  refute_mean_abs_p50: 0.4256
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2023_mean_abs_anomaly: 1.1222
+  year_2023_fraction_cells_above_p75: 0.4444
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 1.2591
+  year_2024_fraction_cells_above_p75: 0.7778
+  year_2024_mean_completeness: 1.0000
+  year_2025_mean_abs_anomaly: 1.0972
+  year_2025_fraction_cells_above_p75: 0.5556
+  year_2025_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (23.75N, 73.50E) shows a persistent regional anomaly through 2023-2025.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7896
+  refute_mean_abs_p50: 0.4256
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2023_mean_abs_anomaly: 1.1222
+  year_2023_fraction_cells_above_p75: 0.4444
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 1.2591
+  year_2024_fraction_cells_above_p75: 0.7778
+  year_2024_mean_completeness: 1.0000
+  year_2025_mean_abs_anomaly: 1.0972
+  year_2025_fraction_cells_above_p75: 0.5556
+  year_2025_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-012,persistent_regional_anomaly_verification,medium,C,"Hypothesis:
+  The 3x3 region centered at (14.75N, 79.75E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.9393
+  year_2022_fraction_cells_above_p75: 0.7778
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.8655
+  year_2023_fraction_cells_above_p75: 0.4444
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 1.4405
+  year_2024_fraction_cells_above_p75: 0.5556
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (14.75N, 79.75E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.9393
+  year_2022_fraction_cells_above_p75: 0.7778
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.8655
+  year_2023_fraction_cells_above_p75: 0.4444
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 1.4405
+  year_2024_fraction_cells_above_p75: 0.5556
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-013,persistent_regional_anomaly_verification,medium,A,"Hypothesis:
+  The 3x3 region centered at (18.75N, 85.50E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 1.4577
+  year_2020_fraction_cells_above_p75: 1.0000
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.6859
+  year_2021_fraction_cells_above_p75: 1.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.7658
+  year_2022_fraction_cells_above_p75: 0.7778
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (18.75N, 85.50E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 1.4577
+  year_2020_fraction_cells_above_p75: 1.0000
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 1.6859
+  year_2021_fraction_cells_above_p75: 1.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.7658
+  year_2022_fraction_cells_above_p75: 0.7778
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-014,persistent_regional_anomaly_verification,medium,C,"Hypothesis:
+  The 3x3 region centered at (34.00N, 78.25E) shows a persistent regional anomaly through 2019-2021.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7459
+  refute_mean_abs_p50: 0.4020
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2019_mean_abs_anomaly: 0.5759
+  year_2019_fraction_cells_above_p75: 0.2222
+  year_2019_mean_completeness: 1.0000
+  year_2020_mean_abs_anomaly: 0.1953
+  year_2020_fraction_cells_above_p75: 0.0000
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 0.7851
+  year_2021_fraction_cells_above_p75: 0.5556
+  year_2021_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (34.00N, 78.25E) shows a persistent regional anomaly through 2019-2021.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7459
+  refute_mean_abs_p50: 0.4020
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2019_mean_abs_anomaly: 0.5759
+  year_2019_fraction_cells_above_p75: 0.2222
+  year_2019_mean_completeness: 1.0000
+  year_2020_mean_abs_anomaly: 0.1953
+  year_2020_fraction_cells_above_p75: 0.0000
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 0.7851
+  year_2021_fraction_cells_above_p75: 0.5556
+  year_2021_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-015,persistent_regional_anomaly_verification,medium,B,"Hypothesis:
+  The 3x3 region centered at (20.50N, 86.75E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 0.3440
+  year_2020_fraction_cells_above_p75: 0.1111
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 0.3021
+  year_2021_fraction_cells_above_p75: 0.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.5273
+  year_2022_fraction_cells_above_p75: 0.2222
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (20.50N, 86.75E) shows a persistent regional anomaly through 2020-2022.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7440
+  refute_mean_abs_p50: 0.3916
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2020_mean_abs_anomaly: 0.3440
+  year_2020_fraction_cells_above_p75: 0.1111
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 0.3021
+  year_2021_fraction_cells_above_p75: 0.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.5273
+  year_2022_fraction_cells_above_p75: 0.2222
+  year_2022_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-016,persistent_regional_anomaly_verification,medium,A,"Hypothesis:
+  The 3x3 region centered at (18.50N, 80.75E) shows a persistent regional anomaly through 2019-2021.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7459
+  refute_mean_abs_p50: 0.4020
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2019_mean_abs_anomaly: 0.4621
+  year_2019_fraction_cells_above_p75: 0.1111
+  year_2019_mean_completeness: 1.0000
+  year_2020_mean_abs_anomaly: 0.4883
+  year_2020_fraction_cells_above_p75: 0.3333
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 0.3525
+  year_2021_fraction_cells_above_p75: 0.1111
+  year_2021_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (18.50N, 80.75E) shows a persistent regional anomaly through 2019-2021.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7459
+  refute_mean_abs_p50: 0.4020
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2019_mean_abs_anomaly: 0.4621
+  year_2019_fraction_cells_above_p75: 0.1111
+  year_2019_mean_completeness: 1.0000
+  year_2020_mean_abs_anomaly: 0.4883
+  year_2020_fraction_cells_above_p75: 0.3333
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 0.3525
+  year_2021_fraction_cells_above_p75: 0.1111
+  year_2021_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-017,persistent_regional_anomaly_verification,medium,B,"Hypothesis:
+  The 3x3 region centered at (26.50N, 83.25E) shows a persistent regional anomaly through 2021-2023.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7763
+  refute_mean_abs_p50: 0.4078
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2021_mean_abs_anomaly: 0.3500
+  year_2021_fraction_cells_above_p75: 0.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.3710
+  year_2022_fraction_cells_above_p75: 0.1111
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.2328
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (26.50N, 83.25E) shows a persistent regional anomaly through 2021-2023.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7763
+  refute_mean_abs_p50: 0.4078
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2021_mean_abs_anomaly: 0.3500
+  year_2021_fraction_cells_above_p75: 0.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.3710
+  year_2022_fraction_cells_above_p75: 0.1111
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.2328
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-018,persistent_regional_anomaly_verification,medium,B,"Hypothesis:
+  The 3x3 region centered at (26.75N, 76.00E) shows a persistent regional anomaly through 2019-2021.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7459
+  refute_mean_abs_p50: 0.4020
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2019_mean_abs_anomaly: 0.3349
+  year_2019_fraction_cells_above_p75: 0.0000
+  year_2019_mean_completeness: 1.0000
+  year_2020_mean_abs_anomaly: 0.4209
+  year_2020_fraction_cells_above_p75: 0.1111
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 0.6174
+  year_2021_fraction_cells_above_p75: 0.2222
+  year_2021_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (26.75N, 76.00E) shows a persistent regional anomaly through 2019-2021.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7459
+  refute_mean_abs_p50: 0.4020
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2019_mean_abs_anomaly: 0.3349
+  year_2019_fraction_cells_above_p75: 0.0000
+  year_2019_mean_completeness: 1.0000
+  year_2020_mean_abs_anomaly: 0.4209
+  year_2020_fraction_cells_above_p75: 0.1111
+  year_2020_mean_completeness: 1.0000
+  year_2021_mean_abs_anomaly: 0.6174
+  year_2021_fraction_cells_above_p75: 0.2222
+  year_2021_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-019,persistent_regional_anomaly_verification,medium,B,"Hypothesis:
+  The 3x3 region centered at (35.25N, 78.50E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.4325
+  year_2022_fraction_cells_above_p75: 0.2222
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.3032
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 0.1776
+  year_2024_fraction_cells_above_p75: 0.0000
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (35.25N, 78.50E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.4325
+  year_2022_fraction_cells_above_p75: 0.2222
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.3032
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 0.1776
+  year_2024_fraction_cells_above_p75: 0.0000
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-020,persistent_regional_anomaly_verification,medium,A,"Hypothesis:
+  The 3x3 region centered at (20.50N, 73.50E) shows a persistent regional anomaly through 2021-2023.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7763
+  refute_mean_abs_p50: 0.4078
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2021_mean_abs_anomaly: 0.2089
+  year_2021_fraction_cells_above_p75: 0.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.1712
+  year_2022_fraction_cells_above_p75: 0.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.1915
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (20.50N, 73.50E) shows a persistent regional anomaly through 2021-2023.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7763
+  refute_mean_abs_p50: 0.4078
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2021_mean_abs_anomaly: 0.2089
+  year_2021_fraction_cells_above_p75: 0.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.1712
+  year_2022_fraction_cells_above_p75: 0.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.1915
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-021,persistent_regional_anomaly_verification,medium,B,"Hypothesis:
+  The 3x3 region centered at (9.50N, 76.25E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.1445
+  year_2022_fraction_cells_above_p75: 0.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.2254
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 0.2699
+  year_2024_fraction_cells_above_p75: 0.0000
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (9.50N, 76.25E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.1445
+  year_2022_fraction_cells_above_p75: 0.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.2254
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 0.2699
+  year_2024_fraction_cells_above_p75: 0.0000
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-022,persistent_regional_anomaly_verification,medium,A,"Hypothesis:
+  The 3x3 region centered at (10.00N, 79.25E) shows a persistent regional anomaly through 2021-2023.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7763
+  refute_mean_abs_p50: 0.4078
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2021_mean_abs_anomaly: 0.1474
+  year_2021_fraction_cells_above_p75: 0.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.1542
+  year_2022_fraction_cells_above_p75: 0.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.1321
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (10.00N, 79.25E) shows a persistent regional anomaly through 2021-2023.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7763
+  refute_mean_abs_p50: 0.4078
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2021_mean_abs_anomaly: 0.1474
+  year_2021_fraction_cells_above_p75: 0.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.1542
+  year_2022_fraction_cells_above_p75: 0.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.1321
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-023,persistent_regional_anomaly_verification,medium,A,"Hypothesis:
+  The 3x3 region centered at (28.75N, 80.00E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.2056
+  year_2022_fraction_cells_above_p75: 0.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.1695
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 0.1869
+  year_2024_fraction_cells_above_p75: 0.0000
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (28.75N, 80.00E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.2056
+  year_2022_fraction_cells_above_p75: 0.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.1695
+  year_2023_fraction_cells_above_p75: 0.0000
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 0.1869
+  year_2024_fraction_cells_above_p75: 0.0000
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-024,persistent_regional_anomaly_verification,medium,B,"Hypothesis:
+  The 3x3 region centered at (17.75N, 79.25E) shows a persistent regional anomaly through 2021-2023.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7763
+  refute_mean_abs_p50: 0.4078
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2021_mean_abs_anomaly: 0.2083
+  year_2021_fraction_cells_above_p75: 0.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.2931
+  year_2022_fraction_cells_above_p75: 0.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.6189
+  year_2023_fraction_cells_above_p75: 0.3333
+  year_2023_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (17.75N, 79.25E) shows a persistent regional anomaly through 2021-2023.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7763
+  refute_mean_abs_p50: 0.4078
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2021_mean_abs_anomaly: 0.2083
+  year_2021_fraction_cells_above_p75: 0.0000
+  year_2021_mean_completeness: 1.0000
+  year_2022_mean_abs_anomaly: 0.2931
+  year_2022_fraction_cells_above_p75: 0.0000
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.6189
+  year_2023_fraction_cells_above_p75: 0.3333
+  year_2023_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"
+HYP-025,persistent_regional_anomaly_verification,medium,B,"Hypothesis:
+  The 3x3 region centered at (24.00N, 81.00E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.4800
+  year_2022_fraction_cells_above_p75: 0.2222
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.3991
+  year_2023_fraction_cells_above_p75: 0.1111
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 0.3636
+  year_2024_fraction_cells_above_p75: 0.2222
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?","Hypothesis:
+  The 3x3 region centered at (24.00N, 81.00E) shows a persistent regional anomaly through 2022-2024.
+
+Decision protocol (all thresholds are derived from this dataset and printed below):
+For each target year, three metrics are reported: regional mean |anomaly_score|, fraction of cells above the yearly P75 |anomaly_score| threshold, and mean completeness.
+Identify the weakest year by finding the minimum value across all years for each metric.
+SUPPORTED if the minimum regional mean |anomaly_score| is at least the printed support_mean_abs_p75 threshold, the minimum fraction above P75 is at least support_fraction_above_p75, and the minimum mean completeness is at least support_completeness_p10.
+REFUTED if the minimum regional mean |anomaly_score| is at or below refute_mean_abs_p50, or the minimum fraction above P75 is at or below refute_fraction_above_p75, or any yearly mean completeness falls below support_completeness_p10.
+INSUFFICIENT otherwise.
+
+Thresholds:
+  support_mean_abs_p75: 0.7226
+  refute_mean_abs_p50: 0.3832
+  support_fraction_above_p75: 0.2500
+  refute_fraction_above_p75: 0.0000
+  support_completeness_p10: 1.0000
+
+Computed evidence for the target region:
+  year_2022_mean_abs_anomaly: 0.4800
+  year_2022_fraction_cells_above_p75: 0.2222
+  year_2022_mean_completeness: 1.0000
+  year_2023_mean_abs_anomaly: 0.3991
+  year_2023_fraction_cells_above_p75: 0.1111
+  year_2023_mean_completeness: 1.0000
+  year_2024_mean_abs_anomaly: 0.3636
+  year_2024_fraction_cells_above_p75: 0.2222
+  year_2024_mean_completeness: 1.0000
+
+Under the protocol, how should the hypothesis be adjudicated?
+
+
+IMPORTANT
+
+Before selecting A, B or C you MUST compute every intermediate value required by the protocol.
+
+Return EXACTLY this format.
+
+Derived Values
+Metric_1 = ...
+Metric_2 = ...
+Metric_3 = ...
+
+Decision = A/B/C
+
+Do not explain anything else.
+
+"

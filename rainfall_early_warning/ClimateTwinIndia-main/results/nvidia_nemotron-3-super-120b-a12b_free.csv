@@ -1,0 +1,202 @@
+id,response
+HYP-001,"Derived Values
+Metric_1 = 0.7789
+Metric_2 = 0.4444
+Metric_3 = 1.0000
+Decision = A"
+HYP-002,"Derived Values
+Metric_1 = 1.6805
+Metric_2 = 0.8889
+Metric_3 = 1.0000
+Decision = A"
+HYP-003,"Derived Values
+Metric_1 = 0.9982
+Metric_2 = 0.6667
+Metric_3 = 1.0000
+Decision = A"
+HYP-004,"Derived Values
+Metric_1 = 1.1584
+Metric_2 = 0.7778
+Metric_3 = 1.0000
+Decision = A"
+HYP-005,"Derived Values
+Metric_1 = 0.8405
+Metric_2 = 0.6667
+Metric_3 = 1.0000
+Decision = A"
+HYP-006,"Derived Values
+Metric_1 = 1.0254
+Metric_2 = 0.5556
+Metric_3 = 1.0000
+Decision = A"
+HYP-007,"Derived Values
+Metric_1 = 0.7502
+Metric_2 = 0.5556
+Metric_3 = 1.0000
+Decision = A"
+HYP-008,"Derived Values
+Metric_1 = 0.9184
+Metric_2 = 0.5556
+Metric_3 = 1.0000
+Decision = A"
+HYP-009,"Derived Values
+Metric_1 = 1.0246
+Metric_2 = 0.5556
+Metric_3 = 1.0000
+Decision = A"
+HYP-010,"Derived Values
+Metric_1 = 0.9352
+Metric_2 = 0.5556
+Metric_3 = 1.0000
+Decision = A"
+HYP-011,"Derived Values
+Metric_1 = 1.0972
+Metric_2 = 0.4444
+Metric_3 = 1.0000
+Decision = A"
+HYP-012,"Derived Values
+Metric_1 = 0.8655
+Metric_2 = 0.4444
+Metric_3 = 1.0000
+
+Decision = A"
+HYP-013,"Derived Values
+Metric_1 = 0.7658
+Metric_2 = 0.7778
+Metric_3 = 1.0000
+Decision = A"
+HYP-014,"Derived Values
+Metric_1 = 0.1953
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = B"
+HYP-015,"Derived Values
+Metric_1 = 0.3021
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = B"
+HYP-016,"Derived Values
+Metric_1 = 0.3525
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = B"
+HYP-017,"Derived Values
+Metric_1 = 0.2328
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = B"
+HYP-018,"Derived Values
+Metric_1 = 0.3349
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = C"
+HYP-019,"Derived Values
+Metric_1 = 0.1776
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = C"
+HYP-020,"Derived Values
+Metric_1 = 0.1712
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = B"
+HYP-021,"Derived Values
+Metric_1 = 0.1445
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = C"
+HYP-022,"Derived Values
+Metric_1 = 0.1321
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = C"
+HYP-023,"Derived Values
+Metric_1 = 0.1695
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = C"
+HYP-024,"Derived Values
+Metric_1 = 0.2083
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = B"
+HYP-025,"Derived Values
+Metric_1 = 0.3636
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = B"
+HYP-026,"Derived Values
+Metric_1 = 0.1962
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = C"
+HYP-027,"Derived Values
+Metric_1 = 0.7209
+Metric_2 = 0.4444
+Metric_3 = 1.0000
+Decision = C"
+HYP-028,"Derived Values
+Metric_1 = 0.5149
+Metric_2 = 0.3333
+Metric_3 = 1.0000
+Decision = C"
+HYP-029,"Derived Values
+Metric_1 = 0.5112
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = C"
+HYP-030,"Derived Values
+Metric_1 = 0.4902
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = C"
+HYP-031,"Derived Values
+Metric_1 = 0.4137
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = C"
+HYP-032,"Derived Values
+Metric_1 = 0.4958
+Metric_2 = 0.2222
+Metric_3 = 1.0000
+Decision = C"
+HYP-033,"Derived Values
+Metric_1 = 0.3983
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = C"
+HYP-034,"Derived Values
+Metric_1 = 0.4591
+Metric_2 = 0.2222
+Metric_3 = 1.0000
+Decision = C"
+HYP-035,"Derived Values
+Metric_1 = 0.3877
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = C"
+HYP-036,"Derived Values
+Metric_1 = 0.8806
+Metric_2 = 0.2222
+Metric_3 = 1.0000
+Decision = C"
+HYP-037,"Derived Values
+Metric_1 = 0.4648
+Metric_2 = 0.3333
+Metric_3 = 1.0000
+Decision = C"
+HYP-038,"Derived Values
+Metric_1 = 0.5642
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = C"
+HYP-039,"Derived Values
+Metric_1 = 0.4631
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = C"
+HYP-040,"Derived Values
+Metric_1 = 0.4907
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = C"

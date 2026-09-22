@@ -23,23 +23,6 @@ import { RISK_HEX, fractionToPercent, riskColor } from '../../utils/risk'
 
 const CENTER: [number, number] = [26.1445, 91.7362]
 
-/**
- * Seamless self-generated command-center grid, drawn as a data-URI SVG.
- * No external tile providers — the demo works fully offline.
- */
-const GRID_TILE =
-  'data:image/svg+xml;charset=utf-8,' +
-  encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
-      <defs><pattern id="g" width="64" height="64" patternUnits="userSpaceOnUse">
-        <path d="M0 .6H256M.6 0V256" fill="none" stroke="#7ec4ec" stroke-opacity="0.06" stroke-width="1"/>
-      </pattern></defs>
-      <rect width="256" height="256" fill="#071726"/>
-      <rect width="256" height="256" fill="url(#g)"/>
-      <circle cx="0" cy="256" r="200" fill="#0c2a45" fill-opacity="0.16"/>
-      <circle cx="256" cy="0" r="220" fill="#09233c" fill-opacity="0.12"/>
-    </svg>`,
-  )
 
 /** Approximate Brahmaputra alignment — purely illustrative. */
 const RIVER: [number, number][] = [
@@ -299,9 +282,10 @@ export function WeatherMap({ height = 560, className = '' }: WeatherMapProps) {
         className="map-container"
       >
         <TileLayer
-          url={GRID_TILE}
-          tileSize={256}
-          attribution="AquaSentinel · NEXORA — mock data"
+          url="https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
+          subdomains={['0', '1', '2', '3']}
+          maxZoom={20}
+          attribution="© Google Maps"
         />
 
         {/* Ambience — Brahmaputra corridor + selected city */}

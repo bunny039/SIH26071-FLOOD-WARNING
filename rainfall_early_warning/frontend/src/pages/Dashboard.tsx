@@ -7,8 +7,10 @@ import {
   RotateCw,
   Activity,
   ShieldCheck,
-  TrendingUp
+  TrendingUp,
+  Map
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import {
   ResponsiveContainer,
   AreaChart,
@@ -19,6 +21,7 @@ import {
   CartesianGrid
 } from 'recharts'
 import { WeatherMap } from '../components/maps/WeatherMap'
+import { CurrentWeatherCard } from '../components/cards/CurrentWeatherCard'
 import { runModelPrediction, getSupportedLocations } from '../services/api'
 import type { BackendPredictionResponse, RiskLevel } from '../types'
 
@@ -51,6 +54,13 @@ export function Dashboard() {
   const [loading, setLoading] = useState(false)
   const [errorMsg, setErrorMsg] = useState<string | null>(null)
   const [prediction, setPrediction] = useState<BackendPredictionResponse | null>(null)
+
+  const activeLocation = locations.find((l) => l.name === selectedLocation) || {
+    name: selectedLocation,
+    lat: 20.2961,
+    lon: 85.8245,
+    state: 'Odisha',
+  }
 
   // Fetch supported locations on mount
   useEffect(() => {
@@ -180,6 +190,14 @@ export function Dashboard() {
             {isDemoMode ? 'DEMO DATA ACTIVE' : 'LIVE MODEL ENGINE'}
           </div>
 
+          <Link
+            to="/weather-map"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-cyan-500/40 bg-cyan-500/10 px-3 py-1.5 text-xs font-semibold text-cyan-300 hover:bg-cyan-500/20 hover:border-cyan-400 transition-colors"
+          >
+            <Map size={13} />
+            India Weather Map
+          </Link>
+
           <button
             onClick={fetchPrediction}
             disabled={loading}
@@ -246,6 +264,9 @@ export function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* ---------------- Current Live Atmospheric Weather Conditions ---------------- */}
+      <CurrentWeatherCard location={activeLocation} />
 
       {/* ---------------- Risk Status Card & Highlights ---------------- */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -339,7 +360,9 @@ export function Dashboard() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-slate-400">Model Architecture:</span>
-              <span className="font-semibold text-cyan-300">U-Net 2D CNN (9.19M params)</span>
+              <span className="font-semibold text-cyan-300 truncate max-w-[220px]" title={prediction?.model_name ?? 'ConvLSTM Spatio-Temporal Forecaster'}>
+                {prediction?.model_name ?? 'ConvLSTM Spatio-Temporal Forecaster'}
+              </span>
             </div>
             <div className="flex justify-between items-center border-t border-slate-800 pt-2">
               <span className="text-slate-400">Warning Category:</span>

@@ -1,0 +1,23 @@
+{
+  "phase": "1.5",
+  "diagnostic": "alpha_1_0_canonical_decision_boundary",
+  "source": "E:\\ClimateTwinIndia\\experiments\\experiment_05_derivation\\results\\margin_sensitivity\\question_level_sensitivity.csv",
+  "n_metric_error_observations": 245,
+  "frozen_alpha_grid": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    0.9,
+    0.95,
+    0.99
+  ],
+  "alpha_099_gt_decision_changes": 0,
+  "alpha_1_0_present_in_frozen_artifact": false,
+  "alpha_1_0_gt_decision_changes_reproducible_from_frozen_csv": false,
+  "historical_alpha_1_0_claim": 222,
+  "historical_alpha_1_0_denominator": 245,
+  "historical_claim_status": "UNVERIFIED_FROM_FROZEN_CSV",
+  "reason": "The frozen question-level sensitivity CSV does not contain alpha=1.0 rows or sufficient metric/threshold state to reconstruct the canonical oracle at alpha=1.0. Therefore the historical 222/245 figure must not be treated as independently reproduced by this artifact."
+}

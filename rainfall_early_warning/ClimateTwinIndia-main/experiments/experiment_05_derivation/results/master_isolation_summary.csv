@@ -1,0 +1,6 @@
+Model,Questions,Protocol Recovery (%),Metric Accuracy (%),Metric Errors,Absorbed,Propagated,Absorption Rate (%),Propagation Rate (%)
+Claude,240,100.0,97.92,5,5,0,100.0,0.0
+Claude Opus,240,100.0,98.75,3,3,0,100.0,0.0
+Gemini,240,100.0,100.0,0,0,0,0.0,0.0
+Deepseek,240,99.58,92.92,17,16,1,94.12,5.88
+Gpt,240,42.92,4.17,230,93,137,40.43,59.57

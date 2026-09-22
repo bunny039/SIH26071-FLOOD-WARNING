@@ -1,0 +1,1679 @@
+HYP-001
+Derived Values
+Metric_1 = 0.7789
+Metric_2 = 0.4444
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-002
+Derived Values
+Metric_1 = 1.6805
+Metric_2 = 0.8889
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-003
+Derived Values
+Metric_1 = 0.9982
+Metric_2 = 0.6667
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-004
+Derived Values
+Metric_1 = 1.1584
+Metric_2 = 0.7778
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-005
+Derived Values
+Metric_1 = 0.8405
+Metric_2 = 0.6667
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-006
+Derived Values
+Metric_1 = 1.0254
+Metric_2 = 0.5556
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-007
+Derived Values
+Metric_1 = 0.7502
+Metric_2 = 0.5556
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-008
+Derived Values
+Metric_1 = 0.9184
+Metric_2 = 0.5556
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-009
+Derived Values
+Metric_1 = 1.0246
+Metric_2 = 0.5556
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-010
+Derived Values
+Metric_1 = 0.9352
+Metric_2 = 0.5556
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-011
+Derived Values
+Metric_1 = 1.0972
+Metric_2 = 0.4444
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-012
+Derived Values
+Metric_1 = 0.8655
+Metric_2 = 0.4444
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-013
+Derived Values
+Metric_1 = 0.7658
+Metric_2 = 0.7778
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-014
+Derived Values
+Metric_1 = 0.1953
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-015
+Derived Values
+Metric_1 = 0.3021
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-016
+Derived Values
+Metric_1 = 0.3525
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-017
+Derived Values
+Metric_1 = 0.2328
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-018
+Derived Values
+Metric_1 = 0.3349
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-019
+Derived Values
+Metric_1 = 0.1776
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-020
+Derived Values
+Metric_1 = 0.1712
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-021
+Derived Values
+Metric_1 = 0.1445
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-022
+Derived Values
+Metric_1 = 0.1321
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-023
+Derived Values
+Metric_1 = 0.1695
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-024
+Derived Values
+Metric_1 = 0.2083
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-025
+Derived Values
+Metric_1 = 0.3636
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-026
+Derived Values
+Metric_1 = 0.1962
+Metric_2 = 0.0000
+Metric_3 = 1.0000
+Decision = REFUTED
+
+HYP-027
+Derived Values
+Metric_1 = 0.7209
+Metric_2 = 0.4444
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-028
+Derived Values
+Metric_1 = 0.5149
+Metric_2 = 0.3333
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-029
+Derived Values
+Metric_1 = 0.5112
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-030
+Derived Values
+Metric_1 = 0.4902
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-031
+Derived Values
+Metric_1 = 0.4137
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-032
+Derived Values
+Metric_1 = 0.4958
+Metric_2 = 0.2222
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-033
+Derived Values
+Metric_1 = 0.3983
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-034
+Derived Values
+Metric_1 = 0.4591
+Metric_2 = 0.2222
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-035
+Derived Values
+Metric_1 = 0.3877
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-036
+Derived Values
+Metric_1 = 0.8806
+Metric_2 = 0.2222
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-037
+Derived Values
+Metric_1 = 0.4648
+Metric_2 = 0.3333
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-038
+Derived Values
+Metric_1 = 0.5642
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-039
+Derived Values
+Metric_1 = 0.4631
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-040
+Derived Values
+Metric_1 = 0.4907
+Metric_2 = 0.1111
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-041
+Derived Values
+Metric_1 = 0.8476
+Metric_2 = 0.4388
+Metric_3 = 1.9395
+Decision = SUPPORTED
+
+HYP-042
+Derived Values
+Metric_1 = 0.0936
+Metric_2 = 0.2593
+Metric_3 = 0.3405
+Decision = SUPPORTED
+
+HYP-043
+Derived Values
+Metric_1 = 0.2429
+Metric_2 = 0.1935
+Metric_3 = 0.4704
+Decision = SUPPORTED
+
+HYP-044
+Derived Values
+Metric_1 = 1.2485
+Metric_2 = 0.3910
+Metric_3 = 2.5151
+Decision = SUPPORTED
+
+HYP-045
+Derived Values
+Metric_1 = 0.1536
+Metric_2 = 0.1522
+Metric_3 = 0.6319
+Decision = SUPPORTED
+
+HYP-046
+Derived Values
+Metric_1 = 0.6393
+Metric_2 = 0.2146
+Metric_3 = 0.6393
+Decision = SUPPORTED
+
+HYP-047
+Derived Values
+Metric_1 = 0.7100
+Metric_2 = 0.3229
+Metric_3 = 0.8739
+Decision = SUPPORTED
+
+HYP-048
+Derived Values
+Metric_1 = 0.5113
+Metric_2 = 0.1598
+Metric_3 = 0.8767
+Decision = SUPPORTED
+
+HYP-049
+Derived Values
+Metric_1 = 0.4475
+Metric_2 = 0.2384
+Metric_3 = 0.8936
+Decision = SUPPORTED
+
+HYP-050
+Derived Values
+Metric_1 = 0.8492
+Metric_2 = 0.4319
+Metric_3 = 1.6101
+Decision = SUPPORTED
+
+HYP-051
+Derived Values
+Metric_1 = 0.3531
+Metric_2 = 0.1389
+Metric_3 = 0.3938
+Decision = SUPPORTED
+
+HYP-052
+Derived Values
+Metric_1 = 0.5673
+Metric_2 = 0.3189
+Metric_3 = 0.5130
+Decision = SUPPORTED
+
+HYP-053
+Derived Values
+Metric_1 = 0.3645
+Metric_2 = 0.1913
+Metric_3 = 0.6594
+Decision = SUPPORTED
+
+HYP-054
+Derived Values
+Metric_1 = -0.6032
+Metric_2 = 0.0738
+Metric_3 = -0.7023
+Decision = REFUTED
+
+HYP-055
+Derived Values
+Metric_1 = -0.1167
+Metric_2 = -0.1446
+Metric_3 = 0.7049
+Decision = REFUTED
+
+HYP-056
+Derived Values
+Metric_1 = 0.2470
+Metric_2 = -0.0173
+Metric_3 = -1.9459
+Decision = REFUTED
+
+HYP-057
+Derived Values
+Metric_1 = -0.2749
+Metric_2 = -0.0312
+Metric_3 = -0.7381
+Decision = REFUTED
+
+HYP-058
+Derived Values
+Metric_1 = 0.8236
+Metric_2 = 0.3229
+Metric_3 = -1.0421
+Decision = REFUTED
+
+HYP-059
+Derived Values
+Metric_1 = 0.0760
+Metric_2 = -0.1506
+Metric_3 = 1.1015
+Decision = REFUTED
+
+HYP-060
+Derived Values
+Metric_1 = -0.4800
+Metric_2 = -0.3807
+Metric_3 = -0.5297
+Decision = REFUTED
+
+HYP-061
+Derived Values
+Metric_1 = -0.2618
+Metric_2 = 0.2291
+Metric_3 = -2.1008
+Decision = REFUTED
+
+HYP-062
+Derived Values
+Metric_1 = 0.0651
+Metric_2 = -0.0714
+Metric_3 = -0.6109
+Decision = REFUTED
+
+HYP-063
+Derived Values
+Metric_1 = -0.2166
+Metric_2 = -0.1236
+Metric_3 = 0.7035
+Decision = REFUTED
+
+HYP-064
+Derived Values
+Metric_1 = 0.0319
+Metric_2 = 0.0918
+Metric_3 = -0.7691
+Decision = REFUTED
+
+HYP-065
+Derived Values
+Metric_1 = 1.1128
+Metric_2 = 0.0445
+Metric_3 = -2.2956
+Decision = REFUTED
+
+HYP-066
+Derived Values
+Metric_1 = -0.0958
+Metric_2 = -0.1211
+Metric_3 = -1.3768
+Decision = REFUTED
+
+HYP-067
+Derived Values
+Metric_1 = -0.1461
+Metric_2 = 0.0685
+Metric_3 = -0.1405
+Decision = INSUFFICIENT
+
+HYP-068
+Derived Values
+Metric_1 = 0.3092
+Metric_2 = 0.1714
+Metric_3 = -0.3979
+Decision = INSUFFICIENT
+
+HYP-069
+Derived Values
+Metric_1 = 0.1647
+Metric_2 = 0.0530
+Metric_3 = 0.1456
+Decision = INSUFFICIENT
+
+HYP-070
+Derived Values
+Metric_1 = -0.0615
+Metric_2 = -0.0061
+Metric_3 = 0.0615
+Decision = INSUFFICIENT
+
+HYP-071
+Derived Values
+Metric_1 = 0.4724
+Metric_2 = 0.0566
+Metric_3 = 0.4724
+Decision = INSUFFICIENT
+
+HYP-072
+Derived Values
+Metric_1 = 0.0451
+Metric_2 = 0.0647
+Metric_3 = 0.3635
+Decision = INSUFFICIENT
+
+HYP-073
+Derived Values
+Metric_1 = 0.5008
+Metric_2 = 0.0256
+Metric_3 = 0.6452
+Decision = INSUFFICIENT
+
+HYP-074
+Derived Values
+Metric_1 = -0.1024
+Metric_2 = -0.0279
+Metric_3 = 0.1446
+Decision = INSUFFICIENT
+
+HYP-075
+Derived Values
+Metric_1 = 0.5428
+Metric_2 = 0.0748
+Metric_3 = 1.1939
+Decision = INSUFFICIENT
+
+HYP-076
+Derived Values
+Metric_1 = 0.0653
+Metric_2 = 0.0477
+Metric_3 = 0.0233
+Decision = INSUFFICIENT
+
+HYP-077
+Derived Values
+Metric_1 = 0.1160
+Metric_2 = 0.2437
+Metric_3 = -0.2990
+Decision = INSUFFICIENT
+
+HYP-078
+Derived Values
+Metric_1 = -0.0153
+Metric_2 = -0.0097
+Metric_3 = 0.1791
+Decision = INSUFFICIENT
+
+HYP-079
+Derived Values
+Metric_1 = -0.0417
+Metric_2 = -0.0057
+Metric_3 = -0.2983
+Decision = INSUFFICIENT
+
+HYP-080
+Derived Values
+Metric_1 = -0.3448
+Metric_2 = -0.2905
+Metric_3 = 0.7874
+Decision = REFUTED
+
+HYP-081
+Derived Values
+Metric_1 = 0.7791
+Metric_2 = 0.8457
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-082
+Derived Values
+Metric_1 = 0.7202
+Metric_2 = 0.8183
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-083
+Derived Values
+Metric_1 = 0.5204
+Metric_2 = 0.6051
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-084
+Derived Values
+Metric_1 = 0.7458
+Metric_2 = 0.7287
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-085
+Derived Values
+Metric_1 = 0.9094
+Metric_2 = 1.3012
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-086
+Derived Values
+Metric_1 = 1.6814
+Metric_2 = 2.1588
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-087
+Derived Values
+Metric_1 = 1.3726
+Metric_2 = 3.0657
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-088
+Derived Values
+Metric_1 = 0.6100
+Metric_2 = 0.9651
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-089
+Derived Values
+Metric_1 = 1.2494
+Metric_2 = 1.8369
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-090
+Derived Values
+Metric_1 = 0.9116
+Metric_2 = 1.6278
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-091
+Derived Values
+Metric_1 = 0.9252
+Metric_2 = 2.2828
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-092
+Derived Values
+Metric_1 = 0.7230
+Metric_2 = 0.6161
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-093
+Derived Values
+Metric_1 = 0.8245
+Metric_2 = 1.5204
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-094
+Derived Values
+Metric_1 = -0.6167
+Metric_2 = -0.1898
+Metric_3 = 0.3333
+Decision = REFUTED
+
+HYP-095
+Derived Values
+Metric_1 = -1.0204
+Metric_2 = -0.3487
+Metric_3 = 0.3333
+Decision = REFUTED
+
+HYP-096
+Derived Values
+Metric_1 = -1.3372
+Metric_2 = -2.8633
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-097
+Derived Values
+Metric_1 = -0.8618
+Metric_2 = 0.0465
+Metric_3 = 0.6667
+Decision = REFUTED
+
+HYP-098
+Derived Values
+Metric_1 = -0.8106
+Metric_2 = -2.7530
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-099
+Derived Values
+Metric_1 = -0.3649
+Metric_2 = -0.1940
+Metric_3 = 0.3333
+Decision = REFUTED
+
+HYP-100
+Derived Values
+Metric_1 = -0.5104
+Metric_2 = 0.3196
+Metric_3 = 0.7778
+Decision = REFUTED
+
+HYP-101
+Derived Values
+Metric_1 = -0.4986
+Metric_2 = -1.0719
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-102
+Derived Values
+Metric_1 = -0.7443
+Metric_2 = -0.4206
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-103
+Derived Values
+Metric_1 = -3.5745
+Metric_2 = -3.4021
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-104
+Derived Values
+Metric_1 = -1.2351
+Metric_2 = 0.2776
+Metric_3 = 0.7778
+Decision = REFUTED
+
+HYP-105
+Derived Values
+Metric_1 = -0.5523
+Metric_2 = -1.0218
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-106
+Derived Values
+Metric_1 = -0.3885
+Metric_2 = -0.0529
+Metric_3 = 0.2222
+Decision = REFUTED
+
+HYP-107
+Derived Values
+Metric_1 = 0.0959
+Metric_2 = 0.1681
+Metric_3 = 0.6667
+Decision = INSUFFICIENT
+
+HYP-108
+Derived Values
+Metric_1 = 0.1935
+Metric_2 = 0.1693
+Metric_3 = 0.7778
+Decision = INSUFFICIENT
+
+HYP-109
+Derived Values
+Metric_1 = -0.1429
+Metric_2 = -0.3607
+Metric_3 = 0.3333
+Decision = INSUFFICIENT
+
+HYP-110
+Derived Values
+Metric_1 = 0.2872
+Metric_2 = 1.4457
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-111
+Derived Values
+Metric_1 = -0.1418
+Metric_2 = -0.2555
+Metric_3 = 0.3333
+Decision = INSUFFICIENT
+
+HYP-112
+Derived Values
+Metric_1 = -0.2314
+Metric_2 = -0.5987
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-113
+Derived Values
+Metric_1 = -0.6313
+Metric_2 = -0.5437
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-114
+Derived Values
+Metric_1 = 0.0782
+Metric_2 = -1.2704
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-115
+Derived Values
+Metric_1 = 0.1343
+Metric_2 = 0.0039
+Metric_3 = 0.4444
+Decision = INSUFFICIENT
+
+HYP-116
+Derived Values
+Metric_1 = -0.2341
+Metric_2 = -0.0397
+Metric_3 = 0.4444
+Decision = INSUFFICIENT
+
+HYP-117
+Derived Values
+Metric_1 = -0.1721
+Metric_2 = -0.4005
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-118
+Derived Values
+Metric_1 = 0.0614
+Metric_2 = 0.1626
+Metric_3 = 0.5556
+Decision = INSUFFICIENT
+
+HYP-119
+Derived Values
+Metric_1 = -0.0695
+Metric_2 = -0.0681
+Metric_3 = 0.2222
+Decision = INSUFFICIENT
+
+HYP-120
+Derived Values
+Metric_1 = 1.0018
+Metric_2 = 1.0144
+Metric_3 = 0.7778
+Decision = INSUFFICIENT
+
+HYP-121
+Derived Values
+Metric_1 = 0.4387
+Metric_2 = 0.4038
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-122
+Derived Values
+Metric_1 = 1.4407
+Metric_2 = 0.2739
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-123
+Derived Values
+Metric_1 = 0.5665
+Metric_2 = 0.4190
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-124
+Derived Values
+Metric_1 = 0.3305
+Metric_2 = 0.3132
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-125
+Derived Values
+Metric_1 = 1.0867
+Metric_2 = 0.6695
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-126
+Derived Values
+Metric_1 = 1.6645
+Metric_2 = 0.5730
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-127
+Derived Values
+Metric_1 = 0.5400
+Metric_2 = 0.7545
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-128
+Derived Values
+Metric_1 = 0.3314
+Metric_2 = 0.4879
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-129
+Derived Values
+Metric_1 = 0.5428
+Metric_2 = 0.3129
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-130
+Derived Values
+Metric_1 = 0.9555
+Metric_2 = 0.3232
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-131
+Derived Values
+Metric_1 = 0.6231
+Metric_2 = 0.3555
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-132
+Derived Values
+Metric_1 = 1.2832
+Metric_2 = 0.2597
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-133
+Derived Values
+Metric_1 = 0.4081
+Metric_2 = 0.3289
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-134
+Derived Values
+Metric_1 = 0.7088
+Metric_2 = -0.3645
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-135
+Derived Values
+Metric_1 = 0.9537
+Metric_2 = -0.3681
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-136
+Derived Values
+Metric_1 = -0.1428
+Metric_2 = -0.5187
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-137
+Derived Values
+Metric_1 = 0.1069
+Metric_2 = -0.7959
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-138
+Derived Values
+Metric_1 = -1.6178
+Metric_2 = 0.9448
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-139
+Derived Values
+Metric_1 = 0.0761
+Metric_2 = -0.2929
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-140
+Derived Values
+Metric_1 = -1.1979
+Metric_2 = 0.4060
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-141
+Derived Values
+Metric_1 = -1.1129
+Metric_2 = 0.2213
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-142
+Derived Values
+Metric_1 = 0.5283
+Metric_2 = -0.7266
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-143
+Derived Values
+Metric_1 = 0.7539
+Metric_2 = -0.3384
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-144
+Derived Values
+Metric_1 = -1.1335
+Metric_2 = -0.8127
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-145
+Derived Values
+Metric_1 = -0.3728
+Metric_2 = -0.4403
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-146
+Derived Values
+Metric_1 = -0.8906
+Metric_2 = 0.5178
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-147
+Derived Values
+Metric_1 = -0.1068
+Metric_2 = 0.4214
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-148
+Derived Values
+Metric_1 = -0.0263
+Metric_2 = 0.3222
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-149
+Derived Values
+Metric_1 = 0.6206
+Metric_2 = 0.0513
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-150
+Derived Values
+Metric_1 = -0.0446
+Metric_2 = 0.3112
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-151
+Derived Values
+Metric_1 = 0.3296
+Metric_2 = 0.0920
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-152
+Derived Values
+Metric_1 = 0.8798
+Metric_2 = -0.0970
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-153
+Derived Values
+Metric_1 = -0.0264
+Metric_2 = 0.4287
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-154
+Derived Values
+Metric_1 = 0.1241
+Metric_2 = 0.2835
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-155
+Derived Values
+Metric_1 = 0.5236
+Metric_2 = -0.2147
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-156
+Derived Values
+Metric_1 = -0.1652
+Metric_2 = 0.3849
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-157
+Derived Values
+Metric_1 = 0.1508
+Metric_2 = 0.2693
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-158
+Derived Values
+Metric_1 = -0.2268
+Metric_2 = -0.0828
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-159
+Derived Values
+Metric_1 = 0.3414
+Metric_2 = 0.1107
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-160
+Derived Values
+Metric_1 = 0.1162
+Metric_2 = 0.5613
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-161
+Derived Values
+Metric_1 = 6.0000
+Metric_2 = 6.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-162
+Derived Values
+Metric_1 = 24.0000
+Metric_2 = 24.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-163
+Derived Values
+Metric_1 = 5.0000
+Metric_2 = 5.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-164
+Derived Values
+Metric_1 = 3.0000
+Metric_2 = 3.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-165
+Derived Values
+Metric_1 = 3.0000
+Metric_2 = 3.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-166
+Derived Values
+Metric_1 = 16.0000
+Metric_2 = 16.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-167
+Derived Values
+Metric_1 = 3.0000
+Metric_2 = 3.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-168
+Derived Values
+Metric_1 = 9.0000
+Metric_2 = 9.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-169
+Derived Values
+Metric_1 = 3.0000
+Metric_2 = 3.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-170
+Derived Values
+Metric_1 = 9.0000
+Metric_2 = 9.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-171
+Derived Values
+Metric_1 = 10.0000
+Metric_2 = 10.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-172
+Derived Values
+Metric_1 = 3.0000
+Metric_2 = 3.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-173
+Derived Values
+Metric_1 = 18.0000
+Metric_2 = 18.0000
+Metric_3 = 1.0000
+Decision = SUPPORTED
+
+HYP-174
+Derived Values
+Metric_1 = 0.0000
+Metric_2 = 0.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-175
+Derived Values
+Metric_1 = 6.0000
+Metric_2 = 2.0000
+Metric_3 = 5.0000
+Decision = REFUTED
+
+HYP-176
+Derived Values
+Metric_1 = 0.0000
+Metric_2 = 0.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-177
+Derived Values
+Metric_1 = 0.0000
+Metric_2 = 0.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-178
+Derived Values
+Metric_1 = 0.0000
+Metric_2 = 0.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-179
+Derived Values
+Metric_1 = 7.0000
+Metric_2 = 5.0000
+Metric_3 = 3.0000
+Decision = REFUTED
+
+HYP-180
+Derived Values
+Metric_1 = 0.0000
+Metric_2 = 0.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-181
+Derived Values
+Metric_1 = 0.0000
+Metric_2 = 0.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-182
+Derived Values
+Metric_1 = 0.0000
+Metric_2 = 0.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-183
+Derived Values
+Metric_1 = 0.0000
+Metric_2 = 0.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-184
+Derived Values
+Metric_1 = 0.0000
+Metric_2 = 0.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-185
+Derived Values
+Metric_1 = 0.0000
+Metric_2 = 0.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-186
+Derived Values
+Metric_1 = 4.0000
+Metric_2 = 1.0000
+Metric_3 = 4.0000
+Decision = REFUTED
+
+HYP-187
+Derived Values
+Metric_1 = 2.0000
+Metric_2 = 2.0000
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-188
+Derived Values
+Metric_1 = 2.0000
+Metric_2 = 1.0000
+Metric_3 = 2.0000
+Decision = INSUFFICIENT
+
+HYP-189
+Derived Values
+Metric_1 = 5.0000
+Metric_2 = 4.0000
+Metric_3 = 2.0000
+Decision = INSUFFICIENT
+
+HYP-190
+Derived Values
+Metric_1 = 2.0000
+Metric_2 = 2.0000
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-191
+Derived Values
+Metric_1 = 2.0000
+Metric_2 = 1.0000
+Metric_3 = 2.0000
+Decision = INSUFFICIENT
+
+HYP-192
+Derived Values
+Metric_1 = 2.0000
+Metric_2 = 1.0000
+Metric_3 = 2.0000
+Decision = INSUFFICIENT
+
+HYP-193
+Derived Values
+Metric_1 = 2.0000
+Metric_2 = 1.0000
+Metric_3 = 2.0000
+Decision = INSUFFICIENT
+
+HYP-194
+Derived Values
+Metric_1 = 1.0000
+Metric_2 = 1.0000
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-195
+Derived Values
+Metric_1 = 2.0000
+Metric_2 = 1.0000
+Metric_3 = 2.0000
+Decision = INSUFFICIENT
+
+HYP-196
+Derived Values
+Metric_1 = 2.0000
+Metric_2 = 1.0000
+Metric_3 = 2.0000
+Decision = INSUFFICIENT
+
+HYP-197
+Derived Values
+Metric_1 = 2.0000
+Metric_2 = 1.0000
+Metric_3 = 2.0000
+Decision = INSUFFICIENT
+
+HYP-198
+Derived Values
+Metric_1 = 5.0000
+Metric_2 = 4.0000
+Metric_3 = 2.0000
+Decision = INSUFFICIENT
+
+HYP-199
+Derived Values
+Metric_1 = 3.0000
+Metric_2 = 2.0000
+Metric_3 = 2.0000
+Decision = INSUFFICIENT
+
+HYP-200
+Derived Values
+Metric_1 = 1.0000
+Metric_2 = 1.0000
+Metric_3 = 1.0000
+Decision = INSUFFICIENT
+
+HYP-201
+Derived Values
+Metric_1 = 1.0057
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-202
+Derived Values
+Metric_1 = 2.0741
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-203
+Derived Values
+Metric_1 = 1.3425
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-204
+Derived Values
+Metric_1 = 0.8835
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-205
+Derived Values
+Metric_1 = 1.1662
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-206
+Derived Values
+Metric_1 = 1.1178
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-207
+Derived Values
+Metric_1 = 1.4872
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-208
+Derived Values
+Metric_1 = 0.9698
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-209
+Derived Values
+Metric_1 = 0.9318
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-210
+Derived Values
+Metric_1 = 1.0198
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-211
+Derived Values
+Metric_1 = 2.6415
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-212
+Derived Values
+Metric_1 = 1.0279
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-213
+Derived Values
+Metric_1 = 1.5182
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = SUPPORTED
+
+HYP-214
+Derived Values
+Metric_1 = 0.3489
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-215
+Derived Values
+Metric_1 = 0.2797
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-216
+Derived Values
+Metric_1 = 0.2960
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-217
+Derived Values
+Metric_1 = 0.3415
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-218
+Derived Values
+Metric_1 = 0.4156
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-219
+Derived Values
+Metric_1 = 0.1910
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-220
+Derived Values
+Metric_1 = 0.3641
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-221
+Derived Values
+Metric_1 = 0.3951
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-222
+Derived Values
+Metric_1 = 0.3697
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-223
+Derived Values
+Metric_1 = 0.2145
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-224
+Derived Values
+Metric_1 = 0.2878
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-225
+Derived Values
+Metric_1 = 0.2685
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-226
+Derived Values
+Metric_1 = 0.2557
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = REFUTED
+
+HYP-227
+Derived Values
+Metric_1 = 0.4970
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-228
+Derived Values
+Metric_1 = 0.6416
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-229
+Derived Values
+Metric_1 = 0.4975
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-230
+Derived Values
+Metric_1 = 0.7299
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-231
+Derived Values
+Metric_1 = 0.4774
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-232
+Derived Values
+Metric_1 = 0.5837
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-233
+Derived Values
+Metric_1 = 0.7539
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-234
+Derived Values
+Metric_1 = 0.7970
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-235
+Derived Values
+Metric_1 = 0.7623
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-236
+Derived Values
+Metric_1 = 0.4724
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-237
+Derived Values
+Metric_1 = 0.5091
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-238
+Derived Values
+Metric_1 = 0.8326
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-239
+Derived Values
+Metric_1 = 0.4922
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT
+
+HYP-240
+Derived Values
+Metric_1 = 0.6410
+Metric_2 = 1.0000
+Metric_3 = 0.0000
+Decision = INSUFFICIENT

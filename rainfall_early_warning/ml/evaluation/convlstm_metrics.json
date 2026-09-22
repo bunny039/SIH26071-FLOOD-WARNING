@@ -1,0 +1,38 @@
+{
+    "evaluation_timestamp": "2026-09-22T04:36:17.540297",
+    "model_name": "ConvLSTM Spatio-Temporal Forecaster",
+    "checkpoint_epoch": 7,
+    "validation_loss": 0.2683217590674758,
+    "physical_units": "mm/day",
+    "test_metrics": {
+        "mean_absolute_error_mm": 3.8502,
+        "root_mean_square_error_mm": 12.1744,
+        "total_evaluated_pixels": 1082073
+    },
+    "heavy_rainfall_detection_gte_64_5mm": {
+        "threshold_mm": 64.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "critical_success_index_csi": 0.0,
+        "contingency_table": {
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 9977,
+            "true_negatives": 1072096
+        }
+    },
+    "moderate_rainfall_detection_gte_15_5mm": {
+        "threshold_mm": 15.5,
+        "precision": 0.7443,
+        "recall": 0.0633,
+        "f1_score": 0.1167,
+        "critical_success_index_csi": 0.062,
+        "contingency_table": {
+            "true_positives": 5654,
+            "false_positives": 1942,
+            "false_negatives": 83658,
+            "true_negatives": 990819
+        }
+    }
+}

@@ -1,0 +1,7 @@
+Category,Questions,Metric Accuracy (%),Decision Accuracy (%),Metric Errors,Decision Errors,Absorbed Errors,Propagated Errors
+compound_state_transition_verification,40,100.0,100.0,0,0,0,0
+localized_intensification_verification,40,92.5,100.0,3,0,3,0
+persistent_regional_anomaly_verification,40,92.5,100.0,3,0,3,0
+reliability_aware_claim_verification,40,100.0,100.0,0,0,0,0
+spatial_coherence_verification,40,72.5,97.5,11,1,10,1
+wet_anomaly_consistency_verification,40,100.0,100.0,0,0,0,0

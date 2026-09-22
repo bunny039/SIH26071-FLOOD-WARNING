@@ -1,0 +1,2 @@
+n,baseline_alpha,endpoint_alpha,baseline_propagation_rate,endpoint_propagation_rate,risk_difference_percentage_points,risk_difference_ci95_percentage_points,mcnemar_A_to_P,mcnemar_P_to_A,mcnemar_discordant,mcnemar_p,ci95_low_pp,ci95_high_pp
+245,0.0,0.99,0.563265306122449,0.689795918367347,12.653061224489804,"[4.489795918367347, 20.408163265306122]",66,35,101,0.002653786057228506,4.489795918367347,20.408163265306122

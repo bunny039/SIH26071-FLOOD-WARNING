@@ -1,12 +1,14 @@
 import {
   Home,
   LayoutDashboard,
+  Map,
   Calculator,
   CloudRain,
   TriangleAlert,
   HelpCircle,
   Beaker,
-  Server
+  Server,
+  Waves
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -32,9 +34,21 @@ export const navItems: NavItem[] = [
     icon: LayoutDashboard,
   },
   {
+    to: '/flood-risk',
+    label: 'Flood & Shelters',
+    description: 'U-Net inundation & evacuation',
+    icon: Waves,
+  },
+  {
+    to: '/weather-map',
+    label: 'Weather Map',
+    description: 'Interactive India radar & weather',
+    icon: Map,
+  },
+  {
     to: '/predict',
     label: 'Run Prediction',
-    description: 'Direct U-Net CNN inference',
+    description: 'Direct ConvLSTM inference',
     icon: Calculator,
   },
   {
@@ -43,6 +57,7 @@ export const navItems: NavItem[] = [
     description: 'Atmospheric input variables',
     icon: CloudRain,
   },
+
   {
     to: '/alerts',
     label: 'Alert Center',

@@ -1,0 +1,5197 @@
+[
+  {
+    "id": "TA-138",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (20.50\u00b0N, 83.75\u00b0E):\n2019:-0.69, 2020:0.59, 2021:0.33, 2022:-0.34, 2023:0.45, 2024:-0.34, 2025:0.1\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2023",
+      "B": "2020",
+      "C": "2019",
+      "D": "2025"
+    },
+    "answer": "C",
+    "explanation": "|anomaly| peaks at 2019 with value -0.6903 (gap to 2nd=0.0976)",
+    "context": {
+      "latitude": 20.5,
+      "longitude": 83.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.6903,
+        0.5927,
+        0.3276,
+        -0.3419,
+        0.4483,
+        -0.3365,
+        0.1046
+      ],
+      "peak_year": 2019,
+      "peak_value": -0.6903
+    }
+  },
+  {
+    "id": "TA-203",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (12.75\u00b0N, 78.25\u00b0E):\n1.53, 0.75, 1.39, 0.69, 0.91, 0.81, 0.81\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "-1.5",
+      "B": "-0.434",
+      "C": "-1.012",
+      "D": "-0.723"
+    },
+    "answer": "D",
+    "explanation": "0.806 \u2212 1.529 = -0.723",
+    "context": {
+      "latitude": 12.75,
+      "longitude": 78.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        1.5285,
+        0.7512,
+        1.3919,
+        0.6948,
+        0.9081,
+        0.8126,
+        0.8059
+      ],
+      "first_value": 1.5285,
+      "last_value": 0.8059,
+      "total_change": -0.723
+    }
+  },
+  {
+    "id": "TA-258",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (20.00\u00b0N, 74.50\u00b0E):\n3.47, 1.61, 2.46, 2.48, 2.14, 1.88, 3.48\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "0.014",
+      "B": "0.008",
+      "C": "0.02",
+      "D": "-1.841"
+    },
+    "answer": "A",
+    "explanation": "3.481 \u2212 3.467 = 0.014",
+    "context": {
+      "latitude": 20.0,
+      "longitude": 74.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        3.4674,
+        1.6121,
+        2.4581,
+        2.4761,
+        2.1419,
+        1.8838,
+        3.4811
+      ],
+      "first_value": 3.4674,
+      "last_value": 3.4811,
+      "total_change": 0.014
+    }
+  },
+  {
+    "id": "CR-058",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "medium",
+    "question": "In 2024, which grid cell had higher rainfall_mm?\n\nCell A: (23.00\u00b0N, 87.00\u00b0E) \u2014 rainfall_mm = 4.129\nCell B: (15.25\u00b0N, 75.25\u00b0E) \u2014 rainfall_mm = 0.76",
+    "options": {
+      "A": "Cell A (23.00\u00b0N, 87.00\u00b0E)",
+      "B": "Cell B (15.25\u00b0N, 75.25\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=4.129 > Cell B=0.760 (diff=3.369)",
+    "context": {
+      "year": 2024,
+      "cell_a": {
+        "latitude": 23.0,
+        "longitude": 87.0,
+        "rainfall_mm": 4.129
+      },
+      "cell_b": {
+        "latitude": 15.25,
+        "longitude": 75.25,
+        "rainfall_mm": 0.76
+      },
+      "difference": 3.369
+    }
+  },
+  {
+    "id": "TA-489",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (14.25\u00b0N, 77.25\u00b0E):\n  2019: -0.25\n  2020: -0.73\n  2021: -0.98\n  2022: +0.20\n  2023: +2.16\n  2024: -0.41\n  2025: +0.71\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.1143, |delta|=1.3203 \u2014 no significant shift",
+    "context": {
+      "latitude": 14.25,
+      "longitude": 77.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.2535,
+        -0.7284,
+        -0.9789,
+        0.2031,
+        2.1629,
+        -0.4052,
+        0.7062
+      ],
+      "first_half_mean": -0.653592,
+      "second_half_mean": 0.666741,
+      "delta": 1.320332,
+      "mannwhitney_p": 0.114286
+    }
+  },
+  {
+    "id": "TA-049",
+    "category": "trend_analysis",
+    "subcategory": "rainfall_trend_direction",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for grid cell (20.25\u00b0N, 74.00\u00b0E), 2019\u20132025:\n2.69, 2.05, 2.30, 2.24, 2.02, 2.09, 2.83\n\nWhich best describes the rainfall trend?",
+    "options": {
+      "A": "Increasing (positive slope, statistically significant)",
+      "B": "Decreasing (negative slope, statistically significant)",
+      "C": "No significant trend (p > 0.05)"
+    },
+    "answer": "C",
+    "explanation": "Slope=0.0075 but p=0.9136 > 0.05 \u2014 not significant",
+    "context": {
+      "latitude": 20.25,
+      "longitude": 74.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        2.6935,
+        2.0508,
+        2.2955,
+        2.2362,
+        2.0242,
+        2.0937,
+        2.8258
+      ],
+      "slope": 0.00755,
+      "p_value": 0.913572
+    }
+  },
+  {
+    "id": "TA-119",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (16.50\u00b0N, 96.00\u00b0E):\n2019:0.16, 2020:2.16, 2021:-1.39, 2022:1.1, 2023:-1.13, 2024:-0.89, 2025:-2.4\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2022",
+      "B": "2025",
+      "C": "2023",
+      "D": "2024"
+    },
+    "answer": "B",
+    "explanation": "|anomaly| peaks at 2025 with value -2.4007 (gap to 2nd=0.2413)",
+    "context": {
+      "latitude": 16.5,
+      "longitude": 96.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.1559,
+        2.1594,
+        -1.3917,
+        1.1014,
+        -1.1308,
+        -0.8942,
+        -2.4007
+      ],
+      "peak_year": 2025,
+      "peak_value": -2.4007
+    }
+  },
+  {
+    "id": "TA-477",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (22.25\u00b0N, 78.25\u00b0E):\n  2019: +0.56\n  2020: -1.07\n  2021: -0.67\n  2022: +1.12\n  2023: -0.15\n  2024: +0.21\n  2025: +0.71\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.2286, |delta|=0.8688 \u2014 no significant shift",
+    "context": {
+      "latitude": 22.25,
+      "longitude": 78.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.5638,
+        -1.0745,
+        -0.6728,
+        1.123,
+        -0.148,
+        0.2085,
+        0.7136
+      ],
+      "first_half_mean": -0.394515,
+      "second_half_mean": 0.474276,
+      "delta": 0.868792,
+      "mannwhitney_p": 0.228571
+    }
+  },
+  {
+    "id": "CR-087",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "easy",
+    "question": "In 2020, which grid cell had higher rainfall_mm?\n\nCell A: (21.00\u00b0N, 76.75\u00b0E) \u2014 rainfall_mm = 3.347\nCell B: (18.50\u00b0N, 88.00\u00b0E) \u2014 rainfall_mm = 10.362",
+    "options": {
+      "A": "Cell A (21.00\u00b0N, 76.75\u00b0E)",
+      "B": "Cell B (18.50\u00b0N, 88.00\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "B",
+    "explanation": "Cell B=10.362 > Cell A=3.347 (diff=7.015)",
+    "context": {
+      "year": 2020,
+      "cell_a": {
+        "latitude": 21.0,
+        "longitude": 76.75,
+        "rainfall_mm": 3.347
+      },
+      "cell_b": {
+        "latitude": 18.5,
+        "longitude": 88.0,
+        "rainfall_mm": 10.362
+      },
+      "difference": 7.015
+    }
+  },
+  {
+    "id": "CR-045",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "medium",
+    "question": "In 2021, which grid cell had higher rainfall_mm?\n\nCell A: (19.75\u00b0N, 86.00\u00b0E) \u2014 rainfall_mm = 2.602\nCell B: (21.00\u00b0N, 69.50\u00b0E) \u2014 rainfall_mm = 1.196",
+    "options": {
+      "A": "Cell A (19.75\u00b0N, 86.00\u00b0E)",
+      "B": "Cell B (21.00\u00b0N, 69.50\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=2.602 > Cell B=1.196 (diff=1.406)",
+    "context": {
+      "year": 2021,
+      "cell_a": {
+        "latitude": 19.75,
+        "longitude": 86.0,
+        "rainfall_mm": 2.602
+      },
+      "cell_b": {
+        "latitude": 21.0,
+        "longitude": 69.5,
+        "rainfall_mm": 1.196
+      },
+      "difference": 1.406
+    }
+  },
+  {
+    "id": "TA-010",
+    "category": "trend_analysis",
+    "subcategory": "rainfall_trend_direction",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for grid cell (27.25\u00b0N, 82.25\u00b0E), 2019\u20132025:\n3.27, 3.93, 3.42, 3.53, 3.58, 3.29, 3.75\n\nWhich best describes the rainfall trend?",
+    "options": {
+      "A": "Increasing (positive slope, statistically significant)",
+      "B": "Decreasing (negative slope, statistically significant)",
+      "C": "No significant trend (p > 0.05)"
+    },
+    "answer": "C",
+    "explanation": "Slope=0.0113 but p=0.8295 > 0.05 \u2014 not significant",
+    "context": {
+      "latitude": 27.25,
+      "longitude": 82.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        3.2716,
+        3.9326,
+        3.4157,
+        3.5339,
+        3.5815,
+        3.2915,
+        3.7489
+      ],
+      "slope": 0.011263,
+      "p_value": 0.829536
+    }
+  },
+  {
+    "id": "CR-241",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (22.75\u00b0N, 83.25\u00b0E) \u2014 max|anomaly|=0.5657 in 2020\n  Cell B: (32.25\u00b0N, 77.00\u00b0E) \u2014 max|anomaly|=1.7915 in 2022\n  Cell C: (21.50\u00b0N, 82.50\u00b0E) \u2014 max|anomaly|=1.1076 in 2020\n  Cell D: (9.50\u00b0N, 76.00\u00b0E) \u2014 max|anomaly|=0.376 in 2019\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(22.75\u00b0N, 83.25\u00b0E) \u2014 max|anomaly|=0.5657",
+      "B": "(32.25\u00b0N, 77.00\u00b0E) \u2014 max|anomaly|=1.7915",
+      "C": "(21.50\u00b0N, 82.50\u00b0E) \u2014 max|anomaly|=1.1076",
+      "D": "(9.50\u00b0N, 76.00\u00b0E) \u2014 max|anomaly|=0.376"
+    },
+    "answer": "B",
+    "explanation": "Cell B at (32.25\u00b0N, 77.00\u00b0E) recorded the highest max|anomaly|=1.7915 in 2022",
+    "context": {
+      "cells": [
+        {
+          "lat": 22.75,
+          "lon": 83.25,
+          "max_abs_anomaly": 0.5657,
+          "peak_year": 2020
+        },
+        {
+          "lat": 32.25,
+          "lon": 77.0,
+          "max_abs_anomaly": 1.7915,
+          "peak_year": 2022
+        },
+        {
+          "lat": 21.5,
+          "lon": 82.5,
+          "max_abs_anomaly": 1.1076,
+          "peak_year": 2020
+        },
+        {
+          "lat": 9.5,
+          "lon": 76.0,
+          "max_abs_anomaly": 0.376,
+          "peak_year": 2019
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 32.25,
+          "lon": 77.0,
+          "max_abs_anomaly": 1.7915,
+          "peak_year": 2022
+        },
+        {
+          "lat": 21.5,
+          "lon": 82.5,
+          "max_abs_anomaly": 1.1076,
+          "peak_year": 2020
+        },
+        {
+          "lat": 22.75,
+          "lon": 83.25,
+          "max_abs_anomaly": 0.5657,
+          "peak_year": 2020
+        },
+        {
+          "lat": 9.5,
+          "lon": 76.0,
+          "max_abs_anomaly": 0.376,
+          "peak_year": 2019
+        }
+      ],
+      "worst_cell": {
+        "lat": 32.25,
+        "lon": 77.0,
+        "max_abs_anomaly": 1.7915,
+        "peak_year": 2022
+      }
+    }
+  },
+  {
+    "id": "TA-259",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (30.50\u00b0N, 78.25\u00b0E):\n1.61, 2.87, 3.31, 2.47, 1.50, 1.78, 2.27\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "0.665",
+      "B": "0.931",
+      "C": "1.93",
+      "D": "0.399"
+    },
+    "answer": "A",
+    "explanation": "2.271 \u2212 1.606 = 0.665",
+    "context": {
+      "latitude": 30.5,
+      "longitude": 78.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        1.6059,
+        2.8706,
+        3.3149,
+        2.4738,
+        1.4992,
+        1.7757,
+        2.2712
+      ],
+      "first_value": 1.6059,
+      "last_value": 2.2712,
+      "total_change": 0.665
+    }
+  },
+  {
+    "id": "TA-426",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (19.50\u00b0N, 86.50\u00b0E):\n  2019: -0.18\n  2020: +0.69\n  2021: +0.77\n  2022: -1.39\n  2023: +0.25\n  2024: -0.13\n  2025: +0.32\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.4000, |delta|=0.6643 \u2014 no significant shift",
+    "context": {
+      "latitude": 19.5,
+      "longitude": 86.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.1839,
+        0.6866,
+        0.7724,
+        -1.3917,
+        0.2512,
+        -0.1346,
+        0.3179
+      ],
+      "first_half_mean": 0.425031,
+      "second_half_mean": -0.239306,
+      "delta": -0.664337,
+      "mannwhitney_p": 0.4
+    }
+  },
+  {
+    "id": "TA-033",
+    "category": "trend_analysis",
+    "subcategory": "rainfall_trend_direction",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for grid cell (21.25\u00b0N, 82.75\u00b0E), 2019\u20132025:\n3.25, 3.82, 3.09, 2.47, 2.62, 4.50, 4.21\n\nWhich best describes the rainfall trend?",
+    "options": {
+      "A": "Increasing (positive slope, statistically significant)",
+      "B": "Decreasing (negative slope, statistically significant)",
+      "C": "No significant trend (p > 0.05)"
+    },
+    "answer": "C",
+    "explanation": "Slope=0.1351 but p=0.4072 > 0.05 \u2014 not significant",
+    "context": {
+      "latitude": 21.25,
+      "longitude": 82.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        3.2484,
+        3.8162,
+        3.088,
+        2.4667,
+        2.619,
+        4.4995,
+        4.2105
+      ],
+      "slope": 0.135144,
+      "p_value": 0.407231
+    }
+  },
+  {
+    "id": "TA-491",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (10.00\u00b0N, 74.25\u00b0E):\n  2019: +1.22\n  2020: +0.24\n  2021: +0.06\n  2022: -0.49\n  2023: -0.55\n  2024: -0.47\n  2025: -0.06\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.0571, |delta|=0.9012 \u2014 no significant shift",
+    "context": {
+      "latitude": 10.0,
+      "longitude": 74.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        1.217,
+        0.2446,
+        0.0555,
+        -0.4937,
+        -0.5523,
+        -0.4711,
+        -0.0649
+      ],
+      "first_half_mean": 0.505719,
+      "second_half_mean": -0.395506,
+      "delta": -0.901225,
+      "mannwhitney_p": 0.057143
+    }
+  },
+  {
+    "id": "TA-358",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (15.25\u00b0N, 74.25\u00b0E), 2019\u20132025:\n  rainfall_mm   : 0.74, 0.88, 0.80, 1.26, 1.22, 1.19, 1.64\n  anomaly_score : -0.28, -0.14, -0.22, 0.25, 0.21, 0.18, 0.62\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "A",
+    "explanation": "Both increasing: rain slope=0.1342, anomaly slope=0.1342",
+    "context": {
+      "latitude": 15.25,
+      "longitude": 74.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        0.7384,
+        0.8776,
+        0.7993,
+        1.2605,
+        1.2224,
+        1.193,
+        1.6396
+      ],
+      "anomaly_score": [
+        -0.2768,
+        -0.1376,
+        -0.2159,
+        0.2453,
+        0.2072,
+        0.1778,
+        0.6244
+      ],
+      "rainfall_slope": 0.1342,
+      "rainfall_p": 0.004639,
+      "anomaly_slope": 0.1342,
+      "anomaly_p": 0.004639
+    }
+  },
+  {
+    "id": "CR-100",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "hard",
+    "question": "In 2020, which grid cell had higher rainfall_mm?\n\nCell A: (31.25\u00b0N, 77.00\u00b0E) \u2014 rainfall_mm = 2.404\nCell B: (19.00\u00b0N, 76.50\u00b0E) \u2014 rainfall_mm = 1.97",
+    "options": {
+      "A": "Cell A (31.25\u00b0N, 77.00\u00b0E)",
+      "B": "Cell B (19.00\u00b0N, 76.50\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=2.404 > Cell B=1.970 (diff=0.434)",
+    "context": {
+      "year": 2020,
+      "cell_a": {
+        "latitude": 31.25,
+        "longitude": 77.0,
+        "rainfall_mm": 2.404
+      },
+      "cell_b": {
+        "latitude": 19.0,
+        "longitude": 76.5,
+        "rainfall_mm": 1.97
+      },
+      "difference": 0.434
+    }
+  },
+  {
+    "id": "TA-324",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (17.25\u00b0N, 88.50\u00b0E), 2019\u20132025:\n  rainfall_mm   : 8.91, 9.93, 8.53, 9.67, 8.37, 9.10, 5.94\n  anomaly_score : -0.18, 0.85, -0.55, 0.58, -0.72, 0.02, -3.15\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 17.25,
+      "longitude": 88.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        8.9064,
+        9.934,
+        8.5337,
+        9.6699,
+        8.3705,
+        9.1027,
+        5.9387
+      ],
+      "anomaly_score": [
+        -0.1798,
+        0.8478,
+        -0.5525,
+        0.5837,
+        -0.7157,
+        0.0165,
+        -3.1475
+      ],
+      "rainfall_slope": -0.383171,
+      "rainfall_p": 0.130458,
+      "anomaly_slope": -0.383171,
+      "anomaly_p": 0.130458
+    }
+  },
+  {
+    "id": "TA-200",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (17.50\u00b0N, 96.75\u00b0E):\n2019:1.5, 2020:0.1, 2021:-1.71, 2022:1.79, 2023:-1.49, 2024:-0.19, 2025:-1.71\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2020",
+      "B": "2021",
+      "C": "2022",
+      "D": "2025"
+    },
+    "answer": "C",
+    "explanation": "|anomaly| peaks at 2022 with value 1.7869 (gap to 2nd=0.0804)",
+    "context": {
+      "latitude": 17.5,
+      "longitude": 96.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        1.5009,
+        0.1007,
+        -1.7052,
+        1.7869,
+        -1.4914,
+        -0.1919,
+        -1.7065
+      ],
+      "peak_year": 2022,
+      "peak_value": 1.7869
+    }
+  },
+  {
+    "id": "CR-073",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "hard",
+    "question": "In 2025, which grid cell had higher rainfall_mm?\n\nCell A: (20.75\u00b0N, 94.25\u00b0E) \u2014 rainfall_mm = 3.595\nCell B: (21.00\u00b0N, 77.25\u00b0E) \u2014 rainfall_mm = 3.081",
+    "options": {
+      "A": "Cell A (20.75\u00b0N, 94.25\u00b0E)",
+      "B": "Cell B (21.00\u00b0N, 77.25\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=3.595 > Cell B=3.081 (diff=0.514)",
+    "context": {
+      "year": 2025,
+      "cell_a": {
+        "latitude": 20.75,
+        "longitude": 94.25,
+        "rainfall_mm": 3.595
+      },
+      "cell_b": {
+        "latitude": 21.0,
+        "longitude": 77.25,
+        "rainfall_mm": 3.081
+      },
+      "difference": 0.514
+    }
+  },
+  {
+    "id": "TA-058",
+    "category": "trend_analysis",
+    "subcategory": "rainfall_trend_direction",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for grid cell (20.50\u00b0N, 85.75\u00b0E), 2019\u20132025:\n2.55, 2.93, 3.56, 3.00, 2.76, 3.63, 3.88\n\nWhich best describes the rainfall trend?",
+    "options": {
+      "A": "Increasing (positive slope, statistically significant)",
+      "B": "Decreasing (negative slope, statistically significant)",
+      "C": "No significant trend (p > 0.05)"
+    },
+    "answer": "C",
+    "explanation": "Slope=0.1641 but p=0.0760 > 0.05 \u2014 not significant",
+    "context": {
+      "latitude": 20.5,
+      "longitude": 85.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        2.5471,
+        2.9295,
+        3.5635,
+        2.996,
+        2.761,
+        3.6294,
+        3.8793
+      ],
+      "slope": 0.164066,
+      "p_value": 0.076021
+    }
+  },
+  {
+    "id": "TA-118",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (18.75\u00b0N, 79.75\u00b0E):\n2019:-0.18, 2020:-0.32, 2021:0.14, 2022:-0.1, 2023:0.14, 2024:0.33, 2025:0.19\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2019",
+      "B": "2025",
+      "C": "2020",
+      "D": "2024"
+    },
+    "answer": "D",
+    "explanation": "|anomaly| peaks at 2024 with value 0.3288 (gap to 2nd=0.0048)",
+    "context": {
+      "latitude": 18.75,
+      "longitude": 79.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.1827,
+        -0.3241,
+        0.1388,
+        -0.1034,
+        0.1425,
+        0.3288,
+        0.1899
+      ],
+      "peak_year": 2024,
+      "peak_value": 0.3288
+    }
+  },
+  {
+    "id": "TA-156",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (12.25\u00b0N, 76.00\u00b0E):\n2019:0.72, 2020:-0.76, 2021:-0.45, 2022:0.12, 2023:0.68, 2024:-0.3, 2025:0.91\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2022",
+      "B": "2019",
+      "C": "2024",
+      "D": "2025"
+    },
+    "answer": "D",
+    "explanation": "|anomaly| peaks at 2025 with value 0.9123 (gap to 2nd=0.1509)",
+    "context": {
+      "latitude": 12.25,
+      "longitude": 76.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.7199,
+        -0.7614,
+        -0.4511,
+        0.1218,
+        0.6758,
+        -0.3049,
+        0.9123
+      ],
+      "peak_year": 2025,
+      "peak_value": 0.9123
+    }
+  },
+  {
+    "id": "TA-435",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (25.00\u00b0N, 75.00\u00b0E):\n  2019: -1.37\n  2020: +0.33\n  2021: +1.31\n  2022: +0.64\n  2023: -0.47\n  2024: -0.44\n  2025: +0.31\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.8571, |delta|=0.0844 \u2014 no significant shift",
+    "context": {
+      "latitude": 25.0,
+      "longitude": 75.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -1.3697,
+        0.3333,
+        1.3143,
+        0.6368,
+        -0.4715,
+        -0.4432,
+        0.3109
+      ],
+      "first_half_mean": 0.092625,
+      "second_half_mean": 0.008268,
+      "delta": -0.084356,
+      "mannwhitney_p": 0.857143
+    }
+  },
+  {
+    "id": "TA-367",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (31.25\u00b0N, 76.25\u00b0E), 2019\u20132025:\n  rainfall_mm   : 3.03, 2.41, 3.14, 3.07, 1.55, 2.51, 1.83\n  anomaly_score : 0.41, -0.21, 0.52, 0.45, -1.07, -0.11, -0.78\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 31.25,
+      "longitude": 76.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        3.0283,
+        2.4078,
+        3.1352,
+        3.0695,
+        1.5455,
+        2.5081,
+        1.8324
+      ],
+      "anomaly_score": [
+        0.4126,
+        -0.2079,
+        0.5195,
+        0.4537,
+        -1.0702,
+        -0.1076,
+        -0.7833
+      ],
+      "rainfall_slope": -0.177737,
+      "rainfall_p": 0.145258,
+      "anomaly_slope": -0.177737,
+      "anomaly_p": 0.145258
+    }
+  },
+  {
+    "id": "TA-017",
+    "category": "trend_analysis",
+    "subcategory": "rainfall_trend_direction",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for grid cell (20.50\u00b0N, 86.75\u00b0E), 2019\u20132025:\n3.39, 3.68, 3.86, 2.78, 3.35, 3.30, 4.05\n\nWhich best describes the rainfall trend?",
+    "options": {
+      "A": "Increasing (positive slope, statistically significant)",
+      "B": "Decreasing (negative slope, statistically significant)",
+      "C": "No significant trend (p > 0.05)"
+    },
+    "answer": "C",
+    "explanation": "Slope=0.0252 but p=0.7805 > 0.05 \u2014 not significant",
+    "context": {
+      "latitude": 20.5,
+      "longitude": 86.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        3.3923,
+        3.6787,
+        3.857,
+        2.7844,
+        3.347,
+        3.3041,
+        4.0469
+      ],
+      "slope": 0.025169,
+      "p_value": 0.78047
+    }
+  },
+  {
+    "id": "TA-251",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (21.00\u00b0N, 80.25\u00b0E):\n2.46, 2.20, 2.14, 2.98, 2.62, 2.80, 3.22\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "0.501",
+      "B": "1.067",
+      "C": "0.762",
+      "D": "0.457"
+    },
+    "answer": "C",
+    "explanation": "3.218 \u2212 2.456 = 0.762",
+    "context": {
+      "latitude": 21.0,
+      "longitude": 80.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        2.456,
+        2.1952,
+        2.1426,
+        2.9787,
+        2.6216,
+        2.8042,
+        3.2181
+      ],
+      "first_value": 2.456,
+      "last_value": 3.2181,
+      "total_change": 0.762
+    }
+  },
+  {
+    "id": "CR-078",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "hard",
+    "question": "In 2025, which grid cell had higher rainfall_mm?\n\nCell A: (17.25\u00b0N, 74.50\u00b0E) \u2014 rainfall_mm = 2.406\nCell B: (16.50\u00b0N, 74.75\u00b0E) \u2014 rainfall_mm = 2.043",
+    "options": {
+      "A": "Cell A (17.25\u00b0N, 74.50\u00b0E)",
+      "B": "Cell B (16.50\u00b0N, 74.75\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=2.406 > Cell B=2.043 (diff=0.363)",
+    "context": {
+      "year": 2025,
+      "cell_a": {
+        "latitude": 17.25,
+        "longitude": 74.5,
+        "rainfall_mm": 2.406
+      },
+      "cell_b": {
+        "latitude": 16.5,
+        "longitude": 74.75,
+        "rainfall_mm": 2.043
+      },
+      "difference": 0.363
+    }
+  },
+  {
+    "id": "TA-139",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (16.50\u00b0N, 74.00\u00b0E):\n2019:-0.22, 2020:-0.12, 2021:-0.03, 2022:0.15, 2023:0.13, 2024:0.1, 2025:0.32\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2020",
+      "B": "2024",
+      "C": "2023",
+      "D": "2025"
+    },
+    "answer": "D",
+    "explanation": "|anomaly| peaks at 2025 with value 0.3218 (gap to 2nd=0.0992)",
+    "context": {
+      "latitude": 16.5,
+      "longitude": 74.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.2226,
+        -0.1231,
+        -0.0278,
+        0.149,
+        0.1263,
+        0.098,
+        0.3218
+      ],
+      "peak_year": 2025,
+      "peak_value": 0.3218
+    }
+  },
+  {
+    "id": "CR-151",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "medium",
+    "question": "For grid cell (19.50\u00b0N, 87.75\u00b0E):\n  2022 anomaly_score = -1.2282\n  2025 anomaly_score = -0.4531\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2022 was more anomalous (|-1.2282| > |-0.4531|)",
+      "B": "2025 was more anomalous (|-0.4531| > |-1.2282|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "A",
+    "explanation": "|anomaly in 2022|=1.2282 > |anomaly in 2025|=0.4531",
+    "context": {
+      "latitude": 19.5,
+      "longitude": 87.75,
+      "year1": 2022,
+      "anomaly1": -1.2282,
+      "abs_anomaly1": 1.2282,
+      "year2": 2025,
+      "anomaly2": -0.4531,
+      "abs_anomaly2": 0.4531,
+      "difference": 0.7751
+    }
+  },
+  {
+    "id": "TA-315",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (25.50\u00b0N, 74.75\u00b0E), 2019\u20132025:\n  rainfall_mm   : 2.52, 2.96, 2.71, 2.44, 1.23, 2.22, 2.22\n  anomaly_score : 0.18, 0.62, 0.36, 0.10, -1.12, -0.13, -0.13\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 25.5,
+      "longitude": 74.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        2.5209,
+        2.9636,
+        2.7064,
+        2.4412,
+        1.2276,
+        2.215,
+        2.217
+      ],
+      "anomaly_score": [
+        0.1751,
+        0.6179,
+        0.3606,
+        0.0954,
+        -1.1182,
+        -0.1308,
+        -0.1287
+      ],
+      "rainfall_slope": -0.138842,
+      "rainfall_p": 0.208221,
+      "anomaly_slope": -0.138842,
+      "anomaly_p": 0.208221
+    }
+  },
+  {
+    "id": "TA-014",
+    "category": "trend_analysis",
+    "subcategory": "rainfall_trend_direction",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for grid cell (13.75\u00b0N, 78.50\u00b0E), 2019\u20132025:\n2.35, 1.92, 2.57, 2.18, 2.55, 2.24, 2.10\n\nWhich best describes the rainfall trend?",
+    "options": {
+      "A": "Increasing (positive slope, statistically significant)",
+      "B": "Decreasing (negative slope, statistically significant)",
+      "C": "No significant trend (p > 0.05)"
+    },
+    "answer": "C",
+    "explanation": "Slope=-0.0038 but p=0.9406 > 0.05 \u2014 not significant",
+    "context": {
+      "latitude": 13.75,
+      "longitude": 78.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        2.3469,
+        1.9224,
+        2.5678,
+        2.1771,
+        2.5476,
+        2.2448,
+        2.1033
+      ],
+      "slope": -0.0038,
+      "p_value": 0.940566
+    }
+  },
+  {
+    "id": "TA-395",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (19.75\u00b0N, 90.75\u00b0E), 2019\u20132025:\n  rainfall_mm   : 21.98, 30.90, 22.78, 34.59, 16.02, 18.83, 14.24\n  anomaly_score : -2.20, 6.71, -1.41, 10.41, -8.16, -5.35, -9.94\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 19.75,
+      "longitude": 90.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        21.9792,
+        30.8984,
+        22.7782,
+        34.5897,
+        16.0226,
+        18.8326,
+        14.2393
+      ],
+      "anomaly_score": [
+        -2.2043,
+        6.715,
+        -1.4053,
+        10.4063,
+        -8.1609,
+        -5.3508,
+        -9.9441
+      ],
+      "rainfall_slope": -1.932385,
+      "rainfall_p": 0.196551,
+      "anomaly_slope": -1.932385,
+      "anomaly_p": 0.196551
+    }
+  },
+  {
+    "id": "TA-275",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (17.75\u00b0N, 73.75\u00b0E):\n0.82, 1.23, 1.18, 0.98, 1.47, 1.21, 1.90\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "1.081",
+      "B": "0.649",
+      "C": "1.489",
+      "D": "1.513"
+    },
+    "answer": "A",
+    "explanation": "1.900 \u2212 0.819 = 1.081",
+    "context": {
+      "latitude": 17.75,
+      "longitude": 73.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        0.8194,
+        1.227,
+        1.1816,
+        0.9779,
+        1.4722,
+        1.2091,
+        1.9005
+      ],
+      "first_value": 0.8194,
+      "last_value": 1.9005,
+      "total_change": 1.081
+    }
+  },
+  {
+    "id": "CR-219",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (23.75\u00b0N, 76.00\u00b0E) \u2014 max|anomaly|=0.6426 in 2019\n  Cell B: (30.25\u00b0N, 76.50\u00b0E) \u2014 max|anomaly|=1.1675 in 2023\n  Cell C: (34.00\u00b0N, 78.25\u00b0E) \u2014 max|anomaly|=1.0099 in 2025\n  Cell D: (21.00\u00b0N, 82.00\u00b0E) \u2014 max|anomaly|=0.7658 in 2023\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(23.75\u00b0N, 76.00\u00b0E) \u2014 max|anomaly|=0.6426",
+      "B": "(30.25\u00b0N, 76.50\u00b0E) \u2014 max|anomaly|=1.1675",
+      "C": "(34.00\u00b0N, 78.25\u00b0E) \u2014 max|anomaly|=1.0099",
+      "D": "(21.00\u00b0N, 82.00\u00b0E) \u2014 max|anomaly|=0.7658"
+    },
+    "answer": "B",
+    "explanation": "Cell B at (30.25\u00b0N, 76.50\u00b0E) recorded the highest max|anomaly|=1.1675 in 2023",
+    "context": {
+      "cells": [
+        {
+          "lat": 23.75,
+          "lon": 76.0,
+          "max_abs_anomaly": 0.6426,
+          "peak_year": 2019
+        },
+        {
+          "lat": 30.25,
+          "lon": 76.5,
+          "max_abs_anomaly": 1.1675,
+          "peak_year": 2023
+        },
+        {
+          "lat": 34.0,
+          "lon": 78.25,
+          "max_abs_anomaly": 1.0099,
+          "peak_year": 2025
+        },
+        {
+          "lat": 21.0,
+          "lon": 82.0,
+          "max_abs_anomaly": 0.7658,
+          "peak_year": 2023
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 30.25,
+          "lon": 76.5,
+          "max_abs_anomaly": 1.1675,
+          "peak_year": 2023
+        },
+        {
+          "lat": 34.0,
+          "lon": 78.25,
+          "max_abs_anomaly": 1.0099,
+          "peak_year": 2025
+        },
+        {
+          "lat": 21.0,
+          "lon": 82.0,
+          "max_abs_anomaly": 0.7658,
+          "peak_year": 2023
+        },
+        {
+          "lat": 23.75,
+          "lon": 76.0,
+          "max_abs_anomaly": 0.6426,
+          "peak_year": 2019
+        }
+      ],
+      "worst_cell": {
+        "lat": 30.25,
+        "lon": 76.5,
+        "max_abs_anomaly": 1.1675,
+        "peak_year": 2023
+      }
+    }
+  },
+  {
+    "id": "TA-321",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (19.00\u00b0N, 77.00\u00b0E), 2019\u20132025:\n  rainfall_mm   : 1.85, 1.68, 3.10, 2.87, 2.02, 2.75, 3.15\n  anomaly_score : -0.53, -0.70, 0.72, 0.49, -0.36, 0.37, 0.77\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 19.0,
+      "longitude": 77.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        1.8503,
+        1.6766,
+        3.1007,
+        2.8665,
+        2.0199,
+        2.7503,
+        3.1454
+      ],
+      "anomaly_score": [
+        -0.527,
+        -0.7007,
+        0.7233,
+        0.4891,
+        -0.3575,
+        0.3729,
+        0.768
+      ],
+      "rainfall_slope": 0.176843,
+      "rainfall_p": 0.140342,
+      "anomaly_slope": 0.176843,
+      "anomaly_p": 0.140342
+    }
+  },
+  {
+    "id": "CR-303",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (14.75\u00b0N, 74.75\u00b0E) \u2014 max|anomaly|=0.6889 in 2024\n  Cell B: (15.25\u00b0N, 78.25\u00b0E) \u2014 max|anomaly|=1.557 in 2023\n  Cell C: (31.25\u00b0N, 74.75\u00b0E) \u2014 max|anomaly|=4.3537 in 2023\n  Cell D: (19.25\u00b0N, 93.75\u00b0E) \u2014 max|anomaly|=1.2732 in 2021\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(14.75\u00b0N, 74.75\u00b0E) \u2014 max|anomaly|=0.6889",
+      "B": "(15.25\u00b0N, 78.25\u00b0E) \u2014 max|anomaly|=1.557",
+      "C": "(31.25\u00b0N, 74.75\u00b0E) \u2014 max|anomaly|=4.3537",
+      "D": "(19.25\u00b0N, 93.75\u00b0E) \u2014 max|anomaly|=1.2732"
+    },
+    "answer": "C",
+    "explanation": "Cell C at (31.25\u00b0N, 74.75\u00b0E) recorded the highest max|anomaly|=4.3537 in 2023",
+    "context": {
+      "cells": [
+        {
+          "lat": 14.75,
+          "lon": 74.75,
+          "max_abs_anomaly": 0.6889,
+          "peak_year": 2024
+        },
+        {
+          "lat": 15.25,
+          "lon": 78.25,
+          "max_abs_anomaly": 1.557,
+          "peak_year": 2023
+        },
+        {
+          "lat": 31.25,
+          "lon": 74.75,
+          "max_abs_anomaly": 4.3537,
+          "peak_year": 2023
+        },
+        {
+          "lat": 19.25,
+          "lon": 93.75,
+          "max_abs_anomaly": 1.2732,
+          "peak_year": 2021
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 31.25,
+          "lon": 74.75,
+          "max_abs_anomaly": 4.3537,
+          "peak_year": 2023
+        },
+        {
+          "lat": 15.25,
+          "lon": 78.25,
+          "max_abs_anomaly": 1.557,
+          "peak_year": 2023
+        },
+        {
+          "lat": 19.25,
+          "lon": 93.75,
+          "max_abs_anomaly": 1.2732,
+          "peak_year": 2021
+        },
+        {
+          "lat": 14.75,
+          "lon": 74.75,
+          "max_abs_anomaly": 0.6889,
+          "peak_year": 2024
+        }
+      ],
+      "worst_cell": {
+        "lat": 31.25,
+        "lon": 74.75,
+        "max_abs_anomaly": 4.3537,
+        "peak_year": 2023
+      }
+    }
+  },
+  {
+    "id": "TA-294",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (22.25\u00b0N, 81.25\u00b0E):\n4.56, 4.54, 4.64, 4.69, 4.14, 4.10, 4.02\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "-0.766",
+      "B": "-0.328",
+      "C": "-0.547",
+      "D": "-0.571"
+    },
+    "answer": "C",
+    "explanation": "4.018 \u2212 4.565 = -0.547",
+    "context": {
+      "latitude": 22.25,
+      "longitude": 81.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        4.5647,
+        4.5407,
+        4.6394,
+        4.6926,
+        4.1433,
+        4.0994,
+        4.0181
+      ],
+      "first_value": 4.5647,
+      "last_value": 4.0181,
+      "total_change": -0.547
+    }
+  },
+  {
+    "id": "TA-209",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (16.75\u00b0N, 79.50\u00b0E):\n1.02, 0.75, 0.96, 1.41, 1.54, 2.08, 1.02\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "-0.003",
+      "B": "-0.271",
+      "C": "-0.005",
+      "D": "-0.007"
+    },
+    "answer": "C",
+    "explanation": "1.016 \u2212 1.020 = -0.005",
+    "context": {
+      "latitude": 16.75,
+      "longitude": 79.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        1.0204,
+        0.7546,
+        0.9614,
+        1.4129,
+        1.5359,
+        2.0752,
+        1.0158
+      ],
+      "first_value": 1.0204,
+      "last_value": 1.0158,
+      "total_change": -0.005
+    }
+  },
+  {
+    "id": "TA-393",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (20.50\u00b0N, 86.50\u00b0E), 2019\u20132025:\n  rainfall_mm   : 3.52, 3.02, 3.14, 2.19, 2.49, 2.48, 3.27\n  anomaly_score : 0.72, 0.21, 0.34, -0.61, -0.32, -0.33, 0.47\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 20.5,
+      "longitude": 86.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        3.5223,
+        3.0176,
+        3.1426,
+        2.1921,
+        2.4901,
+        2.4772,
+        3.2734
+      ],
+      "anomaly_score": [
+        0.7153,
+        0.2106,
+        0.3356,
+        -0.6149,
+        -0.3169,
+        -0.3298,
+        0.4664
+      ],
+      "rainfall_slope": -0.088574,
+      "rainfall_p": 0.386773,
+      "anomaly_slope": -0.088574,
+      "anomaly_p": 0.386773
+    }
+  },
+  {
+    "id": "CR-123",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "medium",
+    "question": "For grid cell (27.75\u00b0N, 73.25\u00b0E):\n  2019 anomaly_score = 1.19\n  2025 anomaly_score = 0.5341\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2019 was more anomalous (|1.19| > |0.5341|)",
+      "B": "2025 was more anomalous (|0.5341| > |1.19|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "A",
+    "explanation": "|anomaly in 2019|=1.1900 > |anomaly in 2025|=0.5341",
+    "context": {
+      "latitude": 27.75,
+      "longitude": 73.25,
+      "year1": 2019,
+      "anomaly1": 1.19,
+      "abs_anomaly1": 1.19,
+      "year2": 2025,
+      "anomaly2": 0.5341,
+      "abs_anomaly2": 0.5341,
+      "difference": 0.6559
+    }
+  },
+  {
+    "id": "TA-187",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (23.00\u00b0N, 75.00\u00b0E):\n2019:1.02, 2020:0.34, 2021:-0.38, 2022:0.12, 2023:-0.39, 2024:-0.71, 2025:-0.69\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2025",
+      "B": "2019",
+      "C": "2023",
+      "D": "2021"
+    },
+    "answer": "B",
+    "explanation": "|anomaly| peaks at 2019 with value 1.0242 (gap to 2nd=0.3133)",
+    "context": {
+      "latitude": 23.0,
+      "longitude": 75.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        1.0242,
+        0.337,
+        -0.3822,
+        0.1215,
+        -0.3896,
+        -0.7109,
+        -0.6936
+      ],
+      "peak_year": 2019,
+      "peak_value": 1.0242
+    }
+  },
+  {
+    "id": "CR-250",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (24.50\u00b0N, 82.25\u00b0E) \u2014 max|anomaly|=1.1855 in 2025\n  Cell B: (19.25\u00b0N, 79.00\u00b0E) \u2014 max|anomaly|=0.5024 in 2020\n  Cell C: (21.25\u00b0N, 83.50\u00b0E) \u2014 max|anomaly|=1.4781 in 2025\n  Cell D: (18.00\u00b0N, 71.25\u00b0E) \u2014 max|anomaly|=0.3234 in 2025\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(24.50\u00b0N, 82.25\u00b0E) \u2014 max|anomaly|=1.1855",
+      "B": "(19.25\u00b0N, 79.00\u00b0E) \u2014 max|anomaly|=0.5024",
+      "C": "(21.25\u00b0N, 83.50\u00b0E) \u2014 max|anomaly|=1.4781",
+      "D": "(18.00\u00b0N, 71.25\u00b0E) \u2014 max|anomaly|=0.3234"
+    },
+    "answer": "C",
+    "explanation": "Cell C at (21.25\u00b0N, 83.50\u00b0E) recorded the highest max|anomaly|=1.4781 in 2025",
+    "context": {
+      "cells": [
+        {
+          "lat": 24.5,
+          "lon": 82.25,
+          "max_abs_anomaly": 1.1855,
+          "peak_year": 2025
+        },
+        {
+          "lat": 19.25,
+          "lon": 79.0,
+          "max_abs_anomaly": 0.5024,
+          "peak_year": 2020
+        },
+        {
+          "lat": 21.25,
+          "lon": 83.5,
+          "max_abs_anomaly": 1.4781,
+          "peak_year": 2025
+        },
+        {
+          "lat": 18.0,
+          "lon": 71.25,
+          "max_abs_anomaly": 0.3234,
+          "peak_year": 2025
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 21.25,
+          "lon": 83.5,
+          "max_abs_anomaly": 1.4781,
+          "peak_year": 2025
+        },
+        {
+          "lat": 24.5,
+          "lon": 82.25,
+          "max_abs_anomaly": 1.1855,
+          "peak_year": 2025
+        },
+        {
+          "lat": 19.25,
+          "lon": 79.0,
+          "max_abs_anomaly": 0.5024,
+          "peak_year": 2020
+        },
+        {
+          "lat": 18.0,
+          "lon": 71.25,
+          "max_abs_anomaly": 0.3234,
+          "peak_year": 2025
+        }
+      ],
+      "worst_cell": {
+        "lat": 21.25,
+        "lon": 83.5,
+        "max_abs_anomaly": 1.4781,
+        "peak_year": 2025
+      }
+    }
+  },
+  {
+    "id": "CR-085",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "medium",
+    "question": "In 2023, which grid cell had higher rainfall_mm?\n\nCell A: (19.25\u00b0N, 75.75\u00b0E) \u2014 rainfall_mm = 2.494\nCell B: (31.25\u00b0N, 80.25\u00b0E) \u2014 rainfall_mm = 3.951",
+    "options": {
+      "A": "Cell A (19.25\u00b0N, 75.75\u00b0E)",
+      "B": "Cell B (31.25\u00b0N, 80.25\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "B",
+    "explanation": "Cell B=3.951 > Cell A=2.494 (diff=1.457)",
+    "context": {
+      "year": 2023,
+      "cell_a": {
+        "latitude": 19.25,
+        "longitude": 75.75,
+        "rainfall_mm": 2.494
+      },
+      "cell_b": {
+        "latitude": 31.25,
+        "longitude": 80.25,
+        "rainfall_mm": 3.951
+      },
+      "difference": 1.457
+    }
+  },
+  {
+    "id": "CR-276",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (30.50\u00b0N, 75.00\u00b0E) \u2014 max|anomaly|=1.8948 in 2023\n  Cell B: (20.00\u00b0N, 93.00\u00b0E) \u2014 max|anomaly|=1.6298 in 2024\n  Cell C: (15.75\u00b0N, 78.00\u00b0E) \u2014 max|anomaly|=0.5677 in 2023\n  Cell D: (33.25\u00b0N, 76.50\u00b0E) \u2014 max|anomaly|=1.2835 in 2025\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(30.50\u00b0N, 75.00\u00b0E) \u2014 max|anomaly|=1.8948",
+      "B": "(20.00\u00b0N, 93.00\u00b0E) \u2014 max|anomaly|=1.6298",
+      "C": "(15.75\u00b0N, 78.00\u00b0E) \u2014 max|anomaly|=0.5677",
+      "D": "(33.25\u00b0N, 76.50\u00b0E) \u2014 max|anomaly|=1.2835"
+    },
+    "answer": "A",
+    "explanation": "Cell A at (30.50\u00b0N, 75.00\u00b0E) recorded the highest max|anomaly|=1.8948 in 2023",
+    "context": {
+      "cells": [
+        {
+          "lat": 30.5,
+          "lon": 75.0,
+          "max_abs_anomaly": 1.8948,
+          "peak_year": 2023
+        },
+        {
+          "lat": 20.0,
+          "lon": 93.0,
+          "max_abs_anomaly": 1.6298,
+          "peak_year": 2024
+        },
+        {
+          "lat": 15.75,
+          "lon": 78.0,
+          "max_abs_anomaly": 0.5677,
+          "peak_year": 2023
+        },
+        {
+          "lat": 33.25,
+          "lon": 76.5,
+          "max_abs_anomaly": 1.2835,
+          "peak_year": 2025
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 30.5,
+          "lon": 75.0,
+          "max_abs_anomaly": 1.8948,
+          "peak_year": 2023
+        },
+        {
+          "lat": 20.0,
+          "lon": 93.0,
+          "max_abs_anomaly": 1.6298,
+          "peak_year": 2024
+        },
+        {
+          "lat": 33.25,
+          "lon": 76.5,
+          "max_abs_anomaly": 1.2835,
+          "peak_year": 2025
+        },
+        {
+          "lat": 15.75,
+          "lon": 78.0,
+          "max_abs_anomaly": 0.5677,
+          "peak_year": 2023
+        }
+      ],
+      "worst_cell": {
+        "lat": 30.5,
+        "lon": 75.0,
+        "max_abs_anomaly": 1.8948,
+        "peak_year": 2023
+      }
+    }
+  },
+  {
+    "id": "TA-390",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (31.25\u00b0N, 75.00\u00b0E), 2019\u20132025:\n  rainfall_mm   : 11.49, 8.85, 11.31, 10.05, 6.64, 9.72, 10.98\n  anomaly_score : 1.82, -0.83, 1.63, 0.37, -3.04, 0.05, 1.30\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 31.25,
+      "longitude": 75.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        11.4949,
+        8.8467,
+        11.3096,
+        10.0487,
+        6.6371,
+        9.7227,
+        10.9811
+      ],
+      "anomaly_score": [
+        1.8183,
+        -0.8299,
+        1.633,
+        0.372,
+        -3.0395,
+        0.046,
+        1.3045
+      ],
+      "rainfall_slope": -0.15936,
+      "rainfall_p": 0.664697,
+      "anomaly_slope": -0.15936,
+      "anomaly_p": 0.664697
+    }
+  },
+  {
+    "id": "CR-028",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "hard",
+    "question": "In 2024, which grid cell had higher rainfall_mm?\n\nCell A: (21.00\u00b0N, 75.75\u00b0E) \u2014 rainfall_mm = 2.535\nCell B: (18.50\u00b0N, 85.50\u00b0E) \u2014 rainfall_mm = 1.916",
+    "options": {
+      "A": "Cell A (21.00\u00b0N, 75.75\u00b0E)",
+      "B": "Cell B (18.50\u00b0N, 85.50\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=2.535 > Cell B=1.916 (diff=0.619)",
+    "context": {
+      "year": 2024,
+      "cell_a": {
+        "latitude": 21.0,
+        "longitude": 75.75,
+        "rainfall_mm": 2.535
+      },
+      "cell_b": {
+        "latitude": 18.5,
+        "longitude": 85.5,
+        "rainfall_mm": 1.916
+      },
+      "difference": 0.619
+    }
+  },
+  {
+    "id": "TA-239",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (9.25\u00b0N, 78.75\u00b0E):\n1.04, 0.51, 0.06, 0.18, 0.14, 0.15, 0.37\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "-0.402",
+      "B": "-1.205",
+      "C": "-0.67",
+      "D": "-0.938"
+    },
+    "answer": "C",
+    "explanation": "0.370 \u2212 1.041 = -0.67",
+    "context": {
+      "latitude": 9.25,
+      "longitude": 78.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        1.0405,
+        0.5058,
+        0.0572,
+        0.1752,
+        0.1427,
+        0.1513,
+        0.3702
+      ],
+      "first_value": 1.0405,
+      "last_value": 0.3702,
+      "total_change": -0.67
+    }
+  },
+  {
+    "id": "TA-264",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (22.00\u00b0N, 77.50\u00b0E):\n4.72, 4.13, 3.18, 5.11, 2.80, 2.88, 4.52\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "-0.122",
+      "B": "-0.204",
+      "C": "-0.793",
+      "D": "-0.286"
+    },
+    "answer": "B",
+    "explanation": "4.516 \u2212 4.719 = -0.204",
+    "context": {
+      "latitude": 22.0,
+      "longitude": 77.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        4.7191,
+        4.1299,
+        3.1755,
+        5.1147,
+        2.7995,
+        2.8783,
+        4.5156
+      ],
+      "first_value": 4.7191,
+      "last_value": 4.5156,
+      "total_change": -0.204
+    }
+  },
+  {
+    "id": "CR-206",
+    "category": "comparative_reasoning",
+    "subcategory": "global_year_ranking",
+    "difficulty": "medium",
+    "question": "India-wide climate statistics per year:\n  2019: mean anomaly=0.1354, mean rainfall=3.4767, max |anomaly|=5.9891\n  2020: mean anomaly=0.1464, mean rainfall=3.4877, max |anomaly|=11.2871\n  2021: mean anomaly=0.0152, mean rainfall=3.3565, max |anomaly|=5.7350\n  2022: mean anomaly=0.1030, mean rainfall=3.4443, max |anomaly|=12.8501\n  2023: mean anomaly=-0.3792, mean rainfall=2.9621, max |anomaly|=11.3121\n  2024: mean anomaly=-0.0208, mean rainfall=3.3206, max |anomaly|=10.0936\n  2025: mean anomaly=0.1327, mean rainfall=3.4740, max |anomaly|=11.4944\n\nWhich year had the highest mean max_temperature_c across all grid cells?",
+    "options": {
+      "A": "2022",
+      "B": "2025",
+      "C": "2019",
+      "D": "2020"
+    },
+    "answer": "A",
+    "explanation": "Yearly mean temperature ranked descending",
+    "context": {
+      "yearly_mean_anomaly": {
+        "2019": 0.135367,
+        "2020": 0.146384,
+        "2021": 0.015166,
+        "2022": 0.10301,
+        "2023": -0.379173,
+        "2024": -0.020754,
+        "2025": 0.132651
+      },
+      "yearly_mean_rain": {
+        "2019": 3.47668,
+        "2020": 3.487696,
+        "2021": 3.356478,
+        "2022": 3.444323,
+        "2023": 2.96214,
+        "2024": 3.320558,
+        "2025": 3.473964
+      },
+      "yearly_mean_temp": {
+        "2019": 30.865413,
+        "2020": 30.680312,
+        "2021": 30.912408,
+        "2022": 31.171071,
+        "2023": 31.062242,
+        "2024": 31.150929,
+        "2025": 30.80237
+      },
+      "yearly_max_anomaly": {
+        "2019": 5.989103,
+        "2020": 11.287101,
+        "2021": 5.734994,
+        "2022": 12.850145,
+        "2023": 11.31209,
+        "2024": 10.093552,
+        "2025": 11.494356
+      },
+      "correct_year": "2022"
+    }
+  },
+  {
+    "id": "TA-458",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (25.50\u00b0N, 76.75\u00b0E):\n  2019: -0.17\n  2020: +0.19\n  2021: +0.62\n  2022: -0.09\n  2023: -0.25\n  2024: -0.29\n  2025: +0.48\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.4000, |delta|=0.2494 \u2014 no significant shift",
+    "context": {
+      "latitude": 25.5,
+      "longitude": 76.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.1737,
+        0.1896,
+        0.618,
+        -0.0899,
+        -0.2509,
+        -0.2931,
+        0.4814
+      ],
+      "first_half_mean": 0.211314,
+      "second_half_mean": -0.038128,
+      "delta": -0.249442,
+      "mannwhitney_p": 0.4
+    }
+  },
+  {
+    "id": "CR-247",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (27.25\u00b0N, 74.25\u00b0E) \u2014 max|anomaly|=1.3559 in 2023\n  Cell B: (19.25\u00b0N, 92.75\u00b0E) \u2014 max|anomaly|=1.5907 in 2019\n  Cell C: (22.25\u00b0N, 86.75\u00b0E) \u2014 max|anomaly|=1.3596 in 2021\n  Cell D: (33.00\u00b0N, 79.00\u00b0E) \u2014 max|anomaly|=1.0932 in 2021\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(27.25\u00b0N, 74.25\u00b0E) \u2014 max|anomaly|=1.3559",
+      "B": "(19.25\u00b0N, 92.75\u00b0E) \u2014 max|anomaly|=1.5907",
+      "C": "(22.25\u00b0N, 86.75\u00b0E) \u2014 max|anomaly|=1.3596",
+      "D": "(33.00\u00b0N, 79.00\u00b0E) \u2014 max|anomaly|=1.0932"
+    },
+    "answer": "B",
+    "explanation": "Cell B at (19.25\u00b0N, 92.75\u00b0E) recorded the highest max|anomaly|=1.5907 in 2019",
+    "context": {
+      "cells": [
+        {
+          "lat": 27.25,
+          "lon": 74.25,
+          "max_abs_anomaly": 1.3559,
+          "peak_year": 2023
+        },
+        {
+          "lat": 19.25,
+          "lon": 92.75,
+          "max_abs_anomaly": 1.5907,
+          "peak_year": 2019
+        },
+        {
+          "lat": 22.25,
+          "lon": 86.75,
+          "max_abs_anomaly": 1.3596,
+          "peak_year": 2021
+        },
+        {
+          "lat": 33.0,
+          "lon": 79.0,
+          "max_abs_anomaly": 1.0932,
+          "peak_year": 2021
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 19.25,
+          "lon": 92.75,
+          "max_abs_anomaly": 1.5907,
+          "peak_year": 2019
+        },
+        {
+          "lat": 22.25,
+          "lon": 86.75,
+          "max_abs_anomaly": 1.3596,
+          "peak_year": 2021
+        },
+        {
+          "lat": 27.25,
+          "lon": 74.25,
+          "max_abs_anomaly": 1.3559,
+          "peak_year": 2023
+        },
+        {
+          "lat": 33.0,
+          "lon": 79.0,
+          "max_abs_anomaly": 1.0932,
+          "peak_year": 2021
+        }
+      ],
+      "worst_cell": {
+        "lat": 19.25,
+        "lon": 92.75,
+        "max_abs_anomaly": 1.5907,
+        "peak_year": 2019
+      }
+    }
+  },
+  {
+    "id": "TA-317",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (28.25\u00b0N, 76.50\u00b0E), 2019\u20132025:\n  rainfall_mm   : 1.34, 2.00, 1.93, 2.53, 1.84, 1.64, 3.24\n  anomaly_score : -0.54, 0.12, 0.05, 0.65, -0.04, -0.23, 1.36\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 28.25,
+      "longitude": 76.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        1.3358,
+        1.9953,
+        1.9267,
+        2.5253,
+        1.8388,
+        1.6447,
+        3.2382
+      ],
+      "anomaly_score": [
+        -0.542,
+        0.1175,
+        0.049,
+        0.6476,
+        -0.039,
+        -0.2331,
+        1.3604
+      ],
+      "rainfall_slope": 0.175645,
+      "rainfall_p": 0.151313,
+      "anomaly_slope": 0.175645,
+      "anomaly_p": 0.151313
+    }
+  },
+  {
+    "id": "TA-075",
+    "category": "trend_analysis",
+    "subcategory": "rainfall_trend_direction",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for grid cell (30.25\u00b0N, 75.00\u00b0E), 2019\u20132025:\n4.40, 3.03, 3.75, 3.04, 1.71, 2.42, 3.49\n\nWhich best describes the rainfall trend?",
+    "options": {
+      "A": "Increasing (positive slope, statistically significant)",
+      "B": "Decreasing (negative slope, statistically significant)",
+      "C": "No significant trend (p > 0.05)"
+    },
+    "answer": "C",
+    "explanation": "Slope=-0.2136 but p=0.2277 > 0.05 \u2014 not significant",
+    "context": {
+      "latitude": 30.25,
+      "longitude": 75.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        4.4011,
+        3.0284,
+        3.7529,
+        3.0427,
+        1.7127,
+        2.4231,
+        3.4907
+      ],
+      "slope": -0.213636,
+      "p_value": 0.227669
+    }
+  },
+  {
+    "id": "CR-164",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "hard",
+    "question": "For grid cell (28.00\u00b0N, 82.25\u00b0E):\n  2025 anomaly_score = -0.3727\n  2020 anomaly_score = 0.8673\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2025 was more anomalous (|-0.3727| > |0.8673|)",
+      "B": "2020 was more anomalous (|0.8673| > |-0.3727|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "B",
+    "explanation": "|anomaly in 2020|=0.8673 > |anomaly in 2025|=0.3727",
+    "context": {
+      "latitude": 28.0,
+      "longitude": 82.25,
+      "year1": 2025,
+      "anomaly1": -0.3727,
+      "abs_anomaly1": 0.3727,
+      "year2": 2020,
+      "anomaly2": 0.8673,
+      "abs_anomaly2": 0.8673,
+      "difference": 0.4946
+    }
+  },
+  {
+    "id": "CR-082",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "medium",
+    "question": "In 2020, which grid cell had higher rainfall_mm?\n\nCell A: (23.75\u00b0N, 83.75\u00b0E) \u2014 rainfall_mm = 5.232\nCell B: (16.50\u00b0N, 79.00\u00b0E) \u2014 rainfall_mm = 1.482",
+    "options": {
+      "A": "Cell A (23.75\u00b0N, 83.75\u00b0E)",
+      "B": "Cell B (16.50\u00b0N, 79.00\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=5.232 > Cell B=1.482 (diff=3.750)",
+    "context": {
+      "year": 2020,
+      "cell_a": {
+        "latitude": 23.75,
+        "longitude": 83.75,
+        "rainfall_mm": 5.232
+      },
+      "cell_b": {
+        "latitude": 16.5,
+        "longitude": 79.0,
+        "rainfall_mm": 1.482
+      },
+      "difference": 3.75
+    }
+  },
+  {
+    "id": "TA-022",
+    "category": "trend_analysis",
+    "subcategory": "rainfall_trend_direction",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for grid cell (31.75\u00b0N, 76.00\u00b0E), 2019\u20132025:\n3.69, 2.93, 3.62, 5.00, 1.97, 2.86, 2.14\n\nWhich best describes the rainfall trend?",
+    "options": {
+      "A": "Increasing (positive slope, statistically significant)",
+      "B": "Decreasing (negative slope, statistically significant)",
+      "C": "No significant trend (p > 0.05)"
+    },
+    "answer": "C",
+    "explanation": "Slope=-0.2299 but p=0.2774 > 0.05 \u2014 not significant",
+    "context": {
+      "latitude": 31.75,
+      "longitude": 76.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        3.6934,
+        2.9265,
+        3.6207,
+        4.9982,
+        1.9735,
+        2.86,
+        2.1408
+      ],
+      "slope": -0.22994,
+      "p_value": 0.277373
+    }
+  },
+  {
+    "id": "TA-418",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (11.25\u00b0N, 75.75\u00b0E):\n  2019: +1.13\n  2020: -0.24\n  2021: -0.29\n  2022: -0.57\n  2023: +0.46\n  2024: -0.48\n  2025: -0.13\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.6286, |delta|=0.3809 \u2014 no significant shift",
+    "context": {
+      "latitude": 11.25,
+      "longitude": 75.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        1.1267,
+        -0.2402,
+        -0.2874,
+        -0.5743,
+        0.4552,
+        -0.48,
+        -0.1256
+      ],
+      "first_half_mean": 0.199694,
+      "second_half_mean": -0.181179,
+      "delta": -0.380873,
+      "mannwhitney_p": 0.628571
+    }
+  },
+  {
+    "id": "TA-166",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (17.00\u00b0N, 72.50\u00b0E):\n2019:-0.0, 2020:-0.02, 2021:0.09, 2022:0.06, 2023:-0.18, 2024:0.06, 2025:-0.14\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2023",
+      "B": "2024",
+      "C": "2019",
+      "D": "2022"
+    },
+    "answer": "A",
+    "explanation": "|anomaly| peaks at 2023 with value -0.1812 (gap to 2nd=0.0427)",
+    "context": {
+      "latitude": 17.0,
+      "longitude": 72.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.0033,
+        -0.0231,
+        0.0853,
+        0.064,
+        -0.1812,
+        0.0582,
+        -0.1385
+      ],
+      "peak_year": 2023,
+      "peak_value": -0.1812
+    }
+  },
+  {
+    "id": "TA-183",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (12.25\u00b0N, 75.50\u00b0E):\n2019:1.15, 2020:-0.02, 2021:-0.62, 2022:0.08, 2023:0.18, 2024:-0.77, 2025:1.11\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2023",
+      "B": "2019",
+      "C": "2024",
+      "D": "2021"
+    },
+    "answer": "B",
+    "explanation": "|anomaly| peaks at 2019 with value 1.1506 (gap to 2nd=0.0403)",
+    "context": {
+      "latitude": 12.25,
+      "longitude": 75.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        1.1506,
+        -0.0211,
+        -0.6217,
+        0.0845,
+        0.1796,
+        -0.7718,
+        1.1102
+      ],
+      "peak_year": 2019,
+      "peak_value": 1.1506
+    }
+  },
+  {
+    "id": "TA-455",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (24.25\u00b0N, 76.25\u00b0E):\n  2019: +0.05\n  2020: -0.17\n  2021: -0.19\n  2022: -0.27\n  2023: +0.00\n  2024: +0.58\n  2025: -0.05\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.8571, |delta|=0.1654 \u2014 no significant shift",
+    "context": {
+      "latitude": 24.25,
+      "longitude": 76.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.0546,
+        -0.1693,
+        -0.1891,
+        -0.2728,
+        0.0006,
+        0.576,
+        -0.047
+      ],
+      "first_half_mean": -0.101256,
+      "second_half_mean": 0.064184,
+      "delta": 0.16544,
+      "mannwhitney_p": 0.857143
+    }
+  },
+  {
+    "id": "TA-442",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (21.25\u00b0N, 80.25\u00b0E):\n  2019: +0.18\n  2020: -0.35\n  2021: -0.38\n  2022: +0.29\n  2023: +0.20\n  2024: +0.07\n  2025: +0.59\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.1143, |delta|=0.4688 \u2014 no significant shift",
+    "context": {
+      "latitude": 21.25,
+      "longitude": 80.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.1835,
+        -0.3499,
+        -0.3837,
+        0.2854,
+        0.1976,
+        0.0671,
+        0.5917
+      ],
+      "first_half_mean": -0.183384,
+      "second_half_mean": 0.285464,
+      "delta": 0.468848,
+      "mannwhitney_p": 0.114286
+    }
+  },
+  {
+    "id": "TA-384",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (18.00\u00b0N, 71.25\u00b0E), 2019\u20132025:\n  rainfall_mm   : 0.86, 0.79, 1.03, 1.07, 1.08, 1.26, 0.69\n  anomaly_score : -0.16, -0.22, 0.02, 0.06, 0.07, 0.24, -0.32\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 18.0,
+      "longitude": 71.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        0.8551,
+        0.7921,
+        1.0326,
+        1.0713,
+        1.0795,
+        1.2553,
+        0.691
+      ],
+      "anomaly_score": [
+        -0.1592,
+        -0.2222,
+        0.0182,
+        0.057,
+        0.0651,
+        0.241,
+        -0.3234
+      ],
+      "rainfall_slope": 0.017175,
+      "rainfall_p": 0.684211,
+      "anomaly_slope": 0.017175,
+      "anomaly_p": 0.684211
+    }
+  },
+  {
+    "id": "CR-210",
+    "category": "comparative_reasoning",
+    "subcategory": "global_year_ranking",
+    "difficulty": "medium",
+    "question": "India-wide climate statistics per year:\n  2019: mean anomaly=0.1354, mean rainfall=3.4767, max |anomaly|=5.9891\n  2020: mean anomaly=0.1464, mean rainfall=3.4877, max |anomaly|=11.2871\n  2021: mean anomaly=0.0152, mean rainfall=3.3565, max |anomaly|=5.7350\n  2022: mean anomaly=0.1030, mean rainfall=3.4443, max |anomaly|=12.8501\n  2023: mean anomaly=-0.3792, mean rainfall=2.9621, max |anomaly|=11.3121\n  2024: mean anomaly=-0.0208, mean rainfall=3.3206, max |anomaly|=10.0936\n  2025: mean anomaly=0.1327, mean rainfall=3.4740, max |anomaly|=11.4944\n\nWhich year had the most balanced climate conditions (mean anomaly_score closest to zero)?",
+    "options": {
+      "A": "2024",
+      "B": "2021",
+      "C": "2020",
+      "D": "2022"
+    },
+    "answer": "B",
+    "explanation": "Year with |mean anomaly| closest to 0",
+    "context": {
+      "yearly_mean_anomaly": {
+        "2019": 0.135367,
+        "2020": 0.146384,
+        "2021": 0.015166,
+        "2022": 0.10301,
+        "2023": -0.379173,
+        "2024": -0.020754,
+        "2025": 0.132651
+      },
+      "yearly_mean_rain": {
+        "2019": 3.47668,
+        "2020": 3.487696,
+        "2021": 3.356478,
+        "2022": 3.444323,
+        "2023": 2.96214,
+        "2024": 3.320558,
+        "2025": 3.473964
+      },
+      "yearly_mean_temp": {
+        "2019": 30.865413,
+        "2020": 30.680312,
+        "2021": 30.912408,
+        "2022": 31.171071,
+        "2023": 31.062242,
+        "2024": 31.150929,
+        "2025": 30.80237
+      },
+      "yearly_max_anomaly": {
+        "2019": 5.989103,
+        "2020": 11.287101,
+        "2021": 5.734994,
+        "2022": 12.850145,
+        "2023": 11.31209,
+        "2024": 10.093552,
+        "2025": 11.494356
+      },
+      "correct_year": "2021"
+    }
+  },
+  {
+    "id": "TA-199",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (20.00\u00b0N, 84.25\u00b0E):\n2019:0.25, 2020:0.3, 2021:0.78, 2022:-0.44, 2023:-0.73, 2024:-0.16, 2025:-0.11\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2025",
+      "B": "2020",
+      "C": "2022",
+      "D": "2021"
+    },
+    "answer": "D",
+    "explanation": "|anomaly| peaks at 2021 with value 0.781 (gap to 2nd=0.0518)",
+    "context": {
+      "latitude": 20.0,
+      "longitude": 84.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.2457,
+        0.2988,
+        0.781,
+        -0.4352,
+        -0.7292,
+        -0.161,
+        -0.1076
+      ],
+      "peak_year": 2021,
+      "peak_value": 0.781
+    }
+  },
+  {
+    "id": "TA-144",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (31.25\u00b0N, 77.00\u00b0E):\n2019:-0.36, 2020:0.05, 2021:0.06, 2022:1.23, 2023:-1.12, 2024:0.14, 2025:-0.8\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2021",
+      "B": "2025",
+      "C": "2019",
+      "D": "2022"
+    },
+    "answer": "D",
+    "explanation": "|anomaly| peaks at 2022 with value 1.2298 (gap to 2nd=0.1053)",
+    "context": {
+      "latitude": 31.25,
+      "longitude": 77.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.3613,
+        0.052,
+        0.0611,
+        1.2298,
+        -1.1246,
+        0.143,
+        -0.803
+      ],
+      "peak_year": 2022,
+      "peak_value": 1.2298
+    }
+  },
+  {
+    "id": "CR-074",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "medium",
+    "question": "In 2023, which grid cell had higher rainfall_mm?\n\nCell A: (21.25\u00b0N, 76.00\u00b0E) \u2014 rainfall_mm = 2.815\nCell B: (26.25\u00b0N, 81.50\u00b0E) \u2014 rainfall_mm = 3.898",
+    "options": {
+      "A": "Cell A (21.25\u00b0N, 76.00\u00b0E)",
+      "B": "Cell B (26.25\u00b0N, 81.50\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "B",
+    "explanation": "Cell B=3.898 > Cell A=2.815 (diff=1.083)",
+    "context": {
+      "year": 2023,
+      "cell_a": {
+        "latitude": 21.25,
+        "longitude": 76.0,
+        "rainfall_mm": 2.815
+      },
+      "cell_b": {
+        "latitude": 26.25,
+        "longitude": 81.5,
+        "rainfall_mm": 3.898
+      },
+      "difference": 1.083
+    }
+  },
+  {
+    "id": "CR-134",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "hard",
+    "question": "For grid cell (17.50\u00b0N, 72.00\u00b0E):\n  2020 anomaly_score = 0.1426\n  2025 anomaly_score = -0.2106\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2020 was more anomalous (|0.1426| > |-0.2106|)",
+      "B": "2025 was more anomalous (|-0.2106| > |0.1426|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "B",
+    "explanation": "|anomaly in 2025|=0.2106 > |anomaly in 2020|=0.1426",
+    "context": {
+      "latitude": 17.5,
+      "longitude": 72.0,
+      "year1": 2020,
+      "anomaly1": 0.1426,
+      "abs_anomaly1": 0.1426,
+      "year2": 2025,
+      "anomaly2": -0.2106,
+      "abs_anomaly2": 0.2106,
+      "difference": 0.068
+    }
+  },
+  {
+    "id": "CR-009",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "hard",
+    "question": "In 2019, which grid cell had higher rainfall_mm?\n\nCell A: (35.25\u00b0N, 78.75\u00b0E) \u2014 rainfall_mm = 2.639\nCell B: (26.00\u00b0N, 79.25\u00b0E) \u2014 rainfall_mm = 3.066",
+    "options": {
+      "A": "Cell A (35.25\u00b0N, 78.75\u00b0E)",
+      "B": "Cell B (26.00\u00b0N, 79.25\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "B",
+    "explanation": "Cell B=3.066 > Cell A=2.639 (diff=0.427)",
+    "context": {
+      "year": 2019,
+      "cell_a": {
+        "latitude": 35.25,
+        "longitude": 78.75,
+        "rainfall_mm": 2.639
+      },
+      "cell_b": {
+        "latitude": 26.0,
+        "longitude": 79.25,
+        "rainfall_mm": 3.066
+      },
+      "difference": 0.427
+    }
+  },
+  {
+    "id": "TA-394",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (24.25\u00b0N, 77.25\u00b0E), 2019\u20132025:\n  rainfall_mm   : 1.91, 1.22, 2.30, 1.83, 2.09, 2.44, 2.68\n  anomaly_score : -0.05, -0.74, 0.34, -0.14, 0.13, 0.47, 0.72\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 24.25,
+      "longitude": 77.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        1.9097,
+        1.222,
+        2.3013,
+        1.8266,
+        2.091,
+        2.4356,
+        2.6844
+      ],
+      "anomaly_score": [
+        -0.0547,
+        -0.7424,
+        0.337,
+        -0.1378,
+        0.1266,
+        0.4712,
+        0.72
+      ],
+      "rainfall_slope": 0.162177,
+      "rainfall_p": 0.060683,
+      "anomaly_slope": 0.162177,
+      "anomaly_p": 0.060683
+    }
+  },
+  {
+    "id": "CR-252",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (15.50\u00b0N, 77.00\u00b0E) \u2014 max|anomaly|=0.4594 in 2019\n  Cell B: (19.25\u00b0N, 86.25\u00b0E) \u2014 max|anomaly|=1.2682 in 2024\n  Cell C: (16.75\u00b0N, 88.75\u00b0E) \u2014 max|anomaly|=3.1204 in 2025\n  Cell D: (16.00\u00b0N, 79.00\u00b0E) \u2014 max|anomaly|=0.2657 in 2023\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(15.50\u00b0N, 77.00\u00b0E) \u2014 max|anomaly|=0.4594",
+      "B": "(19.25\u00b0N, 86.25\u00b0E) \u2014 max|anomaly|=1.2682",
+      "C": "(16.75\u00b0N, 88.75\u00b0E) \u2014 max|anomaly|=3.1204",
+      "D": "(16.00\u00b0N, 79.00\u00b0E) \u2014 max|anomaly|=0.2657"
+    },
+    "answer": "C",
+    "explanation": "Cell C at (16.75\u00b0N, 88.75\u00b0E) recorded the highest max|anomaly|=3.1204 in 2025",
+    "context": {
+      "cells": [
+        {
+          "lat": 15.5,
+          "lon": 77.0,
+          "max_abs_anomaly": 0.4594,
+          "peak_year": 2019
+        },
+        {
+          "lat": 19.25,
+          "lon": 86.25,
+          "max_abs_anomaly": 1.2682,
+          "peak_year": 2024
+        },
+        {
+          "lat": 16.75,
+          "lon": 88.75,
+          "max_abs_anomaly": 3.1204,
+          "peak_year": 2025
+        },
+        {
+          "lat": 16.0,
+          "lon": 79.0,
+          "max_abs_anomaly": 0.2657,
+          "peak_year": 2023
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 16.75,
+          "lon": 88.75,
+          "max_abs_anomaly": 3.1204,
+          "peak_year": 2025
+        },
+        {
+          "lat": 19.25,
+          "lon": 86.25,
+          "max_abs_anomaly": 1.2682,
+          "peak_year": 2024
+        },
+        {
+          "lat": 15.5,
+          "lon": 77.0,
+          "max_abs_anomaly": 0.4594,
+          "peak_year": 2019
+        },
+        {
+          "lat": 16.0,
+          "lon": 79.0,
+          "max_abs_anomaly": 0.2657,
+          "peak_year": 2023
+        }
+      ],
+      "worst_cell": {
+        "lat": 16.75,
+        "lon": 88.75,
+        "max_abs_anomaly": 3.1204,
+        "peak_year": 2025
+      }
+    }
+  },
+  {
+    "id": "TA-475",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (17.25\u00b0N, 75.50\u00b0E):\n  2019: +0.24\n  2020: -0.41\n  2021: +0.16\n  2022: -0.34\n  2023: +0.36\n  2024: -0.01\n  2025: +0.87\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.6286, |delta|=0.2245 \u2014 no significant shift",
+    "context": {
+      "latitude": 17.25,
+      "longitude": 75.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.242,
+        -0.4114,
+        0.1568,
+        -0.3394,
+        0.3612,
+        -0.0092,
+        0.8687
+      ],
+      "first_half_mean": -0.004185,
+      "second_half_mean": 0.220315,
+      "delta": 0.2245,
+      "mannwhitney_p": 0.628571
+    }
+  },
+  {
+    "id": "CR-023",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "hard",
+    "question": "In 2019, which grid cell had higher rainfall_mm?\n\nCell A: (23.75\u00b0N, 78.25\u00b0E) \u2014 rainfall_mm = 2.551\nCell B: (23.00\u00b0N, 82.25\u00b0E) \u2014 rainfall_mm = 3.023",
+    "options": {
+      "A": "Cell A (23.75\u00b0N, 78.25\u00b0E)",
+      "B": "Cell B (23.00\u00b0N, 82.25\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "B",
+    "explanation": "Cell B=3.023 > Cell A=2.551 (diff=0.472)",
+    "context": {
+      "year": 2019,
+      "cell_a": {
+        "latitude": 23.75,
+        "longitude": 78.25,
+        "rainfall_mm": 2.551
+      },
+      "cell_b": {
+        "latitude": 23.0,
+        "longitude": 82.25,
+        "rainfall_mm": 3.023
+      },
+      "difference": 0.472
+    }
+  },
+  {
+    "id": "CR-258",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (14.25\u00b0N, 74.75\u00b0E) \u2014 max|anomaly|=0.5465 in 2024\n  Cell B: (31.00\u00b0N, 77.25\u00b0E) \u2014 max|anomaly|=1.0143 in 2023\n  Cell C: (22.50\u00b0N, 84.50\u00b0E) \u2014 max|anomaly|=0.6061 in 2022\n  Cell D: (29.75\u00b0N, 79.50\u00b0E) \u2014 max|anomaly|=0.6887 in 2019\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(14.25\u00b0N, 74.75\u00b0E) \u2014 max|anomaly|=0.5465",
+      "B": "(31.00\u00b0N, 77.25\u00b0E) \u2014 max|anomaly|=1.0143",
+      "C": "(22.50\u00b0N, 84.50\u00b0E) \u2014 max|anomaly|=0.6061",
+      "D": "(29.75\u00b0N, 79.50\u00b0E) \u2014 max|anomaly|=0.6887"
+    },
+    "answer": "B",
+    "explanation": "Cell B at (31.00\u00b0N, 77.25\u00b0E) recorded the highest max|anomaly|=1.0143 in 2023",
+    "context": {
+      "cells": [
+        {
+          "lat": 14.25,
+          "lon": 74.75,
+          "max_abs_anomaly": 0.5465,
+          "peak_year": 2024
+        },
+        {
+          "lat": 31.0,
+          "lon": 77.25,
+          "max_abs_anomaly": 1.0143,
+          "peak_year": 2023
+        },
+        {
+          "lat": 22.5,
+          "lon": 84.5,
+          "max_abs_anomaly": 0.6061,
+          "peak_year": 2022
+        },
+        {
+          "lat": 29.75,
+          "lon": 79.5,
+          "max_abs_anomaly": 0.6887,
+          "peak_year": 2019
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 31.0,
+          "lon": 77.25,
+          "max_abs_anomaly": 1.0143,
+          "peak_year": 2023
+        },
+        {
+          "lat": 29.75,
+          "lon": 79.5,
+          "max_abs_anomaly": 0.6887,
+          "peak_year": 2019
+        },
+        {
+          "lat": 22.5,
+          "lon": 84.5,
+          "max_abs_anomaly": 0.6061,
+          "peak_year": 2022
+        },
+        {
+          "lat": 14.25,
+          "lon": 74.75,
+          "max_abs_anomaly": 0.5465,
+          "peak_year": 2024
+        }
+      ],
+      "worst_cell": {
+        "lat": 31.0,
+        "lon": 77.25,
+        "max_abs_anomaly": 1.0143,
+        "peak_year": 2023
+      }
+    }
+  },
+  {
+    "id": "TA-288",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (24.75\u00b0N, 80.25\u00b0E):\n5.59, 2.89, 3.11, 4.98, 3.98, 4.68, 5.14\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "-3.15",
+      "B": "-0.271",
+      "C": "-0.451",
+      "D": "-0.631"
+    },
+    "answer": "C",
+    "explanation": "5.140 \u2212 5.591 = -0.451",
+    "context": {
+      "latitude": 24.75,
+      "longitude": 80.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        5.5914,
+        2.8926,
+        3.1085,
+        4.982,
+        3.9818,
+        4.6794,
+        5.1399
+      ],
+      "first_value": 5.5914,
+      "last_value": 5.1399,
+      "total_change": -0.451
+    }
+  },
+  {
+    "id": "CR-212",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (17.75\u00b0N, 83.50\u00b0E) \u2014 max|anomaly|=1.5282 in 2021\n  Cell B: (19.50\u00b0N, 88.25\u00b0E) \u2014 max|anomaly|=1.4364 in 2025\n  Cell C: (16.75\u00b0N, 77.50\u00b0E) \u2014 max|anomaly|=0.6685 in 2020\n  Cell D: (21.00\u00b0N, 87.50\u00b0E) \u2014 max|anomaly|=0.9402 in 2022\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(17.75\u00b0N, 83.50\u00b0E) \u2014 max|anomaly|=1.5282",
+      "B": "(19.50\u00b0N, 88.25\u00b0E) \u2014 max|anomaly|=1.4364",
+      "C": "(16.75\u00b0N, 77.50\u00b0E) \u2014 max|anomaly|=0.6685",
+      "D": "(21.00\u00b0N, 87.50\u00b0E) \u2014 max|anomaly|=0.9402"
+    },
+    "answer": "A",
+    "explanation": "Cell A at (17.75\u00b0N, 83.50\u00b0E) recorded the highest max|anomaly|=1.5282 in 2021",
+    "context": {
+      "cells": [
+        {
+          "lat": 17.75,
+          "lon": 83.5,
+          "max_abs_anomaly": 1.5282,
+          "peak_year": 2021
+        },
+        {
+          "lat": 19.5,
+          "lon": 88.25,
+          "max_abs_anomaly": 1.4364,
+          "peak_year": 2025
+        },
+        {
+          "lat": 16.75,
+          "lon": 77.5,
+          "max_abs_anomaly": 0.6685,
+          "peak_year": 2020
+        },
+        {
+          "lat": 21.0,
+          "lon": 87.5,
+          "max_abs_anomaly": 0.9402,
+          "peak_year": 2022
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 17.75,
+          "lon": 83.5,
+          "max_abs_anomaly": 1.5282,
+          "peak_year": 2021
+        },
+        {
+          "lat": 19.5,
+          "lon": 88.25,
+          "max_abs_anomaly": 1.4364,
+          "peak_year": 2025
+        },
+        {
+          "lat": 21.0,
+          "lon": 87.5,
+          "max_abs_anomaly": 0.9402,
+          "peak_year": 2022
+        },
+        {
+          "lat": 16.75,
+          "lon": 77.5,
+          "max_abs_anomaly": 0.6685,
+          "peak_year": 2020
+        }
+      ],
+      "worst_cell": {
+        "lat": 17.75,
+        "lon": 83.5,
+        "max_abs_anomaly": 1.5282,
+        "peak_year": 2021
+      }
+    }
+  },
+  {
+    "id": "TA-105",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "medium",
+    "question": "Anomaly scores for (19.25\u00b0N, 85.00\u00b0E):\n2019:-0.28, 2020:0.68, 2021:2.26, 2022:-0.99, 2023:-0.31, 2024:-1.37, 2025:-0.39\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2023",
+      "B": "2022",
+      "C": "2020",
+      "D": "2021"
+    },
+    "answer": "D",
+    "explanation": "|anomaly| peaks at 2021 with value 2.2635 (gap to 2nd=0.8942)",
+    "context": {
+      "latitude": 19.25,
+      "longitude": 85.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.277,
+        0.6776,
+        2.2635,
+        -0.9852,
+        -0.3096,
+        -1.3693,
+        -0.3943
+      ],
+      "peak_year": 2021,
+      "peak_value": 2.2635
+    }
+  },
+  {
+    "id": "TA-114",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (20.00\u00b0N, 76.00\u00b0E):\n2019:0.58, 2020:-0.96, 2021:0.66, 2022:0.75, 2023:-0.89, 2024:-0.16, 2025:0.95\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2021",
+      "B": "2020",
+      "C": "2022",
+      "D": "2025"
+    },
+    "answer": "B",
+    "explanation": "|anomaly| peaks at 2020 with value -0.9551 (gap to 2nd=0.0066)",
+    "context": {
+      "latitude": 20.0,
+      "longitude": 76.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.5828,
+        -0.9551,
+        0.6635,
+        0.7503,
+        -0.8856,
+        -0.1559,
+        0.9486
+      ],
+      "peak_year": 2020,
+      "peak_value": -0.9551
+    }
+  },
+  {
+    "id": "CR-277",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (30.50\u00b0N, 76.50\u00b0E) \u2014 max|anomaly|=1.5617 in 2024\n  Cell B: (10.50\u00b0N, 79.00\u00b0E) \u2014 max|anomaly|=0.3062 in 2019\n  Cell C: (30.00\u00b0N, 74.75\u00b0E) \u2014 max|anomaly|=1.8533 in 2023\n  Cell D: (32.25\u00b0N, 77.75\u00b0E) \u2014 max|anomaly|=1.6066 in 2022\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(30.50\u00b0N, 76.50\u00b0E) \u2014 max|anomaly|=1.5617",
+      "B": "(10.50\u00b0N, 79.00\u00b0E) \u2014 max|anomaly|=0.3062",
+      "C": "(30.00\u00b0N, 74.75\u00b0E) \u2014 max|anomaly|=1.8533",
+      "D": "(32.25\u00b0N, 77.75\u00b0E) \u2014 max|anomaly|=1.6066"
+    },
+    "answer": "C",
+    "explanation": "Cell C at (30.00\u00b0N, 74.75\u00b0E) recorded the highest max|anomaly|=1.8533 in 2023",
+    "context": {
+      "cells": [
+        {
+          "lat": 30.5,
+          "lon": 76.5,
+          "max_abs_anomaly": 1.5617,
+          "peak_year": 2024
+        },
+        {
+          "lat": 10.5,
+          "lon": 79.0,
+          "max_abs_anomaly": 0.3062,
+          "peak_year": 2019
+        },
+        {
+          "lat": 30.0,
+          "lon": 74.75,
+          "max_abs_anomaly": 1.8533,
+          "peak_year": 2023
+        },
+        {
+          "lat": 32.25,
+          "lon": 77.75,
+          "max_abs_anomaly": 1.6066,
+          "peak_year": 2022
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 30.0,
+          "lon": 74.75,
+          "max_abs_anomaly": 1.8533,
+          "peak_year": 2023
+        },
+        {
+          "lat": 32.25,
+          "lon": 77.75,
+          "max_abs_anomaly": 1.6066,
+          "peak_year": 2022
+        },
+        {
+          "lat": 30.5,
+          "lon": 76.5,
+          "max_abs_anomaly": 1.5617,
+          "peak_year": 2024
+        },
+        {
+          "lat": 10.5,
+          "lon": 79.0,
+          "max_abs_anomaly": 0.3062,
+          "peak_year": 2019
+        }
+      ],
+      "worst_cell": {
+        "lat": 30.0,
+        "lon": 74.75,
+        "max_abs_anomaly": 1.8533,
+        "peak_year": 2023
+      }
+    }
+  },
+  {
+    "id": "CR-115",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "hard",
+    "question": "For grid cell (18.75\u00b0N, 76.75\u00b0E):\n  2019 anomaly_score = -0.294\n  2023 anomaly_score = -0.0112\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2019 was more anomalous (|-0.294| > |-0.0112|)",
+      "B": "2023 was more anomalous (|-0.0112| > |-0.294|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "A",
+    "explanation": "|anomaly in 2019|=0.2940 > |anomaly in 2023|=0.0112",
+    "context": {
+      "latitude": 18.75,
+      "longitude": 76.75,
+      "year1": 2019,
+      "anomaly1": -0.294,
+      "abs_anomaly1": 0.294,
+      "year2": 2023,
+      "anomaly2": -0.0112,
+      "abs_anomaly2": 0.0112,
+      "difference": 0.2828
+    }
+  },
+  {
+    "id": "TA-285",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (16.50\u00b0N, 73.75\u00b0E):\n0.82, 0.51, 1.01, 1.10, 1.11, 1.14, 1.47\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "0.338",
+      "B": "0.651",
+      "C": "0.911",
+      "D": "0.391"
+    },
+    "answer": "B",
+    "explanation": "1.473 \u2212 0.821 = 0.651",
+    "context": {
+      "latitude": 16.5,
+      "longitude": 73.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        0.8215,
+        0.5088,
+        1.0066,
+        1.1032,
+        1.1081,
+        1.1424,
+        1.4729
+      ],
+      "first_value": 0.8215,
+      "last_value": 1.4729,
+      "total_change": 0.651
+    }
+  },
+  {
+    "id": "CR-061",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "medium",
+    "question": "In 2022, which grid cell had higher rainfall_mm?\n\nCell A: (17.25\u00b0N, 88.50\u00b0E) \u2014 rainfall_mm = 9.67\nCell B: (20.50\u00b0N, 92.00\u00b0E) \u2014 rainfall_mm = 7.194",
+    "options": {
+      "A": "Cell A (17.25\u00b0N, 88.50\u00b0E)",
+      "B": "Cell B (20.50\u00b0N, 92.00\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=9.670 > Cell B=7.194 (diff=2.476)",
+    "context": {
+      "year": 2022,
+      "cell_a": {
+        "latitude": 17.25,
+        "longitude": 88.5,
+        "rainfall_mm": 9.67
+      },
+      "cell_b": {
+        "latitude": 20.5,
+        "longitude": 92.0,
+        "rainfall_mm": 7.194
+      },
+      "difference": 2.476
+    }
+  },
+  {
+    "id": "TA-433",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (22.50\u00b0N, 89.00\u00b0E):\n  2019: +0.08\n  2020: +0.36\n  2021: +1.61\n  2022: -1.58\n  2023: -0.76\n  2024: +0.29\n  2025: +0.51\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.4000, |delta|=1.0663 \u2014 no significant shift",
+    "context": {
+      "latitude": 22.5,
+      "longitude": 89.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.0763,
+        0.3568,
+        1.6119,
+        -1.5768,
+        -0.7593,
+        0.2912,
+        0.5064
+      ],
+      "first_half_mean": 0.681673,
+      "second_half_mean": -0.384652,
+      "delta": -1.066325,
+      "mannwhitney_p": 0.4
+    }
+  },
+  {
+    "id": "TA-168",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (18.25\u00b0N, 94.50\u00b0E):\n2019:-0.07, 2020:-0.03, 2021:-0.95, 2022:0.24, 2023:0.03, 2024:0.77, 2025:-0.96\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2025",
+      "B": "2021",
+      "C": "2022",
+      "D": "2019"
+    },
+    "answer": "A",
+    "explanation": "|anomaly| peaks at 2025 with value -0.9597 (gap to 2nd=0.0096)",
+    "context": {
+      "latitude": 18.25,
+      "longitude": 94.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.0658,
+        -0.0274,
+        -0.9501,
+        0.2414,
+        0.032,
+        0.7698,
+        -0.9597
+      ],
+      "peak_year": 2025,
+      "peak_value": -0.9597
+    }
+  },
+  {
+    "id": "TA-416",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (18.50\u00b0N, 81.25\u00b0E):\n  2019: +2.01\n  2020: -0.92\n  2021: +0.14\n  2022: +0.85\n  2023: -0.65\n  2024: -1.44\n  2025: -1.18\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.4000, |delta|=1.0113 \u2014 no significant shift",
+    "context": {
+      "latitude": 18.5,
+      "longitude": 81.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        2.0089,
+        -0.9212,
+        0.1415,
+        0.8547,
+        -0.647,
+        -1.4369,
+        -1.1771
+      ],
+      "first_half_mean": 0.409734,
+      "second_half_mean": -0.60158,
+      "delta": -1.011315,
+      "mannwhitney_p": 0.4
+    }
+  },
+  {
+    "id": "CR-228",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (23.00\u00b0N, 70.75\u00b0E) \u2014 max|anomaly|=1.3753 in 2020\n  Cell B: (17.75\u00b0N, 95.25\u00b0E) \u2014 max|anomaly|=1.7899 in 2021\n  Cell C: (25.25\u00b0N, 82.00\u00b0E) \u2014 max|anomaly|=0.7511 in 2022\n  Cell D: (11.00\u00b0N, 78.25\u00b0E) \u2014 max|anomaly|=0.3366 in 2019\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(23.00\u00b0N, 70.75\u00b0E) \u2014 max|anomaly|=1.3753",
+      "B": "(17.75\u00b0N, 95.25\u00b0E) \u2014 max|anomaly|=1.7899",
+      "C": "(25.25\u00b0N, 82.00\u00b0E) \u2014 max|anomaly|=0.7511",
+      "D": "(11.00\u00b0N, 78.25\u00b0E) \u2014 max|anomaly|=0.3366"
+    },
+    "answer": "B",
+    "explanation": "Cell B at (17.75\u00b0N, 95.25\u00b0E) recorded the highest max|anomaly|=1.7899 in 2021",
+    "context": {
+      "cells": [
+        {
+          "lat": 23.0,
+          "lon": 70.75,
+          "max_abs_anomaly": 1.3753,
+          "peak_year": 2020
+        },
+        {
+          "lat": 17.75,
+          "lon": 95.25,
+          "max_abs_anomaly": 1.7899,
+          "peak_year": 2021
+        },
+        {
+          "lat": 25.25,
+          "lon": 82.0,
+          "max_abs_anomaly": 0.7511,
+          "peak_year": 2022
+        },
+        {
+          "lat": 11.0,
+          "lon": 78.25,
+          "max_abs_anomaly": 0.3366,
+          "peak_year": 2019
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 17.75,
+          "lon": 95.25,
+          "max_abs_anomaly": 1.7899,
+          "peak_year": 2021
+        },
+        {
+          "lat": 23.0,
+          "lon": 70.75,
+          "max_abs_anomaly": 1.3753,
+          "peak_year": 2020
+        },
+        {
+          "lat": 25.25,
+          "lon": 82.0,
+          "max_abs_anomaly": 0.7511,
+          "peak_year": 2022
+        },
+        {
+          "lat": 11.0,
+          "lon": 78.25,
+          "max_abs_anomaly": 0.3366,
+          "peak_year": 2019
+        }
+      ],
+      "worst_cell": {
+        "lat": 17.75,
+        "lon": 95.25,
+        "max_abs_anomaly": 1.7899,
+        "peak_year": 2021
+      }
+    }
+  },
+  {
+    "id": "TA-377",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (21.25\u00b0N, 82.00\u00b0E), 2019\u20132025:\n  rainfall_mm   : 3.43, 3.47, 3.19, 2.82, 2.70, 3.68, 3.83\n  anomaly_score : 0.21, 0.25, -0.02, -0.39, -0.51, 0.46, 0.62\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 21.25,
+      "longitude": 82.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        3.4285,
+        3.4682,
+        3.1905,
+        2.8221,
+        2.7033,
+        3.6804,
+        3.832
+      ],
+      "anomaly_score": [
+        0.213,
+        0.2527,
+        -0.025,
+        -0.3934,
+        -0.5122,
+        0.4649,
+        0.6165
+      ],
+      "rainfall_slope": 0.040993,
+      "rainfall_p": 0.651605,
+      "anomaly_slope": 0.040993,
+      "anomaly_p": 0.651605
+    }
+  },
+  {
+    "id": "TA-206",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (24.25\u00b0N, 73.00\u00b0E):\n6.71, 6.14, 5.90, 7.13, 5.47, 7.63, 6.55\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "-0.095",
+      "B": "-0.73",
+      "C": "-0.159",
+      "D": "-0.223"
+    },
+    "answer": "C",
+    "explanation": "6.550 \u2212 6.709 = -0.159",
+    "context": {
+      "latitude": 24.25,
+      "longitude": 73.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        6.7089,
+        6.1382,
+        5.8979,
+        7.133,
+        5.4686,
+        7.6273,
+        6.55
+      ],
+      "first_value": 6.7089,
+      "last_value": 6.55,
+      "total_change": -0.159
+    }
+  },
+  {
+    "id": "CR-148",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "hard",
+    "question": "For grid cell (15.50\u00b0N, 74.00\u00b0E):\n  2024 anomaly_score = 0.0025\n  2023 anomaly_score = 0.1143\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2024 was more anomalous (|0.0025| > |0.1143|)",
+      "B": "2023 was more anomalous (|0.1143| > |0.0025|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "B",
+    "explanation": "|anomaly in 2023|=0.1143 > |anomaly in 2024|=0.0025",
+    "context": {
+      "latitude": 15.5,
+      "longitude": 74.0,
+      "year1": 2024,
+      "anomaly1": 0.0025,
+      "abs_anomaly1": 0.0025,
+      "year2": 2023,
+      "anomaly2": 0.1143,
+      "abs_anomaly2": 0.1143,
+      "difference": 0.1118
+    }
+  },
+  {
+    "id": "CR-287",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (33.75\u00b0N, 76.75\u00b0E) \u2014 max|anomaly|=5.1492 in 2025\n  Cell B: (20.25\u00b0N, 81.75\u00b0E) \u2014 max|anomaly|=1.3801 in 2025\n  Cell C: (16.25\u00b0N, 95.75\u00b0E) \u2014 max|anomaly|=2.2329 in 2020\n  Cell D: (22.75\u00b0N, 71.75\u00b0E) \u2014 max|anomaly|=0.6073 in 2019\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(33.75\u00b0N, 76.75\u00b0E) \u2014 max|anomaly|=5.1492",
+      "B": "(20.25\u00b0N, 81.75\u00b0E) \u2014 max|anomaly|=1.3801",
+      "C": "(16.25\u00b0N, 95.75\u00b0E) \u2014 max|anomaly|=2.2329",
+      "D": "(22.75\u00b0N, 71.75\u00b0E) \u2014 max|anomaly|=0.6073"
+    },
+    "answer": "A",
+    "explanation": "Cell A at (33.75\u00b0N, 76.75\u00b0E) recorded the highest max|anomaly|=5.1492 in 2025",
+    "context": {
+      "cells": [
+        {
+          "lat": 33.75,
+          "lon": 76.75,
+          "max_abs_anomaly": 5.1492,
+          "peak_year": 2025
+        },
+        {
+          "lat": 20.25,
+          "lon": 81.75,
+          "max_abs_anomaly": 1.3801,
+          "peak_year": 2025
+        },
+        {
+          "lat": 16.25,
+          "lon": 95.75,
+          "max_abs_anomaly": 2.2329,
+          "peak_year": 2020
+        },
+        {
+          "lat": 22.75,
+          "lon": 71.75,
+          "max_abs_anomaly": 0.6073,
+          "peak_year": 2019
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 33.75,
+          "lon": 76.75,
+          "max_abs_anomaly": 5.1492,
+          "peak_year": 2025
+        },
+        {
+          "lat": 16.25,
+          "lon": 95.75,
+          "max_abs_anomaly": 2.2329,
+          "peak_year": 2020
+        },
+        {
+          "lat": 20.25,
+          "lon": 81.75,
+          "max_abs_anomaly": 1.3801,
+          "peak_year": 2025
+        },
+        {
+          "lat": 22.75,
+          "lon": 71.75,
+          "max_abs_anomaly": 0.6073,
+          "peak_year": 2019
+        }
+      ],
+      "worst_cell": {
+        "lat": 33.75,
+        "lon": 76.75,
+        "max_abs_anomaly": 5.1492,
+        "peak_year": 2025
+      }
+    }
+  },
+  {
+    "id": "TA-340",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (27.50\u00b0N, 80.50\u00b0E), 2019\u20132025:\n  rainfall_mm   : 3.46, 5.52, 4.72, 4.09, 3.92, 3.97, 4.99\n  anomaly_score : -0.82, 1.24, 0.44, -0.20, -0.36, -0.31, 0.71\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 27.5,
+      "longitude": 80.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        3.4622,
+        5.5234,
+        4.7221,
+        4.0862,
+        3.9231,
+        3.9733,
+        4.9933
+      ],
+      "anomaly_score": [
+        -0.8195,
+        1.2417,
+        0.4404,
+        -0.1955,
+        -0.3586,
+        -0.3085,
+        0.7116
+      ],
+      "rainfall_slope": 0.024784,
+      "rainfall_p": 0.873964,
+      "anomaly_slope": 0.024784,
+      "anomaly_p": 0.873964
+    }
+  },
+  {
+    "id": "CR-059",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "medium",
+    "question": "In 2021, which grid cell had higher rainfall_mm?\n\nCell A: (16.25\u00b0N, 73.75\u00b0E) \u2014 rainfall_mm = 1.029\nCell B: (25.50\u00b0N, 73.75\u00b0E) \u2014 rainfall_mm = 4.455",
+    "options": {
+      "A": "Cell A (16.25\u00b0N, 73.75\u00b0E)",
+      "B": "Cell B (25.50\u00b0N, 73.75\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "B",
+    "explanation": "Cell B=4.455 > Cell A=1.029 (diff=3.426)",
+    "context": {
+      "year": 2021,
+      "cell_a": {
+        "latitude": 16.25,
+        "longitude": 73.75,
+        "rainfall_mm": 1.029
+      },
+      "cell_b": {
+        "latitude": 25.5,
+        "longitude": 73.75,
+        "rainfall_mm": 4.455
+      },
+      "difference": 3.426
+    }
+  },
+  {
+    "id": "CR-232",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (22.25\u00b0N, 79.50\u00b0E) \u2014 max|anomaly|=1.3345 in 2021\n  Cell B: (16.75\u00b0N, 78.75\u00b0E) \u2014 max|anomaly|=1.2513 in 2023\n  Cell C: (23.50\u00b0N, 71.25\u00b0E) \u2014 max|anomaly|=0.7713 in 2020\n  Cell D: (19.75\u00b0N, 85.25\u00b0E) \u2014 max|anomaly|=1.1537 in 2021\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(22.25\u00b0N, 79.50\u00b0E) \u2014 max|anomaly|=1.3345",
+      "B": "(16.75\u00b0N, 78.75\u00b0E) \u2014 max|anomaly|=1.2513",
+      "C": "(23.50\u00b0N, 71.25\u00b0E) \u2014 max|anomaly|=0.7713",
+      "D": "(19.75\u00b0N, 85.25\u00b0E) \u2014 max|anomaly|=1.1537"
+    },
+    "answer": "A",
+    "explanation": "Cell A at (22.25\u00b0N, 79.50\u00b0E) recorded the highest max|anomaly|=1.3345 in 2021",
+    "context": {
+      "cells": [
+        {
+          "lat": 22.25,
+          "lon": 79.5,
+          "max_abs_anomaly": 1.3345,
+          "peak_year": 2021
+        },
+        {
+          "lat": 16.75,
+          "lon": 78.75,
+          "max_abs_anomaly": 1.2513,
+          "peak_year": 2023
+        },
+        {
+          "lat": 23.5,
+          "lon": 71.25,
+          "max_abs_anomaly": 0.7713,
+          "peak_year": 2020
+        },
+        {
+          "lat": 19.75,
+          "lon": 85.25,
+          "max_abs_anomaly": 1.1537,
+          "peak_year": 2021
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 22.25,
+          "lon": 79.5,
+          "max_abs_anomaly": 1.3345,
+          "peak_year": 2021
+        },
+        {
+          "lat": 16.75,
+          "lon": 78.75,
+          "max_abs_anomaly": 1.2513,
+          "peak_year": 2023
+        },
+        {
+          "lat": 19.75,
+          "lon": 85.25,
+          "max_abs_anomaly": 1.1537,
+          "peak_year": 2021
+        },
+        {
+          "lat": 23.5,
+          "lon": 71.25,
+          "max_abs_anomaly": 0.7713,
+          "peak_year": 2020
+        }
+      ],
+      "worst_cell": {
+        "lat": 22.25,
+        "lon": 79.5,
+        "max_abs_anomaly": 1.3345,
+        "peak_year": 2021
+      }
+    }
+  },
+  {
+    "id": "CR-111",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "hard",
+    "question": "For grid cell (18.00\u00b0N, 88.00\u00b0E):\n  2025 anomaly_score = 0.5388\n  2024 anomaly_score = 0.8486\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2025 was more anomalous (|0.5388| > |0.8486|)",
+      "B": "2024 was more anomalous (|0.8486| > |0.5388|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "B",
+    "explanation": "|anomaly in 2024|=0.8486 > |anomaly in 2025|=0.5388",
+    "context": {
+      "latitude": 18.0,
+      "longitude": 88.0,
+      "year1": 2025,
+      "anomaly1": 0.5388,
+      "abs_anomaly1": 0.5388,
+      "year2": 2024,
+      "anomaly2": 0.8486,
+      "abs_anomaly2": 0.8486,
+      "difference": 0.3098
+    }
+  },
+  {
+    "id": "CR-270",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (14.50\u00b0N, 78.50\u00b0E) \u2014 max|anomaly|=0.963 in 2020\n  Cell B: (17.75\u00b0N, 79.25\u00b0E) \u2014 max|anomaly|=1.1638 in 2023\n  Cell C: (13.25\u00b0N, 78.25\u00b0E) \u2014 max|anomaly|=0.3929 in 2019\n  Cell D: (24.00\u00b0N, 85.25\u00b0E) \u2014 max|anomaly|=0.7952 in 2020\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(14.50\u00b0N, 78.50\u00b0E) \u2014 max|anomaly|=0.963",
+      "B": "(17.75\u00b0N, 79.25\u00b0E) \u2014 max|anomaly|=1.1638",
+      "C": "(13.25\u00b0N, 78.25\u00b0E) \u2014 max|anomaly|=0.3929",
+      "D": "(24.00\u00b0N, 85.25\u00b0E) \u2014 max|anomaly|=0.7952"
+    },
+    "answer": "B",
+    "explanation": "Cell B at (17.75\u00b0N, 79.25\u00b0E) recorded the highest max|anomaly|=1.1638 in 2023",
+    "context": {
+      "cells": [
+        {
+          "lat": 14.5,
+          "lon": 78.5,
+          "max_abs_anomaly": 0.963,
+          "peak_year": 2020
+        },
+        {
+          "lat": 17.75,
+          "lon": 79.25,
+          "max_abs_anomaly": 1.1638,
+          "peak_year": 2023
+        },
+        {
+          "lat": 13.25,
+          "lon": 78.25,
+          "max_abs_anomaly": 0.3929,
+          "peak_year": 2019
+        },
+        {
+          "lat": 24.0,
+          "lon": 85.25,
+          "max_abs_anomaly": 0.7952,
+          "peak_year": 2020
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 17.75,
+          "lon": 79.25,
+          "max_abs_anomaly": 1.1638,
+          "peak_year": 2023
+        },
+        {
+          "lat": 14.5,
+          "lon": 78.5,
+          "max_abs_anomaly": 0.963,
+          "peak_year": 2020
+        },
+        {
+          "lat": 24.0,
+          "lon": 85.25,
+          "max_abs_anomaly": 0.7952,
+          "peak_year": 2020
+        },
+        {
+          "lat": 13.25,
+          "lon": 78.25,
+          "max_abs_anomaly": 0.3929,
+          "peak_year": 2019
+        }
+      ],
+      "worst_cell": {
+        "lat": 17.75,
+        "lon": 79.25,
+        "max_abs_anomaly": 1.1638,
+        "peak_year": 2023
+      }
+    }
+  },
+  {
+    "id": "TA-194",
+    "category": "trend_analysis",
+    "subcategory": "peak_anomaly_year",
+    "difficulty": "hard",
+    "question": "Anomaly scores for (24.50\u00b0N, 83.75\u00b0E):\n2019:0.09, 2020:0.26, 2021:-0.97, 2022:1.05, 2023:0.38, 2024:-0.81, 2025:-0.82\n\nIn which year was the anomaly_score magnitude (|value|) highest?",
+    "options": {
+      "A": "2023",
+      "B": "2019",
+      "C": "2022",
+      "D": "2020"
+    },
+    "answer": "C",
+    "explanation": "|anomaly| peaks at 2022 with value 1.0513 (gap to 2nd=0.0763)",
+    "context": {
+      "latitude": 24.5,
+      "longitude": 83.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.0934,
+        0.2574,
+        -0.975,
+        1.0513,
+        0.3848,
+        -0.8119,
+        -0.8241
+      ],
+      "peak_year": 2022,
+      "peak_value": 1.0513
+    }
+  },
+  {
+    "id": "CR-296",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (22.50\u00b0N, 78.50\u00b0E) \u2014 max|anomaly|=1.2899 in 2020\n  Cell B: (18.50\u00b0N, 95.00\u00b0E) \u2014 max|anomaly|=1.737 in 2024\n  Cell C: (19.50\u00b0N, 88.00\u00b0E) \u2014 max|anomaly|=0.9265 in 2022\n  Cell D: (20.75\u00b0N, 77.50\u00b0E) \u2014 max|anomaly|=1.3608 in 2023\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(22.50\u00b0N, 78.50\u00b0E) \u2014 max|anomaly|=1.2899",
+      "B": "(18.50\u00b0N, 95.00\u00b0E) \u2014 max|anomaly|=1.737",
+      "C": "(19.50\u00b0N, 88.00\u00b0E) \u2014 max|anomaly|=0.9265",
+      "D": "(20.75\u00b0N, 77.50\u00b0E) \u2014 max|anomaly|=1.3608"
+    },
+    "answer": "B",
+    "explanation": "Cell B at (18.50\u00b0N, 95.00\u00b0E) recorded the highest max|anomaly|=1.737 in 2024",
+    "context": {
+      "cells": [
+        {
+          "lat": 22.5,
+          "lon": 78.5,
+          "max_abs_anomaly": 1.2899,
+          "peak_year": 2020
+        },
+        {
+          "lat": 18.5,
+          "lon": 95.0,
+          "max_abs_anomaly": 1.737,
+          "peak_year": 2024
+        },
+        {
+          "lat": 19.5,
+          "lon": 88.0,
+          "max_abs_anomaly": 0.9265,
+          "peak_year": 2022
+        },
+        {
+          "lat": 20.75,
+          "lon": 77.5,
+          "max_abs_anomaly": 1.3608,
+          "peak_year": 2023
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 18.5,
+          "lon": 95.0,
+          "max_abs_anomaly": 1.737,
+          "peak_year": 2024
+        },
+        {
+          "lat": 20.75,
+          "lon": 77.5,
+          "max_abs_anomaly": 1.3608,
+          "peak_year": 2023
+        },
+        {
+          "lat": 22.5,
+          "lon": 78.5,
+          "max_abs_anomaly": 1.2899,
+          "peak_year": 2020
+        },
+        {
+          "lat": 19.5,
+          "lon": 88.0,
+          "max_abs_anomaly": 0.9265,
+          "peak_year": 2022
+        }
+      ],
+      "worst_cell": {
+        "lat": 18.5,
+        "lon": 95.0,
+        "max_abs_anomaly": 1.737,
+        "peak_year": 2024
+      }
+    }
+  },
+  {
+    "id": "TA-233",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (24.50\u00b0N, 77.75\u00b0E):\n1.52, 2.25, 2.88, 2.97, 2.97, 3.12, 2.79\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "1.274",
+      "B": "0.764",
+      "C": "1.784",
+      "D": "2.007"
+    },
+    "answer": "A",
+    "explanation": "2.792 \u2212 1.518 = 1.274",
+    "context": {
+      "latitude": 24.5,
+      "longitude": 77.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        1.5178,
+        2.251,
+        2.8801,
+        2.9694,
+        2.9655,
+        3.1233,
+        2.7915
+      ],
+      "first_value": 1.5178,
+      "last_value": 2.7915,
+      "total_change": 1.274
+    }
+  },
+  {
+    "id": "TA-498",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (14.00\u00b0N, 78.25\u00b0E):\n  2019: -0.22\n  2020: -0.66\n  2021: +0.30\n  2022: +0.29\n  2023: +0.23\n  2024: +0.06\n  2025: +0.84\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.4000, |delta|=0.5434 \u2014 no significant shift",
+    "context": {
+      "latitude": 14.0,
+      "longitude": 78.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.2173,
+        -0.6594,
+        0.3045,
+        0.2884,
+        0.2265,
+        0.0574,
+        0.8382
+      ],
+      "first_half_mean": -0.190747,
+      "second_half_mean": 0.352612,
+      "delta": 0.543359,
+      "mannwhitney_p": 0.4
+    }
+  },
+  {
+    "id": "TA-223",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (19.25\u00b0N, 71.75\u00b0E):\n0.85, 0.97, 0.63, 1.47, 1.62, 1.38, 1.29\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "0.615",
+      "B": "0.556",
+      "C": "0.439",
+      "D": "0.263"
+    },
+    "answer": "C",
+    "explanation": "1.292 \u2212 0.854 = 0.439",
+    "context": {
+      "latitude": 19.25,
+      "longitude": 71.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        0.8535,
+        0.971,
+        0.6317,
+        1.4742,
+        1.6214,
+        1.3825,
+        1.2922
+      ],
+      "first_value": 0.8535,
+      "last_value": 1.2922,
+      "total_change": 0.439
+    }
+  },
+  {
+    "id": "CR-217",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (21.75\u00b0N, 82.75\u00b0E) \u2014 max|anomaly|=1.3254 in 2020\n  Cell B: (25.00\u00b0N, 82.25\u00b0E) \u2014 max|anomaly|=0.671 in 2020\n  Cell C: (18.25\u00b0N, 88.75\u00b0E) \u2014 max|anomaly|=1.4901 in 2022\n  Cell D: (28.50\u00b0N, 82.00\u00b0E) \u2014 max|anomaly|=0.8687 in 2020\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(21.75\u00b0N, 82.75\u00b0E) \u2014 max|anomaly|=1.3254",
+      "B": "(25.00\u00b0N, 82.25\u00b0E) \u2014 max|anomaly|=0.671",
+      "C": "(18.25\u00b0N, 88.75\u00b0E) \u2014 max|anomaly|=1.4901",
+      "D": "(28.50\u00b0N, 82.00\u00b0E) \u2014 max|anomaly|=0.8687"
+    },
+    "answer": "C",
+    "explanation": "Cell C at (18.25\u00b0N, 88.75\u00b0E) recorded the highest max|anomaly|=1.4901 in 2022",
+    "context": {
+      "cells": [
+        {
+          "lat": 21.75,
+          "lon": 82.75,
+          "max_abs_anomaly": 1.3254,
+          "peak_year": 2020
+        },
+        {
+          "lat": 25.0,
+          "lon": 82.25,
+          "max_abs_anomaly": 0.671,
+          "peak_year": 2020
+        },
+        {
+          "lat": 18.25,
+          "lon": 88.75,
+          "max_abs_anomaly": 1.4901,
+          "peak_year": 2022
+        },
+        {
+          "lat": 28.5,
+          "lon": 82.0,
+          "max_abs_anomaly": 0.8687,
+          "peak_year": 2020
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 18.25,
+          "lon": 88.75,
+          "max_abs_anomaly": 1.4901,
+          "peak_year": 2022
+        },
+        {
+          "lat": 21.75,
+          "lon": 82.75,
+          "max_abs_anomaly": 1.3254,
+          "peak_year": 2020
+        },
+        {
+          "lat": 28.5,
+          "lon": 82.0,
+          "max_abs_anomaly": 0.8687,
+          "peak_year": 2020
+        },
+        {
+          "lat": 25.0,
+          "lon": 82.25,
+          "max_abs_anomaly": 0.671,
+          "peak_year": 2020
+        }
+      ],
+      "worst_cell": {
+        "lat": 18.25,
+        "lon": 88.75,
+        "max_abs_anomaly": 1.4901,
+        "peak_year": 2022
+      }
+    }
+  },
+  {
+    "id": "CR-142",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "hard",
+    "question": "For grid cell (23.50\u00b0N, 85.00\u00b0E):\n  2025 anomaly_score = 0.7107\n  2024 anomaly_score = -0.7143\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2025 was more anomalous (|0.7107| > |-0.7143|)",
+      "B": "2024 was more anomalous (|-0.7143| > |0.7107|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "C",
+    "explanation": "|2025|=0.7107 \u2248 |2024|=0.7143",
+    "context": {
+      "latitude": 23.5,
+      "longitude": 85.0,
+      "year1": 2025,
+      "anomaly1": 0.7107,
+      "abs_anomaly1": 0.7107,
+      "year2": 2024,
+      "anomaly2": -0.7143,
+      "abs_anomaly2": 0.7143,
+      "difference": 0.0036
+    }
+  },
+  {
+    "id": "CR-072",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "medium",
+    "question": "In 2022, which grid cell had higher rainfall_mm?\n\nCell A: (25.00\u00b0N, 82.25\u00b0E) \u2014 rainfall_mm = 2.886\nCell B: (17.25\u00b0N, 77.00\u00b0E) \u2014 rainfall_mm = 1.858",
+    "options": {
+      "A": "Cell A (25.00\u00b0N, 82.25\u00b0E)",
+      "B": "Cell B (17.25\u00b0N, 77.00\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=2.886 > Cell B=1.858 (diff=1.028)",
+    "context": {
+      "year": 2022,
+      "cell_a": {
+        "latitude": 25.0,
+        "longitude": 82.25,
+        "rainfall_mm": 2.886
+      },
+      "cell_b": {
+        "latitude": 17.25,
+        "longitude": 77.0,
+        "rainfall_mm": 1.858
+      },
+      "difference": 1.028
+    }
+  },
+  {
+    "id": "TA-065",
+    "category": "trend_analysis",
+    "subcategory": "rainfall_trend_direction",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for grid cell (23.75\u00b0N, 72.50\u00b0E), 2019\u20132025:\n4.43, 4.63, 4.12, 3.76, 2.56, 4.70, 4.18\n\nWhich best describes the rainfall trend?",
+    "options": {
+      "A": "Increasing (positive slope, statistically significant)",
+      "B": "Decreasing (negative slope, statistically significant)",
+      "C": "No significant trend (p > 0.05)"
+    },
+    "answer": "C",
+    "explanation": "Slope=-0.0782 but p=0.6198 > 0.05 \u2014 not significant",
+    "context": {
+      "latitude": 23.75,
+      "longitude": 72.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        4.4319,
+        4.6324,
+        4.1213,
+        3.761,
+        2.5575,
+        4.6961,
+        4.1809
+      ],
+      "slope": -0.078191,
+      "p_value": 0.619767
+    }
+  },
+  {
+    "id": "CR-051",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "medium",
+    "question": "In 2021, which grid cell had higher rainfall_mm?\n\nCell A: (22.00\u00b0N, 68.75\u00b0E) \u2014 rainfall_mm = 1.091\nCell B: (29.00\u00b0N, 78.50\u00b0E) \u2014 rainfall_mm = 2.662",
+    "options": {
+      "A": "Cell A (22.00\u00b0N, 68.75\u00b0E)",
+      "B": "Cell B (29.00\u00b0N, 78.50\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "B",
+    "explanation": "Cell B=2.662 > Cell A=1.091 (diff=1.571)",
+    "context": {
+      "year": 2021,
+      "cell_a": {
+        "latitude": 22.0,
+        "longitude": 68.75,
+        "rainfall_mm": 1.091
+      },
+      "cell_b": {
+        "latitude": 29.0,
+        "longitude": 78.5,
+        "rainfall_mm": 2.662
+      },
+      "difference": 1.571
+    }
+  },
+  {
+    "id": "TA-419",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (16.00\u00b0N, 77.75\u00b0E):\n  2019: -0.57\n  2020: -0.54\n  2021: +0.15\n  2022: +0.34\n  2023: +1.05\n  2024: -0.44\n  2025: +0.87\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.1143, |delta|=0.7729 \u2014 no significant shift",
+    "context": {
+      "latitude": 16.0,
+      "longitude": 77.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        -0.5658,
+        -0.5375,
+        0.1507,
+        0.344,
+        1.0509,
+        -0.4422,
+        0.8685
+      ],
+      "first_half_mean": -0.317561,
+      "second_half_mean": 0.455291,
+      "delta": 0.772853,
+      "mannwhitney_p": 0.114286
+    }
+  },
+  {
+    "id": "CR-133",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "hard",
+    "question": "For grid cell (14.00\u00b0N, 79.00\u00b0E):\n  2023 anomaly_score = 0.0258\n  2020 anomaly_score = -0.3509\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2023 was more anomalous (|0.0258| > |-0.3509|)",
+      "B": "2020 was more anomalous (|-0.3509| > |0.0258|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "B",
+    "explanation": "|anomaly in 2020|=0.3509 > |anomaly in 2023|=0.0258",
+    "context": {
+      "latitude": 14.0,
+      "longitude": 79.0,
+      "year1": 2023,
+      "anomaly1": 0.0258,
+      "abs_anomaly1": 0.0258,
+      "year2": 2020,
+      "anomaly2": -0.3509,
+      "abs_anomaly2": 0.3509,
+      "difference": 0.3251
+    }
+  },
+  {
+    "id": "TA-392",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (17.75\u00b0N, 81.75\u00b0E), 2019\u20132025:\n  rainfall_mm   : 2.86, 3.65, 3.92, 2.86, 1.87, 2.48, 2.59\n  anomaly_score : -0.08, 0.71, 0.98, -0.08, -1.07, -0.45, -0.35\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 17.75,
+      "longitude": 81.75,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        2.8567,
+        3.6486,
+        3.9158,
+        2.8556,
+        1.8665,
+        2.4842,
+        2.5925
+      ],
+      "anomaly_score": [
+        -0.0812,
+        0.7107,
+        0.9779,
+        -0.0823,
+        -1.0714,
+        -0.4537,
+        -0.3454
+      ],
+      "rainfall_slope": -0.184674,
+      "rainfall_p": 0.180793,
+      "anomaly_slope": -0.184674,
+      "anomaly_p": 0.180793
+    }
+  },
+  {
+    "id": "TA-063",
+    "category": "trend_analysis",
+    "subcategory": "rainfall_trend_direction",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for grid cell (24.50\u00b0N, 75.25\u00b0E), 2019\u20132025:\n2.76, 2.21, 3.01, 2.45, 2.20, 2.81, 3.01\n\nWhich best describes the rainfall trend?",
+    "options": {
+      "A": "Increasing (positive slope, statistically significant)",
+      "B": "Decreasing (negative slope, statistically significant)",
+      "C": "No significant trend (p > 0.05)"
+    },
+    "answer": "C",
+    "explanation": "Slope=0.0402 but p=0.5937 > 0.05 \u2014 not significant",
+    "context": {
+      "latitude": 24.5,
+      "longitude": 75.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        2.7645,
+        2.2106,
+        3.0142,
+        2.4465,
+        2.1963,
+        2.8102,
+        3.0123
+      ],
+      "slope": 0.040165,
+      "p_value": 0.593723
+    }
+  },
+  {
+    "id": "TA-271",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (8.75\u00b0N, 74.00\u00b0E):\n3.33, 2.69, 1.77, 2.04, 1.47, 1.63, 2.22\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "-1.555",
+      "B": "-1.111",
+      "C": "-0.667",
+      "D": "-1.75"
+    },
+    "answer": "B",
+    "explanation": "2.215 \u2212 3.326 = -1.111",
+    "context": {
+      "latitude": 8.75,
+      "longitude": 74.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        3.3259,
+        2.6865,
+        1.7736,
+        2.0385,
+        1.4725,
+        1.6284,
+        2.2154
+      ],
+      "first_value": 3.3259,
+      "last_value": 2.2154,
+      "total_change": -1.111
+    }
+  },
+  {
+    "id": "CR-012",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "hard",
+    "question": "In 2019, which grid cell had higher rainfall_mm?\n\nCell A: (22.25\u00b0N, 75.00\u00b0E) \u2014 rainfall_mm = 4.162\nCell B: (18.00\u00b0N, 82.50\u00b0E) \u2014 rainfall_mm = 3.386",
+    "options": {
+      "A": "Cell A (22.25\u00b0N, 75.00\u00b0E)",
+      "B": "Cell B (18.00\u00b0N, 82.50\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=4.162 > Cell B=3.386 (diff=0.776)",
+    "context": {
+      "year": 2019,
+      "cell_a": {
+        "latitude": 22.25,
+        "longitude": 75.0,
+        "rainfall_mm": 4.162
+      },
+      "cell_b": {
+        "latitude": 18.0,
+        "longitude": 82.5,
+        "rainfall_mm": 3.386
+      },
+      "difference": 0.776
+    }
+  },
+  {
+    "id": "TA-467",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (28.50\u00b0N, 74.25\u00b0E):\n  2019: +0.97\n  2020: -0.03\n  2021: +0.64\n  2022: -0.14\n  2023: -1.58\n  2024: +0.13\n  2025: -0.47\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.1143, |delta|=1.0422 \u2014 no significant shift",
+    "context": {
+      "latitude": 28.5,
+      "longitude": 74.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.9746,
+        -0.0309,
+        0.6398,
+        -0.1371,
+        -1.5796,
+        0.1332,
+        -0.4738
+      ],
+      "first_half_mean": 0.527842,
+      "second_half_mean": -0.514322,
+      "delta": -1.042164,
+      "mannwhitney_p": 0.114286
+    }
+  },
+  {
+    "id": "CR-050",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "hard",
+    "question": "In 2019, which grid cell had higher rainfall_mm?\n\nCell A: (20.50\u00b0N, 82.75\u00b0E) \u2014 rainfall_mm = 2.992\nCell B: (18.25\u00b0N, 83.50\u00b0E) \u2014 rainfall_mm = 2.927",
+    "options": {
+      "A": "Cell A (20.50\u00b0N, 82.75\u00b0E)",
+      "B": "Cell B (18.25\u00b0N, 83.50\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=2.992 > Cell B=2.927 (diff=0.065)",
+    "context": {
+      "year": 2019,
+      "cell_a": {
+        "latitude": 20.5,
+        "longitude": 82.75,
+        "rainfall_mm": 2.992
+      },
+      "cell_b": {
+        "latitude": 18.25,
+        "longitude": 83.5,
+        "rainfall_mm": 2.927
+      },
+      "difference": 0.065
+    }
+  },
+  {
+    "id": "TA-420",
+    "category": "trend_analysis",
+    "subcategory": "regime_shift_detection",
+    "difficulty": "hard",
+    "question": "Annual anomaly_score for (22.00\u00b0N, 82.00\u00b0E):\n  2019: +0.28\n  2020: +0.45\n  2021: -0.02\n  2022: -0.44\n  2023: -0.11\n  2024: -0.16\n  2025: -0.03\n\nWhich best characterises the long-term anomaly behaviour?",
+    "options": {
+      "A": "Wet-to-dry shift: anomalies move from positive to negative over the period",
+      "B": "Dry-to-wet shift: anomalies move from negative to positive over the period",
+      "C": "No significant regime shift detected"
+    },
+    "answer": "C",
+    "explanation": "MannWhitney p=0.0571, |delta|=0.4200 \u2014 no significant shift",
+    "context": {
+      "latitude": 22.0,
+      "longitude": 82.0,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "anomaly_score": [
+        0.2754,
+        0.4543,
+        -0.0222,
+        -0.4369,
+        -0.1128,
+        -0.1579,
+        -0.0289
+      ],
+      "first_half_mean": 0.235848,
+      "second_half_mean": -0.184114,
+      "delta": -0.419962,
+      "mannwhitney_p": 0.057143
+    }
+  },
+  {
+    "id": "CR-154",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "medium",
+    "question": "For grid cell (25.00\u00b0N, 76.50\u00b0E):\n  2025 anomaly_score = 1.4011\n  2019 anomaly_score = -0.2673\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2025 was more anomalous (|1.4011| > |-0.2673|)",
+      "B": "2019 was more anomalous (|-0.2673| > |1.4011|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "A",
+    "explanation": "|anomaly in 2025|=1.4011 > |anomaly in 2019|=0.2673",
+    "context": {
+      "latitude": 25.0,
+      "longitude": 76.5,
+      "year1": 2025,
+      "anomaly1": 1.4011,
+      "abs_anomaly1": 1.4011,
+      "year2": 2019,
+      "anomaly2": -0.2673,
+      "abs_anomaly2": 0.2673,
+      "difference": 1.1338
+    }
+  },
+  {
+    "id": "TA-341",
+    "category": "trend_analysis",
+    "subcategory": "multivariable_direction_agreement",
+    "difficulty": "medium",
+    "question": "For grid cell (24.75\u00b0N, 81.25\u00b0E), 2019\u20132025:\n  rainfall_mm   : 2.91, 2.51, 2.56, 4.02, 2.71, 3.48, 3.32\n  anomaly_score : -0.12, -0.52, -0.47, 0.98, -0.32, 0.45, 0.29\n\nDo rainfall_mm and anomaly_score trend in the same direction?",
+    "options": {
+      "A": "Yes \u2014 both trend in the same direction (both up or both down)",
+      "B": "No \u2014 they trend in opposite directions",
+      "C": "Cannot determine \u2014 one or both trends are not statistically significant"
+    },
+    "answer": "C",
+    "explanation": "One or both trends are not statistically significant (p > 0.05)",
+    "context": {
+      "latitude": 24.75,
+      "longitude": 81.25,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        2.9124,
+        2.5066,
+        2.5618,
+        4.0151,
+        2.7112,
+        3.4821,
+        3.3222
+      ],
+      "anomaly_score": [
+        -0.1191,
+        -0.5249,
+        -0.4697,
+        0.9835,
+        -0.3203,
+        0.4505,
+        0.2906
+      ],
+      "rainfall_slope": 0.118912,
+      "rainfall_p": 0.296749,
+      "anomaly_slope": 0.118912,
+      "anomaly_p": 0.296749
+    }
+  },
+  {
+    "id": "CR-139",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "medium",
+    "question": "For grid cell (26.25\u00b0N, 82.00\u00b0E):\n  2021 anomaly_score = -1.0279\n  2025 anomaly_score = 0.3903\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2021 was more anomalous (|-1.0279| > |0.3903|)",
+      "B": "2025 was more anomalous (|0.3903| > |-1.0279|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "A",
+    "explanation": "|anomaly in 2021|=1.0279 > |anomaly in 2025|=0.3903",
+    "context": {
+      "latitude": 26.25,
+      "longitude": 82.0,
+      "year1": 2021,
+      "anomaly1": -1.0279,
+      "abs_anomaly1": 1.0279,
+      "year2": 2025,
+      "anomaly2": 0.3903,
+      "abs_anomaly2": 0.3903,
+      "difference": 0.6376
+    }
+  },
+  {
+    "id": "CR-119",
+    "category": "comparative_reasoning",
+    "subcategory": "within_cell_year_anomaly_comparison",
+    "difficulty": "medium",
+    "question": "For grid cell (16.50\u00b0N, 93.00\u00b0E):\n  2025 anomaly_score = -2.1134\n  2021 anomaly_score = -1.2031\n\nWhich year had the more severe climate anomaly (higher |anomaly_score|)?",
+    "options": {
+      "A": "2025 was more anomalous (|-2.1134| > |-1.2031|)",
+      "B": "2021 was more anomalous (|-1.2031| > |-2.1134|)",
+      "C": "Both years had approximately equal anomaly severity"
+    },
+    "answer": "A",
+    "explanation": "|anomaly in 2025|=2.1134 > |anomaly in 2021|=1.2031",
+    "context": {
+      "latitude": 16.5,
+      "longitude": 93.0,
+      "year1": 2025,
+      "anomaly1": -2.1134,
+      "abs_anomaly1": 2.1134,
+      "year2": 2021,
+      "anomaly2": -1.2031,
+      "abs_anomaly2": 1.2031,
+      "difference": 0.9103
+    }
+  },
+  {
+    "id": "TA-202",
+    "category": "trend_analysis",
+    "subcategory": "total_rainfall_change",
+    "difficulty": "medium",
+    "question": "Annual rainfall_mm for (29.00\u00b0N, 77.50\u00b0E):\n1.34, 3.07, 2.05, 1.99, 1.56, 2.52, 2.76\n\nWhat is the total change in rainfall_mm from 2019 to 2025 (final value minus initial value)?",
+    "options": {
+      "A": "1.987",
+      "B": "1.419",
+      "C": "3.154",
+      "D": "0.851"
+    },
+    "answer": "B",
+    "explanation": "2.758 \u2212 1.339 = 1.419",
+    "context": {
+      "latitude": 29.0,
+      "longitude": 77.5,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "rainfall_mm": [
+        1.3393,
+        3.0744,
+        2.0459,
+        1.9919,
+        1.5622,
+        2.5185,
+        2.7582
+      ],
+      "first_value": 1.3393,
+      "last_value": 2.7582,
+      "total_change": 1.419
+    }
+  },
+  {
+    "id": "CR-024",
+    "category": "comparative_reasoning",
+    "subcategory": "cross_cell_rainfall_comparison",
+    "difficulty": "medium",
+    "question": "In 2024, which grid cell had higher rainfall_mm?\n\nCell A: (35.25\u00b0N, 77.00\u00b0E) \u2014 rainfall_mm = 5.773\nCell B: (17.75\u00b0N, 70.25\u00b0E) \u2014 rainfall_mm = 0.873",
+    "options": {
+      "A": "Cell A (35.25\u00b0N, 77.00\u00b0E)",
+      "B": "Cell B (17.75\u00b0N, 70.25\u00b0E)",
+      "C": "They are approximately equal"
+    },
+    "answer": "A",
+    "explanation": "Cell A=5.773 > Cell B=0.873 (diff=4.900)",
+    "context": {
+      "year": 2024,
+      "cell_a": {
+        "latitude": 35.25,
+        "longitude": 77.0,
+        "rainfall_mm": 5.773
+      },
+      "cell_b": {
+        "latitude": 17.75,
+        "longitude": 70.25,
+        "rainfall_mm": 0.873
+      },
+      "difference": 4.9
+    }
+  },
+  {
+    "id": "CR-302",
+    "category": "comparative_reasoning",
+    "subcategory": "worst_cell_identification",
+    "difficulty": "medium",
+    "question": "The following grid cells are observed over 2019\u20132025:\n  Cell A: (24.00\u00b0N, 78.50\u00b0E) \u2014 max|anomaly|=0.9023 in 2022\n  Cell B: (26.50\u00b0N, 74.75\u00b0E) \u2014 max|anomaly|=0.6677 in 2025\n  Cell C: (28.25\u00b0N, 74.25\u00b0E) \u2014 max|anomaly|=1.5905 in 2023\n  Cell D: (31.25\u00b0N, 78.25\u00b0E) \u2014 max|anomaly|=1.0706 in 2020\n\nWhich cell had the most severe climate anomaly (highest max|anomaly_score| across all years)?",
+    "options": {
+      "A": "(24.00\u00b0N, 78.50\u00b0E) \u2014 max|anomaly|=0.9023",
+      "B": "(26.50\u00b0N, 74.75\u00b0E) \u2014 max|anomaly|=0.6677",
+      "C": "(28.25\u00b0N, 74.25\u00b0E) \u2014 max|anomaly|=1.5905",
+      "D": "(31.25\u00b0N, 78.25\u00b0E) \u2014 max|anomaly|=1.0706"
+    },
+    "answer": "C",
+    "explanation": "Cell C at (28.25\u00b0N, 74.25\u00b0E) recorded the highest max|anomaly|=1.5905 in 2023",
+    "context": {
+      "cells": [
+        {
+          "lat": 24.0,
+          "lon": 78.5,
+          "max_abs_anomaly": 0.9023,
+          "peak_year": 2022
+        },
+        {
+          "lat": 26.5,
+          "lon": 74.75,
+          "max_abs_anomaly": 0.6677,
+          "peak_year": 2025
+        },
+        {
+          "lat": 28.25,
+          "lon": 74.25,
+          "max_abs_anomaly": 1.5905,
+          "peak_year": 2023
+        },
+        {
+          "lat": 31.25,
+          "lon": 78.25,
+          "max_abs_anomaly": 1.0706,
+          "peak_year": 2020
+        }
+      ],
+      "ranked": [
+        {
+          "lat": 28.25,
+          "lon": 74.25,
+          "max_abs_anomaly": 1.5905,
+          "peak_year": 2023
+        },
+        {
+          "lat": 31.25,
+          "lon": 78.25,
+          "max_abs_anomaly": 1.0706,
+          "peak_year": 2020
+        },
+        {
+          "lat": 24.0,
+          "lon": 78.5,
+          "max_abs_anomaly": 0.9023,
+          "peak_year": 2022
+        },
+        {
+          "lat": 26.5,
+          "lon": 74.75,
+          "max_abs_anomaly": 0.6677,
+          "peak_year": 2025
+        }
+      ],
+      "worst_cell": {
+        "lat": 28.25,
+        "lon": 74.25,
+        "max_abs_anomaly": 1.5905,
+        "peak_year": 2023
+      }
+    }
+  }
+]
