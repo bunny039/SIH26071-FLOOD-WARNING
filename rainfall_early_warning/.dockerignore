@@ -1,0 +1,31 @@
+# -- .dockerignore ----------------------------------------------------------
+# Exclude huge data files and dev artifacts from Docker build context
+
+# 3GB NetCDF data files — mount as Railway Volume in production
+*.nc
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Dev / scratch
+scratch/
+scratch_*.py
+
+# Frontend (built separately on Railway)
+frontend/node_modules/
+frontend/dist/
+
+# Other repos bundled in the workspace
+ClimateTwinIndia-main/
+Flood-Monitoring-and-Prediction-Using-Satellite-Data-main/
+RainfallForecasting-main/
+
+# Git / IDE
+.git/
+.gitignore
+*.md
+.vscode/
+.idea/
