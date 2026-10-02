@@ -110,41 +110,42 @@ export function Dashboard() {
     }
   }
 
-  // Generate timeline chart series based on the model predicted depth
-  const chartData = [
-    { time: '00:00', rainfall: Math.round((prediction?.predicted_rainfall ?? 85) * 0.12 * 10) / 10 },
-    { time: '04:00', rainfall: Math.round((prediction?.predicted_rainfall ?? 85) * 0.22 * 10) / 10 },
-    { time: '08:00', rainfall: Math.round((prediction?.predicted_rainfall ?? 85) * 0.45 * 10) / 10 },
-    { time: '12:00', rainfall: Math.round((prediction?.predicted_rainfall ?? 85) * 0.78 * 10) / 10 },
-    { time: '16:00', rainfall: Math.round((prediction?.predicted_rainfall ?? 85) * 0.95 * 10) / 10 },
-    { time: '20:00', rainfall: Math.round((prediction?.predicted_rainfall ?? 85) * 0.82 * 10) / 10 },
-    { time: '24:00', rainfall: Math.round((prediction?.predicted_rainfall ?? 85) * 1.0 * 10) / 10 },
-  ]
+  // Generate timeline chart from real NWP hourly_timeline returned by backend
+  // Falls back to a synthetic distribution only if timeline is empty
+  const chartData = (() => {
+    const timeline = prediction?.hourly_timeline
+    if (timeline && timeline.length >= 6) {
+      // Sample evenly from the timeline so we always have ~7 points
+      const total = timeline.length
+      const step = Math.max(1, Math.floor(total / 7))
+      return Array.from({ length: 7 }, (_, i) => {
+        const entry = timeline[Math.min(i * step, total - 1)]
+        return {
+          time: entry.time_label ?? `+${entry.hour}h`,
+          rainfall: entry.cumulative_mm ?? 0,
+        }
+      })
+    }
+    // Synthetic fallback (only when backend timeline is empty)
+    const base = prediction?.predicted_rainfall ?? 0
+    return [
+      { time: '+4h',  rainfall: Math.round(base * 0.22 * 10) / 10 },
+      { time: '+8h',  rainfall: Math.round(base * 0.42 * 10) / 10 },
+      { time: '+12h', rainfall: Math.round(base * 0.60 * 10) / 10 },
+      { time: '+16h', rainfall: Math.round(base * 0.75 * 10) / 10 },
+      { time: '+20h', rainfall: Math.round(base * 0.88 * 10) / 10 },
+      { time: '+24h', rainfall: Math.round(base * 1.00 * 10) / 10 },
+    ]
+  })()
 
   const recentAlerts = [
     {
       id: 'alt-1',
       location: selectedLocation,
-      time: '10 mins ago',
-      rainfall: prediction?.predicted_rainfall ?? 87.4,
-      level: prediction?.risk_level ?? 'WARNING',
+      time: 'Just now',
+      rainfall: prediction?.predicted_rainfall ?? 0,
+      level: prediction?.risk_level ?? 'NORMAL',
       horizon: selectedHorizon,
-    },
-    {
-      id: 'alt-2',
-      location: 'Cuttack',
-      time: '25 mins ago',
-      rainfall: 72.8,
-      level: 'WARNING',
-      horizon: '12 hours',
-    },
-    {
-      id: 'alt-3',
-      location: 'Puri Coastal Zone',
-      time: '1 hr ago',
-      rainfall: 44.5,
-      level: 'WATCH',
-      horizon: '24 hours',
     },
   ]
 

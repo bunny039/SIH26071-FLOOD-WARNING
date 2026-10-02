@@ -65,6 +65,7 @@ class PredictionResponse(BaseModel):
     convlstm_baseline_mm: Optional[float] = None
     hourly_timeline: Optional[List[Dict[str, Any]]] = None
     rate_mm_per_hour: Optional[float] = None
+    live_weather_source: Optional[str] = None
 
 class ModelInfoResponse(BaseModel):
     model_name: str
@@ -106,6 +107,7 @@ class CurrentWeatherResponse(BaseModel):
     precipitation_mm: Optional[float] = None
     rain_mm: Optional[float] = None
     cloud_cover_pct: Optional[float] = None
+    cape_j_kg: Optional[float] = None       # Convective Available Potential Energy (J/kg)
     observed_at: Optional[str] = None
     source: str
 

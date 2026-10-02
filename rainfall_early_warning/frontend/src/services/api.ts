@@ -174,6 +174,25 @@ export async function getLiveWeather(lat: number, lon: number): Promise<any> {
 }
 
 /**
+ * Fetches comprehensive live weather data including real CAPE, NWP precipitation,
+ * and 24h hourly forecast from the /api/weather/live endpoint.
+ */
+export async function getFullLiveWeather(
+  lat: number,
+  lon: number,
+  locationName?: string
+): Promise<any> {
+  const locParam = locationName ? `&location=${encodeURIComponent(locationName)}` : ''
+  const res = await fetch(`${API_BASE_URL}/api/weather/live?lat=${lat}&lon=${lon}${locParam}`, {
+    signal: AbortSignal.timeout(8000)
+  })
+  if (!res.ok) {
+    throw new Error(`Live weather service error: ${res.status}`)
+  }
+  return await res.json()
+}
+
+/**
  * Gets a sample prediction from the FastAPI backend.
  */
 export async function getSamplePrediction(): Promise<BackendPredictionResponse | null> {
@@ -211,6 +230,22 @@ export async function getSupportedLocations(): Promise<Array<{ name: string; lat
 
 /** Current multi-source conditions snapshot */
 export async function getWeatherData(): Promise<CurrentConditions> {
+  try {
+    // Try the new comprehensive live weather endpoint first
+    const liveData = await getFullLiveWeather(20.2961, 85.8245, 'Bhubaneswar')
+    if (liveData?.live_data_available && liveData?.current_observations) {
+      const obs = liveData.current_observations
+      return {
+        ...weatherData,
+        temperatureC: obs.temperature_c ?? weatherData.temperatureC,
+        humidity: obs.relative_humidity_pct ?? weatherData.humidity,
+        windSpeedKph: obs.wind_speed_kmh ?? weatherData.windSpeedKph,
+        updatedAt: obs.observed_at ?? new Date().toISOString()
+      }
+    }
+  } catch {
+    // fallback below
+  }
   try {
     const sample = await getSamplePrediction()
     if (sample && sample.meteorological_inputs?.live_weather?.current) {

@@ -264,6 +264,47 @@ def get_weather_forecast(
     return res
 
 
+@app.get("/api/weather/live")
+def get_live_weather_full(
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitude in decimal degrees"),
+    lon: float = Query(..., ge=-180.0, le=180.0, description="Longitude in decimal degrees"),
+    location: Optional[str] = Query(None, description="Optional resolved location name")
+):
+    """
+    Comprehensive live weather endpoint combining:
+      - Real-time atmospheric observations (temperature, humidity, pressure, wind, CAPE)
+      - 48h NWP precipitation forecast from Open-Meteo
+      - Convective instability metrics (CAPE, lifted index)
+    This is the primary data source for the prediction pipeline.
+    """
+    from backend.predictor import fetch_live_meteo_params
+    live = fetch_live_meteo_params(lat, lon)
+    current_weather = WeatherService.get_current_weather(lat, lon, location_name=location)
+    return {
+        "status": "success",
+        "location": location or f"{round(lat, 3)}°N, {round(lon, 3)}°E",
+        "latitude": lat,
+        "longitude": lon,
+        "live_data_available": live.get("live_fetched", False),
+        "current_observations": {
+            "temperature_c": live.get("temperature_c") or current_weather.get("temperature_c"),
+            "relative_humidity_pct": live.get("relative_humidity_pct") or current_weather.get("relative_humidity_pct"),
+            "surface_pressure_hpa": live.get("surface_pressure_hpa") or current_weather.get("surface_pressure_hpa"),
+            "wind_speed_kmh": live.get("wind_speed_kmh") or current_weather.get("wind_speed_kmh"),
+            "cloud_cover_pct": round(live.get("cloud_cover_fraction", 0) * 100) if live.get("live_fetched") else current_weather.get("cloud_cover_pct"),
+            "precipitation_mm": live.get("precipitation_mm", 0.0),
+            "weather_code": live.get("weather_code", 0),
+            "cape_j_kg": live.get("cape_j_kg"),
+            "condition_text": current_weather.get("condition_text", "Unknown"),
+            "observed_at": live.get("timestamp"),
+        },
+        "nwp_forecast_summary": live.get("nwp_forecast_summary", {}),
+        "hourly_forecast": live.get("hourly_forecast", [])[:24],
+        "source": "Open-Meteo NWP API (real-time)",
+        "timestamp": datetime.now().isoformat(),
+    }
+
+
 @app.get("/api/location/search", response_model=LocationSearchResponse)
 def search_location(
     q: str = Query(..., min_length=2, description="Search query for Indian state, district, city, or town")

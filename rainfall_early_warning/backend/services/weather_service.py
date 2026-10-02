@@ -118,6 +118,7 @@ class WeatherService:
             "precipitation_mm": cur.get("precipitation_mm", 0.0),
             "rain_mm": cur.get("rain_mm", 0.0),
             "cloud_cover_pct": cur.get("cloud_cover_pct"),
+            "cape_j_kg": cur.get("cape_j_kg"),  # Real CAPE from Open-Meteo
             "observed_at": cur.get("timestamp"),
             "source": "Open-Meteo High-Resolution NWP Service"
         }
@@ -152,14 +153,17 @@ class WeatherService:
                 "wind_direction_10m",
                 "wind_gusts_10m",
                 "cloud_cover",
-                "visibility"
+                "visibility",
+                "cape",
             ],
             "hourly": [
                 "precipitation",
                 "precipitation_probability",
                 "rain",
                 "relative_humidity_2m",
-                "temperature_2m"
+                "temperature_2m",
+                "cape",
+                "cloud_cover",
             ],
             "daily": [
                 "precipitation_sum",
@@ -274,6 +278,7 @@ class WeatherService:
                 "wind_gusts_kmh": current.get("wind_gusts_10m"),
                 "cloud_cover_pct": current.get("cloud_cover"),
                 "visibility_m": current.get("visibility"),
+                "cape_j_kg": current.get("cape"),
                 "timestamp": current.get("time")
             },
             "nwp_forecast_summary": {
