@@ -4,7 +4,7 @@ builder = "dockerfile"
 dockerfilePath = "rainfall_early_warning/backend/Dockerfile"
 
 [deploy]
-startCommand = "uvicorn backend.main:app --host 0.0.0.0 --port "
+startCommand = "uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-8000}"
 healthcheckPath = "/health"
 healthcheckTimeout = 120
 restartPolicyType = "on_failure"
