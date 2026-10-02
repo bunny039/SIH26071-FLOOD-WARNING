@@ -1,8 +1,8 @@
-# -- AquaSentinel Backend — Railway Dockerfile ------------------------------
-# Uses slim Python base; installs CPU-only PyTorch to keep image size down.
+ï»¿# -- AquaSentinel Backend - Railway Dockerfile --------------------------------
+# Build context is the REPO ROOT (SIH26071-FLOOD-WARNING-main/)
 FROM python:3.11-slim
 
-# System deps needed by netCDF4 / scipy / matplotlib
+# System deps for netCDF4 / scipy / matplotlib
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         libhdf5-dev \
@@ -13,20 +13,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-# Copy requirements first (layer caching)
-COPY requirements.txt .
+# Copy requirements (relative to repo root)
+COPY rainfall_early_warning/requirements.txt .
 
-# Install CPU-only torch (saves ~1.5 GB vs CUDA build)
+# Install CPU-only torch (saves ~1.5 GB vs CUDA)
 RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
 # Install remaining deps
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the entire project (backend + ml + config + data files)
-COPY . .
+# Copy the full rainfall_early_warning subfolder into /app
+COPY rainfall_early_warning/ ./rainfall_early_warning/
 
-# Expose the port Railway will forward to
+# Set working dir to the project root so Python imports work
+WORKDIR /app/rainfall_early_warning
+
 EXPOSE 8000
 
-# Run with uvicorn; $PORT is injected by Railway at runtime
-CMD uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-8000}
+CMD uvicorn backend.main:app --host 0.0.0.0 --port 
